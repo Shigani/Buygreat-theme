@@ -132,7 +132,7 @@
         "gallery_layout": "thumbnail_slider",
         "media_size": "large",
         "media_height": "large",
-        "mobile_thumbnails": "hide",
+        "mobile_thumbnails": "show",
         "image_card_corner_radius": 16,
         "hide_variants": false,
         "enable_sticky_info": true,

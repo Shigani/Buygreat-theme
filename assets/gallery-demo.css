@@ -173,6 +173,34 @@
     min-height: 23rem;
   }
 
+  .buygreat-product-gallery-card .buygreat-gallery-viewer {
+    margin: 0;
+    width: 100%;
+  }
+
+  .buygreat-product-gallery-card .product__media-list {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+  }
+
+  .buygreat-product-gallery-card .product__media-list .product__media-item {
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+    width: 100%;
+  }
+
+  .buygreat-product-gallery-card .product__media-frame,
+  .buygreat-product-gallery-card .product__media {
+    min-height: 23rem;
+    width: 100%;
+  }
+
   .buygreat-product-gallery-card .product__media-item img,
   .buygreat-product-gallery-card .product__media-item video,
   .buygreat-product-gallery-card .product__media-item model-viewer {
@@ -188,13 +216,20 @@
   }
 
   .buygreat-product-gallery-card .buygreat-gallery-thumbnails {
+    margin-left: 0;
+    width: 100%;
     justify-content: flex-start;
     overflow-x: auto;
   }
 
   .buygreat-product-gallery-card .buygreat-gallery-thumbnails .thumbnail-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.6rem;
     justify-content: flex-start;
+    max-width: none;
     overflow: visible;
+    padding: 0 0.2rem 0.3rem;
   }
 }
 
