@@ -163,6 +163,41 @@
   width: 100%;
 }
 
+@media screen and (min-width: 750px) {
+  .product--small .buygreat-product-gallery-card .product__media-list,
+  .product--small .buygreat-product-gallery-card .product__media-item {
+    min-height: 32rem;
+  }
+
+  .product--small .buygreat-product-gallery-card .product__media-item img,
+  .product--small .buygreat-product-gallery-card .product__media-item video,
+  .product--small .buygreat-product-gallery-card .product__media-item model-viewer {
+    max-height: 29rem;
+  }
+
+  .product--medium .buygreat-product-gallery-card .product__media-list,
+  .product--medium .buygreat-product-gallery-card .product__media-item {
+    min-height: 38rem;
+  }
+
+  .product--medium .buygreat-product-gallery-card .product__media-item img,
+  .product--medium .buygreat-product-gallery-card .product__media-item video,
+  .product--medium .buygreat-product-gallery-card .product__media-item model-viewer {
+    max-height: 35rem;
+  }
+
+  .product--large .buygreat-product-gallery-card .product__media-list,
+  .product--large .buygreat-product-gallery-card .product__media-item {
+    min-height: 44rem;
+  }
+
+  .product--large .buygreat-product-gallery-card .product__media-item img,
+  .product--large .buygreat-product-gallery-card .product__media-item video,
+  .product--large .buygreat-product-gallery-card .product__media-item model-viewer {
+    max-height: 41rem;
+  }
+}
+
 @media screen and (max-width: 749px) {
   .buygreat-product-gallery-card {
     padding: 1.8rem 1.2rem 1.6rem;
