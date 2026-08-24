@@ -199,6 +199,10 @@
 }
 
 @media screen and (max-width: 749px) {
+  .buygreat-product-gallery-card .buygreat-gallery-thumbnails.small-hide {
+    display: none !important;
+  }
+
   .buygreat-product-gallery-card {
     padding: 1.8rem 1.2rem 1.6rem;
   }
