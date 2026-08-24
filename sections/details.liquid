@@ -1,0 +1,300 @@
+{{ 'details.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign shipping_policy = shop.shipping_policy.body
+  assign review_rating = product.metafields.reviews.rating.value
+  assign review_count = product.metafields.reviews.rating_count
+-%}
+
+<section
+  id="ProductDetailReference-{{ section.id }}"
+  class="product-detail-reference color-{{ section.settings.color_scheme }} gradient"
+  data-product-detail-tabs
+>
+  <div class="page-width">
+    <div class="product-detail-reference__benefits" role="list">
+      {%- for benefit in (1..4) -%}
+        {%- capture benefit_title_key -%}benefit_{{ benefit }}_title{%- endcapture -%}
+        {%- capture benefit_text_key -%}benefit_{{ benefit }}_text{%- endcapture -%}
+        {%- assign benefit_title = section.settings[benefit_title_key] -%}
+        {%- assign benefit_text = section.settings[benefit_text_key] -%}
+        {%- if benefit_title != blank or benefit_text != blank -%}
+          <div class="product-detail-reference__benefit" role="listitem">
+            <span class="product-detail-reference__benefit-mark" aria-hidden="true">✓</span>
+            <div>
+              {%- if benefit_title != blank -%}
+                <strong>{{ benefit_title }}</strong>
+              {%- endif -%}
+              {%- if benefit_text != blank -%}
+                <span>{{ benefit_text }}</span>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="product-detail-reference__tabs-wrap">
+      <div class="product-detail-reference__tabs" role="tablist" aria-label="Product information">
+        <button
+          class="product-detail-reference__tab is-active"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="ProductDetailOverview-{{ section.id }}"
+          data-product-detail-tab="ProductDetailOverview-{{ section.id }}"
+        >
+          {{ section.settings.overview_label }}
+        </button>
+        <button
+          class="product-detail-reference__tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="ProductDetailShipping-{{ section.id }}"
+          data-product-detail-tab="ProductDetailShipping-{{ section.id }}"
+        >
+          {{ section.settings.shipping_label }}
+        </button>
+        <button
+          class="product-detail-reference__tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="ProductDetailReviews-{{ section.id }}"
+          data-product-detail-tab="ProductDetailReviews-{{ section.id }}"
+        >
+          {{ section.settings.reviews_label }}
+        </button>
+        <button
+          class="product-detail-reference__tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="ProductDetailQuestions-{{ section.id }}"
+          data-product-detail-tab="ProductDetailQuestions-{{ section.id }}"
+        >
+          {{ section.settings.questions_label }}
+        </button>
+      </div>
+
+      <div class="product-detail-reference__panels">
+        <div
+          id="ProductDetailOverview-{{ section.id }}"
+          class="product-detail-reference__panel is-active rte"
+          role="tabpanel"
+          tabindex="0"
+        >
+          {%- if product.description != blank -%}
+            {{ product.description }}
+          {%- else -%}
+            <p>{{ section.settings.empty_description }}</p>
+          {%- endif -%}
+        </div>
+
+        <div
+          id="ProductDetailShipping-{{ section.id }}"
+          class="product-detail-reference__panel rte"
+          role="tabpanel"
+          tabindex="0"
+          hidden
+        >
+          {%- if shipping_policy != blank -%}
+            {{ shipping_policy }}
+          {%- else -%}
+            <p>{{ section.settings.empty_shipping }}</p>
+          {%- endif -%}
+        </div>
+
+        <div
+          id="ProductDetailReviews-{{ section.id }}"
+          class="product-detail-reference__panel rte"
+          role="tabpanel"
+          tabindex="0"
+          hidden
+        >
+          {%- if review_rating != blank -%}
+            <div class="product-detail-reference__rating" aria-label="{{ review_rating }} out of 5 stars">
+              <span class="product-detail-reference__stars" aria-hidden="true">★★★★★</span>
+              <strong>{{ review_rating }} / 5</strong>
+              {%- if review_count != blank -%}
+                <span>({{ review_count }})</span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+          {%- if product.metafields.spr.reviews != blank -%}
+            {{ product.metafields.spr.reviews }}
+          {%- else -%}
+            <p>{{ section.settings.empty_reviews }}</p>
+          {%- endif -%}
+        </div>
+
+        <div
+          id="ProductDetailQuestions-{{ section.id }}"
+          class="product-detail-reference__panel rte"
+          role="tabpanel"
+          tabindex="0"
+          hidden
+        >
+          <p>{{ section.settings.questions_text }}</p>
+          {%- if shop.email != blank -%}
+            <p><a href="mailto:{{ shop.email | escape }}">{{ shop.email }}</a></p>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const root = document.querySelector('#ProductDetailReference-{{ section.id }}');
+    if (!root || root.dataset.tabsReady === 'true') return;
+    root.dataset.tabsReady = 'true';
+
+    const tabs = root.querySelectorAll('[data-product-detail-tab]');
+    const panels = root.querySelectorAll('[role="tabpanel"]');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.dataset.productDetailTab;
+
+        tabs.forEach((item) => {
+          const active = item === tab;
+          item.classList.toggle('is-active', active);
+          item.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+
+        panels.forEach((panel) => {
+          panel.hidden = panel.id !== targetId;
+          panel.classList.toggle('is-active', panel.id === targetId);
+        });
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product details",
+  "tag": "section",
+  "class": "product-detail-reference-section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "background-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Information tabs"
+    },
+    {
+      "type": "text",
+      "id": "overview_label",
+      "default": "Overview",
+      "label": "Overview label"
+    },
+    {
+      "type": "text",
+      "id": "shipping_label",
+      "default": "Shipping info",
+      "label": "Shipping label"
+    },
+    {
+      "type": "text",
+      "id": "reviews_label",
+      "default": "Reviews",
+      "label": "Reviews label"
+    },
+    {
+      "type": "text",
+      "id": "questions_label",
+      "default": "Questions & answers",
+      "label": "Questions label"
+    },
+    {
+      "type": "textarea",
+      "id": "empty_description",
+      "default": "Product details will appear here.",
+      "label": "Empty description text"
+    },
+    {
+      "type": "textarea",
+      "id": "empty_shipping",
+      "default": "Shipping information will appear here.",
+      "label": "Empty shipping text"
+    },
+    {
+      "type": "textarea",
+      "id": "empty_reviews",
+      "default": "Reviews will appear here when they are available.",
+      "label": "Empty reviews text"
+    },
+    {
+      "type": "textarea",
+      "id": "questions_text",
+      "default": "Have a question about this product? Contact our team and we’ll be happy to help.",
+      "label": "Questions text"
+    },
+    {
+      "type": "header",
+      "content": "Benefit strip"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_title",
+      "default": "Fast dispatch",
+      "label": "Benefit 1 title"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_text",
+      "default": "Orders processed quickly",
+      "label": "Benefit 1 text"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_title",
+      "default": "Easy returns",
+      "label": "Benefit 2 title"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_text",
+      "default": "Shop with confidence",
+      "label": "Benefit 2 text"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_title",
+      "default": "Secure checkout",
+      "label": "Benefit 3 title"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_text",
+      "default": "Protected payment options",
+      "label": "Benefit 3 text"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_title",
+      "default": "Helpful support",
+      "label": "Benefit 4 title"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_text",
+      "default": "We’re here when you need us",
+      "label": "Benefit 4 text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product details"
+    }
+  ]
+}
+{% endschema %}

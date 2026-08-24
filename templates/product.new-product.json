@@ -485,10 +485,33 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "product-detail-reference": {
+      "type": "details",
+      "settings": {
+        "color_scheme": "background-1",
+        "overview_label": "Overview",
+        "shipping_label": "Shipping info",
+        "reviews_label": "Reviews",
+        "questions_label": "Questions & answers",
+        "empty_description": "Product details will appear here.",
+        "empty_shipping": "Shipping information will appear here.",
+        "empty_reviews": "Reviews will appear here when they are available.",
+        "questions_text": "Have a question about this product? Contact our team and we’ll be happy to help.",
+        "benefit_1_title": "Fast dispatch",
+        "benefit_1_text": "Orders processed quickly",
+        "benefit_2_title": "Easy returns",
+        "benefit_2_text": "Shop with confidence",
+        "benefit_3_title": "Secure checkout",
+        "benefit_3_text": "Protected payment options",
+        "benefit_4_title": "Helpful support",
+        "benefit_4_text": "We’re here when you need us"
+      }
     }
   },
   "order": [
     "main",
+    "product-detail-reference",
     "177901878618d59b8e",
     "product-recommendations",
     "1745289788ef9d2eb4",
