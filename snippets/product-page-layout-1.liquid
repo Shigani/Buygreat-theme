@@ -1,6 +1,19 @@
 {%- liquid
      assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
      assign media_count = product.media.size
+     assign gallery_variant = product.selected_or_first_available_variant
+     assign gallery_is_on_sale = false
+     if gallery_variant.compare_at_price > gallery_variant.price
+       assign gallery_is_on_sale = true
+     endif
+     assign gallery_is_new = false
+     for product_tag in product.tags
+       assign normalized_product_tag = product_tag | downcase | replace: ' ', '-'
+       if normalized_product_tag == 'new' or normalized_product_tag == 'new-arrival' or normalized_product_tag == 'new-arrivals'
+         assign gallery_is_new = true
+         break
+       endif
+     endfor
      if section.settings.hide_variants
        assign media_count = media_count | minus: variant_images.size | plus: 1
      endif
@@ -11,9 +24,26 @@
     
 -%}
 
-<media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
+<div class="buygreat-product-gallery-card">
+  <div class="buygreat-product-gallery-card__header">
+    <div class="buygreat-product-gallery-card__vendor">
+      {{ product.vendor | escape }}
+    </div>
+    {%- if gallery_is_new or gallery_is_on_sale -%}
+      <div class="buygreat-product-gallery-card__badges" aria-label="Product badges">
+        {%- if gallery_is_new -%}
+          <span class="buygreat-product-gallery-card__badge buygreat-product-gallery-card__badge--new">NEW</span>
+        {%- endif -%}
+        {%- if gallery_is_on_sale -%}
+          <span class="buygreat-product-gallery-card__badge buygreat-product-gallery-card__badge--sale">Sale</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+<media-gallery id="MediaGallery-{{ section.id }}" role="region" class="buygreat-product-gallery{% if section.settings.enable_sticky_info %} product__media-gallery{% endif %}" aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
-  <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter {% if sliderMatchHeight %} mobile__Match--height {% endif %}">
+  <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter buygreat-gallery-viewer {% if sliderMatchHeight %} mobile__Match--height {% endif %}">
    <ul id="Slider-Gallery-{{ section.id }}" class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile" role="list">
       
       {%- if product.selected_or_first_available_variant.featured_media != null -%}
@@ -32,7 +62,7 @@
       {%- endunless -%}
       {%- endfor -%}
     </ul>
-    <div class="slider-buttons no-js-hidden quick-add-hidden{% if media_count < 2 or section.settings.mobile_thumbnails == 'show' %} small-hide{% endif %}">
+    <div class="slider-buttons buygreat-gallery-controls no-js-hidden quick-add-hidden{% if media_count < 2 or section.settings.mobile_thumbnails == 'show' %} small-hide{% endif %}">
       <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
       <div class="slider-counter caption">
         <span class="slider-counter--current">1</span>
@@ -63,7 +93,7 @@
   
 
   {%- if media_count > 1 and section.settings.gallery_layout != 'stacked' or section.settings.mobile_thumbnails == 'show' -%}
-      <slider-component id="GalleryThumbnails-{{ section.id }}" class="thumbnail-slider slider-mobile-gutter quick-add-hidden{% if section.settings.mobile_thumbnails == 'hide' %} small-hide{% endif %}{% if media_count <= 3 %} thumbnail-slider--no-slide{% endif %}">
+      <slider-component id="GalleryThumbnails-{{ section.id }}" class="thumbnail-slider buygreat-gallery-thumbnails slider-mobile-gutter quick-add-hidden{% if section.settings.mobile_thumbnails == 'hide' %} small-hide{% endif %}{% if media_count <= 3 %} thumbnail-slider--no-slide{% endif %}">
             <button type="button" class="slider-button slider-button--prev{% if media_count <= 3 %} small-hide{% endif %}{% if media_count <= 4 %} medium-hide large-up-hide{% endif %}" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}" aria-controls="GalleryThumbnails-{{ section.id }}" data-step="3">{% render 'icon-caret' %}</button>
             <ul id="Slider-Thumbnails-{{ section.id }}" class="thumbnail-list list-unstyled slider slider--mobile{% if section.settings.gallery_layout == 'thumbnail_slider' %} slider--tablet-up{% endif %}">
               {%- if featured_media != null -%}
@@ -158,3 +188,5 @@
    {%- endif -%}
   
 </media-gallery>
+</div>
+
