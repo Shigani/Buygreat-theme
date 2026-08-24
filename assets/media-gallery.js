@@ -11,6 +11,9 @@ if (!customElements.get('media-gallery')) {
       if (!this.elements.thumbnails) return;
 
       this.elements.viewer.addEventListener('slideChanged', debounce(this.onSlideChanged.bind(this), 500));
+      this.elements.viewer.querySelectorAll('button[name="previous"], button[name="next"]').forEach((button) => {
+        button.addEventListener('click', this.changeMedia.bind(this));
+      });
       this.elements.thumbnails.querySelectorAll('[data-target]').forEach((mediaToSwitch) => {
         mediaToSwitch.querySelector('button').addEventListener('click', this.setActiveMedia.bind(this, mediaToSwitch.dataset.target, false));
       });
@@ -20,6 +23,19 @@ if (!customElements.get('media-gallery')) {
     onSlideChanged(event) {
       const thumbnail = this.elements.thumbnails.querySelector(`[data-target="${ event.detail.currentElement.dataset.mediaId }"]`);
       this.setActiveThumbnail(thumbnail);
+    }
+
+    changeMedia(event) {
+      event.preventDefault();
+      const mediaItems = Array.from(this.elements.viewer.querySelectorAll('.product__media-item'))
+        .filter((item) => !item.classList.contains('product__media-item--variant'));
+      if (mediaItems.length < 2) return;
+
+      const activeIndex = mediaItems.findIndex((item) => item.classList.contains('is-active'));
+      const currentIndex = activeIndex < 0 ? 0 : activeIndex;
+      const direction = event.currentTarget.name === 'next' ? 1 : -1;
+      const nextIndex = (currentIndex + direction + mediaItems.length) % mediaItems.length;
+      this.setActiveMedia(mediaItems[nextIndex].dataset.mediaId, false);
     }
 
     setActiveMedia(mediaId, prepend) {
