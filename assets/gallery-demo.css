@@ -221,6 +221,100 @@
   }
 }
 
+/* Keep the compact gallery, while allowing Image height to control the media frame. */
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-adapt .product__media-list,
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-adapt .product__media-item {
+  min-height: 0;
+}
+
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-adapt .product__media-frame,
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-adapt .product__media {
+  height: auto;
+  min-height: 0;
+}
+
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-small .product__media-list,
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-small .product__media-item {
+  min-height: 19rem;
+}
+
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-small .product__media-frame,
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-small .product__media {
+  height: 19rem;
+}
+
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-medium .product__media-list,
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-medium .product__media-item {
+  min-height: 23rem;
+}
+
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-medium .product__media-frame,
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-medium .product__media {
+  height: 23rem;
+}
+
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media-list,
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media-item {
+  min-height: 27rem;
+}
+
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media-frame,
+.buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media {
+  height: 27rem;
+}
+
+@media screen and (min-width: 750px) {
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-small .product__media-list,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-small .product__media-item {
+    min-height: 32rem;
+  }
+
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-small .product__media-frame,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-small .product__media {
+    height: 32rem;
+  }
+
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-medium .product__media-list,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-medium .product__media-item {
+    min-height: 38rem;
+  }
+
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-medium .product__media-frame,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-medium .product__media {
+    height: 38rem;
+  }
+
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media-list,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media-item {
+    min-height: 44rem;
+  }
+
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media-frame,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media {
+    height: 44rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-small .product__media-item img,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-small .product__media-item video,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-small .product__media-item model-viewer {
+    max-height: 17rem;
+  }
+
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-medium .product__media-item img,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-medium .product__media-item video,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-medium .product__media-item model-viewer {
+    max-height: 21rem;
+  }
+
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media-item img,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media-item video,
+  .buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media-item model-viewer {
+    max-height: 25rem;
+  }
+}
+
 @media screen and (max-width: 749px) {
   .buygreat-product-gallery-card .buygreat-gallery-thumbnails.small-hide {
     display: none !important;

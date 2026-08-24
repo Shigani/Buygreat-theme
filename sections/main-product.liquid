@@ -37,41 +37,6 @@
     }
   }
 
-  /* Keep the reference-style gallery compact instead of using the theme's tall media heights. */
-  .buygreat-product-gallery-card .main--product__media--small.media,
-  .buygreat-product-gallery-card .main--product__media--medium.media,
-  .buygreat-product-gallery-card .main--product__media--large.media {
-    height: 40rem;
-  }
-
-  @media screen and (min-width: 750px) {
-    .product--small .buygreat-product-gallery-card .main--product__media--small.media,
-    .product--small .buygreat-product-gallery-card .main--product__media--medium.media,
-    .product--small .buygreat-product-gallery-card .main--product__media--large.media {
-      height: 32rem;
-    }
-
-    .product--medium .buygreat-product-gallery-card .main--product__media--small.media,
-    .product--medium .buygreat-product-gallery-card .main--product__media--medium.media,
-    .product--medium .buygreat-product-gallery-card .main--product__media--large.media {
-      height: 38rem;
-    }
-
-    .product--large .buygreat-product-gallery-card .main--product__media--small.media,
-    .product--large .buygreat-product-gallery-card .main--product__media--medium.media,
-    .product--large .buygreat-product-gallery-card .main--product__media--large.media {
-      height: 44rem;
-    }
-  }
-
-  @media screen and (max-width: 749px) {
-    .buygreat-product-gallery-card .main--product__media--small.media,
-    .buygreat-product-gallery-card .main--product__media--medium.media,
-    .buygreat-product-gallery-card .main--product__media--large.media {
-      height: 23rem;
-    }
-  }
-
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.mobile_padding_top }}px;
     padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
