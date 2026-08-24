@@ -12,10 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "9b934ba1-fe4e-46f6-b201-6680584b0fac": {
-          "type": "sku",
-          "settings": {}
-        },
         "rating_cbUqDr": {
           "type": "rating",
           "settings": {}
@@ -112,7 +108,6 @@
         }
       },
       "block_order": [
-        "9b934ba1-fe4e-46f6-b201-6680584b0fac",
         "rating_cbUqDr",
         "title",
         "price",
@@ -191,141 +186,6 @@
         "include_margins": true
       }
     },
-    "video_wggG33": {
-      "type": "video",
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "height": "adapt",
-        "image_overlay_opacity": 0,
-        "heading": "Why Choose Us?",
-        "heading_size": "medium",
-        "desctext": "<p>We believe you get out what you put in —<br/>that’s why our products are made with the highest standards of quality.</p>",
-        "button_text": "",
-        "button_icon": false,
-        "link_target": "_blank",
-        "button_link": "",
-        "enable_border": true,
-        "video_url": "https://www.youtube.com/watch?v=9no7Q4jYnsI",
-        "description": "",
-        "video_sound": false,
-        "play_button_text": "",
-        "video_icon_position": "bottom--left",
-        "full_width": false,
-        "service_block": true,
-        "service1_title_text": "Premium Technology",
-        "service1_desc_text": "Showcase your high-performance electronics with a clean, modern design that inspires trust and excitement.",
-        "service2_title_text": "Reliability & Innovation",
-        "service2_desc_text": "Highlight key features, cutting-edge specs, and quality certifications clearly, ensuring confidence in every purchase.",
-        "padding_top": 85,
-        "padding_bottom": 15,
-        "mobile_padding_top": 50,
-        "mobile_padding_bottom": 0
-      }
-    },
-    "faq_4YUEmD": {
-      "type": "faq",
-      "blocks": {
-        "accordion_6PMBgy": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Do your mobile come with a warranty?",
-            "content": "<p>We recommend consulting a healthcare professional to determine which vitamins or supplements best fit your needs.Yes, we partner with trusted payment providers to offer easy financing and installment plans at checkout.<br/><br/></p>"
-          }
-        },
-        "accordion_xJyYxm": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Do you offer installment payment options?",
-            "content": "<p>We offer a hassle-free return policy. If you're not satisfied with your purchase, you can return it within 6 days for an exchange or refund.</p>"
-          }
-        },
-        "accordion_nKn3py": {
-          "type": "accordion",
-          "settings": {
-            "heading": "What is your return policy?",
-            "content": "<p>Delivery times vary based on your location, but we typically ship within<strong>24–48</strong>hours. You'll receive tracking information as soon as your order is dispatched.<br/><br/></p>"
-          }
-        }
-      },
-      "block_order": [
-        "accordion_6PMBgy",
-        "accordion_xJyYxm",
-        "accordion_nKn3py"
-      ],
-      "disabled": true,
-      "settings": {
-        "container_type": "container",
-        "caption": "FREQUENTLY ASKED QUESTIONS",
-        "heading": "You've Got Any Questions?",
-        "heading_size": "h1",
-        "enable_image": true,
-        "height": "large",
-        "image_position": "right",
-        "show_have_qustion": true,
-        "stl_h_q": "Still Have Questions?",
-        "sub_h_q_title": "Feel free to ask any questions you have!",
-        "btn__text": "here to help",
-        "h_t_h_button_link": "",
-        "full_width": false,
-        "color_scheme": "",
-        "mobile_image_position": "top",
-        "padding_top": 45,
-        "padding_bottom": 100,
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 60
-      }
-    },
-    "text_with_icons_UiGtfy": {
-      "type": "text-with-icons",
-      "blocks": {
-        "feature_jDUNTa": {
-          "type": "feature",
-          "settings": {
-            "icon_enable": true,
-            "icon": "box",
-            "heading": "<p>FREE SHIPPING</p>",
-            "text": "On all orders over $99.00"
-          }
-        },
-        "feature_Ap9Jyy": {
-          "type": "feature",
-          "settings": {
-            "icon_enable": true,
-            "icon": "guarantee",
-            "heading": "<p>MONEY BACK</p>",
-            "text": "30 days money back guarantee"
-          }
-        },
-        "feature_iWDyVt": {
-          "type": "feature",
-          "settings": {
-            "icon_enable": true,
-            "icon": "support",
-            "heading": "<p>BEST SUPPORT</p>",
-            "text": "Team always ready for you"
-          }
-        }
-      },
-      "block_order": [
-        "feature_jDUNTa",
-        "feature_Ap9Jyy",
-        "feature_iWDyVt"
-      ],
-      "disabled": true,
-      "settings": {
-        "column": "3",
-        "content_alignment": "center",
-        "icon_position": "top",
-        "color_scheme": "background-1",
-        "border_show": true,
-        "border_color": "#e7e7e7",
-        "padding_top": 0,
-        "padding_bottom": 80,
-        "mobile_padding_top": 60,
-        "mobile_padding_bottom": 60
-      }
-    },
     "recent-viewed-products": {
       "type": "recently_viewed_product",
       "disabled": true,
@@ -342,144 +202,6 @@
         "autoplay_time": 3
       }
     },
-    "text_with_icons_g9E6EU": {
-      "type": "text-with-icons",
-      "blocks": {
-        "feature_Rk6pKc": {
-          "type": "feature",
-          "settings": {
-            "icon_enable": true,
-            "icon": "dollar",
-            "heading": "<p>MONEY BACK</p>",
-            "text": "30 days money back guarantee"
-          }
-        },
-        "feature_jELPjH": {
-          "type": "feature",
-          "settings": {
-            "icon_enable": true,
-            "icon": "bag",
-            "heading": "<p>FREE SHIPPING</p>",
-            "text": "On all orders over $75.00"
-          }
-        },
-        "feature_zteeby": {
-          "type": "feature",
-          "settings": {
-            "icon_enable": true,
-            "icon": "sun",
-            "heading": "<p>BEST SUPPORT</p>",
-            "text": "Team always ready for you"
-          }
-        }
-      },
-      "block_order": [
-        "feature_Rk6pKc",
-        "feature_jELPjH",
-        "feature_zteeby"
-      ],
-      "disabled": true,
-      "settings": {
-        "column": "3",
-        "content_alignment": "left",
-        "icon_position": "left",
-        "color_scheme": "",
-        "border_show": true,
-        "border_color": "#e7e7e7",
-        "padding_top": 45,
-        "padding_bottom": 80,
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 40
-      }
-    },
-    "blocks_wREmii": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_239754a_GRwbcJ": {
-          "type": "ai_gen_block_239754a",
-          "settings": {
-            "desktop_width_percent": 100,
-            "overall_rating": "5.0",
-            "total_reviews": 0,
-            "star_5_percent": 0,
-            "star_4_percent": 0,
-            "star_3_percent": 0,
-            "star_2_percent": 0,
-            "star_1_percent": 0,
-            "write_heading": "Review this product",
-            "write_subtext": "Share your thoughts with other customers",
-            "write_button_text": "Write a review",
-            "review_1_name": "",
-            "review_1_rating": 1,
-            "review_1_product": "",
-            "review_1_text": "",
-            "review_1_date": "",
-            "review_2_name": "",
-            "review_2_rating": 1,
-            "review_2_product": "",
-            "review_2_text": "",
-            "review_2_date": "",
-            "review_3_name": "",
-            "review_3_rating": 1,
-            "review_3_product": "",
-            "review_3_text": "",
-            "review_3_date": "",
-            "review_4_name": "",
-            "review_4_rating": 1,
-            "review_4_product": "",
-            "review_4_text": "",
-            "review_4_date": "",
-            "review_5_name": "",
-            "review_5_rating": 1,
-            "review_5_product": "",
-            "review_5_text": "",
-            "review_5_date": "",
-            "review_6_name": "",
-            "review_6_rating": 1,
-            "review_6_product": "",
-            "review_6_text": "",
-            "review_6_date": "",
-            "background_color": "#ffffff",
-            "card_background_color": "#ffffff",
-            "text_color": "#181a17",
-            "secondary_text_color": "#6b7280",
-            "border_color": "#e5e7eb",
-            "star_color": "#ffc107",
-            "progress_bg_color": "#f3f4f6",
-            "button_bg_color": "#181a17",
-            "button_text_color": "#ffffff",
-            "button_hover_bg_color": "#000000",
-            "filter_active_bg": "#181a17",
-            "filter_active_text": "#ffffff",
-            "avatar_bg_color": "#00d1ff",
-            "avatar_text_color": "#ffffff",
-            "card_border_radius": 8,
-            "filter_border_radius": 6,
-            "button_border_radius": 6,
-            "section_padding_top": 60,
-            "section_padding_bottom": 60,
-            "section_padding_horizontal": 20,
-            "section_padding_top_mobile": 40,
-            "section_padding_bottom_mobile": 40,
-            "section_padding_horizontal_mobile": 15
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_239754a_GRwbcJ"
-      ],
-      "disabled": true,
-      "name": "Product reviews",
-      "settings": {}
-    },
-    "177454310590ff9c5c": {
-      "type": "apps",
-      "disabled": true,
-      "settings": {
-        "include_margins": true
-      }
-    },
     "1774636155881bcebb": {
       "type": "apps",
       "settings": {
@@ -492,13 +214,7 @@
     "177901878618d59b8e",
     "product-recommendations",
     "1745289788ef9d2eb4",
-    "video_wggG33",
-    "faq_4YUEmD",
-    "text_with_icons_UiGtfy",
     "recent-viewed-products",
-    "text_with_icons_g9E6EU",
-    "blocks_wREmii",
-    "177454310590ff9c5c",
     "1774636155881bcebb"
   ]
 }
