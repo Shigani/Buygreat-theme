@@ -1,0 +1,1084 @@
+{% doc %}
+  @prompt
+    Create a product reviews section with the following design and features:
+    
+    Layout:
+    - Left sidebar: Large rating number (5.0) with star display, total review count, rating breakdown bars showing percentage for 5-4-3-2-1 stars with yellow progress bars, "Review this product" heading with subtext, and dark "Write a review" button
+    - Right main area: Filter tabs (All, Review with photos, Review with videos, star ratings 5-4-3-2-1), sort dropdown (Most helpful), and review cards in a grid
+    
+    Review cards should include:
+    - Circular colored badge with reviewer initial
+    - Reviewer name
+    - 5-star rating display (yellow stars)
+    - Product name being reviewed
+    - Review text content
+    - Review date
+    - Thumbs up counter with (0) and Report link at bottom
+    
+    Styling:
+    - Clean, minimal design with light gray borders
+    - Yellow/gold stars and rating bars (#FFC107 or similar)
+    - Dark navy/charcoal buttons and badges
+    - Responsive grid layout for review cards
+    - Professional typography with clear hierarchy
+    
+    Functionality:
+    - Star rating breakdown with visual percentage bars
+    - Filter buttons for all reviews, photos, videos, and star ratings
+    - Sort dropdown menu
+    - Helpful vote counter
+    - Report review option
+    - Write review button (can link to review form or modal)
+    
+    Make it customizable through theme editor settings for colors, text, and layout options.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-reviews-section-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding_top }}px {{ block.settings.section_padding_horizontal }}px {{ block.settings.section_padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-reviews-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .ai-reviews-sidebar-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .ai-reviews-rating-summary-{{ ai_gen_id }} {
+    padding: 30px;
+    border: 1px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    background-color: {{ block.settings.card_background_color }};
+  }
+
+  .ai-reviews-overall-rating-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .ai-reviews-rating-number-{{ ai_gen_id }} {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-reviews-stars-display-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .ai-reviews-stars-display-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+    fill: {{ block.settings.star_color }};
+  }
+
+  .ai-reviews-total-count-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.secondary_text_color }};
+  }
+
+  .ai-reviews-breakdown-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+
+  .ai-reviews-breakdown-row-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ai-reviews-breakdown-label-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+    min-width: 50px;
+  }
+
+  .ai-reviews-breakdown-bar-{{ ai_gen_id }} {
+    flex: 1;
+    height: 8px;
+    background-color: {{ block.settings.progress_bg_color }};
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .ai-reviews-breakdown-fill-{{ ai_gen_id }} {
+    height: 100%;
+    background-color: {{ block.settings.star_color }};
+    transition: width 0.3s ease;
+  }
+
+  .ai-reviews-breakdown-percent-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.secondary_text_color }};
+    min-width: 40px;
+    text-align: right;
+  }
+
+  .ai-reviews-write-section-{{ ai_gen_id }} {
+    padding: 25px;
+    border: 1px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    background-color: {{ block.settings.card_background_color }};
+  }
+
+  .ai-reviews-write-heading-{{ ai_gen_id }} {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-reviews-write-subtext-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.secondary_text_color }};
+    margin-bottom: 20px;
+  }
+
+  .ai-reviews-write-button-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 14px 24px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-reviews-write-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+  }
+
+  .ai-reviews-main-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .ai-reviews-controls-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ai-reviews-filters-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .ai-reviews-filter-button-{{ ai_gen_id }} {
+    padding: 10px 18px;
+    background-color: transparent;
+    color: {{ block.settings.text_color }};
+    border: 1px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.filter_border_radius }}px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ai-reviews-filter-button-{{ ai_gen_id }}:hover,
+  .ai-reviews-filter-button-{{ ai_gen_id }}.active {
+    background-color: {{ block.settings.filter_active_bg }};
+    color: {{ block.settings.filter_active_text }};
+    border-color: {{ block.settings.filter_active_bg }};
+  }
+
+  .ai-reviews-sort-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ai-reviews-sort-label-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-reviews-sort-select-{{ ai_gen_id }} {
+    padding: 10px 16px;
+    border: 1px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.filter_border_radius }}px;
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+    background-color: {{ block.settings.card_background_color }};
+    cursor: pointer;
+  }
+
+  .ai-reviews-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+  }
+
+  .ai-review-card-{{ ai_gen_id }} {
+    padding: 25px;
+    border: 1px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    background-color: {{ block.settings.card_background_color }};
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .ai-review-header-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ai-review-avatar-{{ ai_gen_id }} {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: {{ block.settings.avatar_bg_color }};
+    color: {{ block.settings.avatar_text_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .ai-review-author-info-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  .ai-review-author-name-{{ ai_gen_id }} {
+    font-size: 16px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 4px;
+  }
+
+  .ai-review-stars-{{ ai_gen_id }} {
+    display: flex;
+    gap: 3px;
+  }
+
+  .ai-review-stars-{{ ai_gen_id }} svg {
+    width: 16px;
+    height: 16px;
+    fill: {{ block.settings.star_color }};
+  }
+
+  .ai-review-product-name-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 500;
+    color: {{ block.settings.secondary_text_color }};
+  }
+
+  .ai-review-text-{{ ai_gen_id }} {
+    font-size: 15px;
+    line-height: 1.6;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-review-footer-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid {{ block.settings.border_color }};
+  }
+
+  .ai-review-date-{{ ai_gen_id }} {
+    font-size: 13px;
+    color: {{ block.settings.secondary_text_color }};
+  }
+
+  .ai-review-actions-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .ai-review-helpful-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: {{ block.settings.secondary_text_color }};
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .ai-review-helpful-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-review-helpful-{{ ai_gen_id }} svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
+  .ai-review-report-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.secondary_text_color }};
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .ai-review-report-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.text_color }};
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 990px) {
+    .ai-reviews-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .ai-reviews-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-reviews-section-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top_mobile }}px {{ block.settings.section_padding_horizontal_mobile }}px {{ block.settings.section_padding_bottom_mobile }}px;
+    }
+
+    .ai-reviews-filters-{{ ai_gen_id }} {
+      gap: 8px;
+    }
+
+    .ai-reviews-filter-button-{{ ai_gen_id }} {
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+  }
+{% endstyle %}
+
+<product-reviews-{{ ai_gen_id }} class="ai-reviews-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-reviews-container-{{ ai_gen_id }}">
+    <aside class="ai-reviews-sidebar-{{ ai_gen_id }}">
+      <div class="ai-reviews-rating-summary-{{ ai_gen_id }}">
+        <div class="ai-reviews-overall-rating-{{ ai_gen_id }}">
+          <div class="ai-reviews-rating-number-{{ ai_gen_id }}">{{ block.settings.overall_rating }}</div>
+          <div class="ai-reviews-stars-display-{{ ai_gen_id }}">
+            {% for i in (1..5) %}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            {% endfor %}
+          </div>
+          <div class="ai-reviews-total-count-{{ ai_gen_id }}">{{ block.settings.total_reviews }} reviews</div>
+        </div>
+
+        <div class="ai-reviews-breakdown-{{ ai_gen_id }}">
+          {% for i in (1..5) %}
+            {% assign star_num = 6 | minus: i %}
+            {% assign percent_key = 'star_' | append: star_num | append: '_percent' %}
+            {% assign percent = block.settings[percent_key] %}
+            <div class="ai-reviews-breakdown-row-{{ ai_gen_id }}">
+              <div class="ai-reviews-breakdown-label-{{ ai_gen_id }}">{{ star_num }} star</div>
+              <div class="ai-reviews-breakdown-bar-{{ ai_gen_id }}">
+                <div class="ai-reviews-breakdown-fill-{{ ai_gen_id }}" style="width: {{ percent }}%;"></div>
+              </div>
+              <div class="ai-reviews-breakdown-percent-{{ ai_gen_id }}">{{ percent }}%</div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="ai-reviews-write-section-{{ ai_gen_id }}">
+        <h3 class="ai-reviews-write-heading-{{ ai_gen_id }}">{{ block.settings.write_heading }}</h3>
+        <p class="ai-reviews-write-subtext-{{ ai_gen_id }}">{{ block.settings.write_subtext }}</p>
+        <button class="ai-reviews-write-button-{{ ai_gen_id }}" data-write-review>
+          {{ block.settings.write_button_text }}
+        </button>
+      </div>
+    </aside>
+
+    <main class="ai-reviews-main-{{ ai_gen_id }}">
+      <div class="ai-reviews-controls-{{ ai_gen_id }}">
+        <div class="ai-reviews-filters-{{ ai_gen_id }}">
+          <button class="ai-reviews-filter-button-{{ ai_gen_id }} active" data-filter="all">All</button>
+          <button class="ai-reviews-filter-button-{{ ai_gen_id }}" data-filter="photos">Reviews with photos</button>
+          <button class="ai-reviews-filter-button-{{ ai_gen_id }}" data-filter="videos">Reviews with videos</button>
+          <button class="ai-reviews-filter-button-{{ ai_gen_id }}" data-filter="5">5 stars</button>
+          <button class="ai-reviews-filter-button-{{ ai_gen_id }}" data-filter="4">4 stars</button>
+          <button class="ai-reviews-filter-button-{{ ai_gen_id }}" data-filter="3">3 stars</button>
+          <button class="ai-reviews-filter-button-{{ ai_gen_id }}" data-filter="2">2 stars</button>
+          <button class="ai-reviews-filter-button-{{ ai_gen_id }}" data-filter="1">1 star</button>
+        </div>
+
+        <div class="ai-reviews-sort-wrapper-{{ ai_gen_id }}">
+          <label class="ai-reviews-sort-label-{{ ai_gen_id }}" for="sort-{{ ai_gen_id }}">Sort by:</label>
+          <select class="ai-reviews-sort-select-{{ ai_gen_id }}" id="sort-{{ ai_gen_id }}">
+            <option value="helpful">Most helpful</option>
+            <option value="recent">Most recent</option>
+            <option value="highest">Highest rating</option>
+            <option value="lowest">Lowest rating</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ai-reviews-grid-{{ ai_gen_id }}">
+        {% for i in (1..6) %}
+          {% assign review_name_key = 'review_' | append: i | append: '_name' %}
+          {% assign review_rating_key = 'review_' | append: i | append: '_rating' %}
+          {% assign review_product_key = 'review_' | append: i | append: '_product' %}
+          {% assign review_text_key = 'review_' | append: i | append: '_text' %}
+          {% assign review_date_key = 'review_' | append: i | append: '_date' %}
+
+          {% assign review_name = block.settings[review_name_key] %}
+          {% assign review_rating = block.settings[review_rating_key] %}
+          {% assign review_product = block.settings[review_product_key] %}
+          {% assign review_text = block.settings[review_text_key] %}
+          {% assign review_date = block.settings[review_date_key] %}
+
+          {% if review_name != blank %}
+            {% assign initial = review_name | slice: 0 | upcase %}
+            <div class="ai-review-card-{{ ai_gen_id }}">
+              <div class="ai-review-header-{{ ai_gen_id }}">
+                <div class="ai-review-avatar-{{ ai_gen_id }}">{{ initial }}</div>
+                <div class="ai-review-author-info-{{ ai_gen_id }}">
+                  <div class="ai-review-author-name-{{ ai_gen_id }}">{{ review_name }}</div>
+                  <div class="ai-review-stars-{{ ai_gen_id }}">
+                    {% for star in (1..5) %}
+                      {% if star <= review_rating %}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                      {% else %}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+
+              {% if review_product != blank %}
+                <div class="ai-review-product-name-{{ ai_gen_id }}">{{ review_product }}</div>
+              {% endif %}
+
+              {% if review_text != blank %}
+                <div class="ai-review-text-{{ ai_gen_id }}">{{ review_text }}</div>
+              {% endif %}
+
+              <div class="ai-review-footer-{{ ai_gen_id }}">
+                <div class="ai-review-date-{{ ai_gen_id }}">{{ review_date }}</div>
+                <div class="ai-review-actions-{{ ai_gen_id }}">
+                  <div class="ai-review-helpful-{{ ai_gen_id }}" data-helpful>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+                    </svg>
+                    <span>(0)</span>
+                  </div>
+                  <a href="#" class="ai-review-report-{{ ai_gen_id }}">Report</a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </main>
+  </div>
+</product-reviews-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ProductReviews{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.filterButtons = this.querySelectorAll('.ai-reviews-filter-button-{{ ai_gen_id }}');
+        this.writeButton = this.querySelector('[data-write-review]');
+        this.helpfulButtons = this.querySelectorAll('[data-helpful]');
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            this.filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+          });
+        });
+
+        if (this.writeButton) {
+          this.writeButton.addEventListener('click', () => {
+            console.log('Write review clicked');
+          });
+        }
+
+        this.helpfulButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const countSpan = button.querySelector('span');
+            if (countSpan) {
+              const currentCount = parseInt(countSpan.textContent.replace(/[()]/g, '')) || 0;
+              countSpan.textContent = `(${currentCount + 1})`;
+            }
+          });
+        });
+      }
+    }
+
+    customElements.define('product-reviews-{{ ai_gen_id }}', ProductReviews{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product reviews",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Rating summary"
+    },
+    {
+      "type": "text",
+      "id": "overall_rating",
+      "label": "Overall rating",
+      "default": "5.0"
+    },
+    {
+      "type": "range",
+      "id": "total_reviews",
+      "label": "Total reviews",
+      "min": 0,
+      "max": 1000,
+      "step": 10,
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "star_5_percent",
+      "label": "5 star percentage",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 75
+    },
+    {
+      "type": "range",
+      "id": "star_4_percent",
+      "label": "4 star percentage",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "star_3_percent",
+      "label": "3 star percentage",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "star_2_percent",
+      "label": "2 star percentage",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "star_1_percent",
+      "label": "1 star percentage",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Write review section"
+    },
+    {
+      "type": "text",
+      "id": "write_heading",
+      "label": "Heading",
+      "default": "Review this product"
+    },
+    {
+      "type": "text",
+      "id": "write_subtext",
+      "label": "Subtext",
+      "default": "Share your thoughts with other customers"
+    },
+    {
+      "type": "text",
+      "id": "write_button_text",
+      "label": "Button text",
+      "default": "Write a review"
+    },
+    {
+      "type": "header",
+      "content": "Review 1"
+    },
+    {
+      "type": "text",
+      "id": "review_1_name",
+      "label": "Reviewer name",
+      "default": "Sarah Johnson"
+    },
+    {
+      "type": "range",
+      "id": "review_1_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_1_product",
+      "label": "Product name",
+      "default": "Premium Wireless Headphones"
+    },
+    {
+      "type": "textarea",
+      "id": "review_1_text",
+      "label": "Review text",
+      "default": "Absolutely love these headphones! The sound quality is exceptional and they're incredibly comfortable for long listening sessions. Worth every penny."
+    },
+    {
+      "type": "text",
+      "id": "review_1_date",
+      "label": "Review date",
+      "default": "January 15, 2026"
+    },
+    {
+      "type": "header",
+      "content": "Review 2"
+    },
+    {
+      "type": "text",
+      "id": "review_2_name",
+      "label": "Reviewer name",
+      "default": "Michael Chen"
+    },
+    {
+      "type": "range",
+      "id": "review_2_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_2_product",
+      "label": "Product name",
+      "default": "Premium Wireless Headphones"
+    },
+    {
+      "type": "textarea",
+      "id": "review_2_text",
+      "label": "Review text",
+      "default": "Best purchase I've made this year. The noise cancellation is top-notch and battery life exceeds expectations. Highly recommend!"
+    },
+    {
+      "type": "text",
+      "id": "review_2_date",
+      "label": "Review date",
+      "default": "January 12, 2026"
+    },
+    {
+      "type": "header",
+      "content": "Review 3"
+    },
+    {
+      "type": "text",
+      "id": "review_3_name",
+      "label": "Reviewer name",
+      "default": "Emily Rodriguez"
+    },
+    {
+      "type": "range",
+      "id": "review_3_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "review_3_product",
+      "label": "Product name",
+      "default": "Premium Wireless Headphones"
+    },
+    {
+      "type": "textarea",
+      "id": "review_3_text",
+      "label": "Review text",
+      "default": "Great headphones overall. Sound is crystal clear and build quality feels premium. Only minor issue is the case could be slightly more compact."
+    },
+    {
+      "type": "text",
+      "id": "review_3_date",
+      "label": "Review date",
+      "default": "January 10, 2026"
+    },
+    {
+      "type": "header",
+      "content": "Review 4"
+    },
+    {
+      "type": "text",
+      "id": "review_4_name",
+      "label": "Reviewer name",
+      "default": "David Thompson"
+    },
+    {
+      "type": "range",
+      "id": "review_4_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_4_product",
+      "label": "Product name",
+      "default": "Premium Wireless Headphones"
+    },
+    {
+      "type": "textarea",
+      "id": "review_4_text",
+      "label": "Review text",
+      "default": "Perfect for my daily commute. The active noise cancellation blocks out all the subway noise. Comfortable enough to wear all day."
+    },
+    {
+      "type": "text",
+      "id": "review_4_date",
+      "label": "Review date",
+      "default": "January 8, 2026"
+    },
+    {
+      "type": "header",
+      "content": "Review 5"
+    },
+    {
+      "type": "text",
+      "id": "review_5_name",
+      "label": "Reviewer name",
+      "default": "Jessica Martinez"
+    },
+    {
+      "type": "range",
+      "id": "review_5_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_5_product",
+      "label": "Product name",
+      "default": "Premium Wireless Headphones"
+    },
+    {
+      "type": "textarea",
+      "id": "review_5_text",
+      "label": "Review text",
+      "default": "Impressed with the audio quality and connectivity. Pairs instantly with my devices and the controls are intuitive. A solid investment."
+    },
+    {
+      "type": "text",
+      "id": "review_5_date",
+      "label": "Review date",
+      "default": "January 5, 2026"
+    },
+    {
+      "type": "header",
+      "content": "Review 6"
+    },
+    {
+      "type": "text",
+      "id": "review_6_name",
+      "label": "Reviewer name",
+      "default": "Robert Kim"
+    },
+    {
+      "type": "range",
+      "id": "review_6_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "review_6_product",
+      "label": "Product name",
+      "default": "Premium Wireless Headphones"
+    },
+    {
+      "type": "textarea",
+      "id": "review_6_text",
+      "label": "Review text",
+      "default": "Very satisfied with this purchase. The bass response is excellent and they look sleek. Would give 5 stars if they came in more color options."
+    },
+    {
+      "type": "text",
+      "id": "review_6_date",
+      "label": "Review date",
+      "default": "January 3, 2026"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#181a17"
+    },
+    {
+      "type": "color",
+      "id": "secondary_text_color",
+      "label": "Secondary text",
+      "default": "#6b7280"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border",
+      "default": "#e5e7eb"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star",
+      "default": "#FFC107"
+    },
+    {
+      "type": "color",
+      "id": "progress_bg_color",
+      "label": "Progress bar background",
+      "default": "#f3f4f6"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background",
+      "default": "#181a17"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button hover background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "filter_active_bg",
+      "label": "Filter active background",
+      "default": "#181a17"
+    },
+    {
+      "type": "color",
+      "id": "filter_active_text",
+      "label": "Filter active text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "avatar_bg_color",
+      "label": "Avatar background",
+      "default": "#00d1ff"
+    },
+    {
+      "type": "color",
+      "id": "avatar_text_color",
+      "label": "Avatar text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "filter_border_radius",
+      "label": "Filter border radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Desktop spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal",
+      "label": "Padding horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_mobile",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_mobile",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal_mobile",
+      "label": "Padding horizontal",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product reviews"
+    }
+  ]
+}
+{% endschema %}

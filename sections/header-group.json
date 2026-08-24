@@ -1,0 +1,453 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header.name",
+  "sections": {
+    "scrolling_bar_Rxz7rK": {
+      "type": "scrolling-bar",
+      "blocks": {
+        "scrolling_bar_t46wqX": {
+          "type": "scrolling-bar",
+          "settings": {
+            "text": "CRACKED SCREEN",
+            "link": "shopify://collections",
+            "text_stroke": false
+          }
+        },
+        "scrolling_bar_6MMa7k": {
+          "type": "scrolling-bar",
+          "settings": {
+            "text": "WATER DAMAGE",
+            "link": "shopify://collections",
+            "text_stroke": true
+          }
+        },
+        "scrolling_bar_GGgEh3": {
+          "type": "scrolling-bar",
+          "settings": {
+            "text": "SPEAKER NOT WORKING",
+            "link": "shopify://collections",
+            "text_stroke": false
+          }
+        },
+        "scrolling_bar_zgDQLe": {
+          "type": "scrolling-bar",
+          "settings": {
+            "text": "NO SIGNAL",
+            "link": "shopify://collections/eye-shadows",
+            "text_stroke": true
+          }
+        },
+        "scrolling_bar_rkEYN7": {
+          "type": "scrolling-bar",
+          "settings": {
+            "text": "BROKEN BUTTONS",
+            "link": "",
+            "text_stroke": false
+          }
+        },
+        "scrolling_bar_8hTwah": {
+          "type": "scrolling-bar",
+          "settings": {
+            "text": "DEAD BATTERY",
+            "link": "",
+            "text_stroke": true
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_bar_t46wqX",
+        "scrolling_bar_6MMa7k",
+        "scrolling_bar_GGgEh3",
+        "scrolling_bar_zgDQLe",
+        "scrolling_bar_rkEYN7",
+        "scrolling_bar_8hTwah"
+      ],
+      "disabled": true,
+      "settings": {
+        "announcement_enable": true,
+        "index": false,
+        "no_index": false,
+        "color_scheme": "scheme-b84ec59d-d4ef-41c8-8edb-e8a0f1c50267",
+        "heading_size": "h5",
+        "scroll_speed": 20,
+        "scroll_direction": "scrolling-left",
+        "show_separator_line": true,
+        "marquee_text": true,
+        "section_padding_top": 15,
+        "section_padding_bottom": 15
+      }
+    },
+    "17702846832146d1ec": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f5656e0_r9F734": {
+          "type": "ai_gen_block_f5656e0",
+          "settings": {
+            "logo": "shopify://shop_images/Insta_9667cbed-4698-4a71-9f10-0542cf15bc0a.png",
+            "logo_link": "",
+            "logo_height": 50,
+            "logo_alignment": "center",
+            "background_color": "#ffffff",
+            "padding_top": 10,
+            "padding_bottom": 10,
+            "padding_horizontal": 20,
+            "add_border_top": false,
+            "add_border_bottom": false,
+            "border_width": 1,
+            "border_color": "#e0e0e0",
+            "add_shadow": false,
+            "shadow_vertical": 2,
+            "shadow_blur": 8,
+            "shadow_opacity": 0.1,
+            "placeholder_bg_color": "#f4f4f4",
+            "empty_state_text_color": "#666666",
+            "border_radius": 4
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_2d40da3_PLMrJa": {
+          "type": "ai_gen_block_2d40da3",
+          "name": "Announcement bar mobile",
+          "disabled": true,
+          "settings": {
+            "show_logo": true,
+            "logo_link": "",
+            "logo_position": "top",
+            "logo_horizontal_alignment": "center",
+            "logo_vertical_alignment": "center",
+            "logo_margin_top": 0,
+            "logo_margin_bottom": 0,
+            "logo_height": 30,
+            "logo_width_auto": true,
+            "logo_width": 80,
+            "logo_object_fit": "contain",
+            "logo_border_radius": 0,
+            "logo_opacity": 1,
+            "logo_hover_opacity": 0.8,
+            "announcement_text": "<p>Welcome! Free shipping on orders over $50</p>",
+            "font_size": 13,
+            "line_height": 1.4,
+            "font_weight": "400",
+            "letter_spacing": 0,
+            "link_underline": true,
+            "link_hover_underline": true,
+            "link_font_weight": "600",
+            "link_hover_opacity": 0.8,
+            "text_alignment": "center",
+            "logo_text_gap": 10,
+            "padding_top": 10,
+            "padding_bottom": 10,
+            "padding_horizontal": 15,
+            "border_top_width": 0,
+            "border_bottom_width": 0,
+            "border_color": "#000000",
+            "background_color": "#00d1ff",
+            "text_color": "#ffffff",
+            "link_color": "#ffffff"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_2d40da3_pWUnkj": {
+          "type": "ai_gen_block_2d40da3",
+          "disabled": true,
+          "settings": {
+            "show_logo": true,
+            "logo": "shopify://shop_images/Logo_accouncement_bar.jpg",
+            "logo_link": "",
+            "logo_position": "bottom",
+            "logo_horizontal_alignment": "center",
+            "logo_vertical_alignment": "center",
+            "logo_margin_top": 0,
+            "logo_margin_bottom": 0,
+            "logo_height": 40,
+            "logo_width_auto": true,
+            "logo_width": 80,
+            "logo_object_fit": "contain",
+            "logo_border_radius": 10,
+            "logo_opacity": 1,
+            "logo_hover_opacity": 0.8,
+            "announcement_text": "<p>fdgdfgfdgfd</p>",
+            "font_size": 13,
+            "line_height": 1.4,
+            "font_weight": "400",
+            "letter_spacing": 0,
+            "link_underline": true,
+            "link_hover_underline": true,
+            "link_font_weight": "600",
+            "link_hover_opacity": 0.8,
+            "text_alignment": "center",
+            "logo_text_gap": 5,
+            "padding_top": 0,
+            "padding_bottom": 10,
+            "padding_horizontal": 10,
+            "border_top_width": 0,
+            "border_bottom_width": 0,
+            "border_color": "#000000",
+            "background_color": "#ffffff",
+            "text_color": "#ffffff",
+            "link_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f5656e0_r9F734",
+        "ai_gen_block_2d40da3_PLMrJa",
+        "ai_gen_block_2d40da3_pWUnkj"
+      ],
+      "settings": {}
+    },
+    "announcement_bar_FqUCL8": {
+      "type": "announcement-bar",
+      "blocks": {
+        "information_txt_w9WjdD": {
+          "type": "information_txt",
+          "disabled": true,
+          "settings": {
+            "info_txt": "Order Online Call Us (0123) 456789"
+          }
+        }
+      },
+      "block_order": [
+        "information_txt_w9WjdD"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "header_top_enable": true,
+        "color_scheme": "scheme-ef8ab2e6-6488-4a4c-a71b-339b3d2ad1c0",
+        "show_separator_line": false,
+        "show_social": false,
+        "icon": "phone",
+        "header_linklist_title_1": "",
+        "header_linklist_url_1": "",
+        "icon_2": "email",
+        "header_linklist_title_2": "info@buygreat.com.au",
+        "header_linklist_url_2": "",
+        "enable_country_selector": false,
+        "enable_language_selector": true,
+        "section_padding_top": 20,
+        "section_padding_bottom": 20
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega_menu_with_banner_G4kDFJ": {
+          "type": "mega-menu-with-banner",
+          "settings": {
+            "heading": "Shop",
+            "height": "square",
+            "promo1_heading": "",
+            "promo1_text": "",
+            "promo1_link": "shopify://collections/eye-shadows",
+            "height_2": "adapt",
+            "promo2_heading": "",
+            "promo2_text": "",
+            "promo2_link": "shopify://collections/all",
+            "height_3": "adapt",
+            "promo3_heading": "",
+            "promo3_text": "",
+            "promo3_link": ""
+          }
+        },
+        "mega_menu_with_collection_qbjAEx": {
+          "type": "mega-menu-with-collection",
+          "settings": {
+            "heading": "Categories",
+            "image_ratio": "square",
+            "title_position": "full--center",
+            "collection_1": "accessories",
+            "collection_2": "mini-speakers"
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_with_banner_G4kDFJ",
+        "mega_menu_with_collection_qbjAEx"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 749px) {.header__heading-logo {margin-left: auto; margin-right: auto; text-align: center; } .header__heading {justify-content: center; }}"
+      ],
+      "settings": {
+        "container": "container",
+        "logo": "shopify://shop_images/Insta_86d8b772-9445-4465-92c0-04e81e085c50.png",
+        "logo_inner": "shopify://shop_images/Insta_9667cbed-4698-4a71-9f10-0542cf15bc0a.png",
+        "logo_width": 250,
+        "logo_position": "middle_left",
+        "menu": "main-menu-1",
+        "menu_position": "center",
+        "header_sticky": true,
+        "show_normal_btn": false,
+        "askqustion": "Ask Questions?",
+        "phone_nmbr": "",
+        "btn__txt": "Get a Quote",
+        "btn___url": "#",
+        "show_wishlist": true,
+        "show_cart": true,
+        "show_search": true,
+        "user_icon": true,
+        "color_scheme": "scheme-212ba1c6-71aa-4666-9a11-06d7ddf2586c",
+        "transparent_header": false,
+        "transparent_logo": "shopify://shop_images/buygreat_Final_logo_ff27489e-72cc-403b-a4ab-e3827ea886bc.png",
+        "transparent_color_foreground": "#121212",
+        "drawer_menu": false,
+        "drawer-menu": "main-menu",
+        "color_foreground": "#121212",
+        "color_background": "#fff200",
+        "submenu_color_scheme": "scheme-98fe9495-d4e3-4712-9cb7-8d5dfbf5d753",
+        "logo_2": "shopify://shop_images/buygreat_Final_logo_ff27489e-72cc-403b-a4ab-e3827ea886bc.png"
+      }
+    },
+    "17702921375d767fbc": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1770189030daf61a83": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_afcfca9_4Dtajw": {
+          "type": "ai_gen_block_afcfca9",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/buygreat_Final_logo_d8f37126-0fc2-4955-a1e3-33bba64257a8.png",
+            "logo_width": 180,
+            "logo_text": "",
+            "logo_text_size": 32,
+            "logo_text_color": "#0047ab",
+            "logo_tagline": "",
+            "tagline_text_size": 10,
+            "tagline_text_color": "#dc143c",
+            "header_bg_color": "#ffffff",
+            "header_padding_vertical": 16,
+            "header_padding_horizontal": 20,
+            "desktop_width_percent": 100,
+            "search_placeholder": "Search products...",
+            "search_max_width": 600,
+            "search_padding_vertical": 12,
+            "search_padding_horizontal": 20,
+            "search_border_radius": 24,
+            "search_border_width": 2,
+            "search_bg_color": "#f5f5f5",
+            "search_text_color": "#333333",
+            "search_border_color": "#e0e0e0",
+            "search_focus_border_color": "#0047ab",
+            "search_icon_color": "#666666",
+            "search_font_size": 14,
+            "icon_size": 40,
+            "icon_spacing": 16,
+            "icon_color": "#333333",
+            "icon_hover_color": "#0047ab",
+            "cart_badge_bg_color": "#dc143c",
+            "cart_badge_text_color": "#ffffff",
+            "menu": "main-menu-1",
+            "nav_alignment": "center",
+            "nav_bg_color": "#f8f8f8",
+            "nav_border_color": "#e0e0e0",
+            "nav_item_spacing": 24,
+            "nav_link_padding_vertical": 16,
+            "nav_link_padding_horizontal": 16,
+            "nav_font_size": 14,
+            "nav_font_weight": "500",
+            "nav_link_color": "#333333",
+            "nav_link_hover_color": "#0047ab",
+            "mega_menu_columns": 4,
+            "mega_menu_min_width": 600,
+            "mega_menu_max_height": 400,
+            "mega_menu_padding": 24,
+            "mega_menu_bg_color": "#ffffff",
+            "mega_menu_font_size": 14,
+            "mega_menu_link_color": "#333333",
+            "mega_menu_link_hover_color": "#0047ab",
+            "mega_menu_link_hover_bg": "#f5f5f5",
+            "mobile_logo_width": 120,
+            "mobile_logo_text_size": 24,
+            "mobile_tagline_text_size": 8,
+            "mobile_header_padding_vertical": 12,
+            "mobile_header_padding_horizontal": 16,
+            "hide_account_mobile": true,
+            "hide_wishlist_mobile": true,
+            "mobile_menu_bg_color": "#ffffff",
+            "mobile_menu_text_color": "#333333",
+            "mobile_menu_border_color": "#e0e0e0",
+            "mobile_menu_font_size": 16,
+            "mobile_submenu_font_size": 14
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_2cde873_4Vxztq": {
+          "type": "ai_gen_block_2cde873",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/buygreat_Final_logo_d8f37126-0fc2-4955-a1e3-33bba64257a8.png",
+            "logo_width": 180,
+            "logo_text": "",
+            "logo_text_size": 32,
+            "logo_text_color": "#0047ab",
+            "logo_tagline": "",
+            "tagline_size": 11,
+            "tagline_color": "#dc143c",
+            "search_placeholder": "Search products...",
+            "search_border_radius": 30,
+            "search_border_color": "#e0e0e0",
+            "search_focus_color": "#0047ab",
+            "search_icon_color": "#0047ab",
+            "show_account_icon": true,
+            "show_wishlist_icon": true,
+            "hide_account_mobile": true,
+            "hide_wishlist_mobile": true,
+            "icon_spacing": 16,
+            "icon_color": "#333333",
+            "icon_hover_color": "#0047ab",
+            "cart_badge_bg": "#dc143c",
+            "cart_badge_text": "#ffffff",
+            "menu": "main-menu-1",
+            "menu_alignment": "center",
+            "menu_font_size": 15,
+            "menu_item_spacing": 35,
+            "menu_item_padding": 16,
+            "menu_text_color": "#333333",
+            "menu_hover_color": "#0047ab",
+            "nav_bg_color": "#ffffff",
+            "nav_border_color": "#e0e0e0",
+            "mega_menu_bg": "#ffffff",
+            "mega_menu_title_color": "#0047ab",
+            "mega_menu_link_color": "#666666",
+            "mega_menu_link_hover": "#dc143c",
+            "mobile_menu_bg": "#ffffff",
+            "container_width": 1400,
+            "header_padding_desktop": 20,
+            "header_padding_mobile": 16,
+            "header_horizontal_padding": 30,
+            "header_horizontal_padding_mobile": 16,
+            "header_bg_color": "#ffffff",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_afcfca9_4Dtajw",
+        "ai_gen_block_2cde873_4Vxztq"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "scrolling_bar_Rxz7rK",
+    "17702846832146d1ec",
+    "announcement_bar_FqUCL8",
+    "header",
+    "17702921375d767fbc",
+    "1770189030daf61a83"
+  ]
+}

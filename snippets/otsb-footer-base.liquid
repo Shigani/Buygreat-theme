@@ -1,0 +1,728 @@
+{% liquid 
+  if settings.lang_direction contains request.locale.iso_code
+    assign class_rtl = 'rtl'
+    assign is_rtl = true
+  else
+    assign class_rtl = 'ltr'
+    assign is_rtl = false
+  endif
+%}
+<style>#shopify-section-{{section.id}} .otsb_trademark_root {user-select:none;color:#999;font-size:.75em;text-align:center;margin-top:2.5rem}#shopify-section-{{section.id}} .otsb_trademark_root a {color:#999;background:none;text-decoration: none;}</style>
+{%- capture styles -%}
+{%- style -%}
+:root {
+  --font-heading-family: {{ settings.type_heading_font.family }};
+  --font-heading-style: {{ settings.type_heading_font.style }};
+  --font-heading-weight: {{ settings.type_heading_font.weight }};
+}
+#shopify-section-{{ section.id }} .background-footer {
+  background: rgb(var(--background-color-footer));
+}
+#shopify-section-{{ section.id }} .social-list svg {
+  fill: currentColor; 
+}
+#shopify-section-{{ section.id }} .otsb-another-icon svg {
+  fill: none;
+}
+#shopify-section-{{ section.id }} svg {
+  width: auto;
+  height: auto;
+}
+#shopify-section-{{ section.id }} .sticky-footer,
+#shopify-section-{{ section.id }} .sticky-footer h1, 
+#shopify-section-{{ section.id }}.sticky-footer h2,
+#shopify-section-{{ section.id }} .sticky-footer h3,
+#shopify-section-{{ section.id }} .sticky-footer h4, 
+#shopify-section-{{ section.id }} .sticky-footer h5, 
+#shopify-section-{{ section.id }} .sticky-footer h6 {
+  color: rgb(var(--colors-text-footer));
+}
+.section-footer, .section-footer *::before {
+  --colors-text: var(--colors-text-footer);
+  --colors-heading: var(--colors-heading-footer);
+  --colors-text-link: var(--colors-text-link-footer);
+  --colors-line-and-border: var(--colors-line-footer);
+}
+#shopify-section-{{ section.id }} .otsb-section-footer ul {
+  list-style-type: none;
+}
+#shopify-section-{{ section.id }} .otsb-section-footer .rte ul {
+  list-style-type: disc;
+}
+#shopify-section-{{ section.id }} {
+  {% if section.settings.colors_footer_text.alpha != 0.0 %}
+    --colors-text-footer: {{ section.settings.colors_footer_text.red }}, {{ section.settings.colors_footer_text.green }}, {{ section.settings.colors_footer_text.blue }};
+  {% else %}
+    --colors-text-footer: var(--color-foreground);
+  {% endif %}
+    {% if section.settings.colors_footer_heading.alpha != 0.0 %}
+      --colors-heading-footer: {{ section.settings.colors_footer_heading.red }}, {{ section.settings.colors_footer_heading.green }}, {{ section.settings.colors_footer_heading.blue }};
+    {% else %}
+     --colors-heading-footer: var(--color-foreground);
+    {% endif %}
+    {% if section.settings.colors_footer_textlink.alpha != 0.0 %}
+      --colors-text-link-footer: {{ section.settings.colors_footer_textlink.red }}, {{ section.settings.colors_footer_textlink.green }}, {{ section.settings.colors_footer_textlink.blue }};
+    {% else %}
+      --colors-text-link-footer: var(--color-foreground);
+    {% endif %}
+    {% if section.settings.colors_footer_line.alpha != 0.0 %}
+      --colors-line-footer: {{ section.settings.colors_footer_line.red }}, {{ section.settings.colors_footer_line.green }}, {{ section.settings.colors_footer_line.blue }};
+    {% else %}
+    --colors-line-footer: var(--color-foreground);
+      {% endif %}
+    {% if section.settings.colors_footer_background.alpha != 0.0 %}
+    --background-color-footer: {{ section.settings.colors_footer_background.red }}, {{ section.settings.colors_footer_background.green }}, {{ section.settings.colors_footer_background.blue }};
+    {% else %}
+    --background-color-footer: var(--color-background);
+    {% endif %}
+    --color-success: 66, 132, 69;
+  }
+  #shopify-section-{{ section.id }} .input:not(:placeholder-shown)~.input_not_empty\:text-xs {
+    font-size: .75rem;
+    line-height: 1rem;
+  }
+  #shopify-section-{{ section.id }} .input:not(:placeholder-shown)~.input_not_empty\:top-2\.5 {
+    top: .625rem;
+  }
+  #shopify-section-{{ section.id }} .input:focus~.input_focus\:text-xs {
+    font-size: .75rem;
+    line-height: 1rem;
+  }
+  #shopify-section-{{ section.id }} .input:focus~.input_focus\:top-2\.5 {
+    top: .625rem;
+  }
+  #shopify-section-{{ section.id }} .input {
+    box-shadow: none;
+  }
+  #shopify-section-{{ section.id }} .rte a {
+    position: relative;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    color: rgba(var(--colors-text-link));
+    text-decoration-thickness: 1px;
+  }
+  #shopify-section-{{ section.id }} .rte a, #shopify-section-{{ section.id }} .button-link {
+    background: linear-gradient(to right, #0000, #0000), linear-gradient(to right, rgba(var(--colors-text-link), 1), rgba(var(--colors-text-link), 1), rgba(var(--colors-text-link), 1));
+    background-size: 100% .1em, 0 .1em;
+    background-position: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size .25s;
+  }
+  #shopify-section-{{ section.id }} p.nav-link:not(.effect-inline):after, 
+  #shopify-section-{{ section.id }} a.nav-link:not(.effect-inline):after, 
+  #shopify-section-{{ section.id }} .base-link a:after, 
+  #shopify-section-{{ section.id }}  a.effect-inline:after {
+    content: "";
+    display: block;
+    position: absolute;
+    transform: scaleX(0);
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    border-bottom: 1px solid rgba(var(--colors-text-link), 1);
+    transform-origin: 100% 0%;
+    transition: transform .15s linear;
+}
+#shopify-section-{{ section.id }}  a.effect-inline {
+  color: rgba(var(--colors-text-link));
+}
+  #shopify-section-{{ section.id }} .border-opacity-10 {
+    border-color: rgba(var(--colors-line-and-border,242,242,242),calc({{ section.settings.line_opacity }} / 100));
+  }
+  #shopify-section-{{ section.id }} .h5.text-\[115\%\] {
+    font-size: 115%;
+  }
+  @media (min-width: 1024px) {
+    #shopify-section-{{ section.id }} .hover-text-link:hover {
+        color: rgb(var(--colors-text-link));
+    }
+    #shopify-section-{{ section.id }} p.nav-link:not(.effect-inline):hover:after, 
+    #shopify-section-{{ section.id }} .base-link a:hover:after, 
+    #shopify-section-{{ section.id }} a.nav-link:not(.effect-inline):hover:after, 
+    #shopify-section-{{ section.id }} a.effect-inline:hover:after {
+        transform: scaleX(1);
+        transform-origin: 0% 50%;
+        color: rgb(var(--colors-text-link));
+    }
+    #shopify-section-{{ section.id }} .rte a:hover, 
+    #shopify-section-{{ section.id }} .button-link:hover {
+      background-size: 0 1px, 100% 1px;
+      background-position: 100% 100%, 0% 100%;
+    }
+  }
+{%- endstyle -%}
+{%- endcapture -%}
+{% comment %} {%- assign before =  styles.size -%} {% endcomment %}
+{%- assign styles =  styles | strip_newlines | split: " " | join: " " | split: "*/" -%}
+{%- assign minified_style = "" -%}
+{%- for word in styles -%}
+	{%- assign new_word = word | split: "/*" | first | strip | replace: "; ", ";" | replace: "} ", "}" | replace: "{ ", "{" | replace: " {", "{" -%}
+    {%- assign minified_style = minified_style | append: new_word -%}
+{%- endfor -%}
+{% comment %} /* CSS minifed: {{ before }} --> {{ minified_style.size }} */ {% endcomment %}
+{{- minified_style  }}
+
+{% comment %}template app-embed-warning.liquid{% endcomment %}
+{% if request.design_mode %}
+  <style>
+    .otsb_nope {
+      display: none !important;
+      height: 0 !important;
+      overflow: hidden !important;
+      visibility: hidden !important;
+      width: 0 !important;
+      opacity: 0 !important;
+    }
+    ._otsb_warning {
+      position: relative;
+      box-shadow: 0rem 0.1875rem 0.0625rem -0.0625rem rgba(26, 26, 26, 0.07);
+      border-radius: 1rem;
+    }
+    ._otsb_warning::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      box-shadow: 0.0625rem 0rem 0rem 0rem rgba(0, 0, 0, 0.13) inset, -0.0625rem 0rem 0rem 0rem rgba(0, 0, 0, 0.13) inset, 0rem -0.0625rem 0rem 0rem rgba(0, 0, 0, 0.17) inset, 0rem 0.0625rem 0rem 0rem rgba(204, 204, 204, 0.5) inset;
+      border-radius: 1rem;
+      pointer-events: none;
+      mix-blend-mode: luminosity;
+    }
+    .otsb_warning_root {
+      margin-top:36px;
+      margin-bottom:36px;
+    }
+    .otsb_warning_root ._otsb_warning_1 {border-top-left-radius:1rem;border-top-right-radius:1rem;border:1px solid #fcaf0a;background:#fcb827;padding:1rem}
+    .otsb_warning_root ._otsb_warning_2 {align-items:center;gap:8px;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between}
+    .otsb_warning_root ._otsb_warning_3 {display:flex;gap:4px;flex-direction:row;flex-wrap:nowrap;justify-content:space-between}
+    .otsb_warning_root ._otsb_warning ._otsb_warning__icon {display:block;height:20px;width:20px;max-height:100%;max-width:100%;margin:auto}
+    .otsb_warning_root h2 {overflow-wrap:anywhere;word-break:normal;font-size:100%;font-weight:650;line-height:1.25;color:rgb(37,26,0);font-family: var(--font-heading-family)}
+    .otsb_warning_root * {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-body-family);
+      line-height: 1.375;
+    }
+    .otsb_warning_root ul {
+      list-style-type: disc;
+    }
+    .otsb_warning_root a {
+      color: rgb(0, 0, 238);
+      text-decoration: underline;
+    }
+    .otsb_warning_root .otsb_warning_message_container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding:1rem;
+      color:rgb(37,26,0);
+    }
+    .otsb_warning_root .otsb_warning_message_container ul {
+      padding-inline-start:3rem;
+    }
+  </style>
+  <div x-data="otsb_script_require" class="page-width otsb_warning_root">
+    <div class="_otsb_warning">
+      <div class="_otsb_warning_1">
+        <div class="_otsb_warning_2">
+          <div class="_otsb_warning_3">
+            <span class="_otsb_warning__icon">
+              <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true"><path d="M10 6.75a.75.75 0 0 1 .75.75v3.5a.75.75 0 1 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75Z"></path><path d="M11 13.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path><path fill-rule="evenodd" d="M10 3.5c-1.045 0-1.784.702-2.152 1.447a449.26 449.26 0 0 1-2.005 3.847l-.028.052a403.426 403.426 0 0 0-2.008 3.856c-.372.752-.478 1.75.093 2.614.57.863 1.542 1.184 2.464 1.184h7.272c.922 0 1.895-.32 2.464-1.184.57-.864.465-1.862.093-2.614-.21-.424-1.113-2.147-2.004-3.847l-.032-.061a429.497 429.497 0 0 1-2.005-3.847c-.368-.745-1.107-1.447-2.152-1.447Zm-.808 2.112c.404-.816 1.212-.816 1.616 0 .202.409 1.112 2.145 2.022 3.88a418.904 418.904 0 0 1 2.018 3.875c.404.817 0 1.633-1.212 1.633h-7.272c-1.212 0-1.617-.816-1.212-1.633.202-.408 1.113-2.147 2.023-3.883a421.932 421.932 0 0 0 2.017-3.872Z"></path></svg>
+            </span>
+            <h2>App Embeds Are Disabled</h2>
+          </div>
+        </div>
+      </div>
+      <div class="otsb_warning_message_container">
+        <p>To use this section, the app embeds of OT: Theme Sections must be enabled in the theme editor. Please follow these steps to activate them:</p>
+        <ul>
+          <li>In the left panel, click the last icon that says <b>“App embeds”</b>.</li>
+          <li>Enter <b>“OT”</b> on the search bar to quickly find and embed the apps from OT: Theme Sections.</li>
+          <li>Turn on the Toggle buttons of "Section Builder Script" and "Section Builder Style", then click <b>Save</b>.</li>
+        </ul>
+        <p>Please refer to the User Guide <a href="https://support.omnithemes.com/blogs/ot-theme-sections-get-started/1-embed-app-to-shopify-theme" target="_blank">here</a></p>
+        <p>For further support: feel free to contact us at <a href="mailto:support@omnithemes.com">support@omnithemes.com</a>!</p>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% comment %}endtemplate{% endcomment %}
+<div class="otsb_nope" x-data="otsb_script_1">
+<div class="section-footer section relative background-footer sticky-footer selection:bg-[rgba(var(--colors-text-footer),0.2)] pt-[{{ section.settings.top_padding_mobile }}px] md:pt-[{{ section.settings.top_padding }}px] pb-[{{ section.settings.bottom_padding_mobile }}px] md:pb-[{{ section.settings.bottom_padding }}px]">
+  <div class="otsb-section-footer">
+  {%- if section.settings.show_social_icons -%}
+    <div class="flex items-center">
+      {% render 'otsb-toolbar', show_social_icons: section.settings.show_social_icons %}
+    </div>
+  {%- endif -%}
+  {% if section.settings.show_newletter %}
+    <div x-data="{ open: {{ section.settings.open_by_default }} }" class="py-[16px] text-center max-w-[750px] mx-auto">
+      <div @click="open = ! open" class="relative{% if is_rtl %} pl-5{% else %} pr-5{% endif %} cursor-pointer md:cursor-default duration-200 transition">
+        <p class="h4 text-[115%]">{{ section.settings.heading_email | escape }}</p>
+            <span class="md:hidden absolute w-[10px]	h-[10px] top-1/2 -translate-y-1/2 flex{% if is_rtl %} left-3.5{% else %} right-3.5{% endif %}" :class="open ? 'rotate-180' : ''">{% render 'otsb-icon-alls', icon: 'icon-caret' %}</span>
+            {% if section.settings.subtext_email != blank %}
+              <div class="rte">
+                {{ section.settings.subtext_email }}
+              </div>
+            {% endif %}
+        </div>
+        <div :class="open ? 'block' : 'otsb-hidden md:block'">
+          {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form mb-5 max-w-full relative' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="mt-4 flex w-full">
+            <div class="relative w-full">
+              <input
+              id="NewsletterForm--{{ section.id }}"
+              type="email"
+              name="contact[email]"
+              class="w-full h-[55px] input border rounded-none border-solid focus:outline-none bg-transparent placeholder:opacity-0"
+              aria-required="true"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              {% if form.errors %}
+              autofocus
+              aria-invalid="true"
+              aria-describedby="ContactFooter-error"
+              {% elsif form.posted_successfully? %}
+              aria-describedby="ContactFooter-success"
+              {% endif %}
+              placeholder="you-email@exemple.com"
+              required>
+              <label class="absolute top-1/2{% if is_rtl %} right-2.5{% else %} left-2.5{% endif %} -translate-y-1/2 input_focus:text-xs input_focus:top-2.5 input_not_empty:top-2.5 input_not_empty:text-xs" for="NewsletterForm--{{ section.id }}">
+              you-email@exemple.com
+              </label>
+            </div>
+          <div>
+            <button type="submit" class="absolute right-[7px] bg-white top-[16px] rounded-none ml-1 w-[120px] h-full flex justify-center items-center bg-transparent h-[42px]" name="commit" aria-label="Subscribe">
+              <span class="{% if is_rtl %} rotate-180{% endif %}"> 
+                Subscribe
+              </span>
+            </button>
+            </div>
+            {%- if form.errors -%}
+              <div class="flex items-center text-left px-4 py-3 mt-4 bg-[rgba(var(--color-error),0.1)] selection:bg-[rgba(var(--color-error),0.2)]{% if settings.edges_type == 'rounded_corners' %} rounded-md{% endif %}" id="Newsletter-error--{{ section.id }}">
+                <span class="inline-block w-6 mr-2 text-[rgba(var(--color-error))]">{% render 'otsb-icon-alls', icon: 'icon-error' %} </span>
+                <p class="flex-1">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</p>
+              </div>
+            {%- endif -%}
+          </div>
+          {%- if form.posted_successfully? -%}
+            <div class="flex items-center text-left px-3 py-3 mt-4 selection:bg-[rgba(var(--color-success),0.2)] focus:shadown-none focus-visible:outline-none focus:outline-none focus-visible:shadow-none" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>
+              <span class="inline-block w-6 mr-2 text-[rgba(var(--color-success))]"> 
+                {%- render 'otsb-icon-alls', icon: 'icon-success' -%}
+              </span>
+              <p class="flex-1">Thanks for subscribing</p>
+            </div>
+          {%- endif -%}
+        {%- endform -%}
+        
+      </div>
+    </div>
+  {% endif %} 
+  {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social or section.settings.enable_follow_on_shop -%} 
+    <div class="flex-wrap md:mb-12 md:pt-12 md:pb-7">
+      {%- if section.blocks.size > 0 -%}
+        {%- liquid
+          assign number_col_footer = section.settings.columns_desktop
+        -%}
+        <div class="page-width">
+        <div class="pt-6 md:pt-0 md:flex justify-center md:m-auto rtl:md:pr-5 rtl:md:pl-0 flex-wrap md:border-b md:border-b-solid border-opacity-10">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign number = forloop.index | modulo: number_col_footer
+            -%}
+          <div class="footer-col--{{ forloop.index }}{% if is_rtl %} md:pl-5 md:first:pr-0{% else %} md:pr-[20px] md:first:pl-0{% endif %} md:mb-[28px]{% if number == 1 %}{% if is_rtl %} md:pr-0{% else %} md:pl-0{% endif %}{% else %}{% if is_rtl %} md:pr-10{% else %} md:pl-[40px]{% endif %}{% endif %} w-full md:w-1/{{ section.settings.columns_desktop }} {{ class_rtl }}" {{ block.shopify_attributes }}>
+              {%- case block.type -%}
+                {%- when 'text' -%}
+                  <div x-data="{ open: {{ block.settings.open_by_default }} }" class="py-[16px] border-b border-b-solid md:border-none border-opacity-10">
+                    {%- if block.settings.heading_text != blank -%}
+                    <div @click="open = ! open" class="relative{% if is_rtl %} pl-5{% else %} pr-5{% endif %} cursor-pointer md:cursor-default duration-200 transition">
+                        <p class="h4 text-[115%]">{{- block.settings.heading_text | escape -}}</p>
+                        <span class="md:hidden absolute w-[10px]	h-[10px] top-1/2 -translate-y-1/2 flex{% if is_rtl %} left-3.5{% else %} right-3.5{% endif %}" :class="open ? 'rotate-180' : ''">{% render 'otsb-icon-alls', icon: 'icon-caret' %}</span>
+                      </div>
+                    {%- endif -%}
+                    <div {% if block.settings.heading_text != blank %} :class="open ? 'block' : 'otsb-hidden md:block'"{% endif %}>
+                      {%- if block.settings.image != blank -%}
+                        {%- capture sizes -%}
+                          {{ block.settings.image_width | times: 1.1 | ceil }}px
+                        {%- endcapture -%}
+                        {% style %}
+                          .image-{{ block.id }} {
+                            width: {{ block.settings.image_width }}px;
+                          }
+                        {% endstyle %}
+                        {% assign image_tags = block.settings.image_width | times: 1.1 | ceil | append: '' %}
+                        {%- if block.settings.link_image_footer != blank -%}
+                          <a href="{{ block.settings.link_image_footer }}" {% unless request.design_mode %}{% if block.settings.open_new_window %} target="_blank"{% endif %}{% endunless %}  class="h-full inline-block overflow-hidden{% if block.settings.heading_text != blank %} mt-6{% endif %}{% if block.settings.rounded_corner_image %} rounded-[10px]{% endif %}">
+                            {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: widths: image_tags,
+                              height: block.settings.image_height,
+                              class: "image-hover",
+                              width: block.settings.image_width,
+                              sizes: sizes,
+                              loading: 'lazy',
+                              alt: block.settings.image.alt | escape
+                            }}
+                          </a>
+                        {%- else -%}
+                          <div class="h-full inline-block overflow-hidden{% if block.settings.heading_text != blank %} mt-6{% endif %}{% if block.settings.rounded_corner_image %} rounded-[10px]{% endif %}">
+                            {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: widths: image_tags,
+                              height: block.settings.image_height,
+                              class: "image-hover",
+                              width: block.settings.image_width,
+                              sizes: sizes,
+                              loading: 'lazy',
+                              alt: block.settings.image.alt | escape
+                            }}
+                          </div>
+                        {%- endif -%}
+                      {%- endif -%}
+                      <div class="rte{% if block.settings.image != blank %} mt-2{% else %} mt-6{% endif %}">{{ block.settings.subtext }}</div>
+                      {%- if block.settings.show_social_icons -%}
+                        <div class="mt-2">
+                          {% render 'otsb-toolbar', enable_footer: true, show_social_icons: block.settings.show_social_icons %}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- when 'link_list' -%}
+                  <div x-data="{ open: {{ block.settings.open_by_default }} }" class="py-[16px] border-b md:border-none border-opacity-10">
+                    {%- if block.settings.heading_menu != blank -%}
+                      <div @click="open = ! open" class="relative{% if is_rtl %} pl-5{% else %} pr-5{% endif %} cursor-pointer md:cursor-default duration-200 transition">
+                        <p class="h4 text-[115%]">{{- block.settings.heading_menu | escape -}}</p>
+                        <span class="md:hidden absolute w-[10px]	h-[10px] top-1/2 -translate-y-1/2 flex{% if is_rtl %} left-3.5{% else %} right-3.5{% endif %}" :class="open ? 'rotate-180' : ''">{% render 'otsb-icon-alls', icon: 'icon-caret' %}</span>
+                      </div>
+                    {%- endif -%}
+                    {%- if block.settings.menu != blank -%}
+                      <ul class="mt-6"{% if block.settings.heading_menu != blank %} :class="open ? 'block' : 'otsb-hidden md:block'"{% endif %}>
+                        {%- for link in block.settings.menu.links -%}
+                          <li class="mb-1 first:pt-0 pt-2">
+                            <a href="{{ link.url }}" class="hover-text-link nav-link relative block lg:inline-block">
+                              {{ link.title }}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                        {%- if block.settings.show_social_icons -%}
+                          <div class="mt-2">
+                            {% render 'otsb-toolbar', enable_footer: true, show_social_icons: block.settings.show_social_icons %}
+                          </div>
+                        {%- endif -%}
+                      </ul>
+                    {%- endif -%}
+                  </div>
+                {%- when 'image' -%}
+                  <div class="py-[16px] text-{{ block.settings.alignment }} flex flex-col justify-start{% if number == 1 %} md:pr-0{% endif %}{% if block.settings.alignment == 'center' %} items-center{% elsif block.settings.alignment == 'right' %} items-end{% endif %}">
+                    {%- if block.settings.image != blank -%}
+                      {%- capture sizes -%}
+                        {{ block.settings.image_width | times: 1.1 | ceil }}px
+                      {%- endcapture -%}
+                      {% style %}
+                        .image-{{ block.id }} {
+                          width: {{ block.settings.image_width }}px;
+                        }
+                      {% endstyle %}
+                      {% assign image_tags = block.settings.image_width | times: 1.1 | ceil | append: '' %}
+                      {%- if block.settings.link_image_footer != blank -%}
+                        <a href="{{ block.settings.link_image_footer }}"{% unless request.design_mode %}{% if block.settings.open_new_window %} target="_blank"{% endif %}{% endunless %} class="image-{{ block.id }} h-full inline-block overflow-hidden{% if block.settings.rounded_corner_image %} rounded-[10px]{% endif %}">
+                          {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: widths: image_tags,
+                            height: 'auto',
+                            class: "image-hover",
+                            width: block.settings.image_width,
+                            sizes: sizes,
+                            loading: 'lazy',
+                            alt: block.settings.image.alt | escape
+                          }}
+                        </a>
+                      {%- else -%}
+                        <div class="image-{{ block.id }} h-full inline-block overflow-hidden{% if block.settings.rounded_corner_image %} rounded-[10px]{% endif %}">
+                          {{ block.settings.image | image_url: width: block.settings.image.width | image_tag: widths: image_tags,
+                            height: 'auto',
+                            class: "image-hover",
+                            width: block.settings.image_width,
+                            sizes: sizes,
+                            loading: 'lazy',
+                            alt: block.settings.image.alt | escape
+                          }}
+                        </div>
+                      {%- endif -%}
+                    {%- else -%}
+                      {% liquid
+                        assign class_img = 'max-w-[13rem] bg-neutral-200'
+                        if block.settings.rounded_corner_image 
+                          assign class_img = class_img | append: ' rounded-[10px]'
+                        endif
+                      %}
+                      {{ 'image' | placeholder_svg_tag: class_img }}  
+                    {%- endif -%}
+                    {% if block.settings.text != blank %}
+                      {% style %}
+                        .text-{{ block.id }} {
+                          margin-top: {{ block.settings.spacing }}px;
+                        }
+                        .text-{{ block.id }}.rte p:first-child {
+                          margin-top: 0px;
+                        }
+                      {% endstyle %}
+                      <div class="text-{{ block.id }} rte">
+                        {{ block.settings.text }}
+                      </div>
+                    {% endif %}
+                  </div>
+                {%- when 'email_footer' -%}
+                  <div x-data="{ open: {{ block.settings.open_by_default }} }" class="py-[16px]">
+                    <div @click="open = ! open" class="relative{% if is_rtl %} pl-5{% else %} pr-5{% endif %} cursor-pointer md:cursor-default duration-200 transition">
+                      <p class="h4 text-[115%]">{{ block.settings.heading_email | escape }}</p>
+                      <span class="md:hidden absolute w-[10px]	h-[10px] top-1/2 -translate-y-1/2 flex{% if is_rtl %} left-3.5{% else %} right-3.5{% endif %}" :class="open ? 'rotate-180' : ''">{% render 'otsb-icon-alls', icon: 'icon-caret' %}</span>
+                    </div>
+                    <div :class="open ? 'block' : 'otsb-hidden md:block'">
+                      {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form mb-5 w-full max-w-full' -%}
+                        <input type="hidden" name="contact[tags]" value="newsletter">
+                        <div class="mt-4 flex w-full">
+                          <div class="relative w-full">
+                            <input
+                              id="NewsletterForm--{{ section.id }}"
+                              type="email"
+                              name="contact[email]"
+                              class="w-full h-full pl-2.5 pr-4 pt-5 input border-b rounded-none border-solid focus:outline-none bg-transparent placeholder:opacity-0 border-opacity-10"
+                              aria-required="true"
+                              autocorrect="off"
+                              autocapitalize="off"
+                              autocomplete="email"
+                              {% if form.errors %}
+                                autofocus
+                                aria-invalid="true"
+                                aria-describedby="ContactFooter-error"
+                              {% elsif form.posted_successfully? %}
+                                aria-describedby="ContactFooter-success"
+                              {% endif %}
+                                placeholder="Email"
+                                required>
+                            <label class="absolute top-1/2{% if is_rtl %} right-2.5{% else %} left-2.5{% endif %} -translate-y-1/2 input_focus:text-xs input_focus:top-2.5 input_not_empty:top-2.5 input_not_empty:text-xs" for="NewsletterForm--{{ section.id }}">
+                              Email
+                            </label>
+                          </div>
+                          <div>
+                            <button type="submit" class="border-opacity-10 rounded-none ml-1 w-12 h-full flex justify-center items-center bg-transparent border-b border-solid border-x-0 border-t-0" name="commit" aria-label="Subscribe">
+                              <span class="{% if is_rtl %} rotate-180{% endif %}"> 
+                                {% render 'otsb-icon-alls', icon: 'icon-arrow', enable_email_footer: true %}
+                              </span>
+                            </button>
+                          </div>
+                          {%- if form.errors -%}
+                            <div class="flex items-center text-left px-4 py-3 mt-4 bg-[rgba(var(--color-error),0.1)] selection:bg-[rgba(var(--color-error),0.2)]{% if settings.edges_type == 'rounded_corners' %} rounded-md{% endif %}" id="Newsletter-error--{{ section.id }}">
+                              <span class="inline-block w-6 mr-2 text-[rgba(var(--color-error))]">{% render 'otsb-icon-alls', icon: 'icon-error' %} </span>
+                              <p class="flex-1">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</p>
+                            </div>
+                          {%- endif -%}
+                        </div>
+                        {%- if form.posted_successfully? -%}
+                          <div class="flex items-center text-left px-3 py-3 mt-4 selection:bg-[rgba(var(--color-success),0.2)] focus:shadown-none focus-visible:outline-none focus:outline-none focus-visible:shadow-none" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>
+                            <span class="inline-block w-6 mr-2 text-[rgba(var(--color-success))]">
+                              {%- render 'otsb-icon-alls', icon: 'icon-success' -%}
+                            </span>
+                            <p class="flex-1">Thanks for subscribing</p>
+                          </div>
+                        {%- endif -%}
+                      {%- endform -%}
+                      {% if block.settings.subtext_email != blank %}
+                        <div class="rte">
+                          {{ block.settings.subtext_email }}
+                        </div>
+                      {% endif %}
+                      {%- if block.settings.show_social_icons -%}
+                      <div class="mt-4">
+                        {% render 'otsb-toolbar', enable_footer: true, show_social_icons: block.settings.show_social_icons %}
+                      </div>
+                    {%- endif -%}
+                    </div>
+                    
+                  </div>
+                {% when 'contact' %}
+                  <div x-data="{ open: {{ block.settings.open_by_default }} }" class="otsb-block-contact py-[16px] border-b md:border-none border-opacity-10">
+                    {%- if block.settings.heading_menu != blank -%}
+                      <div @click="open = ! open" class="relative{% if is_rtl %} pl-5{% else %} pr-5{% endif %} cursor-pointer md:cursor-default duration-200 transition">
+                        <p class="h4 text-[115%]">{{- block.settings.heading_menu | escape -}}</p>
+                      <span class="md:hidden absolute w-[10px]	h-[10px] top-1/2 -translate-y-1/2 flex{% if is_rtl %} left-3.5{% else %} right-3.5{% endif %}" :class="open ? 'rotate-180' : ''">{% render 'otsb-icon-alls', icon: 'icon-caret' %}</span>
+                      </div>
+                    {%- endif -%}
+                    <div class="mt-6" :class="open ? 'block' : 'otsb-hidden md:block'">
+                      {% if block.settings.icon_1 != 'none' or block.settings.title_1 or block.settings.text_1 %}
+                        <div class="mb-4 flex items-center gap-x-4">
+                          {% if block.settings.icon_1 != 'none' %}
+                            {% unless block.settings.custom_icon_1 == blank and block.settings.another_icon_1 == blank and block.settings.icon_1 == 'another_icon' %}
+                              <span class="{% if block.settings.icon_1 == 'another_icon' %} otsb-another-icon {% endif %}inline-block min-w-[24px] lg:min-w-[36px] h-[24px] w-[24px] lg:h-[36px] lg:w-[36px]">
+                                {% if block.settings.custom_icon_1 == blank %}
+                                  {% if block.settings.another_icon_1 != blank and block.settings.icon_1 == 'another_icon' %}
+                                    {% render 'otsb-icon-new-alls', icon: block.settings.another_icon_1 %}
+                                  {% else %}
+                                    {% render 'otsb-icon-labels-bags-new', icon: block.settings.icon_1 %}
+                                  {% endif %}
+                                {% else %}
+                                  {{ block.settings.custom_icon_1 }}
+                                {% endif %}
+                              </span>
+                            {% endunless %}
+                          {% endif %}
+                          {% if block.settings.title_1 or block.settings.text_1 %}
+                            <div>
+                              <p class="empty:hidden p-break-words">{{ block.settings.title_1 | escape }}</p>
+                              {% if block.settings.text_link_1 != blank %}
+                                <a href="{{ block.settings.text_link_1 }}"{% unless request.design_mode %}{% if block.settings.open_new_window_1 %} target="_blank"{% endif %}{% endunless %}
+                                  class="font-semibold p-break-words empty:hidden{% if block.settings.enable_text_link_1 %} text-[rgb(var(--colors-text-link))]{% endif %} hover-text-link nav-link relative"
+                                >
+                                  {{ block.settings.text_1 | escape }}
+                                </a>
+                              {% else %}
+                                <p class="font-semibold p-break-words empty:hidden{% if block.settings.enable_text_link_1 %} text-[rgb(var(--colors-text-link))]{% endif %}">
+                                  {{ block.settings.text_1 | escape }}
+                                </p>
+                              {% endif %} 
+                            </div>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.icon_2 != 'none' or block.settings.title_2 or block.settings.text_2 %}
+                        <div class="mb-4 flex items-center gap-x-4">
+                          {% if block.settings.icon_2 != 'none' %}
+                            {% unless block.settings.custom_icon_2 == blank and block.settings.another_icon_2 == blank and block.settings.icon_2 == 'another_icon' %}
+                              <span class="{% if block.settings.icon_2 == 'another_icon' %} otsb-another-icon {% endif %} inline-block min-w-[24px] lg:min-w-[36px] h-[24px] w-[24px] lg:h-[36px] lg:w-[36px]">
+                                {% if block.settings.custom_icon_2 == blank %}
+                                  {% if block.settings.another_icon_2 != blank and block.settings.icon_2 == 'another_icon' %}
+                                    {% render 'otsb-icon-new-alls', icon: block.settings.another_icon_2 %}
+                                  {% else %}
+                                    {% render 'otsb-icon-labels-bags-new', icon: block.settings.icon_2 %}
+                                  {% endif %}
+                                {% else %}
+                                  {{ block.settings.custom_icon_2 }}
+                                {% endif %}
+                              </span>
+                            {% endunless %}
+                          {% endif %}
+                          {% if block.settings.title_2 or block.settings.text_2 %}
+                            <div>
+                              <p class="empty:hidden">{{ block.settings.title_2 | escape }}</p>
+                              {% if block.settings.text_link_2 != blank %}
+                                <a href="{{ block.settings.text_link_2 }}"{% unless request.design_mode %}{% if block.settings.open_new_window_2 %} target="_blank"{% endif %}{% endunless %}
+                                  class="font-semibold p-break-words empty:hidden{% if block.settings.enable_text_link_2 %} text-[rgb(var(--colors-text-link))]{% endif %} hover-text-link nav-link relative"
+                                >
+                                  {{ block.settings.text_2 | escape }}
+                                </a>
+                              {% else %}
+                                <p class="font-semibold p-break-words empty:hidden{% if block.settings.enable_text_link_2 %} text-[rgb(var(--colors-text-link))]{% endif %}">
+                                  {{ block.settings.text_2 | escape }}
+                                </p>
+                              {% endif %} 
+                            </div>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.icon_3 != 'none' or block.settings.title_3 or block.settings.text_3 %}
+                        <div class="mb-4 flex items-center gap-x-4">
+                          {% if block.settings.icon_3 != 'none' %}
+                            {% unless block.settings.custom_icon_3 == blank and block.settings.another_icon_3 == blank and block.settings.icon_3 == 'another_icon' %}
+                              <span class="{% if block.settings.icon_3 == 'another_icon' %} otsb-another-icon {% endif %} inline-block h-[24px] w-[24px] lg:h-[36px] lg:w-[36px] min-w-[24px] lg:min-w-[36px]">
+                                {% if block.settings.custom_icon_3 == blank %}
+                                  {% if block.settings.another_icon_3 != blank and block.settings.icon_3 == 'another_icon' %}
+                                    {% render 'otsb-icon-new-alls', icon: block.settings.another_icon_3 %}
+                                  {% else %}
+                                    {% render 'otsb-icon-labels-bags-new', icon: block.settings.icon_3 %}
+                                  {% endif %}
+                                {% else %}
+                                  {{ block.settings.custom_icon_3 }}
+                                {% endif %}
+                              </span>
+                            {% endunless %}
+                          {% endif %}
+                          {% if block.settings.title_3 or block.settings.text_3 %}
+                            <div>
+                              <p class="empty:hidden">{{ block.settings.title_3 | escape }}</p>
+                              {% if block.settings.text_link_3 != blank %}
+                                <a href="{{ block.settings.text_link_3 }}"{% unless request.design_mode %}{% if block.settings.open_new_window_3 %} target="_blank"{% endif %}{% endunless %}
+                                  class="font-semibold p-break-words empty:hidden{% if block.settings.enable_text_link_3 %} text-[rgb(var(--colors-text-link))]{% endif %} hover-text-link nav-link relative"
+                                >
+                                  {{ block.settings.text_3 | escape }}
+                                </a>
+                              {% else %}
+                                <p class="font-semibold p-break-words empty:hidden{% if block.settings.enable_text_link_3 %} text-[rgb(var(--colors-text-link))]{% endif %}">
+                                  {{ block.settings.text_3 | escape }}
+                                </p>
+                              {% endif %}
+                            </div>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                    </div>
+                    {%- if block.settings.show_social_icons -%}
+                      <div class="mt-4 md:mt-6 pb-1">
+                        {% render 'otsb-toolbar', enable_footer: true, show_social_icons: block.settings.show_social_icons %}
+                      </div>
+                    {%- endif -%}
+                  </div>
+              {%- endcase -%}
+            </div>
+          {%- endfor -%}
+        </div>
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+  {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
+    <div class="page-width text-center pt-5 md:pt-3.5 md:pb-3 pb-2 change-position-popup {% if section.settings.additional_layout == 'horizontal' %} md:text-{{section.settings.horizontal_position}}{% else %} md:text-center{% endif %}">
+    {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
+    {% comment %}theme-check-disable{% endcomment %}
+      {{ shop | login_button: action: 'follow' }}
+    {% comment %}theme-check-enable{% endcomment %}
+    </div>
+  {%- endif -%}
+  <div class="additional-footer {{ class_rtl }}{% if section.settings.additional_layout == 'horizontal' %} page-width mx-auto lg:flex lg:flex-row lg:justify-between items-center{% else %} mx-5{% endif -%}"
+  >
+    <div class="{% if section.settings.additional_layout == 'horizontal' %} lg:flex lg:flex-row gap-x-7 items-center{% endif %}">
+      {%- if section.settings.show_language_selector or section.settings.show_currency_selector -%}
+        <div class="mb-3 md:mb-2{% if section.settings.additional_layout == 'vertical' %} lg:mb-2{% else %} lg:mb-0{% endif %}">
+        {% render 'otsb-toolbar', enable_footer: true, show_currency_selector: section.settings.show_currency_selector, show_language_selector: section.settings.show_language_selector %}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.payment_enable -%}
+        {% if section.settings.custom_payment != blank %}
+          {% assign enabled_payment_types = section.settings.custom_payment | remove: ' ' | split: ',' %}
+          <ul class="flex gap-0 justify-center gap-y-2 flex-wrap{% unless section.settings.show_language_selector or section.settings.show_currency_selector %} mt-5 md:mt-0{% endunless %}" role="list">
+          {%- for type in enabled_payment_types -%}
+            <li class="pl-1 pr-1">
+              {{ type | payment_type_svg_tag }}
+            </li>
+          {%- endfor -%}
+          </ul>
+        {% else %}
+          <ul class="flex gap-0 justify-center gap-y-2 flex-wrap{% unless section.settings.show_language_selector or section.settings.show_currency_selector %} mt-5 md:mt-0{% endunless %}" role="list">
+            {%- for type in shop.enabled_payment_types -%}
+              <li class="pl-1 pr-1">
+                {{ type | payment_type_svg_tag }}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {% endif %}       
+      {%- endif -%}                     
+    </div>
+    <div class="flex flex-col items-center{% if section.settings.additional_layout == 'horizontal' %} lg:pl-14 lg:max-w-[768px]{% endif %}">
+      <div class="{% if section.settings.show_copyright %}mt-4 md:mt-4 base-link text-center{% if section.settings.additional_layout == 'vertical' %} lg:mt-4{% else %} lg:mt-0 lg:text-right{% endif %}{% endif %} p-break-words">
+        {%- if section.settings.show_copyright -%}
+        <p class="inline-block">&copy; {{ 'now' | date: "%Y" }}{% unless is_rtl %}, {% endunless %}</p>
+          {{ shop.name | link_to: routes.root_url }}.
+          {%- if section.settings.add_copyright_text != blank -%}
+            <div class="ml-1 inline-block">
+              {{ section.settings.add_copyright_text | replace: '<a href="https://omnithemes.com', '<a rel="nofollow" href="https://omnithemes.com' }}
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+        {% if section.settings.show_powered %}
+          <p class="mt-3{% if section.settings.show_copyright %} md:mt-0{% else %} md:mt-4{% endif %} md:ml-1 block md:inline-block">{{ powered_by_link }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

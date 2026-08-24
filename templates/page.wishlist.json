@@ -1,0 +1,171 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-2",
+        "container_type": "container",
+        "show_page_title": false,
+        "show_breadcrumb_navigation": true,
+        "text_center": "left",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mobile_padding_top": 25,
+        "mobile_padding_bottom": 25
+      }
+    },
+    "main": {
+      "type": "wishlist",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_title": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_product_rating": true,
+        "show_badges": true,
+        "badge_position": "top-left",
+        "show_cart_button": true,
+        "cart_button_positon": "bottom_center",
+        "show_countdown": true,
+        "timer_color_scheme": "accent-2",
+        "place_timer_on_image": false
+      }
+    },
+    "faq_dzknYp": {
+      "type": "faq",
+      "blocks": {
+        "accordion_yq8qK9": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Collapsible row",
+            "content": "<p>Inform your customers about your brand. Make announcements, describe a product, or welcome customers to your store.</p>"
+          }
+        },
+        "accordion_zfgcCw": {
+          "type": "accordion",
+          "settings": {
+            "heading": "About BuyGreat",
+            "content": "<p>BuyGreat is an Australia-focused online retail store offering<br/>consumer products delivered across Australia.</p>"
+          }
+        },
+        "accordion_PwLmpt": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Use of the Website",
+            "content": "<p>By using our website, you confirm that:</p><ul><li>You are at least 18 years old or using the site under<br/>adult supervision</li><li>You will use the website for lawful purposes only<br/></li></ul><p>We reserve the right to refuse service to anyone at our<br/>discretion.</p>"
+          }
+        },
+        "accordion_9TmyyQ": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Products & Pricing",
+            "content": "<ul><li>All prices are listed in <strong>Australian Dollars (AUD)</strong></li><li>Prices and product availability may change without<br/>notice</li><li>Product images are for reference only and may vary<br/>slightly</li></ul><p><br/>We reserve the right to cancel orders due to pricing errors, stock issues, or suspected misuse.</p>"
+          }
+        },
+        "accordion_8RB7Rh": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Orders & Payments",
+            "content": "<ul><li>Orders are processed only after full payment is received</li><li>Placing an order does not guarantee acceptance</li><li>If an order is cancelled after payment, a full refund will<br/>be issued</li></ul>"
+          }
+        },
+        "accordion_YaYCEe": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Shipping & Delivery",
+            "content": "<ul><li>We ship within Australia only unless stated otherwise</li><li>Orders are shipped using <strong>Australia Post </strong>or trusted<br/>courier partners</li><li>Delivery times are estimates and not guaranteed</li></ul><p><br/>Please refer to our <strong>Shipping Policy</strong> for details.</p>"
+          }
+        },
+        "accordion_XMn9Uw": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Returns & Refunds",
+            "content": "<p>Returns and refunds are handled according to our <strong>Return & Refund Policy</strong> and in line with <strong>Australian Consumer Law.</strong></p>"
+          }
+        },
+        "accordion_YUpP8z": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Australian Consumer Law",
+            "content": "<p>Our goods come with guarantees that cannot be excluded under Australian Consumer Law. Customers are entitled to a replacement or refund for major failures.</p>"
+          }
+        },
+        "accordion_FpTqf9": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Intellectual Property",
+            "content": "<p>All website content, including text, images, logos, and designs, is the property of BuyGreat and may not be used without permission.</p>"
+          }
+        },
+        "accordion_EwAgkn": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Limitation of Liability",
+            "content": "<p>To the extent permitted by law, BuyGreat’s liability is limited to the value of the product purchased. We are not responsible for indirect or consequential losses.</p>"
+          }
+        },
+        "accordion_yC4YdT": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Contact Us",
+            "content": "<p>If you have any questions, contact us at:</p><p><strong>info@buygreat.com.au</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_yq8qK9",
+        "accordion_zfgcCw",
+        "accordion_PwLmpt",
+        "accordion_9TmyyQ",
+        "accordion_8RB7Rh",
+        "accordion_YaYCEe",
+        "accordion_XMn9Uw",
+        "accordion_YUpP8z",
+        "accordion_FpTqf9",
+        "accordion_EwAgkn",
+        "accordion_yC4YdT"
+      ],
+      "name": "Collapsible content",
+      "settings": {
+        "container_type": "container",
+        "caption": "Terms of Service",
+        "heading": "These terms govern your use of our website and outline the legal rights and obligations between you and our company.",
+        "heading_size": "h1",
+        "enable_image": true,
+        "image": "shopify://shop_images/m-Product-Intro-Plate-1-7.jpg",
+        "height": "large",
+        "image_position": "left",
+        "show_have_qustion": true,
+        "stl_h_q": "Still Have Questions?",
+        "sub_h_q_title": "Feel free to ask any questions you have!",
+        "btn__text": "here to help",
+        "h_t_h_button_link": "shopify://pages/contact",
+        "full_width": false,
+        "color_scheme": "",
+        "mobile_image_position": "top",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "faq_dzknYp"
+  ]
+}

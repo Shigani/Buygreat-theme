@@ -1,0 +1,1678 @@
+{% render 'otsb-footer-base' %}
+{% schema %}
+  {
+    "name": "OT: Footer #7",
+    "class": "otsb__root section-footer x-section otsb-v2 otsb-v3",
+    "tag": "section",
+    "enabled_on": 
+    { 
+      "groups": ["footer"],
+      "templates": ["*"]
+    },
+    "blocks": [
+      {
+        "type": "link_list",
+        "name": "Menu",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "open_by_default",
+            "default": false,
+            "label": "Open by default on mobile"
+          },
+          {
+            "type": "text",
+            "id": "heading_menu",
+            "default": "Quick links",
+            "label": "Heading"
+          },
+          {
+            "type": "link_list",
+            "id": "menu",
+            "default": "footer",
+            "label": "Menu",
+            "info": "Displays only top-level menu items."
+          },
+          {
+            "type": "checkbox",
+            "id": "show_social_icons",
+            "default": false,
+            "label": "Show social icons",
+            "info": "Show social icons within the block. To show social icons footer-wide, enable social icons in section setting."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "Custom text",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "open_by_default",
+            "default": false,
+            "label": "Open by default on mobile"
+          },
+          {
+            "type": "text",
+            "id": "heading_text",
+            "default": "Custom text",
+            "label": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "subtext",
+            "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
+            "label": "Subtext"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_social_icons",
+            "default": false,
+            "label": "Show social icons",
+            "info": "Show social icons within the block. To show social icons footer-wide, enable social icons in section setting."
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "range",
+            "id": "image_width",
+            "min": 50,
+            "max": 200,
+            "step": 5,
+            "label": "Image width",
+            "default": 100
+          },
+          {
+            "type": "url",
+            "id": "link_image_footer",
+            "label": "Link"
+          },
+          {
+            "type": "checkbox",
+            "id": "open_new_window",
+            "default": false,
+            "label": "Open this link in a new window"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "range",
+            "id": "image_width",
+            "min": 50,
+            "max": 200,
+            "step": 5,
+            "label": "Image width",
+            "default": 100
+          },
+          {
+            "type": "url",
+            "id": "link_image_footer",
+            "label": "Link"
+          },
+          {
+            "type": "checkbox",
+            "id": "open_new_window",
+            "default": false,
+            "label": "Open this link in a new window"
+          },
+          {
+            "type": "checkbox",
+            "id": "rounded_corner_image",
+            "default": false,
+            "label": "Enable rounded corner images"
+          },
+          {
+            "type": "select",
+            "id": "alignment",
+            "label": "Image alignment on large screen",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "center"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Additional information"
+          },
+          {
+            "type": "range",
+            "id": "spacing",
+            "min": 4,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "Block spacing",
+            "default": 28
+          }
+        ]
+      },
+      {
+        "type": "email_footer",
+        "limit": 1,
+        "name": "Newsletter",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "open_by_default",
+            "default": true,
+            "label": "Open by default on mobile"
+          },
+          {
+            "type": "text",
+            "id": "heading_email",
+            "default": "Subscribe to our emails",
+            "label": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "subtext_email",
+            "label": "Text",
+            "default": "<p>Subscribe to get 10% Off</p>"
+          },
+          {
+            "type": "paragraph",
+            "content": "Each email subscription creates a customer account."
+          },
+          {
+            "type": "checkbox",
+            "id": "show_social_icons",
+            "default": false,
+            "label": "Show social icons",
+            "info": "Show social icons within the block. To show social icons footer-wide, enable social icons in section setting."
+          }
+        ]
+      },
+      {
+        "type": "contact",
+        "name": "Contact",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "open_by_default",
+            "default": false,
+            "label": "Open by default on mobile"
+          },
+          {
+            "type": "text",
+            "id": "heading_menu",
+            "default": "Need help",
+            "label": "Heading"
+          },
+          {
+            "type": "header",
+            "content": "Line 1"
+          },
+          {
+            "type": "select",
+            "id": "icon_1",
+            "options": [
+            {
+              "value": "none",
+              "label": "none"
+            },
+            {
+              "value": "another_icon",
+              "label": "Another icon"
+            },
+            {
+              "value": "activity",
+              "label": "Activity"
+            },
+            {
+              "value": "archive",
+              "label": "Archive"
+            },
+            {
+              "value": "arrow-down-cricle",
+              "label": "Arrow down cricle"
+            },
+            {
+              "value": "arrow-left",
+              "label": "Arrow left"
+            },
+            {
+              "value": "arrow-left-circle",
+              "label": "Arrow left circle"
+            },
+            {
+              "value": "arrow-right",
+              "label": "Arrow right"
+            },
+            {
+              "value": "arrow-right-circle",
+              "label": "Arrow right circle"
+            },
+            {
+              "value": "arrow-up-circle",
+              "label": "Arrow up circle"
+            },
+            {
+              "value": "chevron-left",
+              "label": "Chevron left"
+            },
+            {
+              "value": "trending-down",
+              "label": "Trending down"
+            },
+            {
+              "value": "tv",
+              "label": "Tv"
+            },
+            {
+              "value": "trending-up",
+              "label": "Trending up"
+            },
+            {
+              "value": "zap",
+              "label": "Zap"
+            },
+            {
+              "value": "1st-medal",
+              "label": "1st medal"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "bicycle",
+              "label": "Bicycle"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "briefcase",
+              "label": "Briefcase"
+            },
+            {
+              "value": "blink",
+              "label": "Blink"
+            },
+            {
+              "value": "calendar",
+              "label": "Calendar"
+            },
+            {
+              "value": "camera",
+              "label": "Camera"
+            },
+            {
+              "value": "chat-bubble",
+              "label": "Chat bubble"
+            },
+            {
+              "value": "check-mark",
+              "label": "Check mark"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "cloud-rain",
+              "label": "Cloud rain"
+            },
+            {
+              "value": "coffee",
+              "label": "Coffee"
+            },
+            {
+              "value": "coin",
+              "label": "Coin"
+            },
+            {
+              "value": "credit-card",
+              "label": "Credit card"
+            },
+            {
+              "value": "delivery-truck",
+              "label": "Delivery truck"
+            },
+            {
+              "value": "dollar-sign",
+              "label": "Dollar sign"
+            },
+            {
+              "value": "dna",
+              "label": "Dna"
+            },
+            {
+              "value": "dark-mode",
+              "label": "Dark mode"
+            },
+            {
+              "value": "earth",
+              "label": "Earth"
+            },
+            {
+              "value": "eye",
+              "label": "Eye"
+            },
+            {
+              "value": "feather",
+              "label": "Feather"
+            },
+            {
+              "value": "fire",
+              "label": "Fire"
+            },
+            {
+              "value": "flower",
+              "label": "Flower"
+            },
+            {
+              "value": "free-delivery",
+              "label": "Free delivery"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "globe",
+              "label": "Globe"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "help",
+              "label": "Help"
+            },
+            {
+              "value": "hot-sale",
+              "label": "Hot sale"
+            },
+            {
+              "value": "iron",
+              "label": "Iron"
+            },
+            {
+              "value": "information",
+              "label": "Infomation"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "light-mode",
+              "label": "Light mode"
+            },
+            {
+              "value": "map-pin",
+              "label": "Map pin"
+            },
+            {
+              "value": "megaphone",
+              "label": "Megaphone"
+            },
+            {
+              "value": "message-text",
+              "label": "Message text"
+            },
+            {
+              "value": "music",
+              "label": "Music"
+            },
+            {
+              "value": "moon",
+              "label": "Moon"
+            },
+            {
+              "value": "packages",
+              "label": "Packages"
+            },
+            {
+              "value": "pants",
+              "label": "Pants"
+            },
+            {
+              "value": "percent",
+              "label": "Percent"
+            },
+            {
+              "value": "piggy-bank",
+              "label": "Piggy bank"
+            },
+            {
+              "value": "plane",
+              "label": "Plane"
+            },
+            {
+              "value": "planet",
+              "label": "Planet"
+            },
+            {
+              "value": "question-mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "rocket",
+              "label": "Rocket"
+            },
+            {
+              "value": "rulers",
+              "label": "Rulers"
+            },
+            {
+              "value": "scissors",
+              "label": "Scissors"
+            },
+            {
+              "value": "settings",
+              "label": "Settings"
+            },
+            {
+              "value": "shirt",
+              "label": "Shirt"
+            },
+            {
+              "value": "shop-alt",
+              "label": "Shop alt"
+            },
+            {
+              "value": "shopping-bag",
+              "label": "Shopping bag"
+            },
+            {
+              "value": "shopping-cart",
+              "label": "Shopping cart"
+            },
+            {
+              "value": "smile",
+              "label": "Smile"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "sun",
+              "label": "Sun"
+            },
+            {
+              "value": "support",
+              "label": "Support"
+            },
+            {
+              "value": "tag",
+              "label": "Tag"
+            },
+            {
+              "value": "telephone",
+              "label": "Telephone"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "wallet",
+              "label": "Wallet"
+            },
+            {
+              "value": "washing",
+              "label": "Washing"
+            },
+            {
+              "value": "water",
+              "label": "Water"
+            },
+            {
+              "value": "yoga",
+              "label": "Yoga"
+          },
+        ],
+            "default": "question-mark",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "another_icon_1",
+            "label": "Use another icon",
+            "info": "If you want to use different icons from the options above, look for an icon from our [icon list](https://support.omnithemes.com/blogs/user-guide/theme-icons) and fill the icon name here (E.g: price tag)."
+          },
+          {
+            "type": "html",
+            "id": "custom_icon_1",
+            "label": "Custom icon (SVG code)",
+            "info": "For assistance with custom SVG code or fixing issues that arise from custom SVG code, please [contact our support](https://omnithemes.com/contact/)."
+          },
+          {
+            "type": "text",
+            "id": "title_1",
+            "default": "Got questions? Call us 24/7",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "text_1",
+            "default": "1908474783",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "text_link_1",
+            "label": "Text link"
+          },
+          {
+            "type": "checkbox",
+            "id": "open_new_window_1",
+            "default": false,
+            "label": "Open this link in a new window"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_text_link_1",
+            "default": true,
+            "label": "Use text link color"
+          },
+          {
+            "type": "header",
+            "content": "Line 2"
+          },
+          {
+            "type": "select",
+            "id": "icon_2",
+            "options": [
+            {
+              "value": "none",
+              "label": "none"
+            },
+            {
+              "value": "another_icon",
+              "label": "Another icon"
+            },
+            {
+              "value": "activity",
+              "label": "Activity"
+            },
+            {
+              "value": "archive",
+              "label": "Archive"
+            },
+            {
+              "value": "arrow-down-cricle",
+              "label": "Arrow down cricle"
+            },
+            {
+              "value": "arrow-left",
+              "label": "Arrow left"
+            },
+            {
+              "value": "arrow-left-circle",
+              "label": "Arrow left circle"
+            },
+            {
+              "value": "arrow-right",
+              "label": "Arrow right"
+            },
+            {
+              "value": "arrow-right-circle",
+              "label": "Arrow right circle"
+            },
+            {
+              "value": "arrow-up-circle",
+              "label": "Arrow up circle"
+            },
+            {
+              "value": "chevron-left",
+              "label": "Chevron left"
+            },
+            {
+              "value": "trending-down",
+              "label": "Trending down"
+            },
+            {
+              "value": "tv",
+              "label": "Tv"
+            },
+            {
+              "value": "trending-up",
+              "label": "Trending up"
+            },
+            {
+              "value": "zap",
+              "label": "Zap"
+            },
+            {
+              "value": "1st-medal",
+              "label": "1st medal"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "bicycle",
+              "label": "Bicycle"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "briefcase",
+              "label": "Briefcase"
+            },
+            {
+              "value": "blink",
+              "label": "Blink"
+            },
+            {
+              "value": "calendar",
+              "label": "Calendar"
+            },
+            {
+              "value": "camera",
+              "label": "Camera"
+            },
+            {
+              "value": "chat-bubble",
+              "label": "Chat bubble"
+            },
+            {
+              "value": "check-mark",
+              "label": "Check mark"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "cloud-rain",
+              "label": "Cloud rain"
+            },
+            {
+              "value": "coffee",
+              "label": "Coffee"
+            },
+            {
+              "value": "coin",
+              "label": "Coin"
+            },
+            {
+              "value": "credit-card",
+              "label": "Credit card"
+            },
+            {
+              "value": "delivery-truck",
+              "label": "Delivery truck"
+            },
+            {
+              "value": "dollar-sign",
+              "label": "Dollar sign"
+            },
+            {
+              "value": "dna",
+              "label": "Dna"
+            },
+            {
+              "value": "dark-mode",
+              "label": "Dark mode"
+            },
+            {
+              "value": "earth",
+              "label": "Earth"
+            },
+            {
+              "value": "eye",
+              "label": "Eye"
+            },
+            {
+              "value": "feather",
+              "label": "Feather"
+            },
+            {
+              "value": "fire",
+              "label": "Fire"
+            },
+            {
+              "value": "flower",
+              "label": "Flower"
+            },
+            {
+              "value": "free-delivery",
+              "label": "Free delivery"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "globe",
+              "label": "Globe"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "help",
+              "label": "Help"
+            },
+            {
+              "value": "hot-sale",
+              "label": "Hot sale"
+            },
+            {
+              "value": "iron",
+              "label": "Iron"
+            },
+            {
+              "value": "information",
+              "label": "Infomation"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "light-mode",
+              "label": "Light mode"
+            },
+            {
+              "value": "map-pin",
+              "label": "Map pin"
+            },
+            {
+              "value": "megaphone",
+              "label": "Megaphone"
+            },
+            {
+              "value": "message-text",
+              "label": "Message text"
+            },
+            {
+              "value": "music",
+              "label": "Music"
+            },
+            {
+              "value": "moon",
+              "label": "Moon"
+            },
+            {
+              "value": "packages",
+              "label": "Packages"
+            },
+            {
+              "value": "pants",
+              "label": "Pants"
+            },
+            {
+              "value": "percent",
+              "label": "Percent"
+            },
+            {
+              "value": "piggy-bank",
+              "label": "Piggy bank"
+            },
+            {
+              "value": "plane",
+              "label": "Plane"
+            },
+            {
+              "value": "planet",
+              "label": "Planet"
+            },
+            {
+              "value": "question-mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "rocket",
+              "label": "Rocket"
+            },
+            {
+              "value": "rulers",
+              "label": "Rulers"
+            },
+            {
+              "value": "scissors",
+              "label": "Scissors"
+            },
+            {
+              "value": "settings",
+              "label": "Settings"
+            },
+            {
+              "value": "shirt",
+              "label": "Shirt"
+            },
+            {
+              "value": "shop-alt",
+              "label": "Shop alt"
+            },
+            {
+              "value": "shopping-bag",
+              "label": "Shopping bag"
+            },
+            {
+              "value": "shopping-cart",
+              "label": "Shopping cart"
+            },
+            {
+              "value": "smile",
+              "label": "Smile"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "sun",
+              "label": "Sun"
+            },
+            {
+              "value": "support",
+              "label": "Support"
+            },
+            {
+              "value": "tag",
+              "label": "Tag"
+            },
+            {
+              "value": "telephone",
+              "label": "Telephone"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "wallet",
+              "label": "Wallet"
+            },
+            {
+              "value": "washing",
+              "label": "Washing"
+            },
+            {
+              "value": "water",
+              "label": "Water"
+            },
+            {
+              "value": "yoga",
+              "label": "Yoga"
+          },
+        ],
+            "default": "message-text",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "another_icon_2",
+            "label": "Use another icon",
+            "info": "If you want to use different icons from the options above, look for an icon from our [icon list](https://support.omnithemes.com/blogs/user-guide/theme-icons) and fill the icon name here (E.g: price tag)."
+          },
+          {
+            "type": "html",
+            "id": "custom_icon_2",
+            "label": "Custom icon (SVG code)",
+            "info": "For assistance with custom SVG code or fixing issues that arise from custom SVG code, please [contact our support](https://omnithemes.com/contact/)."
+          },
+          {
+            "type": "text",
+            "id": "title_2",
+            "default": "Need help with your order?",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "text_2",
+            "default": "Contact",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "text_link_2",
+            "label": "Text link"
+          },
+          {
+            "type": "checkbox",
+            "id": "open_new_window_2",
+            "default": false,
+            "label": "Open this link in a new window"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_text_link_2",
+            "default": true,
+            "label": "Use text link color"
+          },
+          {
+            "type": "header",
+            "content": "Line 3"
+          },
+          {
+            "type": "select",
+            "id": "icon_3",
+            "options": [
+            {
+              "value": "none",
+              "label": "none"
+            },
+            {
+              "value": "another_icon",
+              "label": "Another icon"
+            },
+            {
+              "value": "activity",
+              "label": "Activity"
+            },
+            {
+              "value": "archive",
+              "label": "Archive"
+            },
+            {
+              "value": "arrow-down-cricle",
+              "label": "Arrow down cricle"
+            },
+            {
+              "value": "arrow-left",
+              "label": "Arrow left"
+            },
+            {
+              "value": "arrow-left-circle",
+              "label": "Arrow left circle"
+            },
+            {
+              "value": "arrow-right",
+              "label": "Arrow right"
+            },
+            {
+              "value": "arrow-right-circle",
+              "label": "Arrow right circle"
+            },
+            {
+              "value": "arrow-up-circle",
+              "label": "Arrow up circle"
+            },
+            {
+              "value": "chevron-left",
+              "label": "Chevron left"
+            },
+            {
+              "value": "trending-down",
+              "label": "Trending down"
+            },
+            {
+              "value": "tv",
+              "label": "Tv"
+            },
+            {
+              "value": "trending-up",
+              "label": "Trending up"
+            },
+            {
+              "value": "zap",
+              "label": "Zap"
+            },
+            {
+              "value": "1st-medal",
+              "label": "1st medal"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "bicycle",
+              "label": "Bicycle"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "briefcase",
+              "label": "Briefcase"
+            },
+            {
+              "value": "blink",
+              "label": "Blink"
+            },
+            {
+              "value": "calendar",
+              "label": "Calendar"
+            },
+            {
+              "value": "camera",
+              "label": "Camera"
+            },
+            {
+              "value": "chat-bubble",
+              "label": "Chat bubble"
+            },
+            {
+              "value": "check-mark",
+              "label": "Check mark"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "cloud-rain",
+              "label": "Cloud rain"
+            },
+            {
+              "value": "coffee",
+              "label": "Coffee"
+            },
+            {
+              "value": "coin",
+              "label": "Coin"
+            },
+            {
+              "value": "credit-card",
+              "label": "Credit card"
+            },
+            {
+              "value": "delivery-truck",
+              "label": "Delivery truck"
+            },
+            {
+              "value": "dollar-sign",
+              "label": "Dollar sign"
+            },
+            {
+              "value": "dna",
+              "label": "Dna"
+            },
+            {
+              "value": "dark-mode",
+              "label": "Dark mode"
+            },
+            {
+              "value": "earth",
+              "label": "Earth"
+            },
+            {
+              "value": "eye",
+              "label": "Eye"
+            },
+            {
+              "value": "feather",
+              "label": "Feather"
+            },
+            {
+              "value": "fire",
+              "label": "Fire"
+            },
+            {
+              "value": "flower",
+              "label": "Flower"
+            },
+            {
+              "value": "free-delivery",
+              "label": "Free delivery"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "globe",
+              "label": "Globe"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "help",
+              "label": "Help"
+            },
+            {
+              "value": "hot-sale",
+              "label": "Hot sale"
+            },
+            {
+              "value": "iron",
+              "label": "Iron"
+            },
+            {
+              "value": "information",
+              "label": "Infomation"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "light-mode",
+              "label": "Light mode"
+            },
+            {
+              "value": "map-pin",
+              "label": "Map pin"
+            },
+            {
+              "value": "megaphone",
+              "label": "Megaphone"
+            },
+            {
+              "value": "message-text",
+              "label": "Message text"
+            },
+            {
+              "value": "music",
+              "label": "Music"
+            },
+            {
+              "value": "moon",
+              "label": "Moon"
+            },
+            {
+              "value": "packages",
+              "label": "Packages"
+            },
+            {
+              "value": "pants",
+              "label": "Pants"
+            },
+            {
+              "value": "percent",
+              "label": "Percent"
+            },
+            {
+              "value": "piggy-bank",
+              "label": "Piggy bank"
+            },
+            {
+              "value": "plane",
+              "label": "Plane"
+            },
+            {
+              "value": "planet",
+              "label": "Planet"
+            },
+            {
+              "value": "question-mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "rocket",
+              "label": "Rocket"
+            },
+            {
+              "value": "rulers",
+              "label": "Rulers"
+            },
+            {
+              "value": "scissors",
+              "label": "Scissors"
+            },
+            {
+              "value": "settings",
+              "label": "Settings"
+            },
+            {
+              "value": "shirt",
+              "label": "Shirt"
+            },
+            {
+              "value": "shop-alt",
+              "label": "Shop alt"
+            },
+            {
+              "value": "shopping-bag",
+              "label": "Shopping bag"
+            },
+            {
+              "value": "shopping-cart",
+              "label": "Shopping cart"
+            },
+            {
+              "value": "smile",
+              "label": "Smile"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "sun",
+              "label": "Sun"
+            },
+            {
+              "value": "support",
+              "label": "Support"
+            },
+            {
+              "value": "tag",
+              "label": "Tag"
+            },
+            {
+              "value": "telephone",
+              "label": "Telephone"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "wallet",
+              "label": "Wallet"
+            },
+            {
+              "value": "washing",
+              "label": "Washing"
+            },
+            {
+              "value": "water",
+              "label": "Water"
+            },
+            {
+              "value": "yoga",
+              "label": "Yoga"
+          },
+        ],
+            "default": "chat-bubble",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "another_icon_3",
+            "label": "Use another icon",
+            "info": "If you want to use different icons from the options above, look for an icon from our [icon list](https://support.omnithemes.com/blogs/user-guide/theme-icons) and fill the icon name here (E.g: price tag)."
+          },
+          {
+            "type": "html",
+            "id": "custom_icon_3",
+            "label": "Custom icon (SVG code)",
+            "info": "For assistance with custom SVG code or fixing issues that arise from custom SVG code, please [contact our support](https://omnithemes.com/contact/)."
+          },
+          {
+            "type": "text",
+            "id": "title_3",
+            "default": "Available 24/7 via chat",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "text_3",
+            "default": "Chat With US",
+            "label": "Text"
+          },
+          {
+            "type": "url",
+            "id": "text_link_3",
+            "label": "Text link"
+          },
+          {
+            "type": "checkbox",
+            "id": "open_new_window_3",
+            "default": false,
+            "label": "Open this link in a new window"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_text_link_3",
+            "default": true,
+            "label": "Use text link color"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "range",
+        "id": "columns_desktop",
+        "min": 2,
+        "max": 5,
+        "step": 1,
+        "default": 5,
+        "label": "Number of columns on desktop"
+      },
+      {
+        "type": "header",
+        "content": "Language and currency"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_language_selector",
+        "default": false,
+        "label": "Show language selector"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_currency_selector",
+        "default": false,
+        "label": "Show currency selector"
+      },
+      {
+        "type": "header",
+        "content": "Additional information"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social_icons",
+        "default": true,
+        "label": "Show social icons"
+      },
+      {
+        "type": "checkbox",
+        "id": "payment_enable",
+        "default": true,
+        "label": "Show payment icons"
+      },
+      {
+        "type": "text",
+        "id": "custom_payment",
+        "info": "Customize your payment icons. For example, fill in this field your chosen methods: apple_pay, google_pay, tabby, tamara. [Learn more](https://shopify.dev/docs/api/checkout-ui-extensions/2024-10/components/media/paymenticon#paymentmethod)",
+        "label": "Custom payment icons SVG"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_copyright",
+        "default": true,
+        "label": "Show copyright"
+      },
+      {
+        "type": "richtext",
+        "id": "add_copyright_text",
+        "label": "Additional copyright text"
+      },
+      {
+        "type": "select",
+        "id": "additional_layout",
+        "label": "Additional information desktop layout", 
+        "default": "vertical",
+        "options": [
+          {
+            "value": "vertical",
+            "label": "Vertical"
+          },
+          {
+            "value": "horizontal",
+            "label": "Horizontal"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "show_powered",
+        "default": true,
+        "label": "Show \"Powered by Shopify\" text" 
+      },
+      {
+        "type": "header",
+        "content": "Follow on Shop",
+        "info": "Display follow button for your storefront on the Shop app. [Learn more](https://help.shopify.com/en/manual/online-store/themes/customizing-themes/add-shop-buttons)"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_follow_on_shop",
+        "default": false,
+        "label": "Enable Follow on Shop"
+      },
+      {
+      "type": "select",
+      "id": "horizontal_position",
+      "label": "Horizontal position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+      {
+        "type": "header",
+        "content": "Social media"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter (X)",
+        "info": "https://twitter.com/shopify",
+        "default": "https://twitter.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook",
+        "info": "https://facebook.com/shopify",
+        "default": "https://facebook.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest",
+        "info": "https://pinterest.com/shopify",
+        "default": "https://pinterest.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram",
+        "info": "http://instagram.com/shopify",
+        "default": "http://instagram.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "TikTok",
+        "info": "https://tiktok.com/@shopify",
+        "default": "https://tiktok.com/@shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "Tumblr",
+        "info": "https://shopify.tumblr.com"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "Snapchat",
+        "info": "https://www.snapchat.com/add/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "YouTube",
+        "info": "https://www.youtube.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "Vimeo",
+        "info": "https://vimeo.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "Linkedin",
+        "info": "https://www.linkedin.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "email_address",
+        "label": "Email address"
+      },
+      {
+        "type": "text",
+        "id": "phone_number",
+        "label": "Phone number"
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "colors_footer_background",
+        "default": "#fff",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "colors_footer_heading",
+        "default": "#212020",
+        "label": "Heading and title"
+      },
+      {
+        "type": "color",
+        "id": "colors_footer_text",
+        "default": "#444",
+        "label": "Text"
+      },
+      {
+        "type": "color",
+        "id": "colors_footer_textlink",
+        "default": "#FB8500",
+        "label": "Text link"
+      },
+      {
+        "type": "color",
+        "id": "colors_footer_line",
+        "default": "#F2F2F2",
+        "label": "Line"
+      },
+      {
+        "type": "range",
+        "id": "line_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "label": "Line opacity",
+        "default": 100
+      },
+      {
+        "type": "header",
+        "content": "Desktop layout"
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Top padding",
+        "default": 80
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Bottom padding",
+        "default": 40
+      },
+      {
+        "type": "header",
+        "content": "Mobile layout"
+      },
+      {
+        "type": "range",
+        "id": "top_padding_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Top padding",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Bottom padding",
+        "default": 28
+      },
+    ],
+    "presets": [
+    {
+      "name": "OT: Footer #7",
+      "blocks": [
+        {
+          "type": "link_list",
+          "settings": {
+            "heading_menu": "Services",
+          }
+        },
+        {
+          "type": "link_list",
+          "settings": {
+            "heading_menu": "Company",
+          }
+        },
+        {
+          "type": "link_list",
+          "settings": {
+            "heading_menu": "Help",
+          }
+        },
+        {
+          "type": "link_list",
+          "settings": {
+            "heading_menu": "Services",
+          }
+        },
+        {
+          "type": "email_footer"
+        }
+      ]
+    }
+  ]
+  }
+  {% endschema %}

@@ -1,0 +1,1140 @@
+{% doc %}
+  @prompt
+    Create a modern, high-conversion e-commerce website header section for a Shopify store named “BuyGreat”, using a clean white background and a bold blue and red color palette.
+    
+    Header structure:
+    - Left area must include a replaceable logo container connected to Shopify theme settings.
+    - Allow uploading an original logo image file (SVG or PNG) via the theme editor.
+    - If no logo image is uploaded, display a text-based fallback logo reading “buygreat” in deep blue.
+    - Display a small tagline “SAVE MORE” below the logo in spaced uppercase letters styled in red.
+    - Ensure the logo scales correctly across desktop and mobile devices.
+    
+    Center area:
+    - Large rounded search bar connected to Shopify’s native search functionality.
+    - Placeholder text: “Search 10,000+ products…”
+    - Blue search button aligned to the right of the input.
+    
+    Right area:
+    - Icon-based links for Account, Wishlist, and Cart.
+    - Cart icon must support Shopify’s dynamic cart item count badge.
+    
+    Navigation bar requirements:
+    - Display a full-width horizontal navigation bar below the main header.
+    - Navigation items must be dynamically populated from Shopify’s Menu settings (Online Store → Navigation).
+    - Allow the merchant to choose which Shopify menu to use via the theme editor.
+    - Provide a theme setting to control menu alignment (left, center, or right).
+    - When a top-level menu item contains nested links in Shopify navigation, automatically display an explorable submenu on hover (desktop).
+    - Submenus must appear as dropdown menus or mega menus depending on the number of child links.
+    - Hover behavior should be smooth, intuitive, and close when the cursor leaves the menu area.
+    - Ensure all submenu labels and links are pulled directly from Shopify’s menu structure with no hardcoded items.
+    - Visually highlight the “Deals” menu item with a red pill-shaped background and a fire icon while keeping it linked to the Shopify menu item.
+    
+    Mobile navigation behavior:
+    - Replace hover interaction with a hamburger menu.
+    - Inside the mobile menu, display expandable accordion-style submenus for categories and subcategories.
+    - Allow users to tap a category to expand or collapse its subcategories.
+    - Maintain full compatibility with Shopify’s nested menu structure.
+    
+    Functional requirements:
+    - Sticky header on scroll.
+    - Fully editable via Shopify’s theme customizer without code changes.
+    - Use clean semantic HTML suitable for Shopify Liquid.
+    - Avoid hardcoded navigation links; all navigation must use Shopify’s menu system.
+    
+    Design style:
+    - Modern, trustworthy, price-focused marketplace design.
+    - Clean white space, rounded corners, and bold readable typography.
+    - Conversion-focused layout emphasizing savings and ease of shopping.
+    - Performance-optimized and accessibility-aware.
+    
+    Overall goal:
+    Create a premium Shopify-native header that supports hover-based category exploration on desktop and touch-based expandable submenus on mobile.
+    , Update the mega menu in the header to expand on hover, showing subcategories for each main category. Also make the mega menu color blue according to logo. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-header-{{ ai_gen_id }} {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: {{ block.settings.header_bg_color }};
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: {{ block.settings.desktop_width_percent }}%;
+  }
+
+  .ai-header-top-{{ ai_gen_id }} {
+    max-width: {{ settings.container_lg_width }}px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .ai-header-logo-area-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .ai-header-logo-link-{{ ai_gen_id }} {
+    display: block;
+    text-decoration: none;
+  }
+
+  .ai-header-logo-image-{{ ai_gen_id }} {
+    display: block;
+    max-width: {{ block.settings.logo_width }}px;
+    height: auto;
+  }
+
+  .ai-header-logo-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.logo_text_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.logo_text_color }};
+    text-decoration: none;
+    text-transform: lowercase;
+    letter-spacing: -0.5px;
+  }
+
+  .ai-header-tagline-{{ ai_gen_id }} {
+    font-size: 10px;
+    font-weight: 600;
+    color: {{ block.settings.tagline_color }};
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 2px;
+  }
+
+  .ai-header-search-area-{{ ai_gen_id }} {
+    flex-grow: 1;
+    max-width: 600px;
+  }
+
+  .ai-header-search-form-{{ ai_gen_id }} {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .ai-header-search-input-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 12px 120px 12px 20px;
+    border: 2px solid {{ block.settings.search_border_color }};
+    border-radius: {{ block.settings.search_border_radius }}px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .ai-header-search-input-{{ ai_gen_id }}:focus {
+    border-color: {{ block.settings.search_button_bg }};
+  }
+
+  .ai-header-search-button-{{ ai_gen_id }} {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: {{ block.settings.search_button_bg }};
+    color: {{ block.settings.search_button_text_color }};
+    border: none;
+    padding: 10px 24px;
+    border-radius: {{ block.settings.search_border_radius | minus: 4 }}px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-header-search-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.search_button_hover_bg }};
+  }
+
+  .ai-header-icons-area-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+
+  .ai-header-icon-link-{{ ai_gen_id }} {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: {{ block.settings.icon_color }};
+    transition: color 0.3s ease;
+  }
+
+  .ai-header-icon-link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.icon_hover_color }};
+  }
+
+  .ai-header-icon-{{ ai_gen_id }} {
+    width: 24px;
+    height: 24px;
+  }
+
+  .ai-header-icon-label-{{ ai_gen_id }} {
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  .ai-header-cart-count-{{ ai_gen_id }} {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background-color: {{ block.settings.cart_badge_bg }};
+    color: {{ block.settings.cart_badge_text }};
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .ai-header-nav-{{ ai_gen_id }} {
+    background-color: {{ block.settings.nav_bg_color }};
+    border-top: 1px solid {{ block.settings.nav_border_color }};
+  }
+
+  .ai-header-nav-container-{{ ai_gen_id }} {
+    max-width: {{ settings.container_lg_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-header-nav-list-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: {{ block.settings.nav_alignment }};
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ai-header-nav-item-{{ ai_gen_id }} {
+    position: relative;
+  }
+
+  .ai-header-nav-link-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 0;
+    text-decoration: none;
+    color: {{ block.settings.nav_text_color }};
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .ai-header-nav-link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.nav_hover_color }};
+  }
+
+  .ai-header-nav-item-{{ ai_gen_id }}.has-submenu .ai-header-nav-link-{{ ai_gen_id }}::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    margin-left: 2px;
+  }
+
+  .ai-header-nav-deals-{{ ai_gen_id }} {
+    background-color: {{ block.settings.deals_bg_color }};
+    color: {{ block.settings.deals_text_color }};
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+
+  .ai-header-nav-deals-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.deals_hover_bg }};
+    color: {{ block.settings.deals_text_color }};
+  }
+
+  .ai-header-fire-icon-{{ ai_gen_id }} {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ai-header-submenu-{{ ai_gen_id }} {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, {{ block.settings.mega_menu_bg_start }} 0%, {{ block.settings.mega_menu_bg_end }} 100%);
+    box-shadow: 0 8px 24px rgba(0, 71, 171, 0.2);
+    border-radius: 12px;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 100;
+    min-width: 280px;
+    border: 1px solid {{ block.settings.mega_menu_border }};
+  }
+
+  .ai-header-nav-item-{{ ai_gen_id }}.has-mega-menu .ai-header-submenu-{{ ai_gen_id }} {
+    min-width: 600px;
+    max-width: 900px;
+  }
+
+  .ai-header-nav-item-{{ ai_gen_id }}:hover .ai-header-submenu-{{ ai_gen_id }} {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .ai-header-mega-menu-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+
+  .ai-header-mega-menu-column-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ai-header-mega-menu-title-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 700;
+    color: {{ block.settings.mega_menu_title_color }};
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid {{ block.settings.mega_menu_border }};
+  }
+
+  .ai-header-submenu-link-{{ ai_gen_id }} {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: {{ block.settings.mega_menu_text_color }};
+    font-size: 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .ai-header-submenu-link-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.mega_menu_hover_bg }};
+    color: {{ block.settings.mega_menu_hover_text }};
+    transform: translateX(4px);
+  }
+
+  .ai-header-mobile-toggle-{{ ai_gen_id }} {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: {{ block.settings.icon_color }};
+  }
+
+  .ai-header-hamburger-{{ ai_gen_id }} {
+    width: 24px;
+    height: 24px;
+  }
+
+  .ai-header-mobile-menu-{{ ai_gen_id }} {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: {{ block.settings.header_bg_color }};
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+  }
+
+  .ai-header-mobile-menu-{{ ai_gen_id }}.active {
+    left: 0;
+  }
+
+  .ai-header-mobile-overlay-{{ ai_gen_id }} {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-header-mobile-overlay-{{ ai_gen_id }}.active {
+    opacity: 1;
+  }
+
+  .ai-header-mobile-header-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid {{ block.settings.nav_border_color }};
+  }
+
+  .ai-header-mobile-close-{{ ai_gen_id }} {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: {{ block.settings.icon_color }};
+  }
+
+  .ai-header-mobile-nav-list-{{ ai_gen_id }} {
+    list-style: none;
+    margin: 0;
+    padding: 16px 0;
+  }
+
+  .ai-header-mobile-nav-item-{{ ai_gen_id }} {
+    border-bottom: 1px solid {{ block.settings.nav_border_color }};
+  }
+
+  .ai-header-mobile-nav-link-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: {{ block.settings.nav_text_color }};
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .ai-header-mobile-submenu-toggle-{{ ai_gen_id }} {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: {{ block.settings.nav_text_color }};
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .ai-header-mobile-submenu-icon-{{ ai_gen_id }} {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-header-mobile-submenu-icon-{{ ai_gen_id }}.open {
+    transform: rotate(180deg);
+  }
+
+  .ai-header-mobile-submenu-{{ ai_gen_id }} {
+    max-height: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, {{ block.settings.mega_menu_bg_start }} 0%, {{ block.settings.mega_menu_bg_end }} 100%);
+    transition: max-height 0.3s ease;
+  }
+
+  .ai-header-mobile-submenu-{{ ai_gen_id }}.open {
+    max-height: 800px;
+  }
+
+  .ai-header-mobile-submenu-link-{{ ai_gen_id }} {
+    display: block;
+    padding: 12px 20px 12px 40px;
+    text-decoration: none;
+    color: {{ block.settings.mega_menu_text_color }};
+    font-size: 14px;
+  }
+
+  .ai-header-mobile-submenu-nested-{{ ai_gen_id }} {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .ai-header-mobile-submenu-nested-{{ ai_gen_id }}.open {
+    max-height: 500px;
+  }
+
+  .ai-header-mobile-submenu-nested-link-{{ ai_gen_id }} {
+    display: block;
+    padding: 10px 20px 10px 60px;
+    text-decoration: none;
+    color: {{ block.settings.mega_menu_text_color }};
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 990px) {
+    .ai-header-top-{{ ai_gen_id }} {
+      gap: 16px;
+    }
+
+    .ai-header-search-area-{{ ai_gen_id }} {
+      order: 3;
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    .ai-header-icons-area-{{ ai_gen_id }} {
+      gap: 16px;
+    }
+
+    .ai-header-icon-label-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-header-nav-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-header-mobile-toggle-{{ ai_gen_id }} {
+      display: block;
+    }
+
+    .ai-header-mobile-menu-{{ ai_gen_id }},
+    .ai-header-mobile-overlay-{{ ai_gen_id }} {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-header-top-{{ ai_gen_id }} {
+      padding: 12px 16px;
+    }
+
+    .ai-header-logo-image-{{ ai_gen_id }} {
+      max-width: {{ block.settings.logo_width | times: 0.8 }}px;
+    }
+
+    .ai-header-logo-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.logo_text_size | times: 0.85 }}px;
+    }
+
+    .ai-header-search-input-{{ ai_gen_id }} {
+      padding: 10px 100px 10px 16px;
+      font-size: 14px;
+    }
+
+    .ai-header-search-button-{{ ai_gen_id }} {
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+  }
+{% endstyle %}
+
+<buygreat-header-{{ ai_gen_id }} class="ai-header-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-header-top-{{ ai_gen_id }}">
+    <button class="ai-header-mobile-toggle-{{ ai_gen_id }}" aria-label="Open menu">
+      <svg class="ai-header-hamburger-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="ai-header-logo-area-{{ ai_gen_id }}">
+      <a href="/" class="ai-header-logo-link-{{ ai_gen_id }}">
+        {% if block.settings.logo != blank %}
+          <img
+            src="{{ block.settings.logo | image_url: width: 400 }}"
+            alt="{{ shop.name }}"
+            class="ai-header-logo-image-{{ ai_gen_id }}"
+            width="{{ block.settings.logo.width }}"
+            height="{{ block.settings.logo.height }}"
+            loading="eager"
+          >
+        {% else %}
+          <span class="ai-header-logo-text-{{ ai_gen_id }}">{{ block.settings.logo_text }}</span>
+        {% endif %}
+      </a>
+      {% if block.settings.show_tagline %}
+        <div class="ai-header-tagline-{{ ai_gen_id }}">{{ block.settings.tagline_text }}</div>
+      {% endif %}
+    </div>
+
+    <div class="ai-header-search-area-{{ ai_gen_id }}">
+      <form action="/search" method="get" class="ai-header-search-form-{{ ai_gen_id }}" role="search">
+        <input
+          type="search"
+          name="q"
+          class="ai-header-search-input-{{ ai_gen_id }}"
+          placeholder="{{ block.settings.search_placeholder }}"
+          aria-label="Search products"
+        >
+        <button type="submit" class="ai-header-search-button-{{ ai_gen_id }}">
+          {{ block.settings.search_btn_label }}
+        </button>
+      </form>
+    </div>
+
+    <div class="ai-header-icons-area-{{ ai_gen_id }}">
+      {% if block.settings.show_account_icon %}
+        <a href="/account" class="ai-header-icon-link-{{ ai_gen_id }}">
+          <svg class="ai-header-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span class="ai-header-icon-label-{{ ai_gen_id }}">Account</span>
+        </a>
+      {% endif %}
+
+      {% if block.settings.show_wishlist_icon %}
+        <a href="/pages/wishlist" class="ai-header-icon-link-{{ ai_gen_id }}">
+          <svg class="ai-header-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="ai-header-icon-label-{{ ai_gen_id }}">Wishlist</span>
+        </a>
+      {% endif %}
+
+      <a href="/cart" class="ai-header-icon-link-{{ ai_gen_id }}">
+        <svg class="ai-header-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="ai-header-icon-label-{{ ai_gen_id }}">Cart</span>
+        {% if cart.item_count > 0 %}
+          <span class="ai-header-cart-count-{{ ai_gen_id }}">{{ cart.item_count }}</span>
+        {% endif %}
+      </a>
+    </div>
+  </div>
+
+  <nav class="ai-header-nav-{{ ai_gen_id }}">
+    <div class="ai-header-nav-container-{{ ai_gen_id }}">
+      {% if block.settings.menu != blank %}
+        <ul class="ai-header-nav-list-{{ ai_gen_id }}">
+          {% for link in linklists[block.settings.menu].links %}
+            {% assign has_children = false %}
+            {% if link.links != blank %}
+              {% assign has_children = true %}
+            {% endif %}
+
+            {% assign is_mega = false %}
+            {% if has_children and link.links.size >= block.settings.mega_menu_threshold %}
+              {% assign is_mega = true %}
+            {% endif %}
+
+            <li class="ai-header-nav-item-{{ ai_gen_id }} {% if has_children %}has-submenu{% endif %} {% if is_mega %}has-mega-menu{% endif %}">
+              {% if link.title == block.settings.deals_menu_title %}
+                <a href="{{ link.url }}" class="ai-header-nav-link-{{ ai_gen_id }} ai-header-nav-deals-{{ ai_gen_id }}">
+                  <svg class="ai-header-fire-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2c1.5 3.5 3 6 3 9 0 3-2 5-5 5s-5-2-5-5c0-3 1.5-5.5 3-9 0 0 1.5 2 2 4 .5-2 2-4 2-4z"/>
+                  </svg>
+                  {{ link.title }}
+                </a>
+              {% else %}
+                <a href="{{ link.url }}" class="ai-header-nav-link-{{ ai_gen_id }}">
+                  {{ link.title }}
+                </a>
+              {% endif %}
+
+              {% if has_children %}
+                <div class="ai-header-submenu-{{ ai_gen_id }}">
+                  {% if is_mega %}
+                    <div class="ai-header-mega-menu-grid-{{ ai_gen_id }}">
+                      {% for child_link in link.links %}
+                        <div class="ai-header-mega-menu-column-{{ ai_gen_id }}">
+                          {% if child_link.links != blank %}
+                            <div class="ai-header-mega-menu-title-{{ ai_gen_id }}">{{ child_link.title }}</div>
+                            {% for grandchild_link in child_link.links %}
+                              <a href="{{ grandchild_link.url }}" class="ai-header-submenu-link-{{ ai_gen_id }}">
+                                {{ grandchild_link.title }}
+                              </a>
+                            {% endfor %}
+                          {% else %}
+                            <a href="{{ child_link.url }}" class="ai-header-submenu-link-{{ ai_gen_id }}">
+                              {{ child_link.title }}
+                            </a>
+                          {% endif %}
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {% for child_link in link.links %}
+                      <a href="{{ child_link.url }}" class="ai-header-submenu-link-{{ ai_gen_id }}">
+                        {{ child_link.title }}
+                      </a>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </nav>
+
+  <div class="ai-header-mobile-overlay-{{ ai_gen_id }}"></div>
+
+  <div class="ai-header-mobile-menu-{{ ai_gen_id }}">
+    <div class="ai-header-mobile-header-{{ ai_gen_id }}">
+      <span class="ai-header-logo-text-{{ ai_gen_id }}">Menu</span>
+      <button class="ai-header-mobile-close-{{ ai_gen_id }}" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    {% if block.settings.menu != blank %}
+      <ul class="ai-header-mobile-nav-list-{{ ai_gen_id }}">
+        {% for link in linklists[block.settings.menu].links %}
+          <li class="ai-header-mobile-nav-item-{{ ai_gen_id }}">
+            {% if link.links != blank %}
+              <button class="ai-header-mobile-submenu-toggle-{{ ai_gen_id }}" data-submenu-toggle>
+                <span>{{ link.title }}</span>
+                <svg class="ai-header-mobile-submenu-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="ai-header-mobile-submenu-{{ ai_gen_id }}">
+                {% for child_link in link.links %}
+                  {% if child_link.links != blank %}
+                    <button class="ai-header-mobile-submenu-toggle-{{ ai_gen_id }}" data-submenu-toggle>
+                      <span>{{ child_link.title }}</span>
+                      <svg class="ai-header-mobile-submenu-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </button>
+                    <div class="ai-header-mobile-submenu-nested-{{ ai_gen_id }}">
+                      {% for grandchild_link in child_link.links %}
+                        <a href="{{ grandchild_link.url }}" class="ai-header-mobile-submenu-nested-link-{{ ai_gen_id }}">
+                          {{ grandchild_link.title }}
+                        </a>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    <a href="{{ child_link.url }}" class="ai-header-mobile-submenu-link-{{ ai_gen_id }}">
+                      {{ child_link.title }}
+                    </a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% else %}
+              <a href="{{ link.url }}" class="ai-header-mobile-nav-link-{{ ai_gen_id }}">
+                {{ link.title }}
+              </a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</buygreat-header-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class BuyGreatHeader{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.mobileToggle = this.querySelector('.ai-header-mobile-toggle-{{ ai_gen_id }}');
+        this.mobileClose = this.querySelector('.ai-header-mobile-close-{{ ai_gen_id }}');
+        this.mobileMenu = this.querySelector('.ai-header-mobile-menu-{{ ai_gen_id }}');
+        this.mobileOverlay = this.querySelector('.ai-header-mobile-overlay-{{ ai_gen_id }}');
+        this.submenuToggles = this.querySelectorAll('[data-submenu-toggle]');
+
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        if (this.mobileToggle) {
+          this.mobileToggle.addEventListener('click', () => this.openMobileMenu());
+        }
+
+        if (this.mobileClose) {
+          this.mobileClose.addEventListener('click', () => this.closeMobileMenu());
+        }
+
+        if (this.mobileOverlay) {
+          this.mobileOverlay.addEventListener('click', () => this.closeMobileMenu());
+        }
+
+        this.submenuToggles.forEach((toggle) => {
+          toggle.addEventListener('click', (e) => this.toggleSubmenu(e));
+        });
+      }
+
+      openMobileMenu() {
+        this.mobileMenu.classList.add('active');
+        this.mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      closeMobileMenu() {
+        this.mobileMenu.classList.remove('active');
+        this.mobileOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      toggleSubmenu(e) {
+        const toggle = e.currentTarget;
+        const icon = toggle.querySelector('.ai-header-mobile-submenu-icon-{{ ai_gen_id }}');
+        const submenu = toggle.nextElementSibling;
+
+        if (submenu) {
+          const isNested = submenu.classList.contains('ai-header-mobile-submenu-nested-{{ ai_gen_id }}');
+          const isRegular = submenu.classList.contains('ai-header-mobile-submenu-{{ ai_gen_id }}');
+          
+          if (isNested || isRegular) {
+            submenu.classList.toggle('open');
+            if (icon) {
+              icon.classList.toggle('open');
+            }
+          }
+        }
+      }
+    }
+
+    customElements.define('buygreat-header-{{ ai_gen_id }}', BuyGreatHeader{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "BuyGreat header",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "Logo width",
+      "min": 80,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 140
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "buygreat"
+    },
+    {
+      "type": "range",
+      "id": "logo_text_size",
+      "label": "Logo text size",
+      "min": 18,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "logo_text_color",
+      "label": "Logo text color",
+      "default": "#0047AB"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tagline",
+      "label": "Show tagline",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tagline_text",
+      "label": "Tagline text",
+      "default": "SAVE MORE"
+    },
+    {
+      "type": "color",
+      "id": "tagline_color",
+      "label": "Tagline color",
+      "default": "#DC143C"
+    },
+    {
+      "type": "header",
+      "content": "Search bar"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Placeholder text",
+      "default": "Search 10,000+ products…"
+    },
+    {
+      "type": "text",
+      "id": "search_btn_label",
+      "label": "Button label",
+      "default": "Search"
+    },
+    {
+      "type": "range",
+      "id": "search_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "search_border_color",
+      "label": "Border color",
+      "default": "#E0E0E0"
+    },
+    {
+      "type": "color",
+      "id": "search_button_bg",
+      "label": "Button background",
+      "default": "#0047AB"
+    },
+    {
+      "type": "color",
+      "id": "search_button_hover_bg",
+      "label": "Button hover background",
+      "default": "#003380"
+    },
+    {
+      "type": "color",
+      "id": "search_button_text_color",
+      "label": "Button text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_account_icon",
+      "label": "Show account icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_wishlist_icon",
+      "label": "Show wishlist icon",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "icon_hover_color",
+      "label": "Icon hover color",
+      "default": "#0047AB"
+    },
+    {
+      "type": "color",
+      "id": "cart_badge_bg",
+      "label": "Cart badge background",
+      "default": "#DC143C"
+    },
+    {
+      "type": "color",
+      "id": "cart_badge_text",
+      "label": "Cart badge text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "select",
+      "id": "nav_alignment",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "deals_menu_title",
+      "label": "Deals menu item title",
+      "default": "Deals"
+    },
+    {
+      "type": "color",
+      "id": "nav_bg_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "nav_border_color",
+      "label": "Border color",
+      "default": "#E0E0E0"
+    },
+    {
+      "type": "color",
+      "id": "nav_text_color",
+      "label": "Text color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "nav_hover_color",
+      "label": "Hover text color",
+      "default": "#0047AB"
+    },
+    {
+      "type": "color",
+      "id": "deals_bg_color",
+      "label": "Deals background",
+      "default": "#DC143C"
+    },
+    {
+      "type": "color",
+      "id": "deals_hover_bg",
+      "label": "Deals hover background",
+      "default": "#B01030"
+    },
+    {
+      "type": "color",
+      "id": "deals_text_color",
+      "label": "Deals text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Mega menu"
+    },
+    {
+      "type": "range",
+      "id": "mega_menu_threshold",
+      "label": "Mega menu threshold",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 4,
+      "info": "Number of child items needed to trigger mega menu layout"
+    },
+    {
+      "type": "color",
+      "id": "mega_menu_bg_start",
+      "label": "Background gradient start",
+      "default": "#E3F2FD"
+    },
+    {
+      "type": "color",
+      "id": "mega_menu_bg_end",
+      "label": "Background gradient end",
+      "default": "#BBDEFB"
+    },
+    {
+      "type": "color",
+      "id": "mega_menu_border",
+      "label": "Border color",
+      "default": "#90CAF9"
+    },
+    {
+      "type": "color",
+      "id": "mega_menu_title_color",
+      "label": "Title color",
+      "default": "#0047AB"
+    },
+    {
+      "type": "color",
+      "id": "mega_menu_text_color",
+      "label": "Text color",
+      "default": "#1565C0"
+    },
+    {
+      "type": "color",
+      "id": "mega_menu_hover_bg",
+      "label": "Hover background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "mega_menu_hover_text",
+      "label": "Hover text color",
+      "default": "#0047AB"
+    },
+    {
+      "type": "header",
+      "content": "Header style"
+    },
+    {
+      "type": "color",
+      "id": "header_bg_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "BuyGreat header"
+    }
+  ]
+}
+{% endschema %}

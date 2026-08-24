@@ -1,0 +1,936 @@
+{% doc %}
+  @prompt
+    Create a fully responsive, mobile-first featured products carousel for a Shopify storefront that dynamically displays products from a merchant-selected collection. The section must not display any visible heading, title, or label.
+    
+    The layout must scroll horizontally from left to right, supporting natural touch swipe on mobile and tablet devices, and arrow-based navigation on desktop. Use smooth snapping behavior so product cards align cleanly when scrolling. The visible product count must adapt by screen size, showing four items on desktop, three on tablet, and two on mobile.
+    
+    Each product card must display a product image with lazy loading and a subtle hover zoom effect, a single-line truncated product title, a prominently styled current price, an optional crossed-out compare price when the product is discounted, and an automatically calculated savings indicator such as “Save $X”. Include an Add to Cart button that adds the item directly to the cart without redirecting the user. If a product is unavailable, the Add to Cart control must be disabled and replaced with a clear Sold Out state.
+    
+    All visual elements must be fully configurable through the Shopify theme editor. Provide controls that allow the merchant to adjust card background color, primary text color, accent color, button background color, button text color, border radius, card spacing, and shadow intensity. Include toggles to enable or disable the savings indicator, Add to Cart button, and desktop navigation arrows.
+    
+    The section must be optimized for mobile usability, hiding scrollbars visually while preserving scroll functionality, ensuring comfortable touch targets, readable text sizes, and full-width action buttons on small screens. The design must prioritize performance, accessibility, and smooth interaction, avoiding hardcoded content and ensuring compatibility with Shopify’s cart behavior and product availability logic.
+    
+    The final output must be a complete, production-ready section implementation that can be inserted into a Shopify theme and fully customized through the theme editor.
+    , Also include Title , also include padding settings, Slide settings and grid settings. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-featured-carousel-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding-top: {{ block.settings.padding_top_mobile }}px;
+    padding-bottom: {{ block.settings.padding_bottom_mobile }}px;
+    padding-left: {{ block.settings.padding_left_mobile }}px;
+    padding-right: {{ block.settings.padding_right_mobile }}px;
+  }
+
+  .ai-featured-carousel-header-{{ ai_gen_id }} {
+    margin-bottom: 24px;
+    text-align: {{ block.settings.title_alignment }};
+  }
+
+  .ai-featured-carousel-heading-{{ ai_gen_id }} {
+    color: {{ block.settings.title_color }};
+    font-size: {{ block.settings.title_size_mobile }}px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ai-featured-carousel-container-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-featured-carousel-track-{{ ai_gen_id }} {
+    display: {% if block.settings.layout_style == 'grid' %}grid{% else %}flex{% endif %};
+    {% if block.settings.layout_style == 'grid' %}
+      grid-template-columns: repeat({{ block.settings.grid_columns_mobile }}, 1fr);
+      gap: {{ block.settings.card_spacing }}px;
+    {% else %}
+      gap: {{ block.settings.card_spacing }}px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    {% endif %}
+    padding: 2px;
+  }
+
+  .ai-featured-carousel-track-{{ ai_gen_id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-featured-carousel-card-{{ ai_gen_id }} {
+    {% if block.settings.layout_style == 'slide' %}
+      flex: 0 0 calc((100% - ({{ block.settings.card_spacing }}px * {{ block.settings.slides_mobile | minus: 1 }})) / {{ block.settings.slides_mobile }});
+      scroll-snap-align: start;
+    {% endif %}
+    background-color: {{ block.settings.card_bg_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 {{ block.settings.shadow_intensity }}px {{ block.settings.shadow_intensity | times: 2 }}px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-featured-carousel-card-{{ ai_gen_id }}:hover {
+    box-shadow: 0 {{ block.settings.shadow_intensity | times: 1.5 }}px {{ block.settings.shadow_intensity | times: 3 }}px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-featured-carousel-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-featured-carousel-image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .ai-featured-carousel-card-{{ ai_gen_id }}:hover .ai-featured-carousel-image-{{ ai_gen_id }} {
+    transform: scale(1.05);
+  }
+
+  .ai-featured-carousel-content-{{ ai_gen_id }} {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+  }
+
+  .ai-featured-carousel-title-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+
+  .ai-featured-carousel-price-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .ai-featured-carousel-price-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .ai-featured-carousel-compare-price-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    opacity: 0.5;
+    font-size: 14px;
+    text-decoration: line-through;
+  }
+
+  .ai-featured-carousel-savings-{{ ai_gen_id }} {
+    color: {{ block.settings.accent_color }};
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    background-color: {{ block.settings.accent_color | color_modify: 'alpha', 0.1 }};
+    border-radius: 4px;
+  }
+
+  .ai-featured-carousel-button-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.border_radius }}px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    min-height: 44px;
+  }
+
+  .ai-featured-carousel-button-{{ ai_gen_id }}:hover:not(:disabled) {
+    background-color: {{ block.settings.button_bg_color | color_darken: 10 }};
+    transform: translateY(-1px);
+  }
+
+  .ai-featured-carousel-button-{{ ai_gen_id }}:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ai-featured-carousel-nav-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: {{ block.settings.card_bg_color }};
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+
+  .ai-featured-carousel-nav-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_bg_color }};
+  }
+
+  .ai-featured-carousel-nav-{{ ai_gen_id }}:hover svg {
+    stroke: {{ block.settings.button_text_color }};
+  }
+
+  .ai-featured-carousel-nav-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+    stroke: {{ block.settings.text_color }};
+    transition: stroke 0.3s ease;
+  }
+
+  .ai-featured-carousel-nav-prev-{{ ai_gen_id }} {
+    left: -20px;
+  }
+
+  .ai-featured-carousel-nav-next-{{ ai_gen_id }} {
+    right: -20px;
+  }
+
+  .ai-featured-carousel-empty-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.6;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-featured-carousel-{{ ai_gen_id }} {
+      padding-top: {{ block.settings.padding_top_tablet }}px;
+      padding-bottom: {{ block.settings.padding_bottom_tablet }}px;
+      padding-left: {{ block.settings.padding_left_tablet }}px;
+      padding-right: {{ block.settings.padding_right_tablet }}px;
+    }
+
+    .ai-featured-carousel-track-{{ ai_gen_id }} {
+      {% if block.settings.layout_style == 'grid' %}
+        grid-template-columns: repeat({{ block.settings.grid_columns_tablet }}, 1fr);
+      {% endif %}
+    }
+
+    .ai-featured-carousel-card-{{ ai_gen_id }} {
+      {% if block.settings.layout_style == 'slide' %}
+        flex: 0 0 calc((100% - ({{ block.settings.card_spacing }}px * {{ block.settings.slides_tablet | minus: 1 }})) / {{ block.settings.slides_tablet }});
+      {% endif %}
+    }
+
+    .ai-featured-carousel-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size_desktop }}px;
+    }
+
+    .ai-featured-carousel-title-{{ ai_gen_id }} {
+      font-size: 15px;
+    }
+
+    .ai-featured-carousel-price-{{ ai_gen_id }} {
+      font-size: 20px;
+    }
+
+    .ai-featured-carousel-button-{{ ai_gen_id }} {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .ai-featured-carousel-{{ ai_gen_id }} {
+      padding-top: {{ block.settings.padding_top_desktop }}px;
+      padding-bottom: {{ block.settings.padding_bottom_desktop }}px;
+      padding-left: {{ block.settings.padding_left_desktop }}px;
+      padding-right: {{ block.settings.padding_right_desktop }}px;
+    }
+
+    .ai-featured-carousel-track-{{ ai_gen_id }} {
+      {% if block.settings.layout_style == 'grid' %}
+        grid-template-columns: repeat({{ block.settings.grid_columns_desktop }}, 1fr);
+      {% endif %}
+    }
+
+    .ai-featured-carousel-card-{{ ai_gen_id }} {
+      {% if block.settings.layout_style == 'slide' %}
+        flex: 0 0 calc((100% - ({{ block.settings.card_spacing }}px * {{ block.settings.slides_desktop | minus: 1 }})) / {{ block.settings.slides_desktop }});
+      {% endif %}
+    }
+
+    .ai-featured-carousel-nav-{{ ai_gen_id }} {
+      {% if block.settings.layout_style == 'slide' and block.settings.show_arrows %}
+        display: flex;
+      {% endif %}
+    }
+
+    .ai-featured-carousel-content-{{ ai_gen_id }} {
+      padding: 20px;
+    }
+
+    .ai-featured-carousel-title-{{ ai_gen_id }} {
+      font-size: 16px;
+    }
+  }
+{% endstyle %}
+
+<featured-products-carousel-{{ ai_gen_id }}
+  class="ai-featured-carousel-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.show_title and block.settings.title != blank %}
+    <div class="ai-featured-carousel-header-{{ ai_gen_id }}">
+      <h2 class="ai-featured-carousel-heading-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+    </div>
+  {% endif %}
+
+  {% if block.settings.collection != blank %}
+    {% assign collection = block.settings.collection %}
+    {% if collection.products.size > 0 %}
+      <div class="ai-featured-carousel-container-{{ ai_gen_id }}">
+        {% if block.settings.layout_style == 'slide' and block.settings.show_arrows %}
+          <button
+            class="ai-featured-carousel-nav-{{ ai_gen_id }} ai-featured-carousel-nav-prev-{{ ai_gen_id }}"
+            aria-label="Previous products"
+            data-nav="prev"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+        {% endif %}
+
+        <div class="ai-featured-carousel-track-{{ ai_gen_id }}">
+          {% for product in collection.products limit: block.settings.product_limit %}
+            <div class="ai-featured-carousel-card-{{ ai_gen_id }}">
+              <a href="{{ product.url }}" class="ai-featured-carousel-image-wrapper-{{ ai_gen_id }}">
+                {% if product.featured_image %}
+                  <img
+                    src="{{ product.featured_image | image_url: width: 600 }}"
+                    alt="{{ product.featured_image.alt | escape }}"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                    class="ai-featured-carousel-image-{{ ai_gen_id }}"
+                  >
+                {% else %}
+                  <div class="ai-featured-carousel-image-{{ ai_gen_id }}">
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  </div>
+                {% endif %}
+              </a>
+
+              <div class="ai-featured-carousel-content-{{ ai_gen_id }}">
+                <a href="{{ product.url }}">
+                  <h3 class="ai-featured-carousel-title-{{ ai_gen_id }}">{{ product.title }}</h3>
+                </a>
+
+                <div class="ai-featured-carousel-price-wrapper-{{ ai_gen_id }}">
+                  <p class="ai-featured-carousel-price-{{ ai_gen_id }}">
+                    {{ product.price | money }}
+                  </p>
+
+                  {% if product.compare_at_price > product.price %}
+                    <span class="ai-featured-carousel-compare-price-{{ ai_gen_id }}">
+                      {{ product.compare_at_price | money }}
+                    </span>
+
+                    {% if block.settings.show_savings %}
+                      {% assign savings = product.compare_at_price | minus: product.price %}
+                      <span class="ai-featured-carousel-savings-{{ ai_gen_id }}">
+                        Save {{ savings | money }}
+                      </span>
+                    {% endif %}
+                  {% endif %}
+                </div>
+
+                {% if block.settings.show_add_to_cart %}
+                  {% if product.available %}
+                    <button
+                      class="ai-featured-carousel-button-{{ ai_gen_id }}"
+                      data-product-id="{{ product.id }}"
+                      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                      data-action="add-to-cart"
+                    >
+                      Add to Cart
+                    </button>
+                  {% else %}
+                    <button
+                      class="ai-featured-carousel-button-{{ ai_gen_id }}"
+                      disabled
+                    >
+                      Sold Out
+                    </button>
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if block.settings.layout_style == 'slide' and block.settings.show_arrows %}
+          <button
+            class="ai-featured-carousel-nav-{{ ai_gen_id }} ai-featured-carousel-nav-next-{{ ai_gen_id }}"
+            aria-label="Next products"
+            data-nav="next"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="ai-featured-carousel-empty-{{ ai_gen_id }}">
+        <p>This collection has no products yet.</p>
+      </div>
+    {% endif %}
+  {% else %}
+    <div class="ai-featured-carousel-empty-{{ ai_gen_id }}">
+      <p>Select a collection to display products</p>
+    </div>
+  {% endif %}
+</featured-products-carousel-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FeaturedProductsCarousel{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.track = this.querySelector('.ai-featured-carousel-track-{{ ai_gen_id }}');
+        this.prevButton = this.querySelector('[data-nav="prev"]');
+        this.nextButton = this.querySelector('[data-nav="next"]');
+        this.addToCartButtons = this.querySelectorAll('[data-action="add-to-cart"]');
+      }
+
+      connectedCallback() {
+        if (this.prevButton && this.nextButton) {
+          this.setupNavigation();
+        }
+        if (this.addToCartButtons.length > 0) {
+          this.setupAddToCart();
+        }
+      }
+
+      setupNavigation() {
+        this.prevButton.addEventListener('click', () => this.scroll('prev'));
+        this.nextButton.addEventListener('click', () => this.scroll('next'));
+      }
+
+      scroll(direction) {
+        if (!this.track) return;
+
+        const cardWidth = this.track.querySelector('.ai-featured-carousel-card-{{ ai_gen_id }}').offsetWidth;
+        const gap = {{ block.settings.card_spacing }};
+        const scrollAmount = cardWidth + gap;
+
+        if (direction === 'prev') {
+          this.track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+          this.track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+
+      setupAddToCart() {
+        this.addToCartButtons.forEach(button => {
+          button.addEventListener('click', (e) => this.handleAddToCart(e));
+        });
+      }
+
+      handleAddToCart(e) {
+        const button = e.target;
+        const variantId = button.dataset.variantId;
+        const originalText = button.textContent;
+
+        button.disabled = true;
+        button.textContent = 'Adding...';
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: variantId,
+            quantity: 1
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          button.textContent = 'Added!';
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+          }, 2000);
+
+          if (window.theme && window.theme.cart) {
+            window.theme.cart.refresh();
+          }
+
+          document.dispatchEvent(new CustomEvent('cart:updated'));
+        })
+        .catch(error => {
+          console.error('Error adding to cart:', error);
+          button.textContent = 'Error';
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+          }, 2000);
+        });
+      }
+    }
+
+    customElements.define('featured-products-carousel-{{ ai_gen_id }}', FeaturedProductsCarousel{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product carousel",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show title",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured Products"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop size",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default": "#181a17"
+    },
+    {
+      "type": "header",
+      "content": "Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "label": "Maximum products",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout style",
+      "options": [
+        {
+          "value": "slide",
+          "label": "Slide carousel"
+        },
+        {
+          "value": "grid",
+          "label": "Static grid"
+        }
+      ],
+      "default": "slide"
+    },
+    {
+      "type": "header",
+      "content": "Slide settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Only applies when layout style is set to slide carousel"
+    },
+    {
+      "type": "range",
+      "id": "slides_mobile",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Slides per view on mobile",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "slides_tablet",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "label": "Slides per view on tablet",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "slides_desktop",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "label": "Slides per view on desktop",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show navigation arrows",
+      "info": "Desktop only, slide carousel mode",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Grid settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Only applies when layout style is set to static grid"
+    },
+    {
+      "type": "select",
+      "id": "grid_columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "grid_columns_tablet",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Columns on tablet",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "grid_columns_desktop",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "label": "Columns on desktop",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Features"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_savings",
+      "label": "Show savings indicator",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_to_cart",
+      "label": "Show add to cart button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#181a17"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#00d1ff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background",
+      "default": "#00d1ff"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_spacing",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "label": "Card spacing",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "shadow_intensity",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "label": "Shadow intensity",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Mobile padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Left",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Right",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Tablet padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_tablet",
+      "min": 0,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "label": "Top",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_tablet",
+      "min": 0,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_left_tablet",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Left",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_tablet",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Right",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Desktop padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Left",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Right",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product carousel"
+    }
+  ]
+}
+{% endschema %}

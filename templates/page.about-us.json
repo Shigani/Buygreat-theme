@@ -1,0 +1,482 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-ddfb9831-1628-4c6b-8fa0-df990ecd6ce8",
+        "container_type": "container",
+        "show_page_title": false,
+        "show_breadcrumb_navigation": true,
+        "text_center": "left",
+        "padding_top": 55,
+        "padding_bottom": 50,
+        "mobile_padding_top": 25,
+        "mobile_padding_bottom": 25
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading": true,
+        "color_scheme": "background-2",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "image_with_text_xWRnUk": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_EmXLHk": {
+          "type": "caption",
+          "settings": {
+            "caption": "WHO WE ARE",
+            "text_style": "subtitle"
+          }
+        },
+        "heading_rVFBCx": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>At Electroz® we believe technology should not only meet your needs but inspire your lifestyle.</p>",
+            "heading_size": "h1"
+          }
+        },
+        "text_ikTnbm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>BuyGreat is an Australia-focused online store created for smart shoppers who value quality, affordability, and convenience.<br/>We bring together a wide range of carefully selected products including home & living, fashion, electronics, health & beauty, baby & kids, and more all in one easy-to-use online store. By working with trusted suppliers and reliable fulfilment partners, we make it easier for Australians to shop confidently online.<br/></p>",
+            "nav_check_list": false
+          }
+        },
+        "button_EfWzKN": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "https://buygreat.com.au/",
+            "button_style": "primary",
+            "button_size": "small"
+          }
+        }
+      },
+      "block_order": [
+        "caption_EmXLHk",
+        "heading_rVFBCx",
+        "text_ikTnbm",
+        "button_EfWzKN"
+      ],
+      "settings": {
+        "container_type": "container-fluid",
+        "image": "shopify://shop_images/warehouse-worker-operario-de-dep.jpg",
+        "image_card_corner_radius": 18,
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "full_width": false,
+        "make_section_full_width": true,
+        "container_box_corner_radius": 2,
+        "progress_bar_show": false,
+        "pb_title1": "HAPPY CUSTOMERS",
+        "pb_count1": "98",
+        "pb_title2": "12 YEARS OF EXPERIENCE",
+        "pb_count2": "85",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 100,
+        "padding_bottom": 110,
+        "mobile_padding_top": 60,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "counter_stats_section_xYVUwE": {
+      "type": "Counter-Stats-Section",
+      "blocks": {
+        "counter_item_MhwjQq": {
+          "type": "counter_item",
+          "settings": {
+            "customers_count": "3000+",
+            "customers_label": "Products"
+          }
+        },
+        "counter_item_FeTyMa": {
+          "type": "counter_item",
+          "disabled": true,
+          "settings": {
+            "customers_count": "1",
+            "customers_label": "Customers"
+          }
+        },
+        "counter_item_dDcmx4": {
+          "type": "counter_item",
+          "settings": {
+            "customers_count": "5",
+            "customers_label": "Team members"
+          }
+        }
+      },
+      "block_order": [
+        "counter_item_MhwjQq",
+        "counter_item_FeTyMa",
+        "counter_item_dDcmx4"
+      ],
+      "settings": {
+        "container_type": "container",
+        "enable_counter": true,
+        "padding_top": 0,
+        "padding_bottom": 95,
+        "mobile_padding_top": 50,
+        "mobile_padding_bottom": 50,
+        "color_scheme": "background-1"
+      }
+    },
+    "testimonials_2_RaNLqT": {
+      "type": "testimonials-2",
+      "blocks": {
+        "testimonial_GaTAqa": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "text": "<p>“Neonix supplements have been a game-changer for me! I feel more energized and healthier than ever. Highly recommend!”</p>",
+            "rating": "5",
+            "author_image": false,
+            "author_name": "Megan Steele",
+            "author_designation": "Verified Buyer",
+            "verified__icon": true
+          }
+        },
+        "testimonial_Ah4RJy": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "text": "<p>\"Fast shipping and great customer support. The products are high-quality. wish there were more flavor options.\"</p>",
+            "rating": "5",
+            "author_image": false,
+            "author_name": "Karen Summers",
+            "author_designation": "Verified Buyer",
+            "verified__icon": true
+          }
+        },
+        "testimonial_FTjaNB": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "text": "<p>\"Excellent service and top-notch supplements. The loyalty rewards is a great bonus. Will definitely keep ordering!\"</p>",
+            "rating": "4",
+            "author_image": false,
+            "author_name": "Darrel Austin",
+            "author_designation": "Verified Buyer",
+            "verified__icon": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_GaTAqa",
+        "testimonial_Ah4RJy",
+        "testimonial_FTjaNB"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "subtitle": "CLIENT STORIES",
+        "alignment": "left",
+        "mobile_alignment": "center",
+        "products_show_on_xl": "3",
+        "card_color_scheme": "background-1",
+        "background_fit": true,
+        "image_round_corner": true,
+        "box_shadow": true,
+        "rating_color": "#51ade5",
+        "auto_rotate": false,
+        "autoplay_time": 3,
+        "show_navigation": true,
+        "navigation_position": "top",
+        "button_background": "#000000",
+        "custom_colors_navigation": true,
+        "nav_foreground": "#ffffff",
+        "nav_background": "#00d1ff",
+        "padding_top": 95,
+        "padding_bottom": 70,
+        "mobile_padding_top": 60,
+        "mobile_padding_bottom": 30,
+        "color_scheme": "background-2"
+      }
+    },
+    "image_banner_2_hz8eQf": {
+      "type": "image-banner-2",
+      "blocks": {
+        "caption_RRJtYP": {
+          "type": "caption",
+          "settings": {
+            "caption": "WHY CHOOSE US",
+            "text_style": "subtitle",
+            "text_size": "small"
+          }
+        },
+        "heading_YVczag": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fast, Reliable, and Committed to Your Satisfaction.",
+            "heading_size": "h2"
+          }
+        },
+        "text_DHN66E": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our team consists of highly skilled professionals with extensive training and certifications, ensuring top-quality service. We've been committed to excellence since the very beginning.</p>"
+          }
+        },
+        "button_VRPnhy": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/all",
+            "button_style": "primary",
+            "button_size": "small",
+            "video_button": true,
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          }
+        }
+      },
+      "block_order": [
+        "caption_RRJtYP",
+        "heading_YVczag",
+        "text_DHN66E",
+        "button_VRPnhy"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_height": "medium",
+        "show_space_between_image": true,
+        "layout": "text_first",
+        "badge_image_enable": true,
+        "full_width": false,
+        "show_space_between_image_on_mobile": true,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "mobile_padding_top": 60,
+        "mobile_padding_bottom": 60,
+        "color_scheme": "background-1",
+        "background_gradient": ""
+      }
+    },
+    "1774629848bee1dedb": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3a87f39_bjQXxH": {
+          "type": "ai_gen_block_3a87f39",
+          "settings": {
+            "background_image": "shopify://shop_images/happy-smiling-woman-pink-shirt-sofa-home-colorful-shopping-bags-holding-credit-card-paying-online-laptop.jpg",
+            "image_position": "center center",
+            "desktop_height": 600,
+            "mobile_height": 400,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "enable_gradient": false,
+            "gradient_direction": 180,
+            "content_layout": "boxed",
+            "content_max_width": 1200,
+            "vertical_alignment": "center",
+            "text_alignment": "center",
+            "columns_desktop": 3,
+            "columns_tablet": 2,
+            "column_gap": 40,
+            "column_gap_mobile": 30,
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "padding_left": 40,
+            "padding_right": 40,
+            "padding_top_mobile": 40,
+            "padding_bottom_mobile": 40,
+            "padding_left_mobile": 20,
+            "padding_right_mobile": 20,
+            "text_color": "#ffffff",
+            "heading_size": 36,
+            "heading_size_mobile": 24,
+            "subheading_size": 16,
+            "subheading_size_mobile": 14,
+            "icon_size": 60,
+            "enable_parallax": false,
+            "enable_zoom_hover": false,
+            "enable_animations": true,
+            "column_1_enabled": true,
+            "column_1_heading": "Curated Quality Products",
+            "column_1_subheading": "We only list products that meet our standards for quality, usefulness, and value.",
+            "column_2_enabled": true,
+            "column_2_heading": "Competitive Pricing Save More",
+            "column_2_subheading": "By operating online and streamlining our supply chain, we pass the savings directly to you.",
+            "column_3_enabled": true,
+            "column_3_heading": "Trusted Australian Shipping",
+            "column_3_subheading": "Orders are shipped using reliable local courier partners.",
+            "column_4_enabled": true,
+            "column_4_heading": "Customer-First Support",
+            "column_4_subheading": "Our support team is here to help before and after your purchase.",
+            "column_5_enabled": true,
+            "column_5_heading": "Money-Back Guarantee",
+            "column_5_subheading": "100% satisfaction guaranteed"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3a87f39_bjQXxH"
+      ],
+      "settings": {}
+    },
+    "image_banner_LAGEwT": {
+      "type": "image-banner",
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "container_type": "container",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "show_filter_box": false,
+        "corner_radius": 10,
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "rich_text_C6EW4V": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yYr866": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Makes BuyGreat Different",
+            "heading_size": "h1"
+          }
+        },
+        "text_yxETW4": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>✔Curated Quality Products</strong><br/>We only list products that meet our standards for quality, usefulness, and value.<br/><strong>✔ Competitive Pricing – Save More</strong><br/>By operating online and streamlining our supply chain, we pass the savings directly to you.<br/><strong>✔ Trusted Australian Shipping</strong><br/>Orders are shipped using Australia Post and reliable local courier partners.<br/><strong>✔ Customer-First Support</strong><br/>Our support team is here to help before and after your purchase.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yYr866",
+        "text_yxETW4"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "container_type": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "rich_text_KVcTmi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MWyNYn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Fulfilment & Delivery",
+            "heading_size": "h1"
+          }
+        },
+        "text_bNFmbA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To offer a wide selection without unnecessary overheads, BuyGreat uses a modern fulfilment<br/>model that allows products to ship directly from trusted suppliers.</p><p><br/>This means:<br/>• More product variety<br/>• Better prices<br/>• Reliable Australia-wide delivery<br/>Every order is carefully processed and shipped to your door using dependable shipping partners.<br/><br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MWyNYn",
+        "text_bNFmbA"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "container_type": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "rich_text_adNVRe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mBKKx4": {
+          "type": "heading",
+          "settings": {
+            "heading": "New Section Heading",
+            "heading_size": "h1"
+          }
+        },
+        "text_c6w6yH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Add your content here. This text area supports rich formatting including bold, italic, and links.</p>"
+          }
+        },
+        "button_FALPaB": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "large"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mBKKx4",
+        "text_c6w6yH",
+        "button_FALPaB"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "container_type": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "image_with_text_xWRnUk",
+    "counter_stats_section_xYVUwE",
+    "testimonials_2_RaNLqT",
+    "image_banner_2_hz8eQf",
+    "1774629848bee1dedb",
+    "image_banner_LAGEwT",
+    "rich_text_C6EW4V",
+    "rich_text_KVcTmi",
+    "rich_text_adNVRe"
+  ]
+}

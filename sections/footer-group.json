@@ -1,0 +1,242 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "otsb_footer_7_Up7BYt": {
+      "type": "otsb-footer-7",
+      "blocks": {
+        "text_tL7fUW": {
+          "type": "text",
+          "settings": {
+            "open_by_default": false,
+            "heading_text": "ABOUT US",
+            "subtext": "<p>Buygreat is an Australian online store offering quality everyday and trending products at great prices. We work with trusted suppliers and reliable delivery partners, to ensure a smooth and secure shopping experience.</p><p>ABN: 60978102446</p>",
+            "show_social_icons": false,
+            "image_width": 150,
+            "link_image_footer": "",
+            "open_new_window": false
+          }
+        },
+        "link_list_4JkNYK": {
+          "type": "link_list",
+          "settings": {
+            "open_by_default": false,
+            "heading_menu": "MENU",
+            "menu": "main-menu",
+            "show_social_icons": false
+          }
+        },
+        "link_list_YzAWbA": {
+          "type": "link_list",
+          "settings": {
+            "open_by_default": false,
+            "heading_menu": "POLICIES",
+            "menu": "cate",
+            "show_social_icons": false
+          }
+        },
+        "text_R3tUc9": {
+          "type": "text",
+          "settings": {
+            "open_by_default": false,
+            "heading_text": "SUPPORT",
+            "subtext": "<p>We’re always happy to assist. </p><p><strong>Email:</strong><a href=\"mailto:support@buygreat.com\" target=\"_blank\"><span style=\"text-decoration:underline\">info@buygreat.com.au</span></a></p><p>Support Hours: Monday–Friday, 9am–5pm (AEST) <br/><br/></p>",
+            "show_social_icons": false,
+            "image_width": 100,
+            "link_image_footer": "",
+            "open_new_window": false
+          }
+        },
+        "link_list_8H7YAN": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "heading_menu": "Help",
+            "menu": "footer",
+            "show_social_icons": false
+          }
+        },
+        "link_list_8CLd79": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "heading_menu": "Services",
+            "menu": "footer",
+            "show_social_icons": false
+          }
+        },
+        "email_footer_xGDaJc": {
+          "type": "email_footer",
+          "settings": {
+            "open_by_default": true,
+            "heading_email": "SUBSCRIPTION",
+            "subtext_email": "<p>Subscribe For New Product Updates</p>",
+            "show_social_icons": false
+          }
+        }
+      },
+      "block_order": [
+        "text_tL7fUW",
+        "link_list_4JkNYK",
+        "link_list_YzAWbA",
+        "text_R3tUc9",
+        "link_list_8H7YAN",
+        "link_list_8CLd79",
+        "email_footer_xGDaJc"
+      ],
+      "name": "OT: Footer #7",
+      "settings": {
+        "columns_desktop": 5,
+        "show_language_selector": false,
+        "show_currency_selector": false,
+        "show_social_icons": true,
+        "payment_enable": true,
+        "custom_payment": "",
+        "show_copyright": true,
+        "add_copyright_text": "",
+        "additional_layout": "vertical",
+        "show_powered": true,
+        "enable_follow_on_shop": false,
+        "horizontal_position": "right",
+        "social_twitter_link": "",
+        "social_facebook_link": "",
+        "social_pinterest_link": "",
+        "social_instagram_link": "https://www.instagram.com/buygreataustralia?igsh=ejNhNmljaDh5Mmxt",
+        "social_tiktok_link": "",
+        "social_tumblr_link": "",
+        "social_snapchat_link": "",
+        "social_youtube_link": "",
+        "social_vimeo_link": "",
+        "social_linkedin_link": "",
+        "email_address": "",
+        "phone_number": "",
+        "colors_footer_background": "#dedede",
+        "colors_footer_heading": "#212020",
+        "colors_footer_text": "#444444",
+        "colors_footer_textlink": "#fb8500",
+        "colors_footer_line": "#f2f2f2",
+        "line_opacity": 100,
+        "top_padding": 80,
+        "bottom_padding": 40,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 28
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "about_us_2_rRygEm": {
+          "type": "about_us_2",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "image_width": 100,
+            "heading2": "Dare to Bare  Beautiful Skin.",
+            "about_information": "Neonix® was founded on the belief that skincare is more than just necessity—it's a powerful form of self-expression.",
+            "social_media": true
+          }
+        },
+        "about_us_WFDYpK": {
+          "type": "about_us",
+          "disabled": true,
+          "settings": {
+            "heading": "About us",
+            "about_information": "Lorem ipsum dolor sit amet, consectel adipisicing elit, sed do eiusmod temp incidid ut labore et dolor"
+          }
+        },
+        "image_MDe8pU": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "image": "shopify://shop_images/buygreat_Final_logo_6fbede4c-de24-4d04-829c-a49a1011cde8.png",
+            "image_width": 200,
+            "contact_address": "<p>BuyGreat is an Australia-focused online store offering quality everyday and trending products at great prices. We work with trusted suppliers and reliable delivery partners, including Australia Post, to ensure a smooth and secure shopping experience. BuyGreat — Save More.</p>",
+            "social_media": false,
+            "social_forground_color": "#022335",
+            "social_background_color": "#ffffff"
+          }
+        },
+        "link_list_PDkTHN": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "Help Center",
+            "menu": ""
+          }
+        },
+        "link_list_hhftGd": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Menu",
+            "menu": "main-menu"
+          }
+        },
+        "link_list_YJ6VGQ": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Our Policy",
+            "menu": "cate"
+          }
+        },
+        "newsletter_YnDLXX": {
+          "type": "newsletter",
+          "name": "Subscribe ",
+          "settings": {
+            "newsletter_information": "Subscribe to BuyGreat and Save on your First Order.",
+            "heading": "Subscribe"
+          }
+        },
+        "contact_info_bdVgTR": {
+          "type": "contact_info",
+          "settings": {
+            "heading": "Get in Touch",
+            "contact_address": "<p>We’re always happy to assist. </p><p><strong>Email:</strong><a href=\"mailto:support@buygreat.com\" target=\"_blank\"><span style=\"text-decoration:underline\">info@buygreat.com.au</span></a></p><p>Support Hours: Monday–Friday, 9am–5pm (AEST) <br/><br/></p>",
+            "social_media": false
+          }
+        }
+      },
+      "block_order": [
+        "about_us_2_rRygEm",
+        "about_us_WFDYpK",
+        "image_MDe8pU",
+        "link_list_PDkTHN",
+        "link_list_hhftGd",
+        "link_list_YJ6VGQ",
+        "newsletter_YnDLXX",
+        "contact_info_bdVgTR"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-a343ce79-5123-420f-8efd-48e3252818eb",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "show_divider": false,
+        "show_divider_home": false,
+        "copy_right_color_scheme": "background-1",
+        "copyright_custom_enable": true,
+        "copyright_custom_text": "<p><strong>♡</strong> Designed By <a href=\"https://themeforest.net/user/team90degree\" target=\"_blank\" title=\"https://thekamaan.com\">www.thekamaan.com</a></p>",
+        "payment_enable": true,
+        "content_alignment": "left",
+        "padding_top": 105,
+        "padding_bottom": 95,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 45
+      }
+    }
+  },
+  "order": [
+    "otsb_footer_7_Up7BYt",
+    "footer"
+  ]
+}

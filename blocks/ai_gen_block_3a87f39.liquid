@@ -1,0 +1,935 @@
+{% doc %}
+  @prompt
+    Create a fully customizable full-width image banner section for a Shopify 2.0 (Dawn-compatible) theme.
+    
+    The banner must use a full background image and include up to 5 editable content columns displayed on top of the image.
+    
+    Requirements:
+    Full-width responsive background image with adjustable height (desktop + mobile)
+    Overlay system with color, opacity, and optional gradient
+    Optional parallax scrolling effect (toggle)
+    Lazy loading and responsive image optimization
+    Multi-Column Content:
+    Support 1 to 5 columns (dynamic setting)
+    Each column must include:
+    Heading
+    Subheading/description
+    Button (label + link)
+    Optional icon/image
+    Independent controls per column:
+    Text alignment (left, center, right)
+    Vertical alignment
+    Design & Layout Controls:
+    Boxed or full-width content layout
+    Equal or custom column widths
+    Adjustable padding (top, bottom, left, right)
+    Column spacing (gap control)
+    Global or per-column text color
+    Button styles (primary, secondary, outline)
+    Responsive Behavior:
+    Desktop: up to 5 columns in a row
+    Tablet: 2–3 columns
+    Mobile: stacked single column
+    Mobile-specific spacing and font size controls
+    Conversion-Focused Features:
+    CTA buttons in each column
+    Optional scroll animations (fade/slide)
+    Hover effects (background zoom, button transitions)
+    High contrast readability for text
+    Shopify Schema Settings:
+    Background image picker
+    Overlay color & opacity controls
+    Column count (1–5)
+    Block-based columns with:
+    Heading
+    Text
+    Button label + link
+    Icon/image
+    Typography controls (font sizes)
+    Layout settings (padding, alignment, spacing)
+    Animation toggle
+    Technical Requirements:
+    Use Shopify Liquid, HTML, CSS, and minimal JavaScript
+    Follow Shopify Online Store 2.0 section architecture
+    Use CSS Grid or Flexbox
+    Ensure accessibility (ARIA labels, semantic HTML)
+    Optimize for performance and fast loading
+    Fully compatible with Dawn theme
+    Output:
+    
+    Provide a complete Shopify section file including:
+    
+    Liquid markup
+    CSS styling
+    Minimal JavaScript (if needed)
+    Full schema JSON for customization
+    
+    The design should be modern, clean, highly responsive, and optimized for conversions., remove button Links, Set the last 2 column at the center
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-banner-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+  }
+
+  .ai-banner-background-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: {{ block.settings.desktop_height }}px;
+    background-size: cover;
+    background-position: {{ block.settings.image_position }};
+    background-repeat: no-repeat;
+    {% if block.settings.enable_parallax %}
+      background-attachment: fixed;
+    {% endif %}
+  }
+
+  .ai-banner-background-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: {{ block.settings.image_position }};
+    display: block;
+  }
+
+  .ai-banner-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
+    {% if block.settings.enable_gradient %}
+      background: linear-gradient(
+        {{ block.settings.gradient_direction }}deg,
+        {{ block.settings.overlay_color }} 0%,
+        transparent 100%
+      );
+    {% endif %}
+    z-index: 1;
+  }
+
+  .ai-banner-content-wrapper-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: {{ block.settings.vertical_alignment }};
+    justify-content: center;
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_right }}px {{ block.settings.padding_bottom }}px {{ block.settings.padding_left }}px;
+  }
+
+  .ai-banner-content-inner-{{ ai_gen_id }} {
+    width: 100%;
+    {% if block.settings.content_layout == 'boxed' %}
+      max-width: {{ block.settings.content_max_width }}px;
+    {% endif %}
+  }
+
+  .ai-banner-columns-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    gap: {{ block.settings.column_gap }}px;
+    width: 100%;
+  }
+
+  .ai-banner-column-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+    {% if block.settings.enable_animations %}
+      opacity: 0;
+      transform: translateY(30px);
+      animation: ai-banner-fade-in-{{ ai_gen_id }} 0.8s ease-out forwards;
+    {% endif %}
+  }
+
+  .ai-banner-column-{{ ai_gen_id }}:nth-child(4),
+  .ai-banner-column-{{ ai_gen_id }}:nth-child(5) {
+    text-align: center;
+  }
+
+  {% if block.settings.enable_animations %}
+    @keyframes ai-banner-fade-in-{{ ai_gen_id }} {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .ai-banner-column-{{ ai_gen_id }}:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    .ai-banner-column-{{ ai_gen_id }}:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .ai-banner-column-{{ ai_gen_id }}:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    .ai-banner-column-{{ ai_gen_id }}:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+    .ai-banner-column-{{ ai_gen_id }}:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+  {% endif %}
+
+  .ai-banner-column-icon-{{ ai_gen_id }} {
+    margin-bottom: 15px;
+  }
+
+  .ai-banner-column-icon-{{ ai_gen_id }} img {
+    max-width: {{ block.settings.icon_size }}px;
+    height: auto;
+    display: inline-block;
+  }
+
+  .ai-banner-column-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    line-height: 1.2;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-banner-column-subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheading_size }}px;
+    margin: 0;
+    line-height: 1.5;
+    color: {{ block.settings.text_color }};
+    opacity: 0.9;
+  }
+
+  .ai-banner-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.desktop_height }}px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-banner-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .ai-banner-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+  }
+
+  {% if block.settings.enable_zoom_hover %}
+    .ai-banner-background-{{ ai_gen_id }} img {
+      transition: transform 0.6s ease;
+    }
+
+    .ai-banner-container-{{ ai_gen_id }}:hover .ai-banner-background-{{ ai_gen_id }} img {
+      transform: scale(1.05);
+    }
+  {% endif %}
+
+  @media screen and (max-width: 989px) {
+    .ai-banner-columns-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_tablet }}, 1fr);
+      gap: {{ block.settings.column_gap_mobile }}px;
+    }
+
+    .ai-banner-background-{{ ai_gen_id }} {
+      height: {{ block.settings.mobile_height }}px;
+    }
+
+    .ai-banner-placeholder-{{ ai_gen_id }} {
+      height: {{ block.settings.mobile_height }}px;
+    }
+
+    .ai-banner-content-wrapper-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_top_mobile }}px {{ block.settings.padding_right_mobile }}px {{ block.settings.padding_bottom_mobile }}px {{ block.settings.padding_left_mobile }}px;
+    }
+
+    .ai-banner-column-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_mobile }}px;
+    }
+
+    .ai-banner-column-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_size_mobile }}px;
+    }
+
+    {% if block.settings.enable_parallax %}
+      .ai-banner-background-{{ ai_gen_id }} {
+        background-attachment: scroll;
+      }
+    {% endif %}
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-banner-columns-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-banner-column-{{ ai_gen_id }}:nth-child(4),
+    .ai-banner-column-{{ ai_gen_id }}:nth-child(5) {
+      text-align: {{ block.settings.text_alignment }};
+    }
+  }
+{% endstyle %}
+
+<image-banner-{{ ai_gen_id }} class="ai-banner-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-banner-background-{{ ai_gen_id }}">
+    {% if block.settings.background_image %}
+      <img
+        src="{{ block.settings.background_image | image_url: width: 2400 }}"
+        srcset="
+          {{ block.settings.background_image | image_url: width: 750 }} 750w,
+          {{ block.settings.background_image | image_url: width: 1100 }} 1100w,
+          {{ block.settings.background_image | image_url: width: 1500 }} 1500w,
+          {{ block.settings.background_image | image_url: width: 2400 }} 2400w
+        "
+        sizes="100vw"
+        alt="{{ block.settings.background_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.background_image.width }}"
+        height="{{ block.settings.background_image.height }}"
+      >
+    {% else %}
+      <div class="ai-banner-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        <div class="ai-banner-empty-state-{{ ai_gen_id }}">
+          Add a background image to get started
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-banner-overlay-{{ ai_gen_id }}"></div>
+
+  <div class="ai-banner-content-wrapper-{{ ai_gen_id }}">
+    <div class="ai-banner-content-inner-{{ ai_gen_id }}">
+      <div class="ai-banner-columns-{{ ai_gen_id }}">
+        {% for i in (1..5) %}
+          {% liquid
+            assign column_enabled_key = 'column_' | append: i | append: '_enabled'
+            assign column_icon_key = 'column_' | append: i | append: '_icon'
+            assign column_heading_key = 'column_' | append: i | append: '_heading'
+            assign column_subheading_key = 'column_' | append: i | append: '_subheading'
+
+            assign column_enabled = block.settings[column_enabled_key]
+            assign column_icon = block.settings[column_icon_key]
+            assign column_heading = block.settings[column_heading_key]
+            assign column_subheading = block.settings[column_subheading_key]
+          %}
+
+          {% if column_enabled %}
+            <div class="ai-banner-column-{{ ai_gen_id }}">
+              {% if column_icon %}
+                <div class="ai-banner-column-icon-{{ ai_gen_id }}">
+                  <img
+                    src="{{ column_icon | image_url: width: 200 }}"
+                    alt="{{ column_icon.alt | escape }}"
+                    loading="lazy"
+                    width="200"
+                    height="200"
+                  >
+                </div>
+              {% endif %}
+
+              {% if column_heading != blank %}
+                <h2 class="ai-banner-column-heading-{{ ai_gen_id }}">
+                  {{ column_heading }}
+                </h2>
+              {% endif %}
+
+              {% if column_subheading != blank %}
+                <div class="ai-banner-column-subheading-{{ ai_gen_id }}">
+                  {{ column_subheading }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</image-banner-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ImageBanner{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        {% if block.settings.enable_parallax %}
+          this.setupParallax();
+        {% endif %}
+      }
+
+      setupParallax() {
+        const background = this.querySelector('.ai-banner-background-{{ ai_gen_id }}');
+        if (!background) return;
+
+        const handleScroll = () => {
+          const scrolled = window.pageYOffset;
+          const rect = this.getBoundingClientRect();
+          const elementTop = rect.top + scrolled;
+          const elementHeight = rect.height;
+          const windowHeight = window.innerHeight;
+
+          if (scrolled + windowHeight > elementTop && scrolled < elementTop + elementHeight) {
+            const offset = (scrolled - elementTop) * 0.5;
+            background.style.transform = 'translateY(' + offset + 'px)';
+          }
+        };
+
+        if (window.innerWidth > 749) {
+          window.addEventListener('scroll', handleScroll, { passive: true });
+        }
+      }
+    }
+
+    customElements.define('image-banner-{{ ai_gen_id }}', ImageBanner{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Full-width image banner",
+  "tag": null,
+  "class": "ai-banner-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "center center",
+          "label": "Center"
+        },
+        {
+          "value": "top center",
+          "label": "Top"
+        },
+        {
+          "value": "bottom center",
+          "label": "Bottom"
+        },
+        {
+          "value": "left center",
+          "label": "Left"
+        },
+        {
+          "value": "right center",
+          "label": "Right"
+        }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Desktop height",
+      "min": 300,
+      "max": 900,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Mobile height",
+      "min": 200,
+      "max": 700,
+      "step": 50,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_gradient",
+      "label": "Enable gradient overlay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "gradient_direction",
+      "label": "Gradient direction",
+      "min": 0,
+      "max": 360,
+      "step": 45,
+      "unit": "deg",
+      "default": 180
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_layout",
+      "label": "Content layout",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full width"
+        },
+        {
+          "value": "boxed",
+          "label": "Boxed"
+        }
+      ],
+      "default": "boxed"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Columns"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Columns on tablet",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap",
+      "min": 10,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "label": "Column gap mobile",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Desktop padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "label": "Left",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "label": "Right",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "label": "Left",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "label": "Right",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size desktop",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size mobile",
+      "min": 14,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size desktop",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_mobile",
+      "label": "Subheading size mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 30,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Effects"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_parallax",
+      "label": "Enable parallax scrolling",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_zoom_hover",
+      "label": "Enable zoom on hover",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animations",
+      "label": "Enable scroll animations",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "column_1_enabled",
+      "label": "Enable column 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "column_1_icon",
+      "label": "Icon or image"
+    },
+    {
+      "type": "text",
+      "id": "column_1_heading",
+      "label": "Heading",
+      "default": "Premium quality"
+    },
+    {
+      "type": "textarea",
+      "id": "column_1_subheading",
+      "label": "Description",
+      "default": "Experience the finest craftsmanship"
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "column_2_enabled",
+      "label": "Enable column 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "column_2_icon",
+      "label": "Icon or image"
+    },
+    {
+      "type": "text",
+      "id": "column_2_heading",
+      "label": "Heading",
+      "default": "Fast delivery"
+    },
+    {
+      "type": "textarea",
+      "id": "column_2_subheading",
+      "label": "Description",
+      "default": "Get your order delivered quickly"
+    },
+    {
+      "type": "header",
+      "content": "Column 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "column_3_enabled",
+      "label": "Enable column 3",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "column_3_icon",
+      "label": "Icon or image"
+    },
+    {
+      "type": "text",
+      "id": "column_3_heading",
+      "label": "Heading",
+      "default": "Secure checkout"
+    },
+    {
+      "type": "textarea",
+      "id": "column_3_subheading",
+      "label": "Description",
+      "default": "Shop with confidence and security"
+    },
+    {
+      "type": "header",
+      "content": "Column 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "column_4_enabled",
+      "label": "Enable column 4",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "column_4_icon",
+      "label": "Icon or image"
+    },
+    {
+      "type": "text",
+      "id": "column_4_heading",
+      "label": "Heading",
+      "default": "Expert support"
+    },
+    {
+      "type": "textarea",
+      "id": "column_4_subheading",
+      "label": "Description",
+      "default": "Get help from our dedicated team"
+    },
+    {
+      "type": "header",
+      "content": "Column 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "column_5_enabled",
+      "label": "Enable column 5",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "column_5_icon",
+      "label": "Icon or image"
+    },
+    {
+      "type": "text",
+      "id": "column_5_heading",
+      "label": "Heading",
+      "default": "Money-back guarantee"
+    },
+    {
+      "type": "textarea",
+      "id": "column_5_subheading",
+      "label": "Description",
+      "default": "100% satisfaction guaranteed"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Full-width image banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,163 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-2",
+        "container_type": "container",
+        "show_page_title": true,
+        "show_breadcrumb_navigation": true,
+        "text_center": "center",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mobile_padding_top": 25,
+        "mobile_padding_bottom": 25
+      }
+    },
+    "main": {
+      "type": "compare",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "padding_top": 90,
+        "padding_bottom": 60,
+        "mobile_padding_top": 60,
+        "mobile_padding_bottom": 30
+      }
+    },
+    "faq_VR4ehR": {
+      "type": "faq",
+      "blocks": {
+        "accordion_bNprRC": {
+          "type": "accordion",
+          "settings": {
+            "heading": "1. Do your products come with a warranty?",
+            "content": "<p>Yes. All products include a 12-month warranty against manufacturing defects, unless otherwise stated on the product page.</p><p>This is provided in addition to your rights under the <strong>Australian Consumer Law (ACL).</strong></p>"
+          }
+        },
+        "accordion_9yBqHc": {
+          "type": "accordion",
+          "settings": {
+            "heading": "2. What are my rights under Australian Consumer Law?",
+            "content": "<p>Under the ACL, you are entitled to a replacement or refund for a <strong>major failure, </strong>and compensation for any other reasonably foreseeable loss or damage.</p><p>You are also entitled to have goods repaired or replaced if they fail to be of acceptable quality.</p>"
+          }
+        },
+        "accordion_YTb487": {
+          "type": "accordion",
+          "settings": {
+            "heading": "3. What does your warranty cover?",
+            "content": "<p>Our warranty covers:</p><ul><li>Manufacturing faults</li><li>Products damaged in transit</li><li>Missing parts</li></ul><p>We may provide (at our discretion):</p><ul><li>Replacement parts</li><li>Repair solutions</li><li>Product replacement</li><li>Store credit or refund</li></ul>"
+          }
+        },
+        "accordion_WyKdWB": {
+          "type": "accordion",
+          "settings": {
+            "heading": "4. What is NOT covered under warranty?",
+            "content": "<p>The warranty does NOT cover:</p><ul><li>Normal wear and tear</li><li>Misuse, abuse, or improper use</li><li>Incorrect assembly or modification</li><li>Lack of proper maintenance</li><li>Cosmetic damage or packaging damage only</li><li>Accessories, consumables, or bonus items</li></ul>"
+          }
+        },
+        "accordion_fN9eyR": {
+          "type": "accordion",
+          "settings": {
+            "heading": "5. How do I make a claim?",
+            "content": "<p>To lodge a claim, you must contact us with:</p><ul><li>Order number</li><li>Detailed description of the issue</li><li>Clear photos/videos showing the fault</li><li>Images of packaging (if applicable)</li></ul><p>Claims without sufficient evidence may be rejected.</p>"
+          }
+        },
+        "accordion_Ne3rBC": {
+          "type": "accordion",
+          "settings": {
+            "heading": "7. How are refunds processed?",
+            "content": "<p>Approved refunds:</p><ul><li>Are issued to the <strong>original payment method only</strong></li><li>Cannot be redirected to another account or card</li></ul>"
+          }
+        },
+        "accordion_LEFF9p": {
+          "type": "accordion",
+          "settings": {
+            "heading": "8. What happens if my item is faulty or damaged?",
+            "content": "<p>If confirmed:</p><ul><li>We will offer repair, replacement, or refund in line with ACL</li><li>In some cases, parts may be sent instead of full replacement</li></ul><p>All cases are assessed individually.</p>"
+          }
+        },
+        "accordion_TJzbtq": {
+          "type": "accordion",
+          "settings": {
+            "heading": "9. What is your change-of-mind policy?",
+            "content": "<p>We generally do not accept change-of-mind returns, except where required by law.</p><p>If we choose to accept such a request all of the following must be met:</p><ul><li>Request submitted within 7 days of delivery</li><li>Item is unused, unopened, and in original packaging</li><li>Prior written approval is obtained from us</li><li>A minimum 15% restocking fee applies</li><li>Original shipping costs are non-refundable</li><li>Return shipping with cost is the customer’s responsibility</li><li>Additional handling or return-to-sender fees may be deducted</li></ul>"
+          }
+        },
+        "accordion_gQPHD9": {
+          "type": "accordion",
+          "settings": {
+            "heading": "10. What items are excluded from change-of-mind returns?",
+            "content": "<p>Change-of-mind returns are <strong>NOT accepted</strong> for:</p><ul><li>Opened, used, or damaged items</li><li>Health, hygiene, or personal-use products</li><li>Clearance or promotional items</li><li>Bulk or commercial orders</li><li>Items returned due to incorrect address or unclaimed delivery</li></ul>"
+          }
+        },
+        "accordion_M9T4jw": {
+          "type": "accordion",
+          "disabled": true,
+          "settings": {
+            "heading": "11. Are there any fees for approved change-of-mind returns?",
+            "content": ""
+          }
+        },
+        "accordion_kjRAFA": {
+          "type": "accordion",
+          "settings": {
+            "heading": "12. Important conditions you must follow",
+            "content": "<ul><li>Do not dispose of items before claim approval</li><li>Do not return items without authorization</li><li>Incorrect or incomplete delivery details may result in extra fees</li><li>Some products may have <strong>supplier-specific policies</strong> that override this policy</li></ul><p>Failure to comply with these conditions may result in refusal of refund, replacement, or warranty claim.<br/>If you need assistance, please contact our support team with full details of your issue via Chat on website or Email. <br/><br/>Support Email: info@buygreat.com.au</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_bNprRC",
+        "accordion_9yBqHc",
+        "accordion_YTb487",
+        "accordion_WyKdWB",
+        "accordion_fN9eyR",
+        "accordion_Ne3rBC",
+        "accordion_LEFF9p",
+        "accordion_TJzbtq",
+        "accordion_gQPHD9",
+        "accordion_M9T4jw",
+        "accordion_kjRAFA"
+      ],
+      "name": "Collapsible content",
+      "settings": {
+        "container_type": "container",
+        "caption": "GENERAL QUESTIONS HERE",
+        "heading": "Some Frequently Asked Questions.",
+        "heading_size": "h1",
+        "enable_image": true,
+        "image": "shopify://shop_images/iphone-15-pink-1-scaled.jpg",
+        "height": "large",
+        "image_position": "left",
+        "show_have_qustion": true,
+        "stl_h_q": "Still Have Questions?",
+        "sub_h_q_title": "Feel free to ask any questions you have!",
+        "btn__text": "here to help",
+        "h_t_h_button_link": "",
+        "full_width": false,
+        "color_scheme": "",
+        "mobile_image_position": "top",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "faq_VR4ehR"
+  ]
+}

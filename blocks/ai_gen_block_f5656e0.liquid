@@ -1,0 +1,325 @@
+{% doc %}
+  @prompt
+    Generate an announcement bar having logo inserting option with full controls setting. The bar should not have any texts. And make it only for mobile version. The logo should not me shown in desktop version only to be shown on mobile version. make the height of the bar according to logo.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-mobile-logo-bar-{{ ai_gen_id }} {
+    display: none;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-mobile-logo-bar-{{ ai_gen_id }} {
+      display: block;
+    }
+  }
+
+  .ai-mobile-logo-bar-container-{{ ai_gen_id }} {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: {{ block.settings.logo_alignment }};
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_horizontal }}px {{ block.settings.padding_bottom }}px {{ block.settings.padding_horizontal }}px;
+  }
+
+  .ai-mobile-logo-bar-image-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .ai-mobile-logo-bar-image-{{ ai_gen_id }} {
+    display: block;
+    width: auto;
+    height: {{ block.settings.logo_height }}px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .ai-mobile-logo-bar-placeholder-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: {{ block.settings.logo_height }}px;
+    background-color: {{ block.settings.placeholder_bg_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    position: relative;
+  }
+
+  .ai-mobile-logo-bar-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: {{ block.settings.logo_height }}px;
+    max-height: {{ block.settings.logo_height }}px;
+    opacity: 0.3;
+  }
+
+  .ai-mobile-logo-bar-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: {{ block.settings.empty_state_text_color }};
+    text-align: center;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  {% if block.settings.add_border_top %}
+    .ai-mobile-logo-bar-{{ ai_gen_id }} {
+      border-top: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    }
+  {% endif %}
+
+  {% if block.settings.add_border_bottom %}
+    .ai-mobile-logo-bar-{{ ai_gen_id }} {
+      border-bottom: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    }
+  {% endif %}
+
+  {% if block.settings.add_shadow %}
+    .ai-mobile-logo-bar-{{ ai_gen_id }} {
+      box-shadow: 0 {{ block.settings.shadow_vertical }}px {{ block.settings.shadow_blur }}px rgba(0, 0, 0, {{ block.settings.shadow_opacity }});
+    }
+  {% endif %}
+{% endstyle %}
+
+<div class="ai-mobile-logo-bar-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-mobile-logo-bar-container-{{ ai_gen_id }}">
+    {% if block.settings.logo != blank %}
+      <div class="ai-mobile-logo-bar-image-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.logo_link != blank %}
+          <a href="{{ block.settings.logo_link }}">
+            <img
+              src="{{ block.settings.logo | image_url: height: block.settings.logo_height }}"
+              alt="{{ block.settings.logo.alt | default: shop.name | escape }}"
+              class="ai-mobile-logo-bar-image-{{ ai_gen_id }}"
+              width="{{ block.settings.logo.width }}"
+              height="{{ block.settings.logo_height }}"
+              loading="lazy"
+            >
+          </a>
+        {% else %}
+          <img
+            src="{{ block.settings.logo | image_url: height: block.settings.logo_height }}"
+            alt="{{ block.settings.logo.alt | default: shop.name | escape }}"
+            class="ai-mobile-logo-bar-image-{{ ai_gen_id }}"
+            width="{{ block.settings.logo.width }}"
+            height="{{ block.settings.logo_height }}"
+            loading="lazy"
+          >
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="ai-mobile-logo-bar-placeholder-{{ ai_gen_id }}">
+        {{ 'image' | placeholder_svg_tag }}
+        <div class="ai-mobile-logo-bar-empty-state-{{ ai_gen_id }}">
+          Add your logo
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Mobile logo bar",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "url",
+      "id": "logo_link",
+      "label": "Logo link"
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "min": 20,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Logo height",
+      "default": 50
+    },
+    {
+      "type": "select",
+      "id": "logo_alignment",
+      "label": "Logo alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Bar style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding horizontal",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Border"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_border_top",
+      "label": "Add top border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "add_border_bottom",
+      "label": "Add bottom border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "header",
+      "content": "Shadow"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_shadow",
+      "label": "Add shadow",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "shadow_vertical",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Shadow vertical offset",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "shadow_blur",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Shadow blur",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "Shadow opacity",
+      "default": 0.1
+    },
+    {
+      "type": "header",
+      "content": "Placeholder style"
+    },
+    {
+      "type": "color",
+      "id": "placeholder_bg_color",
+      "label": "Placeholder background",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "empty_state_text_color",
+      "label": "Empty state text color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Placeholder border radius",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mobile logo bar"
+    }
+  ]
+}
+{% endschema %}

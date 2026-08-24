@@ -1,0 +1,297 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "color_scheme": "background-2",
+        "container_type": "container",
+        "show_page_title": false,
+        "show_breadcrumb_navigation": false,
+        "text_center": "left",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mobile_padding_top": 50,
+        "mobile_padding_bottom": 50
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading": true,
+        "color_scheme": "scheme-68712f09-164f-4499-b1c5-6cc4fc176351",
+        "padding_top": 40,
+        "padding_bottom": 35,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "faq_ej9jAX": {
+      "type": "faq",
+      "blocks": {
+        "accordion_DhXHrT": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Can I return an item if I change my mind?",
+            "content": "<p>Yes. You can request a return within <strong>14 days</strong> of receiving your order, provided the item is unused and in original packaging.</p>"
+          }
+        },
+        "accordion_NqwGey": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Who pays for return shipping?",
+            "content": "<p>•<strong> Change of mind:</strong> Customer pays return shipping<br/>• <strong>Faulty or incorrect items:</strong> We cover return shipping</p>"
+          }
+        },
+        "accordion_fCGrNM": {
+          "type": "accordion",
+          "settings": {
+            "heading": "What if my item arrives damaged or faulty?",
+            "content": "<p>Please contact us within <strong>7 days</strong> of delivery with clear photos or videos.<br/>We will offer a <strong>replacement, refund, or store credit</strong></p>"
+          }
+        },
+        "accordion_wUaYcj": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Are there items that can’t be returned?",
+            "content": "<p>Yes. For hygiene and safety reasons, the following are non-returnable unless faulty:</p><p><br/>• Personal care & beauty items<br/>• Health & wellness products<br/>• Undergarments<br/>• Clearance / final sale items</p>"
+          }
+        },
+        "accordion_DLA9jY": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How long do refunds take?",
+            "content": "<p>Once approved, refunds are processed within <strong>3–5 business days.</strong><br/>Your bank or payment provider may take additional time to reflect the funds.</p>"
+          }
+        },
+        "accordion_8fPnHw": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Can I cancel my order?",
+            "content": "<p>Orders can be cancelled within <strong>12 hours</strong> of purchase.<br/>After processing begins, cancellation may not be possible</p>"
+          }
+        },
+        "accordion_8yrQ7V": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Do you offer exchanges?",
+            "content": "<p>We do not offer direct exchanges.<br/>If eligible, please return the item and place a new order.</p>"
+          }
+        },
+        "accordion_4ftkdk": {
+          "type": "accordion",
+          "settings": {
+            "heading": "What if my order is delayed?",
+            "content": "<p>Delivery times are estimates only. Delays caused by couriers, weather, or peak periods are <strong>not grounds for refunds.</strong></p>"
+          }
+        },
+        "accordion_4Gc6cJ": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How do I start a return?",
+            "content": "<p>Email us at <strong>support@[yourdomain].com </strong>with:</p><p><br/>• Order number<br/>• Reason for return<br/>• Photos/videos (if applicable)</p><p><br/>Returns sent without approval may not be accepted</p>"
+          }
+        },
+        "accordion_iqRdQk": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Is this policy compliant with Australian law?",
+            "content": "<p>Yes. This policy follows <strong>Australian Consumer Law (ACL)</strong> and does not limit your statutory rights.<br/><br/>We offer <strong>14-day returns</strong> on eligible items</p><p><br/>• Change of mind returns are accepted within <strong>14 days of delivery</strong><br/>• Items must be <strong>unused, in original packaging</strong><br/>• Return shipping costs apply for change of mind<br/>• Faulty, damaged, or incorrect items are eligible for a <strong>refund or replacement</strong><br/>• Sale and hygiene items are <strong>non-returnable unless faulty</strong><br/></p><p>All returns must be approved before sending items back.</p><p><br/>This policy is in addition to your rights under <strong>Australian Consumer Law.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_DhXHrT",
+        "accordion_NqwGey",
+        "accordion_fCGrNM",
+        "accordion_wUaYcj",
+        "accordion_DLA9jY",
+        "accordion_8fPnHw",
+        "accordion_8yrQ7V",
+        "accordion_4ftkdk",
+        "accordion_4Gc6cJ",
+        "accordion_iqRdQk"
+      ],
+      "name": "Collapsible content",
+      "settings": {
+        "container_type": "container",
+        "caption": "GENERAL QUESTIONS HERE",
+        "heading": "Some Frequently Asked  Questions.",
+        "heading_size": "h1",
+        "enable_image": true,
+        "image": "shopify://shop_images/iphone-15-pink-1-scaled.jpg",
+        "height": "large",
+        "image_position": "left",
+        "show_have_qustion": true,
+        "stl_h_q": "Still Have Questions?",
+        "sub_h_q_title": "Feel free to ask any questions you have!",
+        "btn__text": "here to help",
+        "h_t_h_button_link": "shopify://pages/contact",
+        "full_width": false,
+        "color_scheme": "",
+        "mobile_image_position": "top",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "faq_bWCYFk": {
+      "type": "faq",
+      "blocks": {
+        "accordion_BBMjkc": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Shipping CoverageShipping Coverage",
+            "content": "<p>We currently ship <strong>Australia-wide.</strong><br/>At this time, we do not offer international shipping.<br/></p>"
+          }
+        },
+        "accordion_HQWjDU": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Shipping Carriers",
+            "content": "<p>We primarily ship orders using <strong>Australia Post.</strong><br/>In some cases, depending on the product type, size, or delivery location, we may also use<strong> trusted local courier partners</strong> to ensure faster and safer delivery.</p>"
+          }
+        },
+        "accordion_yHxz9m": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Order Processing Time",
+            "content": "<p>All orders are processed within<strong> 1–3 business days </strong>(excluding weekends and public holidays).</p><p><br/>Once your order has been processed and dispatched, you will receive a <strong>shipping confirmation email.</strong></p>"
+          }
+        },
+        "accordion_c3ycMN": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Estimated Delivery Time (Australia Post)",
+            "content": "<p>Delivery times are estimates provided by <strong>Australia Post </strong>and may vary.</p><p><br/>Typical delivery times within Australia:</p><p><br/>•<strong> Metro areas:</strong> 3–8 business days<br/>• <strong>Regional & remote areas:</strong> 5–12 business days</p><p><br/>Please note that delivery delays may occur during peak periods, public holidays, or due to weather<br/>conditions.</p>"
+          }
+        },
+        "accordion_pTPEFK": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Shipping Fees",
+            "content": "<p>We offer:</p><p><br/>• <strong>Free Shipping Australia-Wide</strong> on most products<br/>OR<br/>•<strong> Flat Rate Shipping</strong> on selected bulky or oversized items</p><p><br/>Any applicable shipping fees will be clearly displayed at checkout before payment.</p>"
+          }
+        },
+        "accordion_9FEdzx": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Order Tracking",
+            "content": "<p>Where available, tracking details will be provided via email once your order is dispatched with <strong>Australia Post.</strong></p><p><br/>Please allow<strong> 24–48 hours</strong> for tracking information to become active in the Australia Post tracking system.</p>"
+          }
+        },
+        "accordion_4Wz6Y7": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Split Shipments",
+            "content": "<p>Some orders may be shipped in <strong>multiple parcels,</strong> especially if items are sourced from different warehouses.</p><p><br/>If this happens, you may receive <strong>multiple tracking numbers.</strong></p>"
+          }
+        },
+        "accordion_8UKRNK": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Delivery Delays",
+            "content": "<p>While we work closely with Australia Post to ensure timely delivery, delays may occur due to:</p><p><br/>• Courier network congestion<br/>• Weather conditions<br/>• Public holidays<br/>• Peak shopping periods</p><p><br/>Such delays are outside of our control and do not qualify for refunds.</p>"
+          }
+        },
+        "accordion_Bnh3V9": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Incorrect Address or Failed Delivery",
+            "content": "<p>Please ensure your shipping address is accurate at checkout.</p><p><br/>We are not responsible for:</p><p><br/>• Delays caused by incorrect or incomplete addresses<br/>• Parcels returned to sender due to failed delivery attempts</p><p><br/>Reshipping fees may apply if an order needs to be sent again.</p>"
+          }
+        },
+        "accordion_9aNAKE": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Damaged, Lost, or Missing Parcels",
+            "content": "<p>If your order arrives damaged or appears to be lost in transit:</p><p><br/>• Contact us within <strong>7 days </strong>of delivery (or expected delivery date)<br/>• Provide photos (if applicable)</p><p><br/>We will work with <strong>Australia Post</strong> to investigate and arrange a <strong>replacement or refund</strong> where appropriate.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_BBMjkc",
+        "accordion_HQWjDU",
+        "accordion_yHxz9m",
+        "accordion_c3ycMN",
+        "accordion_pTPEFK",
+        "accordion_9FEdzx",
+        "accordion_4Wz6Y7",
+        "accordion_8UKRNK",
+        "accordion_Bnh3V9",
+        "accordion_9aNAKE"
+      ],
+      "name": "Collapsible content",
+      "settings": {
+        "container_type": "container",
+        "caption": "",
+        "heading": "Shipping Policy",
+        "heading_size": "h1",
+        "enable_image": true,
+        "image": "shopify://shop_images/BEST-IPHONE-SMARTWATCHES-9171-3x.jpg",
+        "height": "large",
+        "image_position": "right",
+        "show_have_qustion": true,
+        "stl_h_q": "Still Have Questions?",
+        "sub_h_q_title": "Feel free to ask any questions you have!",
+        "btn__text": "here to help",
+        "h_t_h_button_link": "shopify://pages/contact",
+        "full_width": false,
+        "color_scheme": "",
+        "mobile_image_position": "top",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "rich_text_Bhet8U": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RX3FJL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Australian Consumer Law",
+            "heading_size": "h1"
+          }
+        },
+        "text_GRFHi8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This shipping policy complies with Australian Consumer Law.<br/>Your statutory rights are not affected by this policy.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RX3FJL",
+        "text_GRFHi8"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "container_type": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "faq_ej9jAX",
+    "faq_bWCYFk",
+    "rich_text_Bhet8U"
+  ]
+}

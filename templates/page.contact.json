@@ -1,0 +1,178 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-2",
+        "container_type": "container",
+        "show_page_title": false,
+        "show_breadcrumb_navigation": true,
+        "text_center": "left",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mobile_padding_top": 25,
+        "mobile_padding_bottom": 25
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading": true,
+        "color_scheme": "inverse",
+        "padding_top": 55,
+        "padding_bottom": 95,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "blocks": {
+        "contact_list_rfjPHg": {
+          "type": "contact_list",
+          "disabled": true,
+          "settings": {
+            "heading": "Visit us:",
+            "text": "<h5>Sydney road, Billboard Street 2219-11C</h5>"
+          }
+        },
+        "contact_list_wXkEPV": {
+          "type": "contact_list",
+          "settings": {
+            "heading": "Get in Touch",
+            "text": "<p>Have a question or need help? We’re always happy to assist. </p><p><strong>Support Hours:</strong> </p><p>Monday–Friday, 9am–5pm (AEST) </p>"
+          }
+        },
+        "contact_list_FM3LfA": {
+          "type": "contact_list",
+          "disabled": true,
+          "settings": {
+            "heading": "Phone:",
+            "text": "<p> <strong> (372) 587-2335 </strong> <br/> (372) 555-4665</p>"
+          }
+        },
+        "contact_list_XLUy64": {
+          "type": "contact_list",
+          "disabled": true,
+          "settings": {
+            "heading": "Call us:",
+            "text": "<h5>+1 (880) 567 891 505</h5>"
+          }
+        },
+        "contact_list_eCmbxn": {
+          "type": "contact_list",
+          "disabled": true,
+          "settings": {
+            "heading": "We are open:",
+            "text": "<h5>Monday - Friday: 8:00-20:00</h5>"
+          }
+        }
+      },
+      "block_order": [
+        "contact_list_rfjPHg",
+        "contact_list_wXkEPV",
+        "contact_list_FM3LfA",
+        "contact_list_XLUy64",
+        "contact_list_eCmbxn"
+      ],
+      "settings": {
+        "heading": "Keep In Touch with Us",
+        "description": "<p>We do not sell product from our corporate headquarters in New York City. If you want to visit please reach out to our customer service team first.</p>",
+        "color_scheme": "background-1",
+        "container_type": "container",
+        "full_width": false,
+        "heading_tag": "h1",
+        "heading_size": "h1",
+        "alignment": "center",
+        "button_type": "primary",
+        "form_color_scheme": "scheme-a343ce79-5123-420f-8efd-48e3252818eb",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "mobile_padding_top": 55,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "1649317856167b9ecf": {
+      "type": "google-map",
+      "disabled": true,
+      "settings": {
+        "container_type": "container",
+        "color_scheme": "background-1",
+        "image_height": "small",
+        "map": "<div style=\"width: 100%\"><iframe width=\"100%\" height=\"600\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.com/maps?width=100%25&height=600&hl=en&q=usa+(My%20Business%20Name)&t=&z=12&ie=UTF8&iwloc=B&output=embed\"><a href=\"https://www.gps.ie/\">gps vehicle tracker</a></iframe></div>",
+        "padding_top": 0,
+        "padding_bottom": 95,
+        "mobile_padding_top": 60,
+        "mobile_padding_bottom": 55
+      }
+    },
+    "text_with_icons_3mX6Dz": {
+      "type": "text-with-icons",
+      "blocks": {
+        "feature_qDjjHk": {
+          "type": "feature",
+          "settings": {
+            "icon_enable": true,
+            "icon": "dollar",
+            "heading": "<p>MONEY BACK</p>",
+            "text": "30 days money back guarantee"
+          }
+        },
+        "feature_Ly8XWy": {
+          "type": "feature",
+          "settings": {
+            "icon_enable": true,
+            "icon": "bag",
+            "heading": "<p>FREE SHIPPING</p>",
+            "text": "On all orders over $75.00"
+          }
+        },
+        "feature_MbkTAy": {
+          "type": "feature",
+          "settings": {
+            "icon_enable": true,
+            "icon": "sun",
+            "heading": "<p>BEST SUPPORT</p>",
+            "text": "Team always ready for you"
+          }
+        }
+      },
+      "block_order": [
+        "feature_qDjjHk",
+        "feature_Ly8XWy",
+        "feature_MbkTAy"
+      ],
+      "disabled": true,
+      "settings": {
+        "column": "3",
+        "content_alignment": "left",
+        "icon_position": "left",
+        "color_scheme": "",
+        "border_show": true,
+        "border_color": "#e7e7e7",
+        "padding_top": 0,
+        "padding_bottom": 70,
+        "mobile_padding_top": 45,
+        "mobile_padding_bottom": 45
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "form",
+    "1649317856167b9ecf",
+    "text_with_icons_3mX6Dz"
+  ]
+}

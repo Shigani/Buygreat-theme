@@ -1,0 +1,248 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-2",
+        "show_collection_title": true,
+        "show_breadcrumbs": true,
+        "show_collection_description": true,
+        "content_align": "left",
+        "show_collection_image": false,
+        "height": "small",
+        "content_overlap_on_image": true,
+        "image_overlay_opacity": 0,
+        "full_width": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "mobile_padding_top": 25,
+        "mobile_padding_bottom": 25
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "container_type": "container-fluid",
+        "color_scheme": "background-1",
+        "products_per_page": 100,
+        "product_column": "4",
+        "product_column_on_mobile": false,
+        "product_view_switcher": false,
+        "icon_color": "#1f0f9a",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "checked_icon_color": "#181a17",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_title": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_product_rating": true,
+        "show_badges": true,
+        "badge_position": "top-left",
+        "show_cart_button": true,
+        "cart_button_positon": "bottom_center",
+        "show_countdown": false,
+        "timer_color_scheme": "accent-1",
+        "place_timer_on_image": true,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "mobile_padding_top": 65,
+        "mobile_padding_bottom": 60
+      }
+    },
+    "collection_list_MY84iY": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_pNNTjd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accessories"
+          }
+        },
+        "featured_collection_qgqknq": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "speaker-audio"
+          }
+        },
+        "featured_collection_gT7aDi": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "camera-photo"
+          }
+        },
+        "featured_collection_zT8MTr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "headphones"
+          }
+        },
+        "featured_collection_maFQqg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "laptop-computer"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_pNNTjd",
+        "featured_collection_qgqknq",
+        "featured_collection_gT7aDi",
+        "featured_collection_zT8MTr",
+        "featured_collection_maFQqg"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Carry Genuine  Products",
+        "heading_size": "h1",
+        "subtitle": "SHOP BY CATEGORY",
+        "alignment": "center",
+        "container_type": "container",
+        "color_scheme": "background-2",
+        "collection_card_style": "standard",
+        "image_ratio": "square",
+        "card_corner": 15,
+        "product_count": true,
+        "show_view_all": false,
+        "card_color_scheme": "",
+        "card_inner_padding": "none",
+        "layout": "standard",
+        "column": "5",
+        "mobile_column": "2",
+        "title_position": "full--center",
+        "collection_show_content_below": true,
+        "content_position_without_image_below": "center",
+        "padding_top": 95,
+        "padding_bottom": 50,
+        "mobile_padding_top": 50,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "featured_collection_aiQkEC": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "main_heading": "You May Also Like",
+        "heading_size": "h1",
+        "subtitle": "ONLY FOR YOUR",
+        "alignment": "left",
+        "mobile_alignment": "center",
+        "collection": "accessories",
+        "image_ratio": "adapt",
+        "image_round_corner": true,
+        "show_secondary_image": true,
+        "show_title": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_product_rating": true,
+        "show_badges": true,
+        "badge_position": "top-left",
+        "show_cart_button": true,
+        "cart_button_style": "style2",
+        "cart_button_positon": "bottom_center",
+        "show_countdown": false,
+        "timer_color_scheme": "",
+        "place_timer_on_image": false,
+        "color_swatches": false,
+        "products_to_show": 8,
+        "products_show_on_xl": "4",
+        "products_show_on_sm": "2",
+        "slider_enable": true,
+        "auto_rotate": true,
+        "autoplay_time": 3,
+        "show_navigation": true,
+        "navigation_button_style": "round",
+        "navigation_position": "top",
+        "button_background": "#121212",
+        "button_text_color": "#ffffff",
+        "custom_colors_navigation": true,
+        "nav_foreground": "#ffffff",
+        "nav_background": "#00d1ff",
+        "show_view_all": false,
+        "button_label": "View all",
+        "button_style": "primary",
+        "button_size": "large",
+        "padding_top": 90,
+        "padding_bottom": 95,
+        "mobile_padding_top": 50,
+        "mobile_padding_bottom": 50,
+        "color_scheme": "accent-2",
+        "custom_colors": false,
+        "foreground": "#121212",
+        "background": "#ffffff"
+      }
+    },
+    "lookbook_ikgAgd": {
+      "type": "lookbook",
+      "blocks": {
+        "look_MkKXJc": {
+          "type": "look",
+          "settings": {
+            "product": "iphone-14-pro-max",
+            "quick_shop": true,
+            "hotspot_x": 44,
+            "hotspot_y": 38,
+            "background_1": "#ffffff",
+            "background_2_gradient": "linear-gradient(180deg, rgba(0, 209, 255, 1), rgba(0, 209, 255, 1) 100%)"
+          }
+        },
+        "look_PtUAhf": {
+          "type": "look",
+          "settings": {
+            "product": "airpods-pro-white",
+            "quick_shop": true,
+            "hotspot_x": 76,
+            "hotspot_y": 34,
+            "background_1": "#ffffff",
+            "background_2_gradient": "linear-gradient(180deg, rgba(0, 209, 255, 1), rgba(0, 209, 255, 1) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "look_MkKXJc",
+        "look_PtUAhf"
+      ],
+      "disabled": true,
+      "settings": {
+        "page_width": "fixed",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "heading": "<p>Choose Your Own Style.</p>",
+        "text": "<p>We sustainably and ethically source our ingredients, to create clean and sustainable products</p>",
+        "button_label": "View products",
+        "button_link": "shopify://collections/cellphone",
+        "button_style": "primary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "full_width": false,
+        "round_corner": true,
+        "color_scheme": "background-2",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "collection_list_MY84iY",
+    "featured_collection_aiQkEC",
+    "lookbook_ikgAgd"
+  ]
+}

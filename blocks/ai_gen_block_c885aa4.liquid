@@ -1,0 +1,385 @@
+{% doc %}
+  @prompt
+    Create a filter modification for product collections that automatically hides the current parent category from the Product Type filter and shows only sub-categories. For example, when viewing the Furniture collection, hide "Furniture" from the filter options and display only child categories like Chairs, Tables, Sofas, etc. The code should dynamically detect the current collection and filter accordingly.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% liquid
+  assign current_collection_handle = collection.handle
+  assign current_collection_title = collection.title
+  assign all_product_types = collection.all_products_count | times: 0 | plus: 0
+%}
+
+{% style %}
+  .ai-filter-modifier-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+  }
+
+  .ai-filter-modifier__container-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.padding }}px;
+  }
+
+  .ai-filter-modifier__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.spacing }}px 0;
+  }
+
+  .ai-filter-modifier__list-{{ ai_gen_id }} {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.item_spacing }}px;
+  }
+
+  .ai-filter-modifier__item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ai-filter-modifier__checkbox-{{ ai_gen_id }} {
+    width: {{ block.settings.checkbox_size }}px;
+    height: {{ block.settings.checkbox_size }}px;
+    cursor: pointer;
+    accent-color: {{ block.settings.accent_color }};
+  }
+
+  .ai-filter-modifier__label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.label_size }}px;
+    color: {{ block.settings.text_color }};
+    cursor: pointer;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ai-filter-modifier__count-{{ ai_gen_id }} {
+    font-size: {{ block.settings.count_size }}px;
+    color: {{ block.settings.count_color }};
+    opacity: 0.7;
+  }
+
+  .ai-filter-modifier__empty-{{ ai_gen_id }} {
+    font-size: {{ block.settings.label_size }}px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.6;
+    font-style: italic;
+    padding: 10px 0;
+  }
+
+  .ai-filter-modifier__item-{{ ai_gen_id }}--hidden {
+    display: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-filter-modifier__container-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding | times: 0.8 }}px;
+    }
+
+    .ai-filter-modifier__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+    }
+
+    .ai-filter-modifier__label-{{ ai_gen_id }} {
+      font-size: {{ block.settings.label_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<collection-filter-modifier-{{ ai_gen_id }}
+  class="ai-filter-modifier-{{ ai_gen_id }}"
+  data-collection-handle="{{ current_collection_handle }}"
+  data-collection-title="{{ current_collection_title }}"
+  data-parent-category="{{ block.settings.parent_category_name }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-filter-modifier__container-{{ ai_gen_id }}">
+    {% if block.settings.show_title %}
+      <h3 class="ai-filter-modifier__title-{{ ai_gen_id }}">
+        {{ block.settings.filter_title }}
+      </h3>
+    {% endif %}
+
+    <ul class="ai-filter-modifier__list-{{ ai_gen_id }}" id="ai-filter-list-{{ ai_gen_id }}">
+      {% assign product_types = collection.all_products | map: 'type' | uniq | sort %}
+      
+      {% if product_types.size > 0 %}
+        {% for product_type in product_types %}
+          {% if product_type != blank %}
+            {% assign type_count = 0 %}
+            {% for product in collection.all_products %}
+              {% if product.type == product_type %}
+                {% assign type_count = type_count | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+
+            {% assign should_hide = false %}
+            {% if block.settings.auto_hide_parent %}
+              {% assign type_lower = product_type | downcase %}
+              {% assign collection_lower = current_collection_title | downcase %}
+              {% if type_lower == collection_lower %}
+                {% assign should_hide = true %}
+              {% endif %}
+            {% endif %}
+
+            <li
+              class="ai-filter-modifier__item-{{ ai_gen_id }} {% if should_hide %}ai-filter-modifier__item-{{ ai_gen_id }}--hidden{% endif %}"
+              data-product-type="{{ product_type | downcase }}"
+            >
+              <input
+                type="checkbox"
+                id="ai-filter-{{ ai_gen_id }}-{{ product_type | handle }}"
+                class="ai-filter-modifier__checkbox-{{ ai_gen_id }}"
+                value="{{ product_type }}"
+                data-filter-type="product-type"
+              >
+              <label
+                for="ai-filter-{{ ai_gen_id }}-{{ product_type | handle }}"
+                class="ai-filter-modifier__label-{{ ai_gen_id }}"
+              >
+                <span>{{ product_type }}</span>
+                {% if block.settings.show_count %}
+                  <span class="ai-filter-modifier__count-{{ ai_gen_id }}">({{ type_count }})</span>
+                {% endif %}
+              </label>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <li class="ai-filter-modifier__empty-{{ ai_gen_id }}">
+          No product types available
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+</collection-filter-modifier-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CollectionFilterModifier{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.collectionHandle = this.dataset.collectionHandle;
+        this.collectionTitle = this.dataset.collectionTitle;
+        this.parentCategory = this.dataset.parentCategory;
+      }
+
+      connectedCallback() {
+        this.checkboxes = this.querySelectorAll('.ai-filter-modifier__checkbox-{{ ai_gen_id }}');
+        this.setupEventListeners();
+        this.applyUrlFilters();
+      }
+
+      setupEventListeners() {
+        this.checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener('change', () => {
+            this.handleFilterChange();
+          });
+        });
+      }
+
+      applyUrlFilters() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const filterParam = urlParams.get('filter.p.product_type');
+        
+        if (filterParam) {
+          const selectedTypes = filterParam.split(',').map(t => t.toLowerCase());
+          
+          this.checkboxes.forEach((checkbox) => {
+            const typeValue = checkbox.value.toLowerCase();
+            if (selectedTypes.includes(typeValue)) {
+              checkbox.checked = true;
+            }
+          });
+        }
+      }
+
+      handleFilterChange() {
+        const selectedTypes = Array.from(this.checkboxes)
+          .filter(cb => cb.checked)
+          .map(cb => cb.value);
+
+        const url = new URL(window.location);
+        
+        if (selectedTypes.length > 0) {
+          url.searchParams.set('filter.p.product_type', selectedTypes.join(','));
+        } else {
+          url.searchParams.delete('filter.p.product_type');
+        }
+
+        window.location.href = url.toString();
+      }
+    }
+
+    customElements.define('collection-filter-modifier-{{ ai_gen_id }}', CollectionFilterModifier{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product type filter",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Filter settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show filter title",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "filter_title",
+      "label": "Filter title",
+      "default": "Product type"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_hide_parent",
+      "label": "Auto-hide parent category",
+      "info": "Automatically hides the product type that matches the collection name",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "parent_category_name",
+      "label": "Manual parent category",
+      "info": "Optional: Manually specify a category to hide (e.g., 'Furniture'). Leave blank to use auto-detection."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_count",
+      "label": "Show product count",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#181a17"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#00d1ff"
+    },
+    {
+      "type": "color",
+      "id": "count_color",
+      "label": "Count",
+      "default": "#181a17"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Title spacing",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "min": 5,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Item spacing",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "count_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Count size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "checkbox_size",
+      "min": 14,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Checkbox size",
+      "default": 18
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product type filter"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1082 @@
+{% doc %}
+  @prompt
+    Create a fully responsive, mobile-first featured products carousel for a Shopify storefront that dynamically displays products from a merchant-selected collection. The section must not display any visible heading, title, or label.
+    
+    The layout must scroll horizontally from left to right, supporting natural touch swipe on mobile and tablet devices, and arrow-based navigation on desktop. Use smooth snapping behavior so product cards align cleanly when scrolling. The visible product count must adapt by screen size, showing four items on desktop, three on tablet, and two on mobile. The carousel should have a equal space from both ends. Provide a customization for it like left and rigth paddings to minimize or maximize.  
+    
+    Each product card must display a product image with lazy loading and a subtle hover zoom effect, a single-line truncated product title, a prominently styled current price, an optional crossed-out compare price when the product is discounted, and an automatically calculated savings indicator such as “Save $X”. Include an Add to Cart button that adds the item directly to the cart without redirecting the user. If a product is unavailable, the Add to Cart control must be disabled and replaced with a clear Sold Out state.
+    
+    All visual elements must be fully configurable through the Shopify theme editor. Provide controls that allow the merchant to adjust card background color, primary text color, accent color, button background color, button text color, border radius, card spacing, and shadow intensity. Include toggles to enable or disable the savings indicator, Add to Cart button, and desktop navigation arrows.
+    
+    The section must be optimized for mobile usability, hiding scrollbars visually while preserving scroll functionality, ensuring comfortable touch targets, readable text sizes, and full-width action buttons on small screens. The design must prioritize performance, accessibility, and smooth interaction, avoiding hardcoded content and ensuring compatibility with Shopify’s cart behavior and product availability logic.
+    
+    The final output must be a complete, production-ready section implementation that can be inserted into a Shopify theme and fully customized through the theme editor.
+    Also include: 
+    Dynamic collection-based products:
+    
+    Merchant selects a collection from which up to 20 products display.
+    
+    The visible product count adapts by screen size:
+    
+    Desktop: configurable number of columns (default 4)
+    
+    Tablet: 3 columns
+    
+    Mobile: configurable number of columns (default 2)
+    
+    No visible heading/title/label in the UI.
+    
+    Product Card Settings (configurable in theme editor):
+    
+    Show/hide product title
+    
+    Show/hide product price
+    
+    Show/hide product vendor
+    
+    Show/hide product rating (placeholder or integrated)
+    
+    Show/hide badges (e.g., Sale, New)
+    
+    Grid Settings:
+    
+    Maximum number of products shown (up to 20)
+    
+    Number of columns on desktop and mobile (configurable)
+    
+    Slider Settings:
+    
+    Auto-rotate slider toggle (on/off)
+    
+    Slide interval in seconds (configurable)
+    
+    Navigation arrows toggle for desktop and mobile
+    
+    Padding Settings:
+    
+    Top and bottom padding configurable in pixels
+    
+    Color Settings:
+    
+    Card background color
+    
+    Primary text color
+    
+    Accent color
+    
+    Button background color
+    
+    Button text color
+    
+    Other styling:
+    
+    Card border radius configurable
+    
+    Card spacing configurable
+    
+    Shadow intensity configurable
+    
+    Add to Cart Button:
+    
+    Displayed per product if enabled
+    
+    Adds product directly to cart via AJAX without redirect
+    
+    Disabled and replaced with “Sold Out” if product unavailable
+    
+    Product Image:
+    
+    Lazy loading enabled
+    
+    Subtle hover zoom effect
+    
+    Pricing display:
+    
+    Shows current price prominently
+    
+    Shows crossed-out compare price if discounted
+    
+    Shows savings indicator like “Save $X” if enabled
+    
+    Carousel Behavior:
+    
+    Horizontal scroll with CSS scroll snapping
+    
+    Supports natural touch swipe on mobile/tablet
+    
+    Arrow-based navigation on desktop if enabled
+    
+    Scrollbars visually hidden but scroll functional
+    
+    Smooth scrolling animation
+    
+    Accessibility:
+    
+    Proper aria-labels, keyboard focus, and roles for screen readers
+    
+    Custom CSS option:
+    
+    Merchant can add custom CSS via theme editor textarea
+    
+    Performance:
+    
+    Minimal dependencies, optimized for fast loading and interaction
+    
+    Output:
+    
+    Complete production-ready Shopify Liquid section code with embedded CSS and JS
+    
+    Schema settings covering all controls above for Shopify theme editor customization, Also Include Title, Create a fully responsive, mobile-first featured products carousel for a Shopify storefront that dynamically displays products from a merchant-selected collection. The section must not display any visible heading, title, or label.
+    
+    The layout must scroll horizontally from left to right, supporting natural touch swipe on mobile and tablet devices, and arrow-based navigation on desktop. Use smooth snapping behavior so product cards align cleanly when scrolling. The visible product count must adapt by screen size, showing four items on desktop, three on tablet, and two on mobile. The carousel should have a equal space from both ends. Also include controls for it. 
+    
+    Each product card must display a product image with lazy loading and a subtle hover zoom effect, a single-line truncated product title, a prominently styled current price, an optional crossed-out compare price when the product is discounted, and an automatically calculated savings indicator such as “Save $X”. Include an Add to Cart button that adds the item directly to the cart without redirecting the user. If a product is unavailable, the Add to Cart control must be disabled and replaced with a clear Sold Out state.
+    
+    All visual elements must be fully configurable through the Shopify theme editor. Provide controls that allow the merchant to adjust card background color, primary text color, accent color, button background color, button text color, border radius, card spacing, and shadow intensity. Include toggles to enable or disable the savings indicator, Add to Cart button, and desktop navigation arrows.
+    
+    The section must be optimized for mobile usability, hiding scrollbars visually while preserving scroll functionality, ensuring comfortable touch targets, readable text sizes, and full-width action buttons on small screens. The design must prioritize performance, accessibility, and smooth interaction, avoiding hardcoded content and ensuring compatibility with Shopify’s cart behavior and product availability logic.
+    
+    The final output must be a complete, production-ready section implementation that can be inserted into a Shopify theme and fully customized through the theme editor.
+    Also include: 
+    Dynamic collection-based products:
+    
+    Merchant selects a collection from which up to 20 products display.
+    
+    The visible product count adapts by screen size:
+    
+    Desktop: configurable number of columns (default 4)
+    
+    Tablet: 3 columns
+    
+    Mobile: configurable number of columns (default 2)
+    
+    No visible heading/title/label in the UI.
+    
+    Product Card Settings (configurable in theme editor):
+    
+    Show/hide product title
+    
+    Show/hide product price
+    
+    Show/hide product vendor
+    
+    Show/hide product rating (placeholder or integrated)
+    
+    Show/hide badges (e.g., Sale, New)
+    
+    Grid Settings:
+    
+    Maximum number of products shown (up to 20)
+    
+    Number of columns on desktop and mobile (configurable)
+    
+    Slider Settings:
+    
+    Auto-rotate slider toggle (on/off)
+    
+    Slide interval in seconds (configurable)
+    
+    Navigation arrows toggle for desktop and mobile
+    
+    Padding Settings:
+    
+    Top and bottom padding configurable in pixels
+    
+    Color Settings:
+    
+    Card background color
+    
+    Primary text color
+    
+    Accent color
+    
+    Button background color
+    
+    Button text color
+    
+    Other styling:
+    
+    Card border radius configurable
+    
+    Card spacing configurable
+    
+    Shadow intensity configurable
+    
+    Add to Cart Button:
+    
+    Displayed per product if enabled
+    
+    Adds product directly to cart via AJAX without redirect
+    
+    Disabled and replaced with “Sold Out” if product unavailable
+    
+    Product Image:
+    
+    Lazy loading enabled
+    
+    Subtle hover zoom effect
+    
+    Pricing display:
+    
+    Shows current price prominently
+    
+    Shows crossed-out compare price if discounted
+    
+    Shows savings indicator like “Save $X” if enabled
+    
+    Carousel Behavior:
+    
+    Horizontal scroll with CSS scroll snapping
+    
+    Supports natural touch swipe on mobile/tablet
+    
+    Arrow-based navigation on desktop if enabled
+    
+    Scrollbars visually hidden but scroll functional
+    
+    Smooth scrolling animation
+    
+    Accessibility:
+    
+    Proper aria-labels, keyboard focus, and roles for screen readers
+    
+    Custom CSS option:
+    
+    Merchant can add custom CSS via theme editor textarea
+    
+    Performance:
+    
+    Minimal dependencies, optimized for fast loading and interaction
+    
+    Output:
+    
+    Complete production-ready Shopify Liquid section code with embedded CSS and JS
+    
+    Schema settings covering all controls above for Shopify theme editor customization, Also Include Title
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% liquid
+  assign collection = block.settings.collection
+  assign max_products = block.settings.max_products
+  assign desktop_columns = block.settings.desktop_columns
+  assign mobile_columns = block.settings.mobile_columns
+  assign auto_rotate = block.settings.auto_rotate
+  assign slide_interval = block.settings.slide_interval
+  assign show_arrows_desktop = block.settings.show_arrows_desktop
+  assign show_arrows_mobile = block.settings.show_arrows_mobile
+  assign show_title = block.settings.show_title
+  assign show_price = block.settings.show_price
+  assign show_vendor = block.settings.show_vendor
+  assign show_rating = block.settings.show_rating
+  assign show_badges = block.settings.show_badges
+  assign show_savings = block.settings.show_savings
+  assign show_add_to_cart = block.settings.show_add_to_cart
+  assign card_bg_color = block.settings.card_bg_color
+  assign text_color = block.settings.text_color
+  assign accent_color = block.settings.accent_color
+  assign button_bg_color = block.settings.button_bg_color
+  assign button_text_color = block.settings.button_text_color
+  assign border_radius = block.settings.border_radius
+  assign card_spacing = block.settings.card_spacing
+  assign shadow_intensity = block.settings.shadow_intensity
+  assign padding_top = block.settings.padding_top
+  assign padding_bottom = block.settings.padding_bottom
+  assign container_padding_left = block.settings.container_padding_left
+  assign container_padding_right = block.settings.container_padding_right
+%}
+
+{% style %}
+  .ai-carousel-{{ai_gen_id}} {
+    display: block;
+    width: 100%;
+    padding: {{ padding_top }}px 0 {{ padding_bottom }}px 0;
+    overflow: hidden;
+  }
+
+  .ai-carousel-container-{{ai_gen_id}} {
+    position: relative;
+    width: 100%;
+    padding-left: {{ container_padding_left }}px;
+    padding-right: {{ container_padding_right }}px;
+  }
+
+  .ai-carousel-title-{{ai_gen_id}} {
+    margin: 0 0 24px;
+    color: {{ text_color }};
+    text-align: center;
+  }
+
+  .ai-carousel-wrapper-{{ai_gen_id}} {
+    position: relative;
+  }
+
+  .ai-carousel-track-{{ai_gen_id}} {
+    display: flex;
+    gap: {{ card_spacing }}px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .ai-carousel-track-{{ai_gen_id}}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-carousel-card-{{ai_gen_id}} {
+    flex: 0 0 calc((100% - ({{ card_spacing }}px * ({{ mobile_columns }} - 1))) / {{ mobile_columns }});
+    scroll-snap-align: start;
+    background-color: {{ card_bg_color }};
+    border-radius: {{ border_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 {{ shadow_intensity }}px {{ shadow_intensity | times: 2 }}px rgba(0, 0, 0, {{ shadow_intensity | times: 0.02 }});
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-carousel-card-{{ai_gen_id}}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 {{ shadow_intensity | times: 1.5 }}px {{ shadow_intensity | times: 3 }}px rgba(0, 0, 0, {{ shadow_intensity | times: 0.03 }});
+  }
+
+  .ai-carousel-image-wrapper-{{ai_gen_id}} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-carousel-image-{{ai_gen_id}} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .ai-carousel-card-{{ai_gen_id}}:hover .ai-carousel-image-{{ai_gen_id}} {
+    transform: scale(1.05);
+  }
+
+  .ai-carousel-image-placeholder-{{ai_gen_id}} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-carousel-image-placeholder-{{ai_gen_id}} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-carousel-badges-{{ai_gen_id}} {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 2;
+  }
+
+  .ai-carousel-badge-{{ai_gen_id}} {
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-carousel-badge-sale-{{ai_gen_id}} {
+    background-color: {{ accent_color }};
+    color: #ffffff;
+  }
+
+  .ai-carousel-badge-soldout-{{ai_gen_id}} {
+    background-color: #666666;
+    color: #ffffff;
+  }
+
+  .ai-carousel-content-{{ai_gen_id}} {
+    padding: 16px;
+  }
+
+  .ai-carousel-vendor-{{ai_gen_id}} {
+    font-size: 12px;
+    color: {{ text_color }};
+    opacity: 0.6;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-carousel-product-title-{{ai_gen_id}} {
+    font-size: 14px;
+    font-weight: 500;
+    color: {{ text_color }};
+    margin: 0 0 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ai-carousel-product-title-{{ai_gen_id}} a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .ai-carousel-rating-{{ai_gen_id}} {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: {{ accent_color }};
+  }
+
+  .ai-carousel-price-wrapper-{{ai_gen_id}} {
+    margin-bottom: 12px;
+  }
+
+  .ai-carousel-price-{{ai_gen_id}} {
+    font-size: 18px;
+    font-weight: 600;
+    color: {{ text_color }};
+  }
+
+  .ai-carousel-compare-price-{{ai_gen_id}} {
+    font-size: 14px;
+    color: {{ text_color }};
+    opacity: 0.5;
+    text-decoration: line-through;
+    margin-left: 8px;
+  }
+
+  .ai-carousel-savings-{{ai_gen_id}} {
+    display: inline-block;
+    font-size: 12px;
+    color: {{ accent_color }};
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  .ai-carousel-add-to-cart-{{ai_gen_id}} {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: {{ button_bg_color }};
+    color: {{ button_text_color }};
+    border: none;
+    border-radius: {{ border_radius }}px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-carousel-add-to-cart-{{ai_gen_id}}:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .ai-carousel-add-to-cart-{{ai_gen_id}}:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ai-carousel-arrow-{{ai_gen_id}} {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background-color: {{ card_bg_color }};
+    border: 2px solid {{ text_color }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0.9;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+  }
+
+  .ai-carousel-arrow-{{ai_gen_id}}:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .ai-carousel-arrow-left-{{ai_gen_id}} {
+    left: 10px;
+  }
+
+  .ai-carousel-arrow-right-{{ai_gen_id}} {
+    right: 10px;
+  }
+
+  .ai-carousel-arrow-{{ai_gen_id}} svg {
+    width: 20px;
+    height: 20px;
+    fill: {{ text_color }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-carousel-card-{{ai_gen_id}} {
+      flex: 0 0 calc((100% - ({{ card_spacing }}px * 2)) / 3);
+    }
+
+    .ai-carousel-product-title-{{ai_gen_id}} {
+      font-size: 16px;
+    }
+
+    .ai-carousel-content-{{ai_gen_id}} {
+      padding: 20px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .ai-carousel-card-{{ai_gen_id}} {
+      flex: 0 0 calc((100% - ({{ card_spacing }}px * ({{ desktop_columns }} - 1))) / {{ desktop_columns }});
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-carousel-arrow-{{ai_gen_id}} {
+      display: {% if show_arrows_mobile %}flex{% else %}none{% endif %};
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-carousel-arrow-{{ai_gen_id}} {
+      display: {% if show_arrows_desktop %}flex{% else %}none{% endif %};
+    }
+  }
+
+  {{ block.settings.custom_css }}
+{% endstyle %}
+
+<featured-carousel-{{ai_gen_id}} class="ai-carousel-{{ai_gen_id}}" {{ block.shopify_attributes }}>
+  <div class="ai-carousel-container-{{ai_gen_id}}">
+    {% if block.settings.section_title != blank %}
+      <h2 class="ai-carousel-title-{{ai_gen_id}}">{{ block.settings.section_title }}</h2>
+    {% endif %}
+
+    <div class="ai-carousel-wrapper-{{ai_gen_id}}">
+      {% if show_arrows_desktop or show_arrows_mobile %}
+        <button class="ai-carousel-arrow-{{ai_gen_id}} ai-carousel-arrow-left-{{ai_gen_id}}" aria-label="Previous products" type="button">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="ai-carousel-arrow-{{ai_gen_id}} ai-carousel-arrow-right-{{ai_gen_id}}" aria-label="Next products" type="button">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      {% endif %}
+
+      <div class="ai-carousel-track-{{ai_gen_id}}" role="region" aria-label="Product carousel">
+        {% if collection != blank and collection.products.size > 0 %}
+          {% for product in collection.products limit: max_products %}
+            <div class="ai-carousel-card-{{ai_gen_id}}" data-product-id="{{ product.id }}">
+              <div class="ai-carousel-image-wrapper-{{ai_gen_id}}">
+                {% if product.featured_image %}
+                  <img
+                    src="{{ product.featured_image | image_url: width: 600 }}"
+                    alt="{{ product.featured_image.alt | escape }}"
+                    class="ai-carousel-image-{{ai_gen_id}}"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                  >
+                {% else %}
+                  <div class="ai-carousel-image-placeholder-{{ai_gen_id}}">
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  </div>
+                {% endif %}
+
+                {% if show_badges %}
+                  <div class="ai-carousel-badges-{{ai_gen_id}}">
+                    {% if product.available == false %}
+                      <span class="ai-carousel-badge-{{ai_gen_id}} ai-carousel-badge-soldout-{{ai_gen_id}}">Sold Out</span>
+                    {% elsif product.compare_at_price > product.price %}
+                      <span class="ai-carousel-badge-{{ai_gen_id}} ai-carousel-badge-sale-{{ai_gen_id}}">Sale</span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="ai-carousel-content-{{ai_gen_id}}">
+                {% if show_vendor and product.vendor != blank %}
+                  <div class="ai-carousel-vendor-{{ai_gen_id}}">{{ product.vendor }}</div>
+                {% endif %}
+
+                {% if show_title %}
+                  <h3 class="ai-carousel-product-title-{{ai_gen_id}}">
+                    <a href="{{ product.url }}">{{ product.title }}</a>
+                  </h3>
+                {% endif %}
+
+                {% if show_rating %}
+                  <div class="ai-carousel-rating-{{ai_gen_id}}" role="img" aria-label="Rating: 4.5 out of 5 stars">
+                    ★★★★☆ <span style="opacity: 0.6;">(4.5)</span>
+                  </div>
+                {% endif %}
+
+                {% if show_price %}
+                  <div class="ai-carousel-price-wrapper-{{ai_gen_id}}">
+                    <span class="ai-carousel-price-{{ai_gen_id}}">{{ product.price | money }}</span>
+                    {% if product.compare_at_price > product.price %}
+                      <span class="ai-carousel-compare-price-{{ai_gen_id}}">{{ product.compare_at_price | money }}</span>
+                      {% if show_savings %}
+                        {% assign savings = product.compare_at_price | minus: product.price %}
+                        <div class="ai-carousel-savings-{{ai_gen_id}}">Save {{ savings | money }}</div>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                {% if show_add_to_cart %}
+                  <button
+                    class="ai-carousel-add-to-cart-{{ai_gen_id}}"
+                    data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                    {% unless product.available %}disabled{% endunless %}
+                    aria-label="Add {{ product.title }} to cart"
+                    type="button"
+                  >
+                    {% if product.available %}
+                      Add to Cart
+                    {% else %}
+                      Sold Out
+                    {% endif %}
+                  </button>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          {% for i in (1..4) %}
+            <div class="ai-carousel-card-{{ai_gen_id}}">
+              <div class="ai-carousel-image-wrapper-{{ai_gen_id}}">
+                <div class="ai-carousel-image-placeholder-{{ai_gen_id}}">
+                  {{ 'product-1' | placeholder_svg_tag }}
+                </div>
+              </div>
+              <div class="ai-carousel-content-{{ai_gen_id}}">
+                {% if show_title %}
+                  <h3 class="ai-carousel-product-title-{{ai_gen_id}}">Product Title</h3>
+                {% endif %}
+                {% if show_price %}
+                  <div class="ai-carousel-price-wrapper-{{ai_gen_id}}">
+                    <span class="ai-carousel-price-{{ai_gen_id}}">$99.00</span>
+                  </div>
+                {% endif %}
+                {% if show_add_to_cart %}
+                  <button class="ai-carousel-add-to-cart-{{ai_gen_id}}" disabled type="button">
+                    Add to Cart
+                  </button>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</featured-carousel-{{ai_gen_id}}>
+
+<script>
+(function() {
+  class FeaturedCarousel{{ai_gen_id}} extends HTMLElement {
+    constructor() {
+      super();
+      this.track = this.querySelector('.ai-carousel-track-{{ai_gen_id}}');
+      this.leftArrow = this.querySelector('.ai-carousel-arrow-left-{{ai_gen_id}}');
+      this.rightArrow = this.querySelector('.ai-carousel-arrow-right-{{ai_gen_id}}');
+      this.cards = this.querySelectorAll('.ai-carousel-card-{{ai_gen_id}}');
+      this.autoRotate = {{ auto_rotate }};
+      this.slideInterval = {{ slide_interval | times: 1000 }};
+      this.autoRotateTimer = null;
+    }
+
+    connectedCallback() {
+      this.setupNavigation();
+      this.setupAddToCart();
+      if (this.autoRotate && this.cards.length > 0) {
+        this.startAutoRotate();
+        this.track.addEventListener('mouseenter', () => this.stopAutoRotate());
+        this.track.addEventListener('mouseleave', () => this.startAutoRotate());
+        this.track.addEventListener('touchstart', () => this.stopAutoRotate());
+      }
+    }
+
+    setupNavigation() {
+      if (this.leftArrow) {
+        this.leftArrow.addEventListener('click', () => this.scroll('left'));
+      }
+      if (this.rightArrow) {
+        this.rightArrow.addEventListener('click', () => this.scroll('right'));
+      }
+
+      this.track.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          this.scroll('left');
+        } else if (e.key === 'ArrowRight') {
+          this.scroll('right');
+        }
+      });
+    }
+
+    scroll(direction) {
+      if (this.cards.length === 0) return;
+      
+      const cardWidth = this.cards[0].offsetWidth;
+      const gap = {{ card_spacing }};
+      const scrollAmount = cardWidth + gap;
+      
+      if (direction === 'left') {
+        this.track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        this.track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+    startAutoRotate() {
+      this.autoRotateTimer = setInterval(() => {
+        const maxScroll = this.track.scrollWidth - this.track.clientWidth;
+        if (this.track.scrollLeft >= maxScroll - 10) {
+          this.track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          this.scroll('right');
+        }
+      }, this.slideInterval);
+    }
+
+    stopAutoRotate() {
+      if (this.autoRotateTimer) {
+        clearInterval(this.autoRotateTimer);
+        this.autoRotateTimer = null;
+      }
+    }
+
+    setupAddToCart() {
+      const buttons = this.querySelectorAll('.ai-carousel-add-to-cart-{{ai_gen_id}}');
+      buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          const variantId = e.target.dataset.variantId;
+          if (!variantId || button.disabled) return;
+
+          const originalText = button.textContent;
+          button.textContent = 'Adding...';
+          button.disabled = true;
+
+          fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              items: [{
+                id: variantId,
+                quantity: 1
+              }]
+            })
+          })
+          .then(response => response.json())
+          .then(data => {
+            button.textContent = 'Added!';
+            setTimeout(() => {
+              button.textContent = originalText;
+              button.disabled = false;
+            }, 2000);
+
+            if (window.theme && window.theme.cart) {
+              window.theme.cart.refresh();
+            }
+            document.dispatchEvent(new CustomEvent('cart:updated'));
+          })
+          .catch(error => {
+            console.error('Error adding to cart:', error);
+            button.textContent = 'Error';
+            setTimeout(() => {
+              button.textContent = originalText;
+              button.disabled = false;
+            }, 2000);
+          });
+        });
+      });
+    }
+
+    disconnectedCallback() {
+      this.stopAutoRotate();
+    }
+  }
+
+  customElements.define('featured-carousel-{{ai_gen_id}}', FeaturedCarousel{{ai_gen_id}});
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Product carousel",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Maximum products",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "label": "Desktop columns",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "mobile_columns",
+      "label": "Mobile columns",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Product card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show title",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show rating",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badges",
+      "label": "Show badges",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_savings",
+      "label": "Show savings",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_to_cart",
+      "label": "Show add to cart",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "Auto-rotate slider",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "slide_interval",
+      "label": "Slide interval",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows_desktop",
+      "label": "Show arrows on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows_mobile",
+      "label": "Show arrows on mobile",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "container_padding_left",
+      "label": "Left padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding_right",
+      "label": "Right padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_spacing",
+      "label": "Card spacing",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#1e8a1d"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background",
+      "default": "#1e8a1d"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "shadow_intensity",
+      "label": "Shadow intensity",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Custom CSS"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product carousel"
+    }
+  ]
+}
+{% endschema %}
