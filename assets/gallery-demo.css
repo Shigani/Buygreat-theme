@@ -217,7 +217,7 @@
 
   .buygreat-product-gallery-card .buygreat-gallery-thumbnails {
     gap: 0;
-    justify-content: space-between;
+    justify-content: center;
     margin-left: 0;
     overflow: hidden;
     padding: 0;
@@ -239,14 +239,15 @@
   .buygreat-product-gallery-card .buygreat-gallery-thumbnails .thumbnail-list {
     display: flex;
     flex-wrap: nowrap;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     gap: 0.5rem;
-    justify-content: flex-start;
-    max-width: none;
+    justify-content: center;
+    max-width: calc(100% - 4.8rem);
     min-width: 0;
     overflow: hidden;
     padding: 0.1rem 0.2rem 0.3rem;
     scrollbar-width: none;
+    width: max-content;
   }
 
   .buygreat-product-gallery-card .buygreat-gallery-thumbnails .thumbnail-list::-webkit-scrollbar {
