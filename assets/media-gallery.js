@@ -8,12 +8,13 @@ if (!customElements.get('media-gallery')) {
         thumbnails: this.querySelector('[id^="GalleryThumbnails"]')
       }
       this.mql = window.matchMedia('(min-width: 750px)');
-      if (!this.elements.thumbnails) return;
-
-      this.elements.viewer.addEventListener('slideChanged', debounce(this.onSlideChanged.bind(this), 500));
       this.elements.viewer.querySelectorAll('button[name="previous"], button[name="next"]').forEach((button) => {
         button.addEventListener('click', this.changeMedia.bind(this));
       });
+      this.updateMediaControls();
+      if (!this.elements.thumbnails) return;
+
+      this.elements.viewer.addEventListener('slideChanged', debounce(this.onSlideChanged.bind(this), 500));
       this.elements.thumbnails.querySelectorAll('[data-target]').forEach((mediaToSwitch) => {
         mediaToSwitch.querySelector('button').addEventListener('click', this.setActiveMedia.bind(this, mediaToSwitch.dataset.target, false));
       });
@@ -27,15 +28,35 @@ if (!customElements.get('media-gallery')) {
 
     changeMedia(event) {
       event.preventDefault();
-      const mediaItems = Array.from(this.elements.viewer.querySelectorAll('.product__media-item'))
-        .filter((item) => !item.classList.contains('product__media-item--variant'));
+      const mediaItems = this.getGalleryMediaItems();
       if (mediaItems.length < 2) return;
 
       const activeIndex = mediaItems.findIndex((item) => item.classList.contains('is-active'));
       const currentIndex = activeIndex < 0 ? 0 : activeIndex;
       const direction = event.currentTarget.name === 'next' ? 1 : -1;
-      const nextIndex = (currentIndex + direction + mediaItems.length) % mediaItems.length;
+      const nextIndex = currentIndex + direction;
+      if (nextIndex < 0 || nextIndex >= mediaItems.length) return;
       this.setActiveMedia(mediaItems[nextIndex].dataset.mediaId, false);
+    }
+
+    getGalleryMediaItems() {
+      return Array.from(this.elements.viewer.querySelectorAll('.product__media-item'))
+        .filter((item) => !item.classList.contains('product__media-item--variant'));
+    }
+
+    updateMediaControls() {
+      const mediaItems = this.getGalleryMediaItems();
+      const activeIndex = mediaItems.findIndex((item) => item.classList.contains('is-active'));
+      const currentIndex = activeIndex < 0 ? 0 : activeIndex;
+      const previousButton = this.elements.viewer.querySelector('button[name="previous"]');
+      const nextButton = this.elements.viewer.querySelector('button[name="next"]');
+
+      if (previousButton) {
+        previousButton.disabled = mediaItems.length < 2 || currentIndex === 0;
+      }
+      if (nextButton) {
+        nextButton.disabled = mediaItems.length < 2 || currentIndex === mediaItems.length - 1;
+      }
     }
 
     setActiveMedia(mediaId, prepend) {
@@ -44,6 +65,7 @@ if (!customElements.get('media-gallery')) {
         element.classList.remove('is-active');
       });
       activeMedia.classList.add('is-active');
+      this.updateMediaControls();
 
       if (prepend) {
         activeMedia.parentElement.prepend(activeMedia);

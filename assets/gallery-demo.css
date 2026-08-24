@@ -125,6 +125,11 @@
   width: 2.4rem;
 }
 
+.buygreat-product-gallery-card .buygreat-gallery-controls .slider-button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+
 .buygreat-product-gallery-card .buygreat-gallery-controls .slider-button--prev {
   margin-left: -2.8rem;
 }
