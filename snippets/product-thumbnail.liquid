@@ -81,7 +81,7 @@
   {%- endif -%}
 </noscript>
 
-<div class="product__media-frame product__media-frame--{{ media.media_type }} no-js-hidden">
+<div class="product__media-frame product__media-frame--{{ media.media_type }}">
   <div class="product__media main--product__media--{{ media_height }}  media media--transparent"
      {% if media_height == 'adapt' %} style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;" {%- endif -%}
      >
