@@ -130,7 +130,7 @@
         "color_scheme": "background-1",
         "breadcrumb_enable": true,
         "gallery_layout": "thumbnail_slider",
-        "media_size": "medium",
+        "media_size": "large",
         "media_height": "large",
         "mobile_thumbnails": "hide",
         "image_card_corner_radius": 16,
