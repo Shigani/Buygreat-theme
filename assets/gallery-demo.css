@@ -98,6 +98,19 @@
   z-index: 1;
 }
 
+@media screen and (min-width: 750px) {
+  .buygreat-product-gallery-card .buygreat-gallery-controls {
+    display: flex !important;
+    z-index: 4;
+  }
+
+  .buygreat-product-gallery-card .buygreat-gallery-controls .slider-button {
+    display: flex !important;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .buygreat-product-gallery-card .buygreat-gallery-controls .slider-button {
   background: transparent;
   border: 0;
