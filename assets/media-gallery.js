@@ -66,7 +66,7 @@ if (!customElements.get('media-gallery')) {
     }
 
     announceLiveRegion(activeItem, position) {
-      const image = activeItem.querySelector('.product__modal-opener--image img');
+      const image = activeItem.querySelector('.product__media-frame--image img');
       if (!image) return;
       image.onload = () => {
         this.elements.liveRegion.setAttribute('aria-hidden', false);
@@ -100,3 +100,4 @@ if (!customElements.get('media-gallery')) {
     }
   });
 }
+

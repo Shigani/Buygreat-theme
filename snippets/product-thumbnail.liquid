@@ -1,11 +1,11 @@
 {% comment %}
-    Renders a product thumbnail with a modal-opener
+    Renders a product thumbnail without a zoom modal
 
     Accepts:
     - media: {Object} Product Media object
     - position: {String} Position of the media. Used for accessible label.
     - loop: {Boolean} Enable video looping (optional)
-    - modal_id: {String} The product modal that will be shown by clicking the thumbnail
+    - modal_id: {String} Retained for compatibility with existing render calls
     - xr_button: {Boolean} Renders the "View in your space" button (shopify-xr-button) if the media is a 3D Model
 
     Usage:
@@ -81,22 +81,8 @@
   {%- endif -%}
 </noscript>
 
-<modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
-  <span class="product__media-icon motion-reduce quick-add-hidden" aria-hidden="true">
-    {%- liquid
-      case media.media_type
-      when 'video' or 'external_video'
-        render 'icon-play'
-      when 'model'
-        render 'icon-3d-model'
-      else
-        render 'icon-zoom'
-      endcase
-    -%}
-    <span class="visually-hidden">{{ 'products.modal.label' | t }}</span>   
-  </span>
-
-  <div class="product__media main--product__media--{{ media_height }}  media media--transparent glightbox" data-gallery="gallery2" 
+<div class="product__media-frame product__media-frame--{{ media.media_type }} no-js-hidden">
+  <div class="product__media main--product__media--{{ media_height }}  media media--transparent"
      {% if media_height == 'adapt' %} style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;" {%- endif -%}
      >
     <img
@@ -120,14 +106,8 @@
         alt="{{ media.preview_image.alt | escape }}"
       >
       
-        <span class="visually-hidden">{{ 'products.modal.label' | t }}</span>      
    </div>
-  <button class="product__media-toggle quick-add-hidden" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
-    <span class="visually-hidden">
-      {{ 'products.product.media.open_media' | t: index: position }}
-    </span>
-  </button>
-</modal-opener>
+</div>
 
 {%- if media.media_type != 'image' -%}
   {%- if media.media_type == 'model' -%}
@@ -214,3 +194,4 @@
   {%- endif -%}
 
 {%- endif -%}
+
