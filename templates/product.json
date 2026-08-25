@@ -140,7 +140,7 @@
         "top_space_enable": false,
         "sticky_enable": false,
         "padding_top": 0,
-        "padding_bottom": 95,
+        "padding_bottom": 0,
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 0
       }
