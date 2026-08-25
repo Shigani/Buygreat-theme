@@ -53,7 +53,7 @@
             "add_to_cart__button": "primary",
             "show_dynamic_checkout": true,
             "guarantee_safe_checkout": true,
-            "safe_checkout_text": "Safe Checkout"
+            "safe_checkout_text": ""
           }
         },
         "popup_size_guide_qnNqG3": {
