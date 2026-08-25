@@ -206,6 +206,25 @@
                       price_class: 'price--large'
                     -%}
                   </div>
+                  {%- if block.settings.show_same_day_dispatch -%}
+                    <div class="buygreat-product-dispatch" aria-label="Same day dispatch">
+                      <svg
+                        class="buygreat-product-dispatch__icon"
+                        aria-hidden="true"
+                        focusable="false"
+                        viewBox="0 0 48 32"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M2 7h26v17H2z" />
+                        <path d="M28 13h8l8 7v4H28z" />
+                        <path d="M9 24a4 4 0 1 0 8 0M34 24a4 4 0 1 0 8 0" />
+                      </svg>
+                      <span class="buygreat-product-dispatch__copy">
+                        <span class="buygreat-product-dispatch__title">Same day dispatch</span>
+                        <span class="buygreat-product-dispatch__subtitle">Orders placed before 3pm</span>
+                      </span>
+                    </div>
+                  {%- endif -%}
                 </div>
 
                 {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
@@ -1383,7 +1402,16 @@
     {
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_same_day_dispatch",
+          "default": true,
+          "label": "Show same day dispatch",
+          "info": "Displays the dispatch message beside the product price."
+        }
+      ]
     },
   	{
       "type": "countdown",
