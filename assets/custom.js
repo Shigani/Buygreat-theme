@@ -161,8 +161,8 @@ theme.collectionSlider = (function () {
 
     if (e.dataset.sliderEnable === "true") {
       sliderContainer = e.querySelector(".productSlider");
-      extraLargeDesktopShow = parseInt(e.dataset.showExtraLarge);
-      mobileShow = parseInt(e.dataset.showMobile);
+      extraLargeDesktopShow = parseFloat(e.dataset.showExtraLarge);
+      mobileShow = parseFloat(e.dataset.showMobile);
     } else{
       sliderContainer = false;
     }
