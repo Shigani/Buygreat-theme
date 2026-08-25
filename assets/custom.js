@@ -148,6 +148,7 @@ theme.collectionSlider = (function () {
       largeDesktopShow = 3,
       tabletShow = 3,
       mobileShow = 2,
+      sliderSpace = 30,
       sliderGrid = "column",
       sliderAutoplay = e.dataset.autoplay,
       autoPlayValue = false,
@@ -163,6 +164,9 @@ theme.collectionSlider = (function () {
       sliderContainer = e.querySelector(".productSlider");
       extraLargeDesktopShow = parseFloat(e.dataset.showExtraLarge);
       mobileShow = parseFloat(e.dataset.showMobile);
+      if (e.dataset.sliderSpace !== undefined) {
+        sliderSpace = parseFloat(e.dataset.sliderSpace);
+      }
     } else{
       sliderContainer = false;
     }
@@ -170,7 +174,7 @@ theme.collectionSlider = (function () {
     var featuredCollection = new Swiper(sliderContainer, {
       loop: true,
       slidesPerView: mobileShow,
-      spaceBetween: 30,
+      spaceBetween: sliderSpace,
       autoplay: autoPlayValue,
       pagination: {
         el: e.querySelector(".swiper-pagination"),
