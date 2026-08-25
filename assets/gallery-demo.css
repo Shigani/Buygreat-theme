@@ -130,11 +130,12 @@
 
 .buygreat-product-info-shell .product__add__cart__button,
 .buygreat-product-info-shell .shopify-payment-button {
-  flex: 1 1 0;
+  box-sizing: border-box;
+  flex: 0 0 calc((100% - 1.2rem) / 2);
   margin: 0 !important;
   max-width: none !important;
   min-width: 0;
-  width: auto !important;
+  width: calc((100% - 1.2rem) / 2) !important;
 }
 
 .buygreat-product-info-shell .product__add__cart__button .product-form__submit,
