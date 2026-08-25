@@ -17,24 +17,17 @@
   z-index: 2;
 }
 
-.buygreat-product-gallery-card__vendor {
-  align-items: center;
-  color: #111;
+.buygreat-product-gallery-card__tags {
   display: flex;
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1;
-  min-height: 2.5rem;
-  text-transform: uppercase;
-}
-
-.buygreat-product-gallery-card__badges {
-  display: flex;
+  flex-wrap: wrap;
   gap: 0.3rem;
+  justify-content: flex-end;
+  margin-left: auto;
+  max-width: 75%;
 }
 
-.buygreat-product-gallery-card__badge {
+.buygreat-product-gallery-card__tag {
+  background: #111;
   border-radius: 0.3rem;
   color: #fff;
   display: inline-flex;
@@ -42,16 +35,20 @@
   font-weight: 700;
   justify-content: center;
   line-height: 1;
-  min-width: 4.7rem;
   padding: 0.55rem 0.8rem 0.5rem;
+  text-align: center;
 }
 
-.buygreat-product-gallery-card__badge--new {
+.buygreat-product-gallery-card__tag--new {
   background: #12b7aa;
 }
 
-.buygreat-product-gallery-card__badge--sale {
+.buygreat-product-gallery-card__tag--sale {
   background: #bd1028;
+}
+
+.buygreat-product-gallery-card__tag--bestseller {
+  background: #111;
 }
 
 .buygreat-product-gallery-card .buygreat-gallery-viewer {

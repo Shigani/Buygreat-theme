@@ -1,19 +1,6 @@
 {%- liquid
      assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
      assign media_count = product.media.size
-     assign gallery_variant = product.selected_or_first_available_variant
-     assign gallery_is_on_sale = false
-     if gallery_variant.compare_at_price > gallery_variant.price
-       assign gallery_is_on_sale = true
-     endif
-     assign gallery_is_new = false
-     for product_tag in product.tags
-       assign normalized_product_tag = product_tag | downcase | replace: ' ', '-'
-       if normalized_product_tag == 'new' or normalized_product_tag == 'new-arrival' or normalized_product_tag == 'new-arrivals'
-         assign gallery_is_new = true
-         break
-       endif
-     endfor
      if section.settings.hide_variants
        assign media_count = media_count | minus: variant_images.size | plus: 1
      endif
@@ -26,17 +13,20 @@
 
 <div class="buygreat-product-gallery-card buygreat-product-gallery-card--height-{{ media_height }}">
   <div class="buygreat-product-gallery-card__header">
-    <div class="buygreat-product-gallery-card__vendor">
-      {{ product.vendor | escape }}
-    </div>
-    {%- if gallery_is_new or gallery_is_on_sale -%}
-      <div class="buygreat-product-gallery-card__badges" aria-label="Product badges">
-        {%- if gallery_is_new -%}
-          <span class="buygreat-product-gallery-card__badge buygreat-product-gallery-card__badge--new">NEW</span>
-        {%- endif -%}
-        {%- if gallery_is_on_sale -%}
-          <span class="buygreat-product-gallery-card__badge buygreat-product-gallery-card__badge--sale">Sale</span>
-        {%- endif -%}
+    {%- if product.tags != blank -%}
+      <div class="buygreat-product-gallery-card__tags" aria-label="Product tags">
+        {%- for product_tag in product.tags -%}
+          {%- assign normalized_product_tag = product_tag | downcase | strip | replace: ' ', '-' -%}
+          {%- assign tag_modifier = 'default' -%}
+          {%- if normalized_product_tag == 'sale' -%}
+            {%- assign tag_modifier = 'sale' -%}
+          {%- elsif normalized_product_tag == 'new' or normalized_product_tag == 'new-arrival' or normalized_product_tag == 'new-arrivals' -%}
+            {%- assign tag_modifier = 'new' -%}
+          {%- elsif normalized_product_tag == 'bestseller' or normalized_product_tag == 'best-seller' -%}
+            {%- assign tag_modifier = 'bestseller' -%}
+          {%- endif -%}
+          <span class="buygreat-product-gallery-card__tag buygreat-product-gallery-card__tag--{{ tag_modifier }}">{{ product_tag | escape }}</span>
+        {%- endfor -%}
       </div>
     {%- endif -%}
   </div>
