@@ -517,6 +517,12 @@
 }
 
 @media screen and (max-width: 749px) {
+  .buygreat-product-info-shell .product__add__cart__button,
+  .buygreat-product-info-shell .shopify-payment-button {
+    flex-basis: 100%;
+    width: 100% !important;
+  }
+
   .buygreat-product-gallery-card,
   .buygreat-product-info-shell {
     border-left: 0;
