@@ -1064,7 +1064,7 @@
     border-right: 0;
     border-top: 0;
     margin-top: 0.8rem;
-    padding: 2rem 1.2rem 2.4rem;
+    padding: 0 1.2rem 2.4rem;
     position: relative;
     width: 100%;
     box-shadow: 0 0 0 100vmax #fff;
@@ -1376,7 +1376,10 @@
 
 @media screen and (max-width: 749px) {
   .product {
-    flex-direction: column;
+    display: grid !important;
+    flex-direction: initial;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0;
   }
 
   .product > .buygreat-product-media-column {
@@ -1384,15 +1387,34 @@
   }
 
   .product > .buygreat-product-media-column .product__media_container {
-    order: 1 !important;
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
   }
 
   .product > .buygreat-product-info-column {
-    order: 2 !important;
+    display: contents !important;
+  }
+
+  .product > .buygreat-product-info-column > .buygreat-product-info-shell {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+  }
+
+  .product > .buygreat-product-info-column > .buygreat-product-info-trending {
+    box-sizing: border-box;
+    grid-column: 1;
+    grid-row: 4;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    width: 100%;
   }
 
   .product > .buygreat-product-media-column > .buygreat-product-tabs {
-    order: 3 !important;
+    grid-column: 1;
+    grid-row: 3;
     width: 100%;
   }
 }
+
