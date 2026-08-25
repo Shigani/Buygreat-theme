@@ -31,15 +31,16 @@ var recentViewsetupGrid = function (Recentgrid) {
   var requestsRecentViewed = recentViewPorduct
     .slice(0)
     .reverse()
+    .filter(function (handle) {
+      return handle && handle !== recentViewedProductHandle;
+    })
     .map(function (handle) {
-      if (recentViewedProductHandle !== handle) {
-        var productTileTemplateUrl = "/products/" + handle + "?view=recent-view-card";
-        return fetch(productTileTemplateUrl).then(function (res) {
-          if(res.status == 200){
-          	return res.text();
-          }
-        });
-      }
+      var productTileTemplateUrl = "/products/" + handle + "?view=recent-view-card";
+      return fetch(productTileTemplateUrl).then(function (res) {
+        if(res.status == 200){
+        	return res.text();
+        }
+      });
     });
 
   Promise.all(requestsRecentViewed).then(function (responses) {
@@ -55,8 +56,13 @@ var recentViewsetupGrid = function (Recentgrid) {
 var getrecentViewPorduct = function () {
   var recentViewPorduct =
     localStorage.getItem(LOCAL_STORAGE_RECENTVIEWPRODUCT_KEY) || false;
-  if (recentViewPorduct)
-    return recentViewPorduct.split(LOCAL_STORAGE_DELIMITER);
+  if (recentViewPorduct) {
+    return recentViewPorduct
+      .split(LOCAL_STORAGE_DELIMITER)
+      .filter(function (handle, index, handles) {
+        return handle && handles.indexOf(handle) === index;
+      });
+  }
   return [];
 };
 
@@ -73,15 +79,10 @@ var setrecentViewPorduct = function (array) {
 var updaterecentViewPorduct = function (handle) {
   var recentViewPorduct = getrecentViewPorduct();
   var indexInrecentViewPorduct = recentViewPorduct.indexOf(handle);
-  if (indexInrecentViewPorduct === -1) {
-    recentViewPorduct.push(handle);
-  } else {
-    let currentViewdProduct = recentViewPorduct.splice(
-      indexInrecentViewPorduct,
-      1
-    );
-    recentViewPorduct.push(currentViewdProduct);
+  if (indexInrecentViewPorduct !== -1) {
+    recentViewPorduct.splice(indexInrecentViewPorduct, 1);
   }
+  recentViewPorduct.push(handle);
   return setrecentViewPorduct(recentViewPorduct);
 };
 

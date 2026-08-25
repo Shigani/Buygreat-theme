@@ -172,7 +172,7 @@ theme.collectionSlider = (function () {
     }
 
     var featuredCollection = new Swiper(sliderContainer, {
-      loop: true,
+      loop: e.dataset.sliderLoop !== "false",
       slidesPerView: mobileShow,
       spaceBetween: sliderSpace,
       autoplay: autoPlayValue,
@@ -242,3 +242,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   
 });
+
