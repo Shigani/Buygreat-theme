@@ -1375,20 +1375,24 @@
 }
 
 @media screen and (max-width: 749px) {
+  .product {
+    flex-direction: column;
+  }
+
   .product > .buygreat-product-media-column {
-    display: contents;
+    display: contents !important;
   }
 
   .product > .buygreat-product-media-column .product__media_container {
-    order: 1;
+    order: 1 !important;
   }
 
   .product > .buygreat-product-info-column {
-    order: 2;
+    order: 2 !important;
   }
 
   .product > .buygreat-product-media-column > .buygreat-product-tabs {
-    order: 3;
+    order: 3 !important;
     width: 100%;
   }
 }
