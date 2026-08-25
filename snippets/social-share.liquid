@@ -26,12 +26,6 @@
     </a>
     {%- endif -%}
 
-    {%- if block.settings.twitter_share -%}
-    <a class="twitter" href="//twitter.com/share?text={{ shareTitle }}&amp;url={{ permalinkURL }};source=webclient" title="{{ 'general.share.twitter_follow' | t }}" target="_blank"> 
-      {%- render 'icon-twitter' -%} <span class="social__share--text">{{ 'general.share.twitter' | t }}</span>
-    </a>  
-    {%- endif -%}
-
     {%- if block.settings.pinterest_share -%}
     {% if product.featured_image or article.image  %}
     <a class="pinterest" href="//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media=http:{% if template contains 'product' %}{{ product | img_url: '1024x1024' }}{% else %}{{ article | img_url: '1024x1024' }}{% endif %}&amp;description={{ shareTitle }}" title="{{ 'general.share.pinterest_follow' | t }}" target="_blank">
@@ -40,6 +34,27 @@
     {% endif %}
     {% endif %}
 
+    {%- if block.settings.twitter_share -%}
+    <a class="twitter" href="//twitter.com/share?text={{ shareTitle }}&amp;url={{ permalinkURL }};source=webclient" title="{{ 'general.share.twitter_follow' | t }}" target="_blank">
+      {%- render 'icon-twitter' -%} <span class="social__share--text">{{ 'general.share.twitter' | t }}</span>
+    </a>
+    {%- endif -%}
+
+    {%- if block.settings.email_share -%}
+      <a
+        class="email"
+        href="mailto:?subject={{ shareTitle }}&amp;body={{ permalinkURL | url_encode }}"
+        title="Share by email"
+        aria-label="Share by email"
+      >
+        <svg class="icon icon-email" aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.5 5.5h17v13h-17zM4 6l8 6 8-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+        </svg>
+        <span class="social__share--text">Email</span>
+      </a>
+    {%- endif -%}
+
   </span>
 
 </div>
+

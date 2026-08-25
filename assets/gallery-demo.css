@@ -1,7 +1,3 @@
-warning: in the working copy of 'assets/media-gallery.js', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'sections/main-product.liquid', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'snippets/product-page-layout-1.liquid', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'snippets/product-thumbnail.liquid', LF will be replaced by CRLF the next time Git touches it
 /* Product gallery card styling based on the supplied reference layout. */
 .buygreat-product-info-shell {
   background: #fff;
@@ -146,6 +142,95 @@ warning: in the working copy of 'snippets/product-thumbnail.liquid', LF will be 
 
 .buygreat-product-price-values .price__badge-sale,
 .buygreat-product-price-values .price__badge-sold-out {
+  display: none;
+}
+
+.buygreat-product-share {
+  align-items: center;
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 2.4rem 0 !important;
+}
+
+.buygreat-product-share__label,
+.buygreat-product-share__native .share-button__button {
+  align-items: center;
+  color: #5a7083;
+  display: inline-flex;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 2.8rem;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.buygreat-product-share__native .share-button__button.hidden {
+  display: none !important;
+}
+
+.buygreat-product-share__native {
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.buygreat-product-share__native details,
+.buygreat-product-share .share-icons,
+.buygreat-product-share .social-links {
+  align-items: center;
+  display: flex;
+}
+
+.buygreat-product-share__native summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.buygreat-product-share__native summary::-webkit-details-marker {
+  display: none;
+}
+
+.buygreat-product-share .share-icons,
+.buygreat-product-share .social-links {
+  gap: 0.8rem;
+}
+
+.buygreat-product-share .social-links a {
+  align-items: center;
+  background: #cdd1d3;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  height: 2.8rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 2.8rem;
+}
+
+.buygreat-product-share .social-links a:hover {
+  background: #b8bec1;
+}
+
+.buygreat-product-share .social-links a svg {
+  color: currentColor;
+  height: 1.4rem;
+  margin: 0;
+  width: 1.4rem;
+}
+
+.buygreat-product-share .social-links a.email svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.buygreat-product-share .social__share--text {
   display: none;
 }
 

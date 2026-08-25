@@ -407,18 +407,14 @@
                   </details>
                 </div>
               {%- when 'share' -%}
-                <div class="social__share_box d-flex align-items-center" {{ block.shopify_attributes }}>
-                  {%- render 'social-share', block: block -%}
-
+                <div class="social__share_box buygreat-product-share" {{ block.shopify_attributes }}>
                   {%- if block.settings.share_link -%}
-                    <share-button class="share-button">
+                    <share-button class="share-button buygreat-product-share__native">
                       <button class="share-button__button hidden">
-                        {% render 'icon-share' %}
                         {{ block.settings.share_label | escape }}
                       </button>
                       <details>
                         <summary class="share-button__button">
-                          {% render 'icon-share' %}
                           {{ block.settings.share_label | escape }}
                         </summary>
                         <div id="Product-share-{{ section.id }}" class="share-button__fallback motion-reduce">
@@ -447,7 +443,13 @@
                         </div>
                       </details>
                     </share-button>
+                  {%- else -%}
+                    <span class="buygreat-product-share__label">
+                      {{ block.settings.share_label | escape }}
+                    </span>
                   {%- endif -%}
+
+                  {%- render 'social-share', block: block -%}
                 </div>
                 <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
               {%- when 'variant_picker' -%}
@@ -1793,7 +1795,7 @@
           "type": "text",
           "id": "share_label",
           "label": "t:sections.main-product.blocks.share.settings.text.label",
-          "default": "Share"
+          "default": "Share this item"
         },
 		 {
           "type": "checkbox",
@@ -1813,11 +1815,17 @@
           "default": true,
           "label": "Enable twitter share link"
         },
-		{
+        {
           "type": "checkbox",
           "id": "pinterest_share",
           "default": true,
           "label": "Enable pinterest share link"
+        },
+        {
+          "type": "checkbox",
+          "id": "email_share",
+          "default": true,
+          "label": "Enable email share link"
         },
         {
           "type": "paragraph",
