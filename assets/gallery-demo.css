@@ -1215,6 +1215,17 @@
   top: 1.2rem !important;
 }
 
+.buygreat-trending-products .buygreat-trending-product-tags {
+  gap: 0.3rem;
+  justify-content: flex-end;
+  margin-left: auto;
+  max-width: 75%;
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
+  z-index: 4;
+}
+
 .buygreat-trending-products .product-grid-item__content {
   padding: 1.4rem 2rem 2rem;
   text-align: left;
