@@ -1143,10 +1143,6 @@
 }
 
 .buygreat-trending-products .product-recommendations__heading {
-  color: rgb(var(--color-foreground));
-  font-size: 2.2rem;
-  font-weight: 600;
-  line-height: 1.25;
   margin: 0 0 2.4rem;
   text-align: left !important;
 }
@@ -1217,26 +1213,13 @@
 }
 
 .buygreat-trending-products .product-grid-item__title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.4;
   margin: 0;
 }
 
 .buygreat-trending-products .product-grid-item__price {
   align-items: baseline;
-  color: rgb(var(--color-foreground));
-  font-size: 1.5rem;
   gap: 1.2rem;
   justify-content: flex-start;
-}
-
-.buygreat-trending-products .product-grid-item__price .price-item--sale {
-  color: #bd1028;
-}
-
-.buygreat-trending-products .product-grid-item__price .price-item--regular {
-  color: rgba(var(--color-foreground), 0.65);
 }
 
 .buygreat-trending-products .featured__collection--slider {
@@ -1271,20 +1254,12 @@
 }
 
 @media screen and (max-width: 749px) {
-  .buygreat-trending-products .product-recommendations__heading {
-    font-size: 2rem;
-  }
-
   .buygreat-trending-products .product-grid-item__thumbnail {
     min-height: 17rem;
   }
 
   .buygreat-trending-products .product-grid-item__content {
     padding: 1.2rem 1.2rem 1.6rem;
-  }
-
-  .buygreat-trending-products .product-grid-item__price {
-    font-size: 1.4rem;
   }
 
   .buygreat-trending-products .featured__collection--slider {
@@ -1322,5 +1297,31 @@
 
   .buygreat-product-info-trending .product-grid-item__thumbnail {
     min-height: 15rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .buygreat-product-media-column > .buygreat-product-tabs {
+    margin-top: 2.4rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .product > .buygreat-product-media-column {
+    display: contents;
+  }
+
+  .product > .buygreat-product-media-column .product__media_container {
+    order: 1;
+  }
+
+  .product > .buygreat-product-info-column {
+    order: 2;
+  }
+
+  .product > .buygreat-product-media-column > .buygreat-product-tabs {
+    order: 3;
+    width: 100%;
   }
 }
