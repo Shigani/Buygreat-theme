@@ -913,7 +913,7 @@
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.2);
   display: flex;
   gap: 3rem;
-  overflow-x: auto;
+  overflow: hidden;
   scrollbar-width: none;
 }
 
@@ -930,14 +930,17 @@
   border-radius: 0;
   color: rgba(var(--color-foreground), 0.75);
   cursor: pointer;
-  flex: 0 0 auto;
+  flex: 1 1 0;
   font: inherit;
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.35;
+  min-width: 0;
+  overflow: hidden;
   padding: 0 0 1.4rem;
   position: relative;
   text-align: left;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -1031,7 +1034,8 @@
     justify-content: space-between;
     padding: 1.4rem 1.2rem;
     text-align: left;
-    white-space: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     width: 100%;
   }
 
@@ -1055,4 +1059,3 @@
     padding-top: 1.8rem;
   }
 }
-

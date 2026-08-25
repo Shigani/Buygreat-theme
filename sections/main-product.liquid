@@ -788,6 +788,8 @@
                 aria-selected="{{ first_product_tab }}"
                 aria-controls="{{ product_tab_key }}-panel"
                 data-buygreat-product-tab="{{ product_tab_key }}"
+                aria-label="{{ product_tab_label | escape }}"
+                title="{{ product_tab_label | escape }}"
                 {{ block.shopify_attributes }}
               >
                 {{ product_tab_label | escape }}
@@ -2261,4 +2263,3 @@
   ]
 }
 {% endschema %}
-
