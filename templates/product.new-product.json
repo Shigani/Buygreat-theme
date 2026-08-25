@@ -77,11 +77,12 @@
         "0a478e9c-d23b-4b8b-b309-62919d0eb667": {
           "type": "share",
           "settings": {
-            "share_label": "Share more",
+            "share_label": "Share this item:",
             "share_link": true,
             "facebook_share": true,
             "twitter_share": true,
-            "pinterest_share": true
+            "pinterest_share": true,
+            "email_share": true
           }
         },
         "f7302d8a-c3b2-48a3-ab1e-68e65db1f80c": {
