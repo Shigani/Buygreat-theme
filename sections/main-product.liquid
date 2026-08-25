@@ -53,7 +53,6 @@
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
 
-  assign productShortDescription = product.metafields.meta.product_excerpt.value
   assign productSizeGuideHandler = product.metafields.meta.product_size_guide.value
   assign productShippingPolicy = product.metafields.meta.product_shipping_policy.value
 
@@ -837,14 +836,10 @@
                     {{ '<script type="text/javascript" src="//cdn.judge.me/widget.js"></script>' | raw }}
                   </div>
 
-                  {%- if block.settings.productdesc == 'shortdesc' and productShortDescription != blank -%}
-                    <div class="product__description rte">
-                      {{ productShortDescription | strip_html }}
-                    </div>
-                  {%- elsif block.settings.productdesc == 'fulldesc' and product.description != blank -%}
+                  {%- if product.description != blank -%}
                     {%- assign truncatewords_count = block.settings.truncatewords_count_handle -%}
                     <div class="product__description rte">
-                      {{ product.description | truncatewords: truncatewords_count, '' }}
+                      {{ product.description | strip_html | truncatewords: truncatewords_count, '' }}
                     </div>
                   {%- endif -%}
                 </div>
@@ -1918,32 +1913,11 @@
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.label"
         },
             {
-            "type": "radio",
-            "id": "productdesc",
-            "label": "Product Description",
-            "options": [
-                {
-                  "label": "Short Description",
-                  "value": "shortdesc"
-                },
-                {
-                  "label": "Full Description",
-                  "value": "fulldesc"
-                }
-              ],
-              "default": "shortdesc"
-            },
-            {
               "type": "number",
               "id": "truncatewords_count_handle",
               "label": "Description Word Count",
               "default": 35,
-              "info": "If 'Full Description' is selected, then it will be applicable"
-            },
-            {
-              "type": "header",
-              "content": "How to use Short Description",
-              "info": "Please check the documentation, [click here](https:\/\/themeadora.com\/doc\/product-short-description\/)"
+              "info": "The full product description will be truncated to this many words."
             }
 	   ]
     },

@@ -70,7 +70,6 @@
           "settings": {
             "heading": "Product Description",
             "icon": "star",
-            "productdesc": "fulldesc",
             "truncatewords_count_handle": 200
           }
         },
@@ -504,4 +503,3 @@
     "1774636155881bcebb"
   ]
 }
-
