@@ -2,36 +2,6 @@ warning: in the working copy of 'assets/media-gallery.js', LF will be replaced b
 warning: in the working copy of 'sections/main-product.liquid', LF will be replaced by CRLF the next time Git touches it
 warning: in the working copy of 'snippets/product-page-layout-1.liquid', LF will be replaced by CRLF the next time Git touches it
 warning: in the working copy of 'snippets/product-thumbnail.liquid', LF will be replaced by CRLF the next time Git touches it
-588-
-589:  .buygreat-product-info-shell .product__add__cart__button,
-590:  .buygreat-product-info-shell .shopify-payment-button {
-591-    flex-basis: 100%;
-592-    width: 100% !important;
-593-  }
-594-
-595-  .buygreat-product-gallery-card,
-596:  .buygreat-product-info-shell {
-597-    border-left: 0;
-598-    border-radius: 0;
-599-    border-right: 0;
-600-  }
---
-603-    border-bottom: 0;
-604-    border-top: 0;
-605-  }
-606-
-607:  .buygreat-product-info-shell {
-608-    border-bottom: 0;
-609-    border-top: 0;
-610-    padding: 1.8rem 1.2rem 1.6rem;
-611-    position: relative;
-612-  }
-613-
-614:  .buygreat-product-info-shell::before {
-615-    border-top: 0.1rem solid #d9dddf;
-616-    content: '';
-617-    left: 50%;
-618-    position: absolute;
 /* Product gallery card styling based on the supplied reference layout. */
 .buygreat-product-info-shell {
   background: #fff;
@@ -561,13 +531,6 @@ warning: in the working copy of 'snippets/product-thumbnail.liquid', LF will be 
   .buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media-frame,
   .buygreat-product-gallery-card.buygreat-product-gallery-card--height-large .product__media {
     height: 44rem;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .buygreat-product-info-shell {
-    border: 0.1rem solid #d9dddf !important;
-    border-radius: 0.5rem;
   }
 }
 
