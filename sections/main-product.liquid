@@ -839,7 +839,7 @@
                   {%- if product.description != blank -%}
                     {%- assign truncatewords_count = block.settings.truncatewords_count_handle -%}
                     <div class="product__description rte">
-                      {{ product.description | strip_html | truncatewords: truncatewords_count, '' }}
+                      {{ product.description | truncatewords: truncatewords_count, '' }}
                     </div>
                   {%- endif -%}
                 </div>
@@ -2265,3 +2265,4 @@
   ]
 }
 {% endschema %}
+
