@@ -1258,10 +1258,11 @@
 }
 
 .buygreat-trending-products .product-grid-item__price.price--on-sale .price__sale {
-  align-items: flex-start;
+  align-items: baseline;
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  flex-direction: row;
+  gap: 1.2rem;
+  white-space: nowrap;
 }
 
 .buygreat-trending-products .product-grid-item__price.price--on-sale .price__sale > dt {
