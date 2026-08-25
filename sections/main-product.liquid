@@ -95,13 +95,6 @@
   >
 {%- endif -%}
 
-{%- assign has_review_app_tab = false -%}
-{%- for product_block in section.blocks -%}
-  {%- if product_block.type == 'review_app' -%}
-    {%- assign has_review_app_tab = true -%}
-  {%- endif -%}
-{%- endfor -%}
-
 <div
   data-section-id="{{ section.id }}"
   data-section-type="main-product"
@@ -154,9 +147,7 @@
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
-                {%- unless has_review_app_tab -%}
-                  {% render block %}
-                {%- endunless -%}
+                {% render block %}
               {%- when 'additinal_field' -%}
                 <div class="cart__additional--field" {{ block.shopify_attributes }}>
                   {%- if block.settings.text_field -%}
@@ -859,13 +850,10 @@
                 </div>
               {%- elsif block.type == 'review_app' -%}
                 <div class="buygreat-product-tabs__content buygreat-product-tabs__content--apps rte">
-                  {%- assign review_app_blocks = section.blocks | where: 'type', '@app' -%}
-                  {%- if review_app_blocks.size > 0 -%}
-                    {%- for app_block in review_app_blocks -%}
-                      {% render app_block %}
-                    {%- endfor -%}
+                  {%- if block.settings.review_embed != blank -%}
+                    {{ block.settings.review_embed }}
                   {%- else -%}
-                    <p>Insert a Review App block from the Theme Editor to display reviews here.</p>
+                    <p>Paste your review app embed code into this block’s setting to display reviews here.</p>
                   {%- endif -%}
                 </div>
               {%- else -%}
@@ -2155,7 +2143,13 @@
       "settings": [
         {
           "type": "paragraph",
-          "content": "Insert a Review App block. Add your review app block to this product section and it will appear inside this Reviews tab."
+          "content": "Paste the embed code supplied by your review app below."
+        },
+        {
+          "type": "liquid",
+          "id": "review_embed",
+          "label": "Review app embed code",
+          "info": "Paste the review app's HTML, script, or Liquid embed code here."
         }
       ]
     },
