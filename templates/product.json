@@ -107,7 +107,8 @@
             "share_link": true,
             "facebook_share": true,
             "twitter_share": true,
-            "pinterest_share": true
+            "pinterest_share": true,
+            "email_share": true
           }
         }
       },
@@ -502,3 +503,4 @@
     "1774636155881bcebb"
   ]
 }
+
