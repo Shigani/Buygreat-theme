@@ -1291,3 +1291,36 @@
     right: -1.2rem;
   }
 }
+
+.buygreat-product-info-trending {
+  margin-top: 2.4rem;
+  padding-top: 2.4rem;
+}
+
+.buygreat-product-info-trending .product-recommendations__heading {
+  margin-bottom: 1.6rem;
+}
+
+.buygreat-product-info-trending .product-grid-item__thumbnail {
+  min-height: 18rem;
+}
+
+.buygreat-product-info-trending .product-grid-item__content {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.buygreat-product-info-trending .featured__collection--slider {
+  right: -1.2rem;
+}
+
+@media screen and (max-width: 749px) {
+  .buygreat-product-info-trending {
+    margin-top: 1.8rem;
+    padding-top: 1.8rem;
+  }
+
+  .buygreat-product-info-trending .product-grid-item__thumbnail {
+    min-height: 15rem;
+  }
+}
