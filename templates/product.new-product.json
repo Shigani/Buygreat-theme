@@ -118,7 +118,7 @@
             "show_badges": true,
             "products_to_show": 4,
             "products_show_on_xl": "2",
-            "products_show_on_sm": "2"
+            "products_show_on_sm": "1.5"
           }
         }
       },
