@@ -91,15 +91,14 @@
           "settings": {
             "heading": "Overview",
             "icon": "star",
-            "productdesc": "fulldesc",
-            "truncatewords_count_handle": 200
+            "description_lines": 8
           }
         },
         "c8842c06-e135-4b13-b10b-b2c347861c89": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Shipping Info",
-            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
+            "content": "<p>* Rural and remote areas may attract longer shipping times but we make every effort to ensure we provide the fastest delivery times possible.</p><p>* Please note bulky/heavy orders to rural, remote & offshore areas may attract additional delivery fees.</p><p>Orders placed before 3pm AEST each day will be dispatched on the same day, Monday to Friday, excluding public holidays and weekends.</p><p>Delivery times above are estimates only. Delivery times apply from the date of dispatch, not the date orders are received and refer to business days not calendar days. We make every attempt to ensure all deliveries arrive within the estimated time frames above however sometimes events occur that are out of our control. If your order is more than 2 business days late based on the above guidelines please contact us and provide your name, order number and date of order.</p><h3>International Shipping Terms and Conditions – Customs & Duty Charges</h3><p>International orders may be subject to local charges. Any customs or import duties and associated fees are charged once the parcel reaches its destination country. These charges must be paid by the recipient of the parcel. We have no control over these charges and cannot predict what they may be. Alternative Brewing cannot be held responsible for any additional charges on your order, nor can we accept a return of the order in this case. Customs policies vary widely from country to country, so please contact your local customs office for further information. If you refuse to pay these charges your parcel may be abandoned, and Alternative Brewing will not be held responsible for any loss of funds as a result of this occurrence. We cannot mark International orders as a gift in order to bypass or reduce any customs fees.</p><h3>Authority to Leave Terms and Conditions </h3><p>By ticking the Authority to Leave box at the checkout page on the website when placing an order, Alternative Brewing’s agent/delivery partner will leave your parcel at your unattended premises in accordance with your instructions.</p><p>By providing Authority to Leave you agree that the parcel is deemed to have been received when left at your premises.</p><p>Alternative Brewing, and its agents/delivery partners associated with the delivery of your parcel, do not accept responsibility for any loss or damage that may result from you providing Authority to Leave for your delivery. You agree to release Alternative Brewing from and against any and all claims, demands, liabilities, losses, costs and expenses, including financial and other consequential losses, made, suffered or incurred by you or any other person or entity as a result of your election to choose Authority to Leave for your delivery.</p><p>If you do not provide Alternative Brewing Authority to Leave for your delivery, you will have to be at your premises in order for the delivery to occur.</p><h3>Freight Protection<strong> </strong></h3><p>We strive to ensure that your delivery arrives safely to you, but we understand that sometimes accidents happen outside of our control.  </p><p>By selecting Alternative Brewing's Freight Protection you will receive a priority customer support and priority replacement of your product if it arrives damaged. You will be able to add this option to your order in checkout. </p><h4>What does Freight Protection offer?</h4><p>1 - Priority Customer Service – as soon as you contact our team to submit your Freight Protection claim, you will be placed into a priority queue to ensure your claim is processed as quickly as possible.</p><p>2 - Advanced Shipping – to minimise downtime without your product, once we have assessed your claim we will ship a replacement to you before we have received the damaged goods back.</p><h4>Making a Freight Protection Claim</h4><ul><li>To assess your claim, you will be required to provide photo and/or video evidence of the damaged product. </li><li>All Freight Protections claims must be made within 3 business days of receiving your product.</li><li>Freight Protection does not apply to damaged packaging and only applies to the product itself.</li></ul><h3>Pre Order Shipping</h3><p>Orders that contain pre-order items will be placed on hold until all products are in stock and ready to ship together. This helps ensure your order arrives complete in a single delivery.</p><p>If you would like the in-stock items from your order shipped sooner, we can arrange a split shipment upon request. Please note that an additional delivery fee will apply for this service.</p><p>Estimated shipping times listed on our website only apply once your full order has been dispatched. Pre-order release dates are provided as a guide by the manufacturer and may be subject to change. While these timeframes are outside of our control, we will always do our best to keep you informed and update you as soon as we receive any new information regarding availability.</p><p>If your order contains both pre-order and in-stock items and you choose to wait for a complete delivery, your order will be dispatched in full as soon as the pre-order stock becomes available.</p>",
             "page": "compare",
             "icon": "question_mark"
           }
@@ -126,7 +125,7 @@
         "review_app_NPcTYU"
       ],
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
         "breadcrumb_enable": true,
         "gallery_layout": "thumbnail_slider",
         "media_size": "large",
@@ -151,6 +150,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-a343ce79-5123-420f-8efd-48e3252818eb",
         "heading": "You May Also Like",
