@@ -823,7 +823,7 @@
             {%- assign product_tab_key = 'ProductTab-' | append: section.id | append: '-' | append: block.id -%}
             <div
               id="{{ product_tab_key }}-panel"
-              class="buygreat-product-tabs__panel{% if first_product_tab %} is-active{% endif %}"
+              class="buygreat-product-tabs__panel{% if block.type == 'review_app' %} buygreat-product-tabs__panel--apps{% endif %}{% if first_product_tab %} is-active{% endif %}"
               role="tabpanel"
               aria-labelledby="{{ product_tab_key }}-tab"
               data-buygreat-product-tab-panel="{{ product_tab_key }}"
@@ -2291,4 +2291,3 @@
   ]
 }
 {% endschema %}
-

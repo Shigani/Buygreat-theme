@@ -971,6 +971,10 @@
   padding-top: 2.4rem;
 }
 
+.buygreat-product-tabs__panel--apps {
+  padding-top: 0;
+}
+
 .buygreat-product-tabs__panel[hidden] {
   display: none;
 }
@@ -1059,5 +1063,8 @@
     font-size: 1.5rem;
     padding-top: 1.8rem;
   }
-}
 
+  .buygreat-product-tabs__panel--apps {
+    padding-top: 0;
+  }
+}
