@@ -757,6 +757,8 @@
   .buygreat-product-info-shell {
     border-bottom: 0;
     border-top: 0;
+    box-shadow: 0 0 0 100vmax #fff;
+    clip-path: inset(0 -100vmax);
     padding: 1.8rem 1.2rem 1.6rem;
     position: relative;
   }
