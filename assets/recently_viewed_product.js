@@ -46,10 +46,39 @@ var recentViewsetupGrid = function (Recentgrid) {
   Promise.all(requestsRecentViewed).then(function (responses) {
     var recentViewPorductProductCards = responses.join("");
     Recentgrid.innerHTML = recentViewPorductProductCards;
+    insertRecentViewedAppBlocks(Recentgrid);
 
     if (typeof theme.collectionSlider === "function") {
       theme.collectionSlider(recentViewdProduct);
     }
+  });
+};
+
+var insertRecentViewedAppBlocks = function (Recentgrid) {
+  var appTemplate = recentViewdProduct.querySelector(
+    "template[data-recently-viewed-app-template]"
+  );
+
+  if (!appTemplate || !appTemplate.content.childNodes.length) {
+    return;
+  }
+
+  Recentgrid.querySelectorAll(".product-grid-item__content").forEach(function (
+    productContent
+  ) {
+    var productTitle = productContent.querySelector(".product-grid-item__titles");
+    var productPrice = productContent.querySelector(
+      ".price-wrap, .product-grid-item__price"
+    );
+
+    if (!productTitle || !productPrice) {
+      return;
+    }
+
+    var appContent = document.createElement("div");
+    appContent.className = "buygreat-recently-viewed-app-blocks";
+    appContent.appendChild(appTemplate.content.cloneNode(true));
+    productContent.insertBefore(appContent, productPrice);
   });
 };
 

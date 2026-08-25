@@ -1535,6 +1535,10 @@
   margin-bottom: 0;
 }
 
+.buygreat-recently-viewed-app-blocks {
+  width: 100%;
+}
+
 @media screen and (max-width: 749px) {
   .buygreat-recently-viewed-products {
     margin-top: 1.8rem;
