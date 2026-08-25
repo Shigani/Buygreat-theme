@@ -1,3 +1,9 @@
+warning: in the working copy of 'assets/media-gallery.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'sections/main-product.liquid', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'snippets/product-page-layout-1.liquid', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'snippets/product-thumbnail.liquid', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'snippets/social-share.liquid', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/product.json', LF will be replaced by CRLF the next time Git touches it
 /* Product gallery card styling based on the supplied reference layout. */
 .buygreat-product-info-shell {
   background: #fff;
@@ -209,8 +215,10 @@
   display: inline-flex;
   height: 2.8rem;
   justify-content: center;
+  line-height: 0;
   margin: 0;
   padding: 0;
+  text-align: center;
   width: 2.8rem;
 }
 
@@ -220,6 +228,8 @@
 
 .buygreat-product-share .social-links a svg {
   color: currentColor;
+  display: block;
+  flex: 0 0 auto;
   height: 1.4rem;
   margin: 0;
   width: 1.4rem;
