@@ -4,6 +4,7 @@
   border: 0.1rem solid #d9dddf;
   border-radius: 0.5rem;
   box-sizing: border-box;
+  padding: 2.4rem 2.8rem 2.6rem;
   width: 100%;
 }
 
@@ -321,6 +322,10 @@
 }
 
 @media screen and (max-width: 749px) {
+  .buygreat-product-info-shell {
+    padding: 1.8rem 1.2rem 1.6rem;
+  }
+
   .buygreat-product-gallery-card .buygreat-gallery-thumbnails.small-hide {
     display: none !important;
   }
