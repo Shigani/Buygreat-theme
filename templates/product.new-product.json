@@ -42,7 +42,9 @@
         },
         "price": {
           "type": "price",
-          "settings": {}
+          "settings": {
+            "show_same_day_dispatch": true
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -52,24 +54,6 @@
             "show_dynamic_checkout": true,
             "guarantee_safe_checkout": true,
             "safe_checkout_text": "Safe Checkout"
-          }
-        },
-        "f7302d8a-c3b2-48a3-ab1e-68e65db1f80c": {
-          "type": "description",
-          "settings": {
-            "heading": "Product Description",
-            "icon": "star",
-            "productdesc": "fulldesc",
-            "truncatewords_count_handle": 200
-          }
-        },
-        "c8842c06-e135-4b13-b10b-b2c347861c89": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Our Privacy policy",
-            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
-            "page": "compare",
-            "icon": "question_mark"
           }
         },
         "popup_size_guide_qnNqG3": {
@@ -99,6 +83,24 @@
             "twitter_share": true,
             "pinterest_share": true
           }
+        },
+        "f7302d8a-c3b2-48a3-ab1e-68e65db1f80c": {
+          "type": "description",
+          "settings": {
+            "heading": "Product Description",
+            "icon": "star",
+            "productdesc": "fulldesc",
+            "truncatewords_count_handle": 200
+          }
+        },
+        "c8842c06-e135-4b13-b10b-b2c347861c89": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Our Privacy policy",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
+            "page": "compare",
+            "icon": "question_mark"
+          }
         }
       },
       "block_order": [
@@ -108,11 +110,11 @@
         "variant_picker",
         "price",
         "buy_buttons",
-        "f7302d8a-c3b2-48a3-ab1e-68e65db1f80c",
-        "c8842c06-e135-4b13-b10b-b2c347861c89",
         "popup_size_guide_qnNqG3",
         "popup_text_hirBFk",
-        "0a478e9c-d23b-4b8b-b309-62919d0eb667"
+        "0a478e9c-d23b-4b8b-b309-62919d0eb667",
+        "f7302d8a-c3b2-48a3-ab1e-68e65db1f80c",
+        "c8842c06-e135-4b13-b10b-b2c347861c89"
       ],
       "settings": {
         "color_scheme": "background-1",
