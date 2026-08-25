@@ -52,6 +52,7 @@
             "quantity__button": true,
             "add_to_cart__button": "primary",
             "show_dynamic_checkout": true,
+            "need_help_phone": "0332270075",
             "guarantee_safe_checkout": true,
             "safe_checkout_text": ""
           }
