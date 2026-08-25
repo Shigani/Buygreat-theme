@@ -1,0 +1,213 @@
+{%- assign has_product_tabs = false -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'description' or block.type == 'collapsible_tab' or block.type == 'review_app' -%}
+    {%- assign has_product_tabs = true -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if has_product_tabs -%}
+  <section
+    class="buygreat-product-tabs buygreat-product-tabs--{{ section.settings.media_size }}"
+    data-buygreat-product-tabs
+  >
+    <div class="buygreat-product-tabs__nav" role="tablist" aria-label="Product information">
+      {%- assign first_product_tab = true -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'description' or block.type == 'collapsible_tab' or block.type == 'review_app' -%}
+          {%- if block.type == 'description' -%}
+            {%- assign product_tab_label = block.settings.heading -%}
+            {%- if product_tab_label == blank -%}
+              {%- assign product_tab_label = 'Overview' -%}
+            {%- endif -%}
+          {%- elsif block.type == 'review_app' -%}
+            {%- assign product_tab_label = 'Reviews' -%}
+          {%- else -%}
+            {%- assign product_tab_label = block.settings.heading -%}
+            {%- if product_tab_label == blank -%}
+              {%- assign product_tab_label = block.settings.page.title -%}
+            {%- endif -%}
+            {%- if product_tab_label == blank -%}
+              {%- assign product_tab_label = 'Information' -%}
+            {%- endif -%}
+          {%- endif -%}
+          {%- assign product_tab_key = 'ProductTab-' | append: section.id | append: '-' | append: block.id -%}
+          <button
+            type="button"
+            class="buygreat-product-tabs__tab{% if first_product_tab %} is-active{% endif %}"
+            id="{{ product_tab_key }}-tab"
+            role="tab"
+            aria-selected="{{ first_product_tab }}"
+            aria-controls="{{ product_tab_key }}-panel"
+            data-buygreat-product-tab="{{ product_tab_key }}"
+            aria-label="{{ product_tab_label | escape }}"
+            title="{{ product_tab_label | escape }}"
+            {{ block.shopify_attributes }}
+          >
+            {{ product_tab_label | escape }}
+          </button>
+          {%- assign first_product_tab = false -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- assign first_product_tab = true -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'description' or block.type == 'collapsible_tab' or block.type == 'review_app' -%}
+        {%- if block.type == 'description' -%}
+          {%- assign product_tab_label = block.settings.heading -%}
+          {%- if product_tab_label == blank -%}
+            {%- assign product_tab_label = 'Overview' -%}
+          {%- endif -%}
+        {%- elsif block.type == 'review_app' -%}
+          {%- assign product_tab_label = 'Reviews' -%}
+        {%- else -%}
+          {%- assign product_tab_label = block.settings.heading -%}
+          {%- if product_tab_label == blank -%}
+            {%- assign product_tab_label = block.settings.page.title -%}
+          {%- endif -%}
+          {%- if product_tab_label == blank -%}
+            {%- assign product_tab_label = 'Information' -%}
+          {%- endif -%}
+        {%- endif -%}
+        {%- assign product_tab_key = 'ProductTab-' | append: section.id | append: '-' | append: block.id -%}
+        <div
+          id="{{ product_tab_key }}-panel"
+          class="buygreat-product-tabs__panel{% if block.type == 'review_app' %} buygreat-product-tabs__panel--apps{% endif %}{% if first_product_tab %} is-active{% endif %}"
+          role="tabpanel"
+          aria-labelledby="{{ product_tab_key }}-tab"
+          data-buygreat-product-tab-panel="{{ product_tab_key }}"
+          {% unless first_product_tab %}hidden{% endunless %}
+        >
+          {%- if block.type == 'description' -%}
+            <div class="buygreat-product-tabs__content rte">
+              <!-- Example: Adding Judge.me widget to a product page -->
+              <div class="product-reviews">
+                <!-- Paste your Judge.me widget code here -->
+                {{ '<script type="text/javascript" src="//cdn.judge.me/widget.js"></script>' | raw }}
+              </div>
+
+              {%- if product.description != blank -%}
+                <div class="buygreat-product-description-wrapper" data-buygreat-description-wrapper>
+                  <div
+                    class="product__description rte buygreat-product-description is-collapsed"
+                    data-buygreat-description
+                    data-description-lines="{{ block.settings.description_lines | default: 8 }}"
+                  >
+                    {{ product.description }}
+                  </div>
+                  <button
+                    type="button"
+                    class="buygreat-product-description-toggle"
+                    data-buygreat-description-toggle
+                    aria-expanded="false"
+                    hidden
+                  >
+                    Read more
+                  </button>
+                </div>
+              {%- endif -%}
+            </div>
+          {%- elsif block.type == 'review_app' -%}
+            <div class="buygreat-product-tabs__content buygreat-product-tabs__content--apps rte">
+              {%- if block.settings.review_embed != blank -%}
+                {{ block.settings.review_embed }}
+              {%- else -%}
+                <p>Paste your review app embed code into this block’s setting to display reviews here.</p>
+              {%- endif -%}
+            </div>
+          {%- else -%}
+            <div class="buygreat-product-tabs__content rte">
+              {{ block.settings.content }}
+              {{ block.settings.page.content }}
+            </div>
+          {%- endif -%}
+        </div>
+        {%- assign first_product_tab = false -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </section>
+
+  <script>
+    (function () {
+      if (window.buygreatProductTabsInitialized) return;
+      window.buygreatProductTabsInitialized = true;
+
+      document.addEventListener('click', function (event) {
+        var tab = event.target.closest('[data-buygreat-product-tab]');
+        if (!tab) return;
+
+        var tabs = tab.closest('[data-buygreat-product-tabs]');
+        if (!tabs) return;
+
+        var tabKey = tab.getAttribute('data-buygreat-product-tab');
+        tabs.querySelectorAll('[data-buygreat-product-tab]').forEach(function (item) {
+          var isActive = item === tab;
+          item.classList.toggle('is-active', isActive);
+          item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        tabs.querySelectorAll('[data-buygreat-product-tab-panel]').forEach(function (panel) {
+          panel.hidden = panel.getAttribute('data-buygreat-product-tab-panel') !== tabKey;
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      function initializeDescriptions() {
+        document.querySelectorAll('[data-buygreat-description]').forEach(function (description) {
+          var wrapper = description.closest('[data-buygreat-description-wrapper]');
+          var toggle = wrapper && wrapper.querySelector('[data-buygreat-description-toggle]');
+          var lineCount = parseInt(description.getAttribute('data-description-lines'), 10);
+
+          if (!toggle || !lineCount || description.closest('[hidden]')) return;
+
+          var styles = window.getComputedStyle(description);
+          var lineHeight = parseFloat(styles.lineHeight);
+          if (!Number.isFinite(lineHeight)) {
+            lineHeight = parseFloat(styles.fontSize) * 1.8;
+          }
+
+          var collapsedHeight = lineHeight * lineCount;
+          description.style.setProperty('--buygreat-description-collapsed-height', collapsedHeight + 'px');
+          description.classList.add('is-collapsed');
+          description.classList.remove('is-expanded');
+
+          if (description.scrollHeight <= collapsedHeight + 1) {
+            description.classList.remove('is-collapsed');
+            toggle.hidden = true;
+            return;
+          }
+
+          toggle.hidden = false;
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.textContent = 'Read more';
+        });
+      }
+
+      document.addEventListener('click', function (event) {
+        var toggle = event.target.closest('[data-buygreat-description-toggle]');
+        if (toggle) {
+          var wrapper = toggle.closest('[data-buygreat-description-wrapper]');
+          var description = wrapper && wrapper.querySelector('[data-buygreat-description]');
+          if (!description) return;
+
+          var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+          description.classList.toggle('is-collapsed', isExpanded);
+          description.classList.toggle('is-expanded', !isExpanded);
+          toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+          toggle.textContent = isExpanded ? 'Read more' : 'Read less';
+          return;
+        }
+
+        if (event.target.closest('[data-buygreat-product-tab]')) {
+          window.requestAnimationFrame(initializeDescriptions);
+        }
+      });
+
+      initializeDescriptions();
+      window.addEventListener('load', initializeDescriptions);
+    })();
+  </script>
+{%- endif -%}
