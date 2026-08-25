@@ -212,7 +212,7 @@
         "heading_size": "h2",
         "text_align": "center",
         "products_show_on_xl": "4",
-        "products_show_on_sm": "2",
+        "products_show_on_sm": "1.5",
         "show_pagination": false,
         "show_navigation": false,
         "auto_rotate": true,
