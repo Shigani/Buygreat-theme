@@ -119,6 +119,13 @@
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.buygreat-product-info-shell .product-form__quantity {
+  align-items: center;
+  display: flex;
+  gap: 1.6rem;
 }
 
 .buygreat-product-info-shell .product-form__quantity .quantity {
