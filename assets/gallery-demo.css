@@ -333,7 +333,21 @@
 }
 
 @media screen and (max-width: 749px) {
+  .buygreat-product-gallery-card,
   .buygreat-product-info-shell {
+    border-left: 0;
+    border-radius: 0;
+    border-right: 0;
+  }
+
+  .buygreat-product-gallery-card {
+    border-bottom: 0;
+    border-top: 0;
+  }
+
+  .buygreat-product-info-shell {
+    border-bottom: 0;
+    border-top: 0.1rem solid #d9dddf;
     padding: 1.8rem 1.2rem 1.6rem;
   }
 
