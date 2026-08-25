@@ -991,6 +991,39 @@
   margin: 0;
 }
 
+.buygreat-product-description.is-collapsed {
+  max-height: var(--buygreat-description-collapsed-height, none);
+  overflow: hidden;
+}
+
+.buygreat-product-description.is-expanded {
+  max-height: none;
+}
+
+.buygreat-product-description-toggle {
+  appearance: none;
+  background: transparent;
+  border: 0.1rem solid rgb(var(--color-button));
+  border-radius: 999px;
+  color: rgb(var(--color-button));
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-top: 2rem;
+  padding: 1rem 1.8rem;
+}
+
+.buygreat-product-description-toggle:hover,
+.buygreat-product-description-toggle:focus-visible {
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+}
+
+.buygreat-product-description-toggle[hidden] {
+  display: none;
+}
+
 .buygreat-product-tabs__content p:first-child {
   margin-top: 0;
 }
@@ -1068,3 +1101,4 @@
     padding-top: 0;
   }
 }
+

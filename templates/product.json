@@ -69,8 +69,7 @@
           "type": "description",
           "settings": {
             "heading": "Product Description",
-            "icon": "star",
-            "truncatewords_count_handle": 200
+            "icon": "star"
           }
         },
         "c8842c06-e135-4b13-b10b-b2c347861c89": {
