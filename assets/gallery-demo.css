@@ -1014,6 +1014,7 @@
   }
 
   .buygreat-product-tabs__nav {
+    border-bottom: 0;
     flex-direction: column;
     gap: 0;
     margin-left: -1.2rem;
