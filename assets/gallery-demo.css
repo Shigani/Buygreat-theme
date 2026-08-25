@@ -1500,6 +1500,10 @@
 }
 
 .buygreat-recently-viewed-products .product-recommendations__heading {
+  color: rgb(var(--color-foreground));
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.35;
   margin-bottom: 1.6rem;
 }
 
@@ -1520,6 +1524,7 @@
   padding-bottom: 1.2rem;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
+  padding-top: 0.6rem !important;
 }
 
 .buygreat-recently-viewed-products .product-grid-item__content > *:last-child {
