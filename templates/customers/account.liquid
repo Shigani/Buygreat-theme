@@ -17,6 +17,7 @@
       {%- if settings.account_page_title -%}
         <div class="page_header__title">
           <h1 class="page_header__title_label">{{ 'customer.account.title' | t }}</h1>
+{% render 'hulkapps-wishlist-account-btn' %}
         </div>
       {%- endif -%}
       {%- if settings.account_page_breadcrumb -%}

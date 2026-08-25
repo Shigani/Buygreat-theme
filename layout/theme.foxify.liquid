@@ -303,15 +303,9 @@
       <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
     {% endif %}
     {% render 'rapid-search-settings' %}
-{% include 'pagefly-app-header' %}{%- render 'foxify-head' -%}<script type="text/javascript">if(typeof window.hulkappsWishlist === 'undefined') {
-                            window.hulkappsWishlist = {};
-                        }
-                        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
-                        window.hulkappsWishlist.hasAppBlockSupport = '1';
-                        </script>
-</head>
+{% include 'pagefly-app-header' %}{%- render 'foxify-head' -%}</head>
 
-  <body>{% sections 'foxify-header-group' %}
+  <body> {% sections 'foxify-header-group' %} 
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -323,19 +317,19 @@
     {% comment %}
         {% section 'announcement-bar' %}
         {%- section 'header-top' -%}
-        {%- section 'header' -%}
+        
       {% section 'email-popup' %}
     {% endcomment %}
 
-    {% sections 'header-group' %}
+    
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      <!--LayoutHub-Workspace-Start-->{{ content_for_layout }}<!--LayoutHub-Workspace-End-->
+      <!--LayoutHub-Workspace-Start--><div class="foxify-container">{{ content_for_layout }}</div><!--LayoutHub-Workspace-End-->
     </main>
 
-    {% sections 'footer-group' %}
+    
     {% section 'color-swatches' %}
-    {% sections 'aside-group' %}
+    
     {% section 'email-popup' %}
 
     {%- unless template contains 'cart' -%}
@@ -436,5 +430,5 @@
       {%- render 'back-to-top' -%}
     {%- endif -%}
   {%- render "ecom_footer"-%}{%- render 'layouthub_footer' -%} 
- {%- render 'foxify-footer' -%}{% sections 'foxify-footer-group' %}</body>
+ {%- render 'foxify-footer' -%} {% sections 'foxify-footer-group' %} </body>
 </html>
