@@ -53,11 +53,6 @@
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
 
-  assign on_sale = false
-  if current_variant.compare_at_price != nill
-    assign on_sale = true
-  endif
-
   assign productShortDescription = product.metafields.meta.product_excerpt.value
   assign productSizeGuideHandler = product.metafields.meta.product_size_guide.value
   assign productShippingPolicy = product.metafields.meta.product_shipping_policy.value
@@ -195,30 +190,21 @@
                   {{ product.title | escape }}
                 </h1>
               {%- when 'price' -%}
-                <div class="price__box_wrapper d-flex" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
-                  <div class="no-js-hidden">
+                <div
+                  class="price__box_wrapper buygreat-product-price-block"
+                  id="price-{{ section.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <span class="buygreat-product-price-label">
+                    {{ 'sections.cart.headings.price' | t }}
+                  </span>
+                  <div class="no-js-hidden buygreat-product-price-values">
                     {%- render 'price',
                       product: product,
                       use_variant: true,
                       show_badges: true,
                       price_class: 'price--large'
                     -%}
-                  </div>
-                  <div class="save__disoucnt">
-                    <span class="discount__sale__text {% if on_sale == false %} no-js-inline {% endif %}">
-                      -<span class="sale__save--percent">
-                        {{-
-                          product.selected_or_first_available_variant.compare_at_price
-                          | minus: product.selected_or_first_available_variant.price
-                          | times: 100.0
-                          | divided_by: product.selected_or_first_available_variant.compare_at_price
-                          | money_without_currency
-                          | replace: ',', '.'
-                          | times: 100
-                          | remove: '.0'
-                        -}}</span
-                      >%</span
-                    >
                   </div>
                 </div>
 
