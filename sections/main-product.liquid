@@ -837,9 +837,23 @@
                   </div>
 
                   {%- if product.description != blank -%}
-                    {%- assign truncatewords_count = block.settings.truncatewords_count_handle -%}
-                    <div class="product__description rte">
-                      {{ product.description | truncatewords: truncatewords_count, '' }}
+                    <div class="buygreat-product-description-wrapper" data-buygreat-description-wrapper>
+                      <div
+                        class="product__description rte buygreat-product-description is-collapsed"
+                        data-buygreat-description
+                        data-description-lines="{{ block.settings.description_lines | default: 8 }}"
+                      >
+                        {{ product.description }}
+                      </div>
+                      <button
+                        type="button"
+                        class="buygreat-product-description-toggle"
+                        data-buygreat-description-toggle
+                        aria-expanded="false"
+                        hidden
+                      >
+                        Read more
+                      </button>
                     </div>
                   {%- endif -%}
                 </div>
@@ -886,6 +900,64 @@
               panel.hidden = panel.getAttribute('data-buygreat-product-tab-panel') !== tabKey;
             });
           });
+        })();
+      </script>
+
+      <script>
+        (function () {
+          function initializeDescriptions() {
+            document.querySelectorAll('[data-buygreat-description]').forEach(function (description) {
+              var wrapper = description.closest('[data-buygreat-description-wrapper]');
+              var toggle = wrapper && wrapper.querySelector('[data-buygreat-description-toggle]');
+              var lineCount = parseInt(description.getAttribute('data-description-lines'), 10);
+
+              if (!toggle || !lineCount || description.closest('[hidden]')) return;
+
+              var styles = window.getComputedStyle(description);
+              var lineHeight = parseFloat(styles.lineHeight);
+              if (!Number.isFinite(lineHeight)) {
+                lineHeight = parseFloat(styles.fontSize) * 1.8;
+              }
+
+              var collapsedHeight = lineHeight * lineCount;
+              description.style.setProperty('--buygreat-description-collapsed-height', collapsedHeight + 'px');
+              description.classList.add('is-collapsed');
+              description.classList.remove('is-expanded');
+
+              if (description.scrollHeight <= collapsedHeight + 1) {
+                description.classList.remove('is-collapsed');
+                toggle.hidden = true;
+                return;
+              }
+
+              toggle.hidden = false;
+              toggle.setAttribute('aria-expanded', 'false');
+              toggle.textContent = 'Read more';
+            });
+          }
+
+          document.addEventListener('click', function (event) {
+            var toggle = event.target.closest('[data-buygreat-description-toggle]');
+            if (toggle) {
+              var wrapper = toggle.closest('[data-buygreat-description-wrapper]');
+              var description = wrapper && wrapper.querySelector('[data-buygreat-description]');
+              if (!description) return;
+
+              var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+              description.classList.toggle('is-collapsed', isExpanded);
+              description.classList.toggle('is-expanded', !isExpanded);
+              toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+              toggle.textContent = isExpanded ? 'Read more' : 'Read less';
+              return;
+            }
+
+            if (event.target.closest('[data-buygreat-product-tab]')) {
+              window.requestAnimationFrame(initializeDescriptions);
+            }
+          });
+
+          initializeDescriptions();
+          window.addEventListener('load', initializeDescriptions);
         })();
       </script>
     {%- endif -%}
@@ -1912,13 +1984,16 @@
           "default": "check_mark",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.label"
         },
-            {
-              "type": "number",
-              "id": "truncatewords_count_handle",
-              "label": "Description Word Count",
-              "default": 35,
-              "info": "The full product description will be truncated to this many words."
-            }
+        {
+          "type": "range",
+          "id": "description_lines",
+          "label": "Description lines before Read more",
+          "min": 3,
+          "max": 20,
+          "step": 1,
+          "default": 8,
+          "info": "Choose how many lines are shown before the Read more button."
+        }
 	   ]
     },
     {
