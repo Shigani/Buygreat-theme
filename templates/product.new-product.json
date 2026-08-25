@@ -113,7 +113,7 @@
           "type": "trending_products",
           "settings": {
             "heading": "Trending Products",
-            "collection": "",
+            "collection": "automated-collection",
             "image_ratio": "square",
             "show_badges": true,
             "products_to_show": 4,
