@@ -885,8 +885,8 @@
 }
 
 .buygreat-product-tabs {
-  background: #fff;
-  border: 0.1rem solid #d9dddf;
+  background: rgb(var(--color-background));
+  border: 0.1rem solid rgba(var(--color-foreground), 0.2);
   border-radius: 0.5rem;
   box-sizing: border-box;
   margin-top: 2.4rem;
@@ -910,7 +910,7 @@
 
 .buygreat-product-tabs__nav {
   align-items: stretch;
-  border-bottom: 0.1rem solid #d9dddf;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.2);
   display: flex;
   gap: 3rem;
   overflow-x: auto;
@@ -928,7 +928,7 @@
   background: transparent;
   border: 0;
   border-radius: 0;
-  color: #536d85;
+  color: rgba(var(--color-foreground), 0.75);
   cursor: pointer;
   flex: 0 0 auto;
   font: inherit;
@@ -943,15 +943,15 @@
 
 .buygreat-product-tabs__tab:hover,
 .buygreat-product-tabs__tab:focus-visible {
-  color: #bd1028;
+  color: rgb(var(--color-foreground));
 }
 
 .buygreat-product-tabs__tab.is-active {
-  color: #bd1028;
+  color: rgb(var(--color-foreground));
 }
 
 .buygreat-product-tabs__tab.is-active::after {
-  background: #bd1028;
+  background: rgb(var(--color-button));
   bottom: -0.1rem;
   content: '';
   height: 0.5rem;
@@ -961,7 +961,7 @@
 }
 
 .buygreat-product-tabs__panel {
-  color: #536d85;
+  color: rgba(var(--color-foreground), 0.75);
   font-size: 1.6rem;
   line-height: 1.8;
   padding-top: 2.4rem;
@@ -1004,7 +1004,7 @@
   }
 
   .buygreat-product-tabs::before {
-    border-top: 0.1rem solid #d9dddf;
+    border-top: 0.1rem solid rgba(var(--color-foreground), 0.2);
     content: '';
     left: 50%;
     position: absolute;
@@ -1025,7 +1025,7 @@
 
   .buygreat-product-tabs__tab {
     align-items: center;
-    border-bottom: 0.1rem solid #d9dddf;
+    border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.2);
     display: flex;
     font-size: 1.5rem;
     justify-content: space-between;
@@ -1038,12 +1038,12 @@
   .buygreat-product-tabs__tab:hover,
   .buygreat-product-tabs__tab:focus-visible {
     background: transparent;
-    color: #536d85;
+    color: rgba(var(--color-foreground), 0.75);
   }
 
   .buygreat-product-tabs__tab.is-active {
-    background: #eef0f1;
-    color: #202b33;
+    background: rgba(var(--color-foreground), 0.08);
+    color: rgb(var(--color-foreground));
   }
 
   .buygreat-product-tabs__tab.is-active::after {
