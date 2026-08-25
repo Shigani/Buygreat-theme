@@ -930,7 +930,7 @@
   border-radius: 0;
   color: rgba(var(--color-foreground), 0.75);
   cursor: pointer;
-  flex: 1 1 0;
+  flex: 0 1 auto;
   font: inherit;
   font-size: 1.8rem;
   font-weight: 600;
@@ -1030,9 +1030,9 @@
     align-items: center;
     border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.2);
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     justify-content: space-between;
-    padding: 1.4rem 1.2rem;
+    padding: 1.2rem 1.2rem;
     text-align: left;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1059,3 +1059,4 @@
     padding-top: 1.8rem;
   }
 }
+
