@@ -1507,6 +1507,10 @@
   margin-bottom: 1.6rem;
 }
 
+.buygreat-recently-viewed-products .product-grid-item__thumbnail {
+  min-height: 19rem;
+}
+
 .buygreat-recently-viewed-products .productSlider {
   border-left: 0.1rem solid #d9dddf !important;
   border-right: 0.1rem solid #d9dddf !important;
@@ -1536,6 +1540,10 @@
     margin-top: 1.8rem;
     padding-bottom: 2.4rem;
     padding-top: 1.8rem;
+  }
+
+  .buygreat-recently-viewed-products .product-grid-item__thumbnail {
+    min-height: 16rem;
   }
 }
 
