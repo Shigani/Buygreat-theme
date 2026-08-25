@@ -1274,11 +1274,11 @@
 }
 
 .buygreat-trending-products .product-grid-item__price.price--on-sale .price__sale > dd.price__compare {
-  order: 1;
+  order: 1 !important;
 }
 
 .buygreat-trending-products .product-grid-item__price.price--on-sale .price__sale > dd:not(.price__compare) {
-  order: 2;
+  order: 2 !important;
 }
 
 .buygreat-trending-products .product-grid-item__price.price--on-sale .price-item--regular {
