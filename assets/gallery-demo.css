@@ -1275,6 +1275,10 @@
 }
 
 .buygreat-product-info-trending .product-recommendations__heading {
+  color: rgb(var(--color-foreground));
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.35;
   margin-bottom: 1.6rem;
 }
 
