@@ -104,13 +104,10 @@
             "icon": "question_mark"
           }
         },
-        "collapsible_tab_Bk7ADm": {
-          "type": "collapsible_tab",
+        "review_app_NPcTYU": {
+          "type": "review_app",
           "settings": {
-            "heading": "Reviews",
-            "content": "",
-            "page": "",
-            "icon": "check_mark"
+            "review_embed": ""
           }
         }
       },
@@ -126,7 +123,7 @@
         "0a478e9c-d23b-4b8b-b309-62919d0eb667",
         "f7302d8a-c3b2-48a3-ab1e-68e65db1f80c",
         "c8842c06-e135-4b13-b10b-b2c347861c89",
-        "collapsible_tab_Bk7ADm"
+        "review_app_NPcTYU"
       ],
       "settings": {
         "color_scheme": "background-1",
