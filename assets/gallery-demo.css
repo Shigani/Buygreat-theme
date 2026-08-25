@@ -537,6 +537,7 @@ warning: in the working copy of 'snippets/product-thumbnail.liquid', LF will be 
 @media screen and (min-width: 750px) {
   .buygreat-product-info-shell {
     box-shadow: inset 0 0 0 0.1rem #d9dddf;
+    padding: 2.4rem 2.8rem 2.6rem;
   }
 }
 
