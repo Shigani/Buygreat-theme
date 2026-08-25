@@ -32,6 +32,12 @@
   font-weight: 700;
 }
 
+.buygreat-product-info-shell
+  .product-form__input.radio--swatch
+  > .form__label {
+  font-size: 1.4rem;
+}
+
 .buygreat-product-price-block {
   align-items: center;
   display: flex;
@@ -41,7 +47,7 @@
 .buygreat-product-price-label {
   color: rgb(var(--color-foreground));
   flex: 0 0 auto;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.3;
 }
