@@ -517,6 +517,10 @@
 }
 
 @media screen and (max-width: 749px) {
+  .buygreat-product-info-shell .product-form__buttons {
+    row-gap: 1.2rem;
+  }
+
   .buygreat-product-info-shell .product__add__cart__button,
   .buygreat-product-info-shell .shopify-payment-button {
     flex-basis: 100%;
