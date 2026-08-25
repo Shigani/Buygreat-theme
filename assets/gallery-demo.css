@@ -1203,7 +1203,7 @@
 .buygreat-trending-products .product-grid-item__thumbnail .media > img {
   box-sizing: border-box;
   object-fit: contain;
-  padding: 1.8rem;
+  padding: 1rem;
 }
 
 .buygreat-trending-products .product-grid-item__badges {
@@ -1375,7 +1375,7 @@
 }
 
 .buygreat-product-info-trending .product-grid-item__thumbnail {
-  min-height: 18rem;
+  min-height: 21rem;
 }
 
 .buygreat-product-info-trending .product-grid-item__content {
@@ -1395,7 +1395,18 @@
   }
 
   .buygreat-product-info-trending .product-grid-item__thumbnail {
-    min-height: 15rem;
+    min-height: 18rem;
+  }
+
+  .buygreat-product-info-trending .product-grid-item__price,
+  .buygreat-product-info-trending .product-grid-item__price.price,
+  .buygreat-product-info-trending .product-grid-item__price.price dl,
+  .buygreat-product-info-trending .product-grid-item__price.price .price__sale {
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+    width: 100%;
   }
 }
 
