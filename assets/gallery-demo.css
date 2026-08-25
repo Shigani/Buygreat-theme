@@ -557,7 +557,7 @@ warning: in the working copy of 'snippets/product-thumbnail.liquid', LF will be 
 @media screen and (max-width: 749px) {
   .buygreat-product-price-block {
     flex-wrap: wrap;
-    row-gap: 1.2rem;
+    row-gap: 0.6rem;
   }
 
   .buygreat-product-dispatch {
