@@ -45,6 +45,10 @@ var recentViewsetupGrid = function (Recentgrid) {
   Promise.all(requestsRecentViewed).then(function (responses) {
     var recentViewPorductProductCards = responses.join("");
     Recentgrid.innerHTML = recentViewPorductProductCards;
+
+    if (typeof theme.collectionSlider === "function") {
+      theme.collectionSlider(recentViewdProduct);
+    }
   });
 };
 
@@ -89,3 +93,4 @@ var recentViewPorductContains = function (handle) {
 var resetrecentViewPorduct = function () {
   return setrecentViewPorduct([]);
 };
+

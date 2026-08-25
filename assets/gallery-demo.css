@@ -1490,3 +1490,38 @@
   }
 }
 
+.buygreat-recently-viewed-products {
+  background: #fff;
+  border-bottom: 0.1rem solid #d9dddf;
+  border-top: 0.1rem solid #d9dddf;
+  box-sizing: border-box;
+  margin-top: 2.4rem;
+  padding: 2.4rem 0 2.4rem;
+}
+
+.buygreat-recently-viewed-products .product-recommendations__heading {
+  margin-bottom: 1.6rem;
+}
+
+.buygreat-recently-viewed-products .buygreat-recent-view-slide {
+  position: relative;
+}
+
+.buygreat-recently-viewed-products .product-grid-item__content {
+  padding-bottom: 1.2rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.buygreat-recently-viewed-products .product-grid-item__content > *:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .buygreat-recently-viewed-products {
+    margin-top: 1.8rem;
+    padding-bottom: 2.4rem;
+    padding-top: 1.8rem;
+  }
+}
+

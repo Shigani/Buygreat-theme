@@ -307,17 +307,16 @@
     },
     "recent-viewed-products": {
       "type": "recently_viewed_product",
-      "disabled": true,
       "settings": {
         "color_scheme": "background-1",
-        "heading": "Recently viewed product",
+        "heading": "Recently viewed",
         "heading_size": "h2",
-        "text_align": "center",
-        "products_show_on_xl": "4",
+        "text_align": "left",
+        "products_show_on_xl": "6",
         "products_show_on_sm": "2",
         "show_pagination": false,
-        "show_navigation": false,
-        "auto_rotate": true,
+        "show_navigation": true,
+        "auto_rotate": false,
         "autoplay_time": 3
       }
     },
@@ -468,15 +467,16 @@
   },
   "order": [
     "main",
+    "recent-viewed-products",
     "177901878618d59b8e",
     "1745289788ef9d2eb4",
     "video_wggG33",
     "faq_4YUEmD",
     "text_with_icons_UiGtfy",
-    "recent-viewed-products",
     "text_with_icons_g9E6EU",
     "blocks_wREmii",
     "177454310590ff9c5c",
     "1774636155881bcebb"
   ]
 }
+
