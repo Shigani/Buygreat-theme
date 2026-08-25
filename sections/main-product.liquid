@@ -409,59 +409,7 @@
                 </div>
                 <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
               {%- when 'trending_products' -%}
-                {%- liquid
-                  assign trending_collection = block.settings.collection
-                  if trending_collection != blank
-                    assign trending_products = trending_collection.products
-                  else
-                    assign trending_products = collections.all.products
-                  endif
-                -%}
-                <div
-                  class="buygreat-trending-products buygreat-product-info-trending"
-                  data-section-id="{{ section.id }}-{{ block.id }}"
-                  data-section-type="product-slider"
-                  data-slider-enable="true"
-                  data-show-mobile="{{ block.settings.products_show_on_sm }}"
-                  data-show-extra-large="{{ block.settings.products_show_on_xl }}"
-                  data-slider-space="0"
-                  data-autoplay="false"
-                  data-autoplay-time="3000"
-                  {{ block.shopify_attributes }}
-                >
-                  <h2 class="product-recommendations__heading h2">
-                    {{ block.settings.heading | escape }}
-                  </h2>
-                  <div class="relative product_slider_wrapper">
-                    <div class="productSlider swiper" role="list">
-                      <div class="swiper-wrapper">
-                        {%- for recommendation in trending_products limit: block.settings.products_to_show -%}
-                          <div class="swiper-slide">
-                            {% render 'product-card-item',
-                              product_card_product: recommendation,
-                              media_size: block.settings.image_ratio,
-                              show_secondary_image: false,
-                              show_vendor: false,
-                              show_badge: block.settings.show_badges,
-                              show_cart_button: false,
-                              cart_button_style: 'style2',
-                              cart_button_place: 'bottom_right',
-                              show_countdown: false,
-                              show_countdown_on_image: false,
-                              show_title: true,
-                              show_price: true,
-                              show_rating: false,
-                              is_product_options: true
-                            %}
-                          </div>
-                        {%- endfor -%}
-                      </div>
-                    </div>
-                  </div>
-                  <div class="featured__collection--slider slider--controls--button">
-                    <div class="swiper-button-next product__slider--buton" aria-label="Next products"></div>
-                  </div>
-                </div>
+                {%- comment -%}Rendered below the product info so mobile can place it after the tabs.{%- endcomment -%}
               {%- when 'variant_picker' -%}
                 {%- unless product.has_only_default_variant -%}
                   {%- if block.settings.picker_type == 'button' -%}
@@ -802,6 +750,11 @@
             {%- endcase -%}
           {%- endfor -%}
         </div>
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'trending_products' -%}
+          {%- render 'product-trending-block', block: block -%}
+        {%- endif -%}
+      {%- endfor -%}
       </div>
     </div>
 
