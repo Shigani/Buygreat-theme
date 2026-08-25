@@ -207,7 +207,7 @@
     "recent-viewed-products": {
       "type": "recently_viewed_product",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
         "heading": "Recently viewed product",
         "heading_size": "h2",
         "text_align": "center",
