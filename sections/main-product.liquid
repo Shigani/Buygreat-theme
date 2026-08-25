@@ -757,7 +757,10 @@
     {%- endfor -%}
 
     {%- if has_product_tabs -%}
-      <section class="buygreat-product-tabs" data-buygreat-product-tabs>
+      <section
+        class="buygreat-product-tabs buygreat-product-tabs--{{ section.settings.media_size }}"
+        data-buygreat-product-tabs
+      >
         <div class="buygreat-product-tabs__nav" role="tablist" aria-label="Product information">
           {%- assign first_product_tab = true -%}
           {%- for block in section.blocks -%}
