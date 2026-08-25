@@ -1013,12 +1013,21 @@
   }
 
   .buygreat-product-tabs__nav {
-    gap: 2rem;
+    flex-direction: column;
+    gap: 0;
+    overflow: visible;
   }
 
   .buygreat-product-tabs__tab {
+    align-items: center;
+    border-bottom: 0.1rem solid #d9dddf;
+    display: flex;
     font-size: 1.5rem;
-    padding-bottom: 1.2rem;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
   }
 
   .buygreat-product-tabs__panel {
