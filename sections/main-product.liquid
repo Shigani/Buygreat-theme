@@ -95,6 +95,13 @@
   >
 {%- endif -%}
 
+{%- assign has_review_app_tab = false -%}
+{%- for product_block in section.blocks -%}
+  {%- if product_block.type == 'review_app' -%}
+    {%- assign has_review_app_tab = true -%}
+  {%- endif -%}
+{%- endfor -%}
+
 <div
   data-section-id="{{ section.id }}"
   data-section-type="main-product"
@@ -147,7 +154,9 @@
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
-                {% render block %}
+                {%- unless has_review_app_tab -%}
+                  {% render block %}
+                {%- endunless -%}
               {%- when 'additinal_field' -%}
                 <div class="cart__additional--field" {{ block.shopify_attributes }}>
                   {%- if block.settings.text_field -%}
@@ -751,7 +760,7 @@
 
     {%- assign has_product_tabs = false -%}
     {%- for block in section.blocks -%}
-      {%- if block.type == 'description' or block.type == 'collapsible_tab' -%}
+      {%- if block.type == 'description' or block.type == 'collapsible_tab' or block.type == 'review_app' -%}
         {%- assign has_product_tabs = true -%}
       {%- endif -%}
     {%- endfor -%}
@@ -764,12 +773,14 @@
         <div class="buygreat-product-tabs__nav" role="tablist" aria-label="Product information">
           {%- assign first_product_tab = true -%}
           {%- for block in section.blocks -%}
-            {%- if block.type == 'description' or block.type == 'collapsible_tab' -%}
+            {%- if block.type == 'description' or block.type == 'collapsible_tab' or block.type == 'review_app' -%}
               {%- if block.type == 'description' -%}
                 {%- assign product_tab_label = block.settings.heading -%}
                 {%- if product_tab_label == blank -%}
                   {%- assign product_tab_label = 'Overview' -%}
                 {%- endif -%}
+              {%- elsif block.type == 'review_app' -%}
+                {%- assign product_tab_label = 'Reviews' -%}
               {%- else -%}
                 {%- assign product_tab_label = block.settings.heading -%}
                 {%- if product_tab_label == blank -%}
@@ -801,12 +812,14 @@
 
         {%- assign first_product_tab = true -%}
         {%- for block in section.blocks -%}
-          {%- if block.type == 'description' or block.type == 'collapsible_tab' -%}
+          {%- if block.type == 'description' or block.type == 'collapsible_tab' or block.type == 'review_app' -%}
             {%- if block.type == 'description' -%}
               {%- assign product_tab_label = block.settings.heading -%}
               {%- if product_tab_label == blank -%}
                 {%- assign product_tab_label = 'Overview' -%}
               {%- endif -%}
+            {%- elsif block.type == 'review_app' -%}
+              {%- assign product_tab_label = 'Reviews' -%}
             {%- else -%}
               {%- assign product_tab_label = block.settings.heading -%}
               {%- if product_tab_label == blank -%}
@@ -842,6 +855,17 @@
                     <div class="product__description rte">
                       {{ product.description | truncatewords: truncatewords_count, '' }}
                     </div>
+                  {%- endif -%}
+                </div>
+              {%- elsif block.type == 'review_app' -%}
+                <div class="buygreat-product-tabs__content buygreat-product-tabs__content--apps rte">
+                  {%- assign review_app_blocks = section.blocks | where: 'type', '@app' -%}
+                  {%- if review_app_blocks.size > 0 -%}
+                    {%- for app_block in review_app_blocks -%}
+                      {% render app_block %}
+                    {%- endfor -%}
+                  {%- else -%}
+                    <p>Insert a Review App block from the Theme Editor to display reviews here.</p>
                   {%- endif -%}
                 </div>
               {%- else -%}
@@ -2126,6 +2150,16 @@
       ]
     },
     {
+      "type": "review_app",
+      "name": "Review App",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Insert a Review App block. Add your review app block to this product section and it will appear inside this Reviews tab."
+        }
+      ]
+    },
+    {
       "type": "popup_size_guide",
       "name": "Pop-up size guide",
   	  "limit": 1,
@@ -2263,3 +2297,4 @@
   ]
 }
 {% endschema %}
+
