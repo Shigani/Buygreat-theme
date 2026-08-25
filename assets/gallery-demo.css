@@ -1379,8 +1379,13 @@
 }
 
 .buygreat-product-info-trending .product-grid-item__content {
+  padding-bottom: 1.2rem;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
+}
+
+.buygreat-product-info-trending .product-grid-item__content > *:last-child {
+  margin-bottom: 0;
 }
 
 .buygreat-product-info-trending .featured__collection--slider {
@@ -1396,6 +1401,10 @@
 
   .buygreat-product-info-trending .product-grid-item__thumbnail {
     min-height: 16rem;
+  }
+
+  .buygreat-product-info-trending .product-grid-item__content {
+    padding-bottom: 0.8rem;
   }
 
   .buygreat-product-info-trending .product-grid-item__price,
