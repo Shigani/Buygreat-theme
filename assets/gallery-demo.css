@@ -48,7 +48,7 @@
   color: rgb(var(--color-foreground));
   flex: 0 0 auto;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3;
 }
 
@@ -1016,7 +1016,10 @@
   .buygreat-product-tabs__nav {
     flex-direction: column;
     gap: 0;
+    margin-left: -1.2rem;
+    margin-right: -1.2rem;
     overflow: visible;
+    width: calc(100% + 2.4rem);
   }
 
   .buygreat-product-tabs__tab {
@@ -1025,7 +1028,7 @@
     display: flex;
     font-size: 1.5rem;
     justify-content: space-between;
-    padding: 1.2rem 0;
+    padding: 1.4rem 1.2rem;
     text-align: left;
     white-space: normal;
     width: 100%;
