@@ -8,6 +8,20 @@
   width: 100%;
 }
 
+/* Keep the product color swatches compact and aligned with their legend. */
+.buygreat-product-info-shell
+  .product-form__input input[type="radio"]
+  + label.variant--swatch-color {
+  height: 2.8rem;
+  width: 2.8rem;
+}
+
+.buygreat-product-info-shell
+  .product-form__input.radio--swatch
+  > label.variant--swatch-custom:first-of-type {
+  margin-left: 0.3rem;
+}
+
 .buygreat-product-info-shell .buygreat-product-rating-divider {
   border-top: 0.1rem solid #d9dddf;
   clear: both;
