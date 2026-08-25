@@ -206,7 +206,6 @@
     },
     "recent-viewed-products": {
       "type": "recently_viewed_product",
-      "disabled": true,
       "settings": {
         "color_scheme": "background-1",
         "heading": "Recently viewed product",
