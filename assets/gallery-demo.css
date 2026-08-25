@@ -933,6 +933,7 @@
   flex: 0 0 auto;
   font: inherit;
   font-size: 1.8rem;
+  font-weight: 600;
   line-height: 1.35;
   padding: 0 0 1.4rem;
   position: relative;
@@ -1028,6 +1029,21 @@
     text-align: left;
     white-space: normal;
     width: 100%;
+  }
+
+  .buygreat-product-tabs__tab:hover,
+  .buygreat-product-tabs__tab:focus-visible {
+    background: transparent;
+    color: #536d85;
+  }
+
+  .buygreat-product-tabs__tab.is-active {
+    background: #eef0f1;
+    color: #202b33;
+  }
+
+  .buygreat-product-tabs__tab.is-active::after {
+    display: none;
   }
 
   .buygreat-product-tabs__panel {
