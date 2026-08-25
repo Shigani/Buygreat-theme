@@ -189,6 +189,10 @@
   display: flex;
 }
 
+.buygreat-product-share__native details[hidden] {
+  display: none !important;
+}
+
 .buygreat-product-share__native summary {
   cursor: pointer;
   list-style: none;
