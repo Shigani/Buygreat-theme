@@ -626,6 +626,22 @@
                                 {{ 'products.product.sold_out' | t }}
                               {%- endif -%}
                             </button>
+                            {%- assign need_help_phone = block.settings.need_help_phone | strip -%}
+                            {%- assign need_help_phone_href = need_help_phone
+                              | replace: ' ', ''
+                              | replace: '-', ''
+                              | replace: '(', ''
+                              | replace: ')', ''
+                            -%}
+                            {%- if need_help_phone != blank -%}
+                              <a
+                                class="buygreat-buy-button-help"
+                                href="tel:{{ need_help_phone_href }}"
+                                aria-label="Call for help at {{ need_help_phone }}"
+                              >
+                                Need Help? <span aria-hidden="true">📞</span> {{ need_help_phone }}
+                              </a>
+                            {%- endif -%}
                           </div>
                         </div>
 
@@ -1622,6 +1638,13 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
+        },
+        {
+          "type": "text",
+          "id": "need_help_phone",
+          "default": "07 4801 9365",
+          "label": "Need help phone number",
+          "info": "Shown below Add to cart and used as a telephone link. Leave blank to hide it."
         },
   		{
         	"type": "header",

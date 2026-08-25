@@ -1,9 +1,3 @@
-warning: in the working copy of 'assets/media-gallery.js', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'sections/main-product.liquid', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'snippets/product-page-layout-1.liquid', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'snippets/product-thumbnail.liquid', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'snippets/social-share.liquid', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'templates/product.json', LF will be replaced by CRLF the next time Git touches it
 /* Product gallery card styling based on the supplied reference layout. */
 .buygreat-product-info-shell {
   background: #fff;
@@ -285,6 +279,27 @@ warning: in the working copy of 'templates/product.json', LF will be replaced by
   box-sizing: border-box;
   min-width: 0;
   width: 100% !important;
+}
+
+.buygreat-product-info-shell .buygreat-buy-button-help,
+.buygreat-product-info-shell .shopify-payment-button__more-options {
+  color: #bd1028;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.buygreat-product-info-shell .buygreat-buy-button-help {
+  margin: 1.4rem 0 0;
+  width: 100%;
+}
+
+.buygreat-product-info-shell .shopify-payment-button__more-options {
+  margin: 1.4rem 0 0;
 }
 
 .buygreat-product-info-shell .product-form__quantity .form__label {
