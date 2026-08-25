@@ -294,37 +294,7 @@
                 </div>
 
               {%- when 'description' -%}
-                <div class="product__accordion accordion" {{ block.shopify_attributes }}>
-                  <details>
-                    <summary>
-                      <div class="summary__title">
-                        {% render 'icon-accordion', icon: block.settings.icon %}
-                        <h2 class="h4 accordion__title">
-                          {{ block.settings.heading }}
-                        </h2>
-                      </div>
-                      {% render 'icon-caret' %}
-                    </summary>
-                    <div class="accordion__content rte">
-                      <!-- Example: Adding Judge.me widget to a product page -->
-                      <div class="product-reviews">
-                        <!-- Paste your Judge.me widget code here -->
-                        {{ '<script type="text/javascript" src="//cdn.judge.me/widget.js"></script>' | raw }}
-                      </div>
-
-                      {%- if block.settings.productdesc == 'shortdesc' and productShortDescription != blank -%}
-                        <div class="product__description rte">
-                          {{ productShortDescription | strip_html }}
-                        </div>
-                      {%- elsif block.settings.productdesc == 'fulldesc' and product.description != blank -%}
-                        {%- assign truncatewords_count = block.settings.truncatewords_count_handle -%}
-                        <div class="product__description rte">
-                          {{ product.description | truncatewords: truncatewords_count, '' }}
-                        </div>
-                      {%- endif -%}
-                    </div>
-                  </details>
-                </div>
+                {%- comment -%}Rendered in the tabbed product content below the gallery.{%- endcomment -%}
               {%- when 'inventory' -%}
                 {%- liquid
                   if current_variant.inventory_quantity < 0
@@ -389,23 +359,7 @@
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
-                <div class="product__accordion accordion" {{ block.shopify_attributes }}>
-                  <details>
-                    <summary>
-                      <div class="summary__title">
-                        {% render 'icon-accordion', icon: block.settings.icon %}
-                        <h2 class="h4 accordion__title">
-                          {{ block.settings.heading | default: block.settings.page.title }}
-                        </h2>
-                      </div>
-                      {% render 'icon-caret' %}
-                    </summary>
-                    <div class="accordion__content rte">
-                      {{ block.settings.content }}
-                      {{ block.settings.page.content }}
-                    </div>
-                  </details>
-                </div>
+                {%- comment -%}Rendered in the tabbed product content below the gallery.{%- endcomment -%}
               {%- when 'share' -%}
                 <div class="social__share_box buygreat-product-share" {{ block.shopify_attributes }}>
                   {%- if block.settings.share_link -%}
@@ -794,6 +748,129 @@
         </div>
       </div>
     </div>
+
+    {%- assign has_product_tabs = false -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'description' or block.type == 'collapsible_tab' -%}
+        {%- assign has_product_tabs = true -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if has_product_tabs -%}
+      <section class="buygreat-product-tabs" data-buygreat-product-tabs>
+        <div class="buygreat-product-tabs__nav" role="tablist" aria-label="Product information">
+          {%- assign first_product_tab = true -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'description' or block.type == 'collapsible_tab' -%}
+              {%- if block.type == 'description' -%}
+                {%- assign product_tab_label = 'Overview' -%}
+              {%- else -%}
+                {%- assign product_tab_label = block.settings.heading -%}
+                {%- if product_tab_label == blank -%}
+                  {%- assign product_tab_label = block.settings.page.title -%}
+                {%- endif -%}
+                {%- if product_tab_label == blank -%}
+                  {%- assign product_tab_label = 'Information' -%}
+                {%- endif -%}
+              {%- endif -%}
+              {%- assign product_tab_key = 'ProductTab-' | append: section.id | append: '-' | append: block.id -%}
+              <button
+                type="button"
+                class="buygreat-product-tabs__tab{% if first_product_tab %} is-active{% endif %}"
+                id="{{ product_tab_key }}-tab"
+                role="tab"
+                aria-selected="{{ first_product_tab }}"
+                aria-controls="{{ product_tab_key }}-panel"
+                data-buygreat-product-tab="{{ product_tab_key }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ product_tab_label | escape }}
+              </button>
+              {%- assign first_product_tab = false -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        {%- assign first_product_tab = true -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'description' or block.type == 'collapsible_tab' -%}
+            {%- if block.type == 'description' -%}
+              {%- assign product_tab_label = 'Overview' -%}
+            {%- else -%}
+              {%- assign product_tab_label = block.settings.heading -%}
+              {%- if product_tab_label == blank -%}
+                {%- assign product_tab_label = block.settings.page.title -%}
+              {%- endif -%}
+              {%- if product_tab_label == blank -%}
+                {%- assign product_tab_label = 'Information' -%}
+              {%- endif -%}
+            {%- endif -%}
+            {%- assign product_tab_key = 'ProductTab-' | append: section.id | append: '-' | append: block.id -%}
+            <div
+              id="{{ product_tab_key }}-panel"
+              class="buygreat-product-tabs__panel{% if first_product_tab %} is-active{% endif %}"
+              role="tabpanel"
+              aria-labelledby="{{ product_tab_key }}-tab"
+              data-buygreat-product-tab-panel="{{ product_tab_key }}"
+              {% unless first_product_tab %}hidden{% endunless %}
+            >
+              {%- if block.type == 'description' -%}
+                <div class="buygreat-product-tabs__content rte">
+                  <!-- Example: Adding Judge.me widget to a product page -->
+                  <div class="product-reviews">
+                    <!-- Paste your Judge.me widget code here -->
+                    {{ '<script type="text/javascript" src="//cdn.judge.me/widget.js"></script>' | raw }}
+                  </div>
+
+                  {%- if block.settings.productdesc == 'shortdesc' and productShortDescription != blank -%}
+                    <div class="product__description rte">
+                      {{ productShortDescription | strip_html }}
+                    </div>
+                  {%- elsif block.settings.productdesc == 'fulldesc' and product.description != blank -%}
+                    {%- assign truncatewords_count = block.settings.truncatewords_count_handle -%}
+                    <div class="product__description rte">
+                      {{ product.description | truncatewords: truncatewords_count, '' }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- else -%}
+                <div class="buygreat-product-tabs__content rte">
+                  {{ block.settings.content }}
+                  {{ block.settings.page.content }}
+                </div>
+              {%- endif -%}
+            </div>
+            {%- assign first_product_tab = false -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </section>
+
+      <script>
+        (function () {
+          if (window.buygreatProductTabsInitialized) return;
+          window.buygreatProductTabsInitialized = true;
+
+          document.addEventListener('click', function (event) {
+            var tab = event.target.closest('[data-buygreat-product-tab]');
+            if (!tab) return;
+
+            var tabs = tab.closest('[data-buygreat-product-tabs]');
+            if (!tabs) return;
+
+            var tabKey = tab.getAttribute('data-buygreat-product-tab');
+            tabs.querySelectorAll('[data-buygreat-product-tab]').forEach(function (item) {
+              var isActive = item === tab;
+              item.classList.toggle('is-active', isActive);
+              item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            tabs.querySelectorAll('[data-buygreat-product-tab-panel]').forEach(function (panel) {
+              panel.hidden = panel.getAttribute('data-buygreat-product-tab-panel') !== tabKey;
+            });
+          });
+        })();
+      </script>
+    {%- endif -%}
 
     {% assign popups = section.blocks | where: 'type', 'popup_size_guide' %}
     {%- for block in popups -%}
@@ -2175,4 +2252,3 @@
   ]
 }
 {% endschema %}
-

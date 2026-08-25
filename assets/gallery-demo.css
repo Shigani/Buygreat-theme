@@ -1,9 +1,3 @@
-warning: in the working copy of 'assets/media-gallery.js', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'sections/main-product.liquid', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'snippets/product-page-layout-1.liquid', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'snippets/product-thumbnail.liquid', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'snippets/social-share.liquid', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'templates/product.json', LF will be replaced by CRLF the next time Git touches it
 /* Product gallery card styling based on the supplied reference layout. */
 .buygreat-product-info-shell {
   background: #fff;
@@ -890,3 +884,118 @@ warning: in the working copy of 'templates/product.json', LF will be replaced by
   }
 }
 
+.buygreat-product-tabs {
+  background: #fff;
+  border: 0.1rem solid #d9dddf;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  margin-top: 2.4rem;
+  padding: 2.8rem 2.4rem 3.2rem;
+  width: 100%;
+}
+
+.buygreat-product-tabs__nav {
+  align-items: stretch;
+  border-bottom: 0.1rem solid #d9dddf;
+  display: flex;
+  gap: 3rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.buygreat-product-tabs__nav::-webkit-scrollbar {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+.buygreat-product-tabs__tab {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: #536d85;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font: inherit;
+  font-size: 1.8rem;
+  line-height: 1.35;
+  padding: 0 0 1.4rem;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.buygreat-product-tabs__tab:hover,
+.buygreat-product-tabs__tab:focus-visible {
+  color: #bd1028;
+}
+
+.buygreat-product-tabs__tab.is-active {
+  color: #bd1028;
+}
+
+.buygreat-product-tabs__tab.is-active::after {
+  background: #bd1028;
+  bottom: -0.1rem;
+  content: '';
+  height: 0.5rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.buygreat-product-tabs__panel {
+  color: #536d85;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  padding-top: 2.4rem;
+}
+
+.buygreat-product-tabs__panel[hidden] {
+  display: none;
+}
+
+.buygreat-product-tabs__content {
+  margin: 0;
+}
+
+.buygreat-product-tabs__content .product-reviews:empty {
+  display: none;
+}
+
+.buygreat-product-tabs__content .product__description {
+  margin: 0;
+}
+
+.buygreat-product-tabs__content p:first-child {
+  margin-top: 0;
+}
+
+.buygreat-product-tabs__content p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .buygreat-product-tabs {
+    border-left: 0;
+    border-radius: 0;
+    border-right: 0;
+    margin-top: 1.8rem;
+    padding: 2rem 1.2rem 2.4rem;
+  }
+
+  .buygreat-product-tabs__nav {
+    gap: 2rem;
+  }
+
+  .buygreat-product-tabs__tab {
+    font-size: 1.5rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .buygreat-product-tabs__panel {
+    font-size: 1.5rem;
+    padding-top: 1.8rem;
+  }
+}
