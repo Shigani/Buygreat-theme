@@ -20,6 +20,13 @@
   assign productShowSm = section.settings.products_show_on_sm
   assign slideAutoplay = section.settings.auto_rotate
   assign autoplay_time = section.settings.autoplay_time
+  assign selected_collection = section.settings.collection
+
+  if selected_collection != blank
+    assign product_source = selected_collection.products
+  else
+    assign product_source = recommendations.products
+  endif
 
   assign loadMoreButton = true
   assign slider_enable = section.settings.slider_enable
@@ -54,7 +61,7 @@ row row-cols-xl-{{ productShowXl }} row-cols-lg-{{ productShowLg }} row-cols-md-
 {%- endcapture -%}
 
 <div
-  class=" section-{{ section.id }}-padding   mobile_nrb_{{ productShowSm }}"
+  class="section-{{ section.id }}-padding mobile_nrb_{{ productShowSm }} buygreat-trending-products"
   data-section-id="{{ section.id }}"
   data-section-type="product-slider"
   data-slider-enable="{{ slider_enable }}"
@@ -65,10 +72,14 @@ row row-cols-xl-{{ productShowXl }} row-cols-lg-{{ productShowLg }} row-cols-md-
     data-autoplay-time="{{ autoplay_time }}000"
   {% endif %}
 >
-  <product-recommendations
-    class="product-recommendations section--padding color-{{ section.settings.color_scheme }} gradient"
-    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=8"
-  >
+  {%- if selected_collection != blank -%}
+    <div class="product-recommendations section--padding color-{{ section.settings.color_scheme }} gradient">
+  {%- else -%}
+    <product-recommendations
+      class="product-recommendations section--padding color-{{ section.settings.color_scheme }} gradient"
+      data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
+    >
+  {%- endif -%}
     <div class="container">
       <h2 class="product-recommendations__heading text-{{ section.settings.text_align }} mb-30 {{ section.settings.heading_size }}">
         {{ section.settings.heading | escape }}
@@ -82,22 +93,22 @@ row row-cols-xl-{{ productShowXl }} row-cols-lg-{{ productShowLg }} row-cols-md-
           {% endunless %}
         >
           {%- if slider_enable -%}<div class="swiper-wrapper" grid-recommendation>{%- endif -%}
-          {% for recommendation in recommendations.products %}
+          {% for recommendation in product_source limit: section.settings.products_to_show %}
             <div class="{{ productItem }}">
               {% render 'product-card-item',
                 product_card_product: recommendation,
                 media_size: section.settings.image_ratio,
-                show_secondary_image: section.settings.show_secondary_image,
-                show_vendor: section.settings.show_vendor,
+                show_secondary_image: false,
+                show_vendor: false,
                 show_badge: section.settings.show_badges,
-                show_cart_button: section.settings.show_cart_button,
+                show_cart_button: false,
                 cart_button_style: section.settings.cart_button_style,
                 cart_button_place: section.settings.cart_button_positon,
                 show_countdown: section.settings.show_countdown,
                 show_countdown_on_image: section.settings.place_timer_on_image,
                 show_title: section.settings.show_title,
                 show_price: section.settings.show_price,
-                show_rating: section.settings.show_product_rating,
+                show_rating: false,
                 is_product_options: true
               %}
             </div>
@@ -119,7 +130,11 @@ row row-cols-xl-{{ productShowXl }} row-cols-lg-{{ productShowLg }} row-cols-md-
         </div>
       {%- endif -%}
     </div>
-  </product-recommendations>
+  {%- if selected_collection != blank -%}
+    </div>
+  {%- else -%}
+    </product-recommendations>
+  {%- endif -%}
 </div>
 {% javascript %}
   class ProductRecommendations extends HTMLElement {
@@ -167,6 +182,12 @@ row row-cols-xl-{{ productShowXl }} row-cols-lg-{{ productShowLg }} row-cols-md-
     {
       "type": "paragraph",
       "content": "t:sections.product-recommendations.settings.paragraph__1.content"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Product collection",
+      "info": "Choose a collection to display. Leave blank to use Shopify recommendations."
     },
     {
       "type": "text",

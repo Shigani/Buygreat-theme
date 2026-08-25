@@ -155,18 +155,18 @@
       "type": "product-recommendations",
       "settings": {
         "color_scheme": "scheme-a343ce79-5123-420f-8efd-48e3252818eb",
-        "heading": "You May Also Like",
+        "heading": "Trending Products",
         "heading_size": "h2",
-        "text_align": "center",
+        "text_align": "left",
         "image_ratio": "square",
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "show_title": true,
         "show_price": true,
         "show_vendor": false,
-        "show_product_rating": true,
+        "show_product_rating": false,
         "show_badges": true,
-        "badge_position": "top-left",
-        "show_cart_button": true,
+        "badge_position": "top-right",
+        "show_cart_button": false,
         "cart_button_style": "style2",
         "cart_button_positon": "bottom_center",
         "show_countdown": false,
@@ -177,8 +177,8 @@
         "products_show_on_sm": "2",
         "slider_enable": true,
         "show_pagination": false,
-        "show_navigation": false,
-        "auto_rotate": true,
+        "show_navigation": true,
+        "auto_rotate": false,
         "autoplay_time": 3,
         "padding_top": 0,
         "padding_bottom": 20,
@@ -503,4 +503,3 @@
     "1774636155881bcebb"
   ]
 }
-
