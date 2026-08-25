@@ -889,7 +889,7 @@
 }
 
 .buygreat-product-tabs {
-  background: rgb(var(--color-background));
+  background: #fff;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
   border-radius: 0.5rem;
   box-sizing: border-box;
