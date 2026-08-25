@@ -1235,6 +1235,56 @@
   text-align: left !important;
 }
 
+.buygreat-trending-products .product-grid-item__price.price {
+  align-items: flex-start;
+  display: block;
+  font-size: 1.4rem !important;
+  font-weight: 400 !important;
+  line-height: 1.25;
+}
+
+.buygreat-trending-products .product-grid-item__price.price dl {
+  display: block;
+}
+
+.buygreat-trending-products .product-grid-item__price.price--on-sale .price__sale {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.buygreat-trending-products .product-grid-item__price.price--on-sale .price__sale > dt {
+  display: none;
+}
+
+.buygreat-trending-products .product-grid-item__price.price--on-sale .price__sale > dd {
+  margin: 0;
+}
+
+.buygreat-trending-products .product-grid-item__price.price--on-sale .price__sale > dd.price__compare {
+  order: 1;
+}
+
+.buygreat-trending-products .product-grid-item__price.price--on-sale .price__sale > dd:not(.price__compare) {
+  order: 2;
+}
+
+.buygreat-trending-products .product-grid-item__price.price--on-sale .price-item--regular {
+  color: #6f7780;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0;
+  text-decoration: line-through !important;
+}
+
+.buygreat-trending-products .product-grid-item__price.price--on-sale .price-item--sale,
+.buygreat-trending-products .product-grid-item__price.price:not(.price--on-sale) .price-item--regular {
+  color: #bd1028 !important;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 .buygreat-trending-products .featured__collection--slider {
   margin: 0;
   position: absolute;
