@@ -109,7 +109,7 @@
     <div class="product row row-cols-md-2 row-cols-1 product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }}">
       <div class="{{ media_column }}">
         <div
-          class="product__media_container buygreat-product-media-shell{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}"
+          class="product__media_container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}"
           style="--corner-radius: {{ section.settings.image_card_corner_radius }}px;"
         >
           <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
@@ -129,7 +129,7 @@
       <div class="{{ content_column }}">
         <div
           id="ProductInfo-{{ section.id }}"
-          class="product__info-container {% if section.settings.top_space_enable %} top--space {% endif %} {% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}"
+          class="product__info-container buygreat-product-info-shell {% if section.settings.top_space_enable %} top--space {% endif %} {% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}"
         >
           {%- if section.settings.breadcrumb_enable -%}
             <nav role="navigation" aria-label="breadcrumbs" class="breadcrumbs__wrapper">
