@@ -626,13 +626,22 @@
                                 {{ 'products.product.sold_out' | t }}
                               {%- endif -%}
                             </button>
-                            {%- assign need_help_phone = block.settings.need_help_phone | strip -%}
-                            {%- assign need_help_phone_href = need_help_phone
-                              | replace: ' ', ''
-                              | replace: '-', ''
-                              | replace: '(', ''
-                              | replace: ')', ''
-                            -%}
+                          </div>
+                        </div>
+
+                        {%- if block.settings.show_dynamic_checkout -%}
+                          {{ form | payment_button }}
+                        {%- endif -%}
+
+                        {%- assign need_help_phone = block.settings.need_help_phone | strip -%}
+                        {%- assign need_help_phone_href = need_help_phone
+                          | replace: ' ', ''
+                          | replace: '-', ''
+                          | replace: '(', ''
+                          | replace: ')', ''
+                        -%}
+                        {%- if need_help_phone != blank or block.settings.show_dynamic_checkout -%}
+                          <div class="buygreat-buy-button-links">
                             {%- if need_help_phone != blank -%}
                               <a
                                 class="buygreat-buy-button-help"
@@ -642,11 +651,16 @@
                                 Need Help? <span aria-hidden="true">📞</span> {{ need_help_phone }}
                               </a>
                             {%- endif -%}
+                            {%- if block.settings.show_dynamic_checkout -%}
+                              <button
+                                type="button"
+                                class="buygreat-buy-button-payment-options"
+                                data-buygreat-payment-options
+                              >
+                                More payment options
+                              </button>
+                            {%- endif -%}
                           </div>
-                        </div>
-
-                        {%- if block.settings.show_dynamic_checkout -%}
-                          {{ form | payment_button }}
                         {%- endif -%}
                       </div>
                     {%- endform -%}
@@ -1115,6 +1129,30 @@
     document.querySelector('#Variants-{{ section.id }}').addEventListener('change', function(event) {
       hiddenInput.value = event.currentTarget.value;
     });
+  });
+</script>
+
+<script>
+  document.addEventListener('click', function(event) {
+    const trigger = event.target.closest('[data-buygreat-payment-options]');
+    if (!trigger) return;
+
+    const productForm = trigger.closest('product-form');
+    if (!productForm) return;
+
+    let nativeMoreOptions = productForm.querySelector('.shopify-payment-button__more-options');
+    if (!nativeMoreOptions) {
+      productForm.querySelectorAll('shopify-accelerated-checkout, shopify-payment-button').forEach(function(component) {
+        if (!nativeMoreOptions && component.shadowRoot) {
+          nativeMoreOptions = component.shadowRoot.querySelector('.shopify-payment-button__more-options');
+        }
+      });
+    }
+
+    if (nativeMoreOptions) {
+      event.preventDefault();
+      nativeMoreOptions.click();
+    }
   });
 </script>
 

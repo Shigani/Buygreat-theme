@@ -281,25 +281,42 @@
   width: 100% !important;
 }
 
-.buygreat-product-info-shell .buygreat-buy-button-help,
-.buygreat-product-info-shell .shopify-payment-button__more-options {
-  color: #bd1028;
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: center;
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
-}
-
-.buygreat-product-info-shell .buygreat-buy-button-help {
-  margin: 1.4rem 0 0;
+.buygreat-product-info-shell .buygreat-buy-button-links {
+  display: grid;
+  flex: 0 0 100%;
+  gap: 1.2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  max-width: 100%;
   width: 100%;
 }
 
+.buygreat-product-info-shell .buygreat-buy-button-help,
+.buygreat-product-info-shell .buygreat-buy-button-payment-options {
+  background: transparent;
+  border: 0;
+  color: #bd1028;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  width: 100%;
+}
+
+.buygreat-product-info-shell .buygreat-buy-button-help:hover,
+.buygreat-product-info-shell .buygreat-buy-button-payment-options:hover {
+  color: #8f0c1d;
+}
+
 .buygreat-product-info-shell .shopify-payment-button__more-options {
-  margin: 1.4rem 0 0;
+  display: none !important;
 }
 
 .buygreat-product-info-shell .product-form__quantity .form__label {
@@ -713,6 +730,11 @@
   .buygreat-product-info-shell .shopify-payment-button {
     flex-basis: 100%;
     width: 100% !important;
+  }
+
+  .buygreat-product-info-shell .buygreat-buy-button-links {
+    grid-template-columns: 1fr;
+    row-gap: 0.6rem;
   }
 
   .buygreat-product-gallery-card,
