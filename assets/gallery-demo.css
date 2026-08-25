@@ -42,7 +42,7 @@
   color: rgb(var(--color-foreground));
   flex: 0 0 auto;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.3;
   padding-top: 0.3rem;
 }
@@ -97,7 +97,7 @@
 .buygreat-product-price-values .price:not(.price--on-sale) .price-item--regular {
   color: #bd1028 !important;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .buygreat-product-price-values .price__badge-sale,
