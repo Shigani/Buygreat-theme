@@ -127,26 +127,26 @@
         </div>
       </div>
       <div class="{{ content_column }}">
+        {%- if section.settings.breadcrumb_enable -%}
+          <nav role="navigation" aria-label="breadcrumbs" class="breadcrumbs__wrapper">
+            <ol class="breadcrumbs__list d-flex">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="/">{{ 'general.back_to_home_label' | t }}</a>
+              </li>
+              {%- if collection.url -%}
+                <li class="breadcrumbs__item">
+                  {{ collection.title | link_to: collection.url }}
+                </li>
+              {%- endif -%}
+              <li class="breadcrumbs__item">{{ product.title }}</li>
+            </ol>
+          </nav>
+        {%- endif -%}
+
         <div
           id="ProductInfo-{{ section.id }}"
           class="product__info-container buygreat-product-info-shell {% if section.settings.top_space_enable %} top--space {% endif %} {% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}"
         >
-          {%- if section.settings.breadcrumb_enable -%}
-            <nav role="navigation" aria-label="breadcrumbs" class="breadcrumbs__wrapper">
-              <ol class="breadcrumbs__list d-flex">
-                <li class="breadcrumbs__item">
-                  <a class="breadcrumbs__link" href="/">{{ 'general.back_to_home_label' | t }}</a>
-                </li>
-                {%- if collection.url -%}
-                  <li class="breadcrumbs__item">
-                    {{ collection.title | link_to: collection.url }}
-                  </li>
-                {%- endif -%}
-                <li class="breadcrumbs__item">{{ product.title }}</li>
-              </ol>
-            </nav>
-          {%- endif -%}
-
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
           {%- for block in section.blocks -%}
