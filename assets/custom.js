@@ -173,6 +173,7 @@ theme.collectionSlider = (function () {
 
     var featuredCollection = new Swiper(sliderContainer, {
       loop: e.dataset.sliderLoop !== "false",
+      watchOverflow: e.dataset.sliderWatchOverflow !== "false",
       slidesPerView: mobileShow,
       spaceBetween: sliderSpace,
       autoplay: autoPlayValue,

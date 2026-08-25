@@ -55,11 +55,12 @@ var recentViewsetupGrid = function (Recentgrid) {
 };
 
 var insertRecentViewedAppBlocks = function (Recentgrid) {
-  var appTemplate = recentViewdProduct.querySelector(
-    "template[data-recently-viewed-app-template]"
+  var appSource = recentViewdProduct.querySelector(
+    "[data-recently-viewed-app-source]"
   );
+  var appMarkup = appSource ? appSource.innerHTML.trim() : "";
 
-  if (!appTemplate || !appTemplate.content.childNodes.length) {
+  if (!appMarkup) {
     return;
   }
 
@@ -77,9 +78,13 @@ var insertRecentViewedAppBlocks = function (Recentgrid) {
 
     var appContent = document.createElement("div");
     appContent.className = "buygreat-recently-viewed-app-blocks";
-    appContent.appendChild(appTemplate.content.cloneNode(true));
+    appContent.innerHTML = appMarkup;
     productContent.insertBefore(appContent, productPrice);
   });
+
+  if (appSource) {
+    appSource.remove();
+  }
 };
 
 var getrecentViewPorduct = function () {

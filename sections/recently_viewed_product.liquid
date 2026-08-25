@@ -18,6 +18,7 @@
   data-section-type="recently-viewed"
   data-slider-enable="true"
   data-slider-loop="false"
+  data-slider-watch-overflow="false"
   data-show-mobile="{{ productShowSm }}"
   data-show-extra-large="{{ productShowXl }}"
   data-slider-space="0"
@@ -29,13 +30,13 @@
       {{ section.settings.heading | escape }}
     </h2>
     {%- if section.blocks.size > 0 -%}
-      <template data-recently-viewed-app-template>
+      <div class="buygreat-recently-viewed-app-source" data-recently-viewed-app-source>
         {%- for block in section.blocks -%}
           <div class="buygreat-recently-viewed-app-block" {{ block.shopify_attributes }}>
             {% render block %}
           </div>
         {%- endfor -%}
-      </template>
+      </div>
     {%- endif -%}
     <div class="relative product_slider_wrapper">
       <div class="productSlider swiper" role="list">
