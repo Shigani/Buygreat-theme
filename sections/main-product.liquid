@@ -766,7 +766,10 @@
           {%- for block in section.blocks -%}
             {%- if block.type == 'description' or block.type == 'collapsible_tab' -%}
               {%- if block.type == 'description' -%}
-                {%- assign product_tab_label = 'Overview' -%}
+                {%- assign product_tab_label = block.settings.heading -%}
+                {%- if product_tab_label == blank -%}
+                  {%- assign product_tab_label = 'Overview' -%}
+                {%- endif -%}
               {%- else -%}
                 {%- assign product_tab_label = block.settings.heading -%}
                 {%- if product_tab_label == blank -%}
@@ -798,7 +801,10 @@
         {%- for block in section.blocks -%}
           {%- if block.type == 'description' or block.type == 'collapsible_tab' -%}
             {%- if block.type == 'description' -%}
-              {%- assign product_tab_label = 'Overview' -%}
+              {%- assign product_tab_label = block.settings.heading -%}
+              {%- if product_tab_label == blank -%}
+                {%- assign product_tab_label = 'Overview' -%}
+              {%- endif -%}
             {%- else -%}
               {%- assign product_tab_label = block.settings.heading -%}
               {%- if product_tab_label == blank -%}
@@ -2255,3 +2261,4 @@
   ]
 }
 {% endschema %}
+
