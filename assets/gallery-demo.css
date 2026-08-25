@@ -112,7 +112,35 @@
 }
 
 .buygreat-product-info-shell .product-form__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
   margin-top: 1.5rem !important;
+}
+
+.buygreat-product-info-shell .product-form__cart--box {
+  display: contents;
+}
+
+.buygreat-product-info-shell .product-form__quantity {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.buygreat-product-info-shell .product__add__cart__button,
+.buygreat-product-info-shell .shopify-payment-button {
+  flex: 1 1 0;
+  margin: 0 !important;
+  max-width: none !important;
+  min-width: 0;
+  width: auto !important;
+}
+
+.buygreat-product-info-shell .product__add__cart__button .product-form__submit,
+.buygreat-product-info-shell .shopify-payment-button__button {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100% !important;
 }
 
 .buygreat-product-info-shell .product-form__quantity .form__label {
