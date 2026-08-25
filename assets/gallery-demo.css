@@ -1,3 +1,7 @@
+warning: in the working copy of 'assets/media-gallery.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'sections/main-product.liquid', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'snippets/product-page-layout-1.liquid', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'snippets/product-thumbnail.liquid', LF will be replaced by CRLF the next time Git touches it
 /* Product gallery card styling based on the supplied reference layout. */
 .buygreat-product-info-shell {
   background: #fff;
@@ -562,6 +566,10 @@
     flex: 0 0 100%;
     margin-top: 0;
     padding: 0;
+  }
+
+  .buygreat-product-dispatch__icon {
+    display: none;
   }
 
   .buygreat-product-dispatch__copy {
