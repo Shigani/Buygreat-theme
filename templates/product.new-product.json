@@ -108,6 +108,18 @@
           "settings": {
             "review_embed": "{% assign has_legacy = false %}\n{% if product.metafields.judgeme.widget.size > 20 %}\n  {% assign has_legacy = true %}\n{% endif %}\n<div style='clear:both'></div>\n<div\n  id='judgeme_product_reviews'\n  class='jdgm-widget jdgm-review-widget'\n  data-product-title='{{ product.title | escape }}'\n  data-id='{{ product.id }}'\n  data-product-id='{{ product.id }}'\n  data-widget='review'\n  data-auto-install='false'\n  data-shop-reviews-count='{{ shop.metafields.judgeme.shop_reviews_count | default: 0 | escape }}'\n  data-entry-point='review_widget.js'\n  data-entry-key='review-widget/main.js'\n>\n  {% if has_legacy %}\n    <div class='jdgm-legacy-widget-content' style='display: none;'>\n      {{ product.metafields.judgeme.widget }}\n    </div>\n  {% endif %}\n</div>\n{% if product.metafields.judgeme.review_widget_data %}\n  <script>\n    jdgm.data ||= {};\n    jdgm.data.reviewWidget ||= {};\n    jdgm.data.reviewWidget[{{ product.id }}] = {{ product.metafields.judgeme.review_widget_data }}\n  </script>\n{% endif %}"
           }
+        },
+        "trending_products_N6PPyC": {
+          "type": "trending_products",
+          "settings": {
+            "heading": "Trending Products",
+            "collection": "",
+            "image_ratio": "square",
+            "show_badges": true,
+            "products_to_show": 4,
+            "products_show_on_xl": "2",
+            "products_show_on_sm": "2"
+          }
         }
       },
       "block_order": [
@@ -122,7 +134,8 @@
         "0a478e9c-d23b-4b8b-b309-62919d0eb667",
         "f7302d8a-c3b2-48a3-ab1e-68e65db1f80c",
         "c8842c06-e135-4b13-b10b-b2c347861c89",
-        "review_app_NPcTYU"
+        "review_app_NPcTYU",
+        "trending_products_N6PPyC"
       ],
       "settings": {
         "color_scheme": "background-2",
@@ -133,7 +146,7 @@
         "mobile_thumbnails": "show",
         "image_card_corner_radius": 16,
         "hide_variants": false,
-        "enable_sticky_info": true,
+        "enable_sticky_info": false,
         "top_space_enable": false,
         "sticky_enable": false,
         "padding_top": 15,
@@ -153,6 +166,7 @@
       "disabled": true,
       "settings": {
         "color_scheme": "scheme-a343ce79-5123-420f-8efd-48e3252818eb",
+        "collection": "",
         "heading": "You May Also Like",
         "heading_size": "h2",
         "text_align": "center",
