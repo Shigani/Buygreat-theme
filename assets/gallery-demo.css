@@ -22,6 +22,16 @@
   margin-left: 0.3rem;
 }
 
+.buygreat-product-info-shell
+  .product-form__input.radio--swatch
+  > .form__label strong,
+.buygreat-product-info-shell
+  .product-form__input.radio--swatch
+  > .form__label span {
+  font-size: 1em;
+  font-weight: 700;
+}
+
 .buygreat-product-info-shell .buygreat-product-rating-divider {
   border-top: 0.1rem solid #d9dddf;
   clear: both;
