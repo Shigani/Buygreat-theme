@@ -40,7 +40,7 @@
           "settings": {
             "open_by_default": false,
             "heading_menu": "POLICIES",
-            "menu": "cate",
+            "menu": "",
             "show_social_icons": false
           }
         },
@@ -95,6 +95,7 @@
         "link_list_8CLd79",
         "email_footer_xGDaJc"
       ],
+      "disabled": true,
       "name": "OT: Footer #7",
       "settings": {
         "columns_desktop": 5,
@@ -159,7 +160,6 @@
           "type": "image",
           "settings": {
             "heading": "",
-            "image": "shopify://shop_images/buygreat_Final_logo_6fbede4c-de24-4d04-829c-a49a1011cde8.png",
             "image_width": 200,
             "contact_address": "<p>BuyGreat is an Australia-focused online store offering quality everyday and trending products at great prices. We work with trusted suppliers and reliable delivery partners, including Australia Post, to ensure a smooth and secure shopping experience. BuyGreat — Save More.</p>",
             "social_media": false,
@@ -186,7 +186,7 @@
           "type": "link_list",
           "settings": {
             "heading": "Our Policy",
-            "menu": "cate"
+            "menu": ""
           }
         },
         "newsletter_YnDLXX": {
