@@ -254,7 +254,7 @@
         "products_to_show": 8,
         "products_show_on_xl": "6",
         "products_show_on_sm": "2",
-        "slider_enable": false,
+        "slider_enable": true,
         "auto_rotate": false,
         "autoplay_time": 3,
         "show_navigation": true,
