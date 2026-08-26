@@ -1188,6 +1188,8 @@
   background: #fff;
   border: 0 !important;
   box-shadow: none;
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -1235,8 +1237,16 @@
 }
 
 .buygreat-trending-products .product-grid-item__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
   padding: 1.4rem 2rem 2rem;
   text-align: left;
+}
+
+.buygreat-trending-products .product-grid-item__content > .price-wrap,
+.buygreat-trending-products .product-grid-item__content > .product-grid-item__price {
+  margin-top: auto;
 }
 
 .buygreat-trending-products .product-grid-item__content > * {
