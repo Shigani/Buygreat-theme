@@ -121,6 +121,12 @@
           "settings": {
             "review_embed": "{% assign has_legacy = false %}\n{% if product.metafields.judgeme.widget.size > 20 %}\n  {% assign has_legacy = true %}\n{% endif %}\n<div style='clear:both'></div>\n<div\n  id='judgeme_product_reviews'\n  class='jdgm-widget jdgm-review-widget'\n  data-product-title='{{ product.title | escape }}'\n  data-id='{{ product.id }}'\n  data-product-id='{{ product.id }}'\n  data-widget='review'\n  data-auto-install='false'\n  data-shop-reviews-count='{{ shop.metafields.judgeme.shop_reviews_count | default: 0 | escape }}'\n  data-entry-point='review_widget.js'\n  data-entry-key='review-widget/main.js'\n>\n  {% if has_legacy %}\n    <div class='jdgm-legacy-widget-content' style='display: none;'>\n      {{ product.metafields.judgeme.widget }}\n    </div>\n  {% endif %}\n</div>\n{% if product.metafields.judgeme.review_widget_data %}\n  <script>\n    jdgm.data ||= {};\n    jdgm.data.reviewWidget ||= {};\n    jdgm.data.reviewWidget[{{ product.id }}] = {{ product.metafields.judgeme.review_widget_data }}\n  </script>\n{% endif %}"
           }
+        },
+        "rich_text_X9FXGH": {
+          "type": "rich_text",
+          "settings": {
+            "content": "<h3>Product highlights</h3><ul><li>Varia VS3 Coffee Grinder (Gen 2) is a zero-retention, single-dose grinder built for precision and efficiency.</li><li>With stepless micrometric adjustment, a magnetic dosing system, and a powerful 100W motor, it delivers consistent grind quality for both espresso and filter coffee.</li><li>Its sleek, CNC-machined aluminum body and 76.5° slope geometry ensure less than 0.1g retention per 10g dose—perfect for fast, clean workflow and effortless switching between beans.</li></ul>"
+          }
         }
       },
       "block_order": [
@@ -136,7 +142,8 @@
         "trending_products_N6PPyC",
         "f7302d8a-c3b2-48a3-ab1e-68e65db1f80c",
         "c8842c06-e135-4b13-b10b-b2c347861c89",
-        "review_app_NPcTYU"
+        "review_app_NPcTYU",
+        "rich_text_X9FXGH"
       ],
       "settings": {
         "color_scheme": "background-2",
@@ -146,7 +153,7 @@
         "media_height": "large",
         "mobile_thumbnails": "show",
         "image_card_corner_radius": 16,
-        "hide_variants": false,
+        "hide_variants": true,
         "enable_sticky_info": false,
         "top_space_enable": false,
         "sticky_enable": false,
@@ -295,4 +302,3 @@
     "featured_collection_HyEnxr"
   ]
 }
-
