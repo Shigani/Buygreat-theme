@@ -1226,6 +1226,14 @@
   z-index: 4;
 }
 
+.buygreat-trending-products .buygreat-product-gallery-card__tag {
+  box-sizing: border-box;
+  font-size: 1.2rem !important;
+  font-weight: 700;
+  line-height: 1 !important;
+  padding: 0.55rem 0.8rem 0.5rem !important;
+}
+
 .buygreat-trending-products .product-grid-item__content {
   padding: 1.4rem 2rem 2rem;
   text-align: left;
