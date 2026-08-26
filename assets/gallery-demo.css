@@ -1518,7 +1518,7 @@
 }
 
 .buygreat-recently-viewed-products .product-grid-item__thumbnail {
-  min-height: 19rem;
+  min-height: 15rem;
 }
 
 .buygreat-recently-viewed-products .productSlider {
@@ -1561,7 +1561,83 @@
   }
 
   .buygreat-recently-viewed-products .product-grid-item__thumbnail {
-    min-height: 16rem;
+    min-height: 13rem;
+  }
+}
+
+.buygreat-featured-collection {
+  background-color: rgb(var(--color-background));
+  background: var(--gradient-background);
+  border-bottom: 0.1rem solid #d9dddf;
+  border-top: 0;
+  box-sizing: border-box;
+  margin-top: 0;
+  padding: 2.4rem 0 2.4rem;
+}
+
+.buygreat-featured-collection .section-heading {
+  margin-bottom: 1.6rem !important;
+  text-align: left !important;
+}
+
+.buygreat-featured-collection .section-heading__title {
+  color: rgb(var(--color-foreground));
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 1.6rem;
+}
+
+.buygreat-featured-collection .section-heading__sub_title {
+  color: rgb(var(--color-foreground));
+}
+
+.buygreat-featured-collection .product-grid-item__thumbnail {
+  min-height: 15rem;
+}
+
+.buygreat-featured-collection .productSlider {
+  border-left: 0.1rem solid #d9dddf !important;
+  border-right: 0.1rem solid #d9dddf !important;
+}
+
+.buygreat-featured-collection .productSlider .swiper-slide {
+  border-right: 0.1rem solid #d9dddf !important;
+}
+
+.buygreat-featured-collection .product-grid-item__content {
+  padding-bottom: 1.2rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  padding-top: 0.6rem !important;
+}
+
+.buygreat-featured-collection .product-grid-item__content > *:last-child {
+  margin-bottom: 0;
+}
+
+.buygreat-featured-collection .collection__list--slider {
+  left: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .buygreat-featured-collection {
+    margin-top: 0;
+    padding-bottom: 2.4rem;
+    padding-top: 1.8rem;
+  }
+
+  .buygreat-featured-collection .section-heading {
+    margin-bottom: 1.6rem !important;
+  }
+
+  .buygreat-featured-collection .section-heading__title {
+    margin-bottom: 1.6rem;
+  }
+
+  .buygreat-featured-collection .product-grid-item__thumbnail {
+    min-height: 13rem;
   }
 }
 

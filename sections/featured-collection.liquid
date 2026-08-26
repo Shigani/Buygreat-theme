@@ -19,6 +19,7 @@
 {{ 'countdown-timer.css' | asset_url | stylesheet_tag }}
 {{ 'section-featured-collection.css' | asset_url | stylesheet_tag }}
 {{ 'section-slider-button-controls.css' | asset_url | stylesheet_tag }}
+{{ 'gallery-demo.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-price.css' | asset_url | stylesheet_tag }}</noscript>
 
@@ -179,7 +180,7 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
   {{ 'product-card-item-rtl.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 <div
-  class="section section--top-space-{{ section.id }} section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} {% if section.settings.custom_colors %} custom--colors-{{ section.id }}{% endif %}"
+  class="buygreat-trending-products buygreat-featured-collection section section--top-space-{{ section.id }} section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} {% if section.settings.custom_colors %} custom--colors-{{ section.id }}{% endif %}"
   data-section-id="{{ section.id }}"
   data-section-type="product-slider"
   data-slider-enable="{{ slider_enable }}"
@@ -930,3 +931,4 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
   }
 }
 {% endschema %}
+
