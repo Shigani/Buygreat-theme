@@ -1923,6 +1923,10 @@
   border-right: 0 !important;
 }
 
+.buygreat-product-info-trending .productSlider {
+  border-bottom: 0.1rem solid #d9dddf !important;
+}
+
 /* The border belongs to the last card currently in view, not the final data slide. */
 .buygreat-trending-products .productSlider .swiper-slide:last-child {
   border-right: 0 !important;
