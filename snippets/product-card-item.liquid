@@ -78,23 +78,8 @@
       {%- render 'product-badge', product: product_card_product -%}
     {%- endif -%}
 
-    {%- if show_product_tags and product_card_product.tags != blank -%}
-      <div class="buygreat-product-gallery-card__tags buygreat-trending-product-tags" aria-label="Product tags">
-        {%- for product_tag in product_card_product.tags -%}
-          {%- assign normalized_product_tag = product_tag | downcase | strip | replace: ' ', '-' -%}
-          {%- assign tag_modifier = 'default' -%}
-          {%- if normalized_product_tag == 'sale' -%}
-            {%- assign tag_modifier = 'sale' -%}
-          {%- elsif normalized_product_tag == 'new' or normalized_product_tag == 'new-arrival' or normalized_product_tag == 'new-arrivals' -%}
-            {%- assign tag_modifier = 'new' -%}
-          {%- elsif normalized_product_tag == 'bestseller' or normalized_product_tag == 'best-seller' -%}
-            {%- assign tag_modifier = 'bestseller' -%}
-          {%- endif -%}
-          <span class="buygreat-product-gallery-card__tag buygreat-product-gallery-card__tag--{{ tag_modifier }}">
-            {{ product_tag | escape }}
-          </span>
-        {%- endfor -%}
-      </div>
+    {%- if show_product_tags -%}
+      {%- render 'product-display-tags', product_to_tag: product_card_product -%}
     {%- endif -%}
 
     {%- if product_card_product.featured_media -%}

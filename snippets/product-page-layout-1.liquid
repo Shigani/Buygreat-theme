@@ -13,22 +13,7 @@
 
 <div class="buygreat-product-gallery-card buygreat-product-gallery-card--height-{{ media_height }}">
   <div class="buygreat-product-gallery-card__header">
-    {%- if product.tags != blank -%}
-      <div class="buygreat-product-gallery-card__tags" aria-label="Product tags">
-        {%- for product_tag in product.tags -%}
-          {%- assign normalized_product_tag = product_tag | downcase | strip | replace: ' ', '-' -%}
-          {%- assign tag_modifier = 'default' -%}
-          {%- if normalized_product_tag == 'sale' -%}
-            {%- assign tag_modifier = 'sale' -%}
-          {%- elsif normalized_product_tag == 'new' or normalized_product_tag == 'new-arrival' or normalized_product_tag == 'new-arrivals' -%}
-            {%- assign tag_modifier = 'new' -%}
-          {%- elsif normalized_product_tag == 'bestseller' or normalized_product_tag == 'best-seller' -%}
-            {%- assign tag_modifier = 'bestseller' -%}
-          {%- endif -%}
-          <span class="buygreat-product-gallery-card__tag buygreat-product-gallery-card__tag--{{ tag_modifier }}">{{ product_tag | escape }}</span>
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
+    {%- render 'product-display-tags', product_to_tag: product -%}
   </div>
 
 <media-gallery id="MediaGallery-{{ section.id }}" role="region" class="buygreat-product-gallery{% if section.settings.enable_sticky_info %} product__media-gallery{% endif %}" aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">

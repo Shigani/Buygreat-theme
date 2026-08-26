@@ -1,0 +1,48 @@
+{%- liquid
+  assign tag_product = product_to_tag | default: product
+  assign tag_variant = tag_product.selected_or_first_available_variant
+  assign has_discount = false
+
+  if tag_variant != blank and tag_variant.compare_at_price > tag_variant.price
+    assign has_discount = true
+  elsif tag_product.compare_at_price > tag_product.price
+    assign has_discount = true
+  endif
+
+  assign has_sale_tag = false
+  assign has_display_tag = false
+-%}
+
+{%- if tag_product.tags != blank or has_discount -%}
+  <div class="buygreat-product-gallery-card__tags buygreat-trending-product-tags" aria-label="Product tags">
+    {%- for product_tag in tag_product.tags -%}
+      {%- assign normalized_product_tag = product_tag | downcase | strip | replace: ' ', '-' -%}
+      {%- assign tag_modifier = 'default' -%}
+      {%- assign show_product_tag = false -%}
+
+      {%- if normalized_product_tag == 'bestseller' or normalized_product_tag == 'best-seller' -%}
+        {%- assign tag_modifier = 'bestseller' -%}
+        {%- assign show_product_tag = true -%}
+      {%- elsif normalized_product_tag == 'sale' -%}
+        {%- assign tag_modifier = 'sale' -%}
+        {%- assign show_product_tag = true -%}
+        {%- assign has_sale_tag = true -%}
+      {%- elsif normalized_product_tag == 'new' or normalized_product_tag == 'new-arrival' or normalized_product_tag == 'new-arrivals' -%}
+        {%- assign tag_modifier = 'new' -%}
+        {%- assign show_product_tag = true -%}
+      {%- endif -%}
+
+      {%- if show_product_tag -%}
+        {%- assign has_display_tag = true -%}
+        <span class="buygreat-product-gallery-card__tag buygreat-product-gallery-card__tag--{{ tag_modifier }}">
+          {{ product_tag | escape }}
+        </span>
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if has_discount and has_sale_tag == false -%}
+      <span class="buygreat-product-gallery-card__tag buygreat-product-gallery-card__tag--sale">Sale</span>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+

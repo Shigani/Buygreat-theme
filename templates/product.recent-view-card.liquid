@@ -1,23 +1,6 @@
 {%- layout none -%}
 <div class="swiper-slide buygreat-recent-view-slide">
-  {%- if product.tags != blank -%}
-    <div class="buygreat-product-gallery-card__tags buygreat-trending-product-tags" aria-label="Product tags">
-      {%- for product_tag in product.tags -%}
-        {%- assign normalized_product_tag = product_tag | downcase | strip | replace: ' ', '-' -%}
-        {%- assign tag_modifier = 'default' -%}
-        {%- if normalized_product_tag == 'sale' -%}
-          {%- assign tag_modifier = 'sale' -%}
-        {%- elsif normalized_product_tag == 'new' or normalized_product_tag == 'new-arrival' or normalized_product_tag == 'new-arrivals' -%}
-          {%- assign tag_modifier = 'new' -%}
-        {%- elsif normalized_product_tag == 'bestseller' or normalized_product_tag == 'best-seller' -%}
-          {%- assign tag_modifier = 'bestseller' -%}
-        {%- endif -%}
-        <span class="buygreat-product-gallery-card__tag buygreat-product-gallery-card__tag--{{ tag_modifier }}">
-          {{ product_tag | escape }}
-        </span>
-      {%- endfor -%}
-    </div>
-  {%- endif -%}
+  {%- render 'product-display-tags', product_to_tag: product -%}
 
   {% render 'product-card-item',
     product_card_product: product,
