@@ -951,7 +951,6 @@
   cursor: pointer;
   flex: 0 1 auto;
   font: inherit;
-  font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.35;
   min-width: 0;
@@ -1105,7 +1104,6 @@
     align-items: center;
     border-bottom: 0.1rem solid #d9dddf;
     display: flex;
-    font-size: 1.8rem;
     justify-content: space-between;
     padding: 1.2rem 1.4rem;
     text-align: left;
@@ -1379,7 +1377,6 @@
 
 .buygreat-product-info-trending .product-recommendations__heading {
   color: rgb(var(--color-foreground));
-  font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.35;
   margin-bottom: 1.6rem;
@@ -1502,7 +1499,6 @@
 
 .buygreat-recently-viewed-products .product-recommendations__heading {
   color: rgb(var(--color-foreground));
-  font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.35;
   margin-bottom: 1.6rem;
@@ -1582,7 +1578,6 @@
 
 .buygreat-featured-collection .section-heading__title {
   color: rgb(var(--color-foreground));
-  font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.35;
   margin: 0 0 1.6rem;
@@ -1594,7 +1589,6 @@
 
 .buygreat-featured-collection .product-recommendations__heading {
   color: rgb(var(--color-foreground));
-  font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.35;
   margin-bottom: 1.6rem;

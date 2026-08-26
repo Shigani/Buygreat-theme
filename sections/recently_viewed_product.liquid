@@ -26,7 +26,7 @@
   data-autoplay-time="{{ autoplay_time }}000"
 >
   <div class="container">
-    <h2 class="product-recommendations__heading h2">
+    <h2 class="product-recommendations__heading {{ section.settings.heading_size | default: 'h2' }}">
       {{ section.settings.heading | escape }}
     </h2>
     {%- if section.blocks.size > 0 -%}

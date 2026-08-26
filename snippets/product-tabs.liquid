@@ -1,3 +1,4 @@
+{%- assign product_tab_heading_size = section.settings.heading_size | default: 'h2' -%}
 {%- assign has_product_tabs = false -%}
 {%- for block in section.blocks -%}
   {%- if block.type == 'description' or block.type == 'collapsible_tab' or block.type == 'review_app' -%}
@@ -33,7 +34,7 @@
           {%- assign product_tab_key = 'ProductTab-' | append: section.id | append: '-' | append: block.id -%}
           <button
             type="button"
-            class="buygreat-product-tabs__tab{% if first_product_tab %} is-active{% endif %}"
+            class="buygreat-product-tabs__tab {{ product_tab_heading_size }}{% if first_product_tab %} is-active{% endif %}"
             id="{{ product_tab_key }}-tab"
             role="tab"
             aria-selected="{{ first_product_tab }}"
@@ -211,3 +212,4 @@
     })();
   </script>
 {%- endif -%}
+

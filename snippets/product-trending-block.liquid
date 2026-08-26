@@ -17,7 +17,7 @@
   data-autoplay-time="3000"
   {{ block.shopify_attributes }}
 >
-  <h2 class="product-recommendations__heading h2">
+  <h2 class="product-recommendations__heading {{ block.settings.heading_size | default: 'h2' }}">
     {{ block.settings.heading | escape }}
   </h2>
   <div class="relative product_slider_wrapper">
