@@ -235,7 +235,7 @@
         "alignment": "left",
         "mobile_alignment": "center",
         "collection": "automated-collection",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_round_corner": true,
         "show_secondary_image": true,
         "show_title": true,
