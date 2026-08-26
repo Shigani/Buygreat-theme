@@ -1903,6 +1903,14 @@
   border-bottom: 0.1rem solid #d9dddf !important;
 }
 
+.buygreat-product-info-trending .productSlider .swiper-slide > .product-grid-item {
+  border-bottom: 0.1rem solid #d9dddf !important;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 /* The border belongs to the last card currently in view, not the final data slide. */
 .buygreat-trending-products .productSlider .swiper-slide:last-child {
   border-right: 0 !important;
