@@ -75,6 +75,8 @@
     assign content_column = 'col-lg-7'
     assign media_width = 0.42
   endif
+
+  assign rich_text_blocks = section.blocks | where: 'type', 'rich_text'
 -%}
 
 {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
@@ -118,7 +120,7 @@
       </nav>
     {%- endif -%}
 
-    <div class="product row row-cols-md-2 row-cols-1 product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }}">
+    <div class="product row row-cols-md-2 row-cols-1 product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }}{% if rich_text_blocks.size > 0 %} product--has-rich-text{% endif %}">
       <div class="{{ media_column }} buygreat-product-media-column">
         <div
           class="product__media_container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}"
@@ -410,6 +412,8 @@
                 <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
               {%- when 'trending_products' -%}
                 {%- comment -%}Rendered below the product info so mobile can place it after the tabs.{%- endcomment -%}
+              {%- when 'rich_text' -%}
+                {%- comment -%}Rendered between the product info and trending products.{%- endcomment -%}
               {%- when 'variant_picker' -%}
                 {%- unless product.has_only_default_variant -%}
                   {%- if block.settings.picker_type == 'button' -%}
@@ -750,6 +754,11 @@
             {%- endcase -%}
           {%- endfor -%}
         </div>
+        {%- for block in rich_text_blocks -%}
+          <div class="buygreat-product-rich-text-box rte" {{ block.shopify_attributes }}>
+            {{ block.settings.content }}
+          </div>
+        {%- endfor -%}
       {%- for block in section.blocks -%}
         {%- if block.type == 'trending_products' -%}
           {%- render 'product-trending-block', block: block -%}
@@ -1406,6 +1415,18 @@
           ],
           "default": "body",
           "label": "t:sections.main-product.blocks.text.settings.text_style.label"
+        }
+      ]
+    },
+    {
+      "type": "rich_text",
+      "name": "Rich text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "default": "<p>Add your product information here.</p>",
+          "label": "Content"
         }
       ]
     },

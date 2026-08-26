@@ -1423,6 +1423,24 @@
   padding-top: 2.4rem;
 }
 
+.buygreat-product-rich-text-box {
+  background: #fff;
+  border: 0.1rem solid #d9dddf;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  margin-top: 2.4rem;
+  padding: 2.4rem 2.8rem 2.6rem;
+  width: 100%;
+}
+
+.buygreat-product-rich-text-box > :first-child {
+  margin-top: 0;
+}
+
+.buygreat-product-rich-text-box > :last-child {
+  margin-bottom: 0;
+}
+
 .buygreat-product-info-trending .product-recommendations__heading {
   color: rgb(var(--color-foreground));
   font-weight: 600;
@@ -1475,6 +1493,39 @@
     text-align: left !important;
     width: 100%;
   }
+
+  .buygreat-product-rich-text-box {
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 0;
+    border-right: 0;
+    border-top: 0;
+    clip-path: inset(0 -100vmax);
+    margin-top: 1.8rem;
+    padding: 1.8rem 1.2rem 1.6rem;
+    position: relative;
+    box-shadow: 0 0 0 100vmax #fff;
+  }
+
+  .buygreat-product-rich-text-box::before {
+    border-top: 0.1rem solid #d9dddf;
+    content: '';
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100vw;
+  }
+
+  .buygreat-product-rich-text-box::after {
+    border-bottom: 0.1rem solid #d9dddf;
+    bottom: 0;
+    content: '';
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 100vw;
+  }
 }
 
 @media screen and (min-width: 750px) {
@@ -1526,6 +1577,16 @@
     padding-left: 1.2rem;
     padding-right: 1.2rem;
     width: 100%;
+  }
+
+  .product.product--has-rich-text > .buygreat-product-info-column > .buygreat-product-rich-text-box {
+    grid-column: 1;
+    grid-row: 4;
+    min-width: 0;
+  }
+
+  .product.product--has-rich-text > .buygreat-product-info-column > .buygreat-product-info-trending {
+    grid-row: 5;
   }
 
   .product > .buygreat-product-media-column > .buygreat-product-tabs {
