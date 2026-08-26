@@ -217,7 +217,11 @@
         "show_pagination": false,
         "show_navigation": false,
         "auto_rotate": true,
-        "autoplay_time": 3
+        "autoplay_time": 3,
+        "padding_top": 20,
+        "padding_bottom": 25,
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 25
       }
     },
     "1774636155881bcebb": {
