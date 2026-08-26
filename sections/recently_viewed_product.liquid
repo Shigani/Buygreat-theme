@@ -38,6 +38,7 @@
   data-slider-space="0"
   data-autoplay="{{ slideAutoplay }}"
   data-autoplay-time="{{ autoplay_time }}000"
+  data-show-navigation="{{ showNavigation }}"
 >
   <div class="container">
     <h2 class="product-recommendations__heading {{ section.settings.heading_size | default: 'h2' }}">
@@ -56,19 +57,13 @@
       <div class="productSlider swiper" role="list">
         <div class="swiper-wrapper" grid-recentViewProduct></div>
       </div>
-      {%- if showNavigation or showPagination -%}
-        <div class="featured__collection--slider slider--controls--button">
-          {%- if showNavigation -%}
-            <div class="swiper-button-prev product__slider--buton" aria-label="Previous products"></div>
-          {%- endif -%}
-          {%- if showPagination -%}
-            <div class="swiper-pagination product__slider--pagination"></div>
-          {%- endif -%}
-          {%- if showNavigation -%}
-            <div class="swiper-button-next product__slider--buton" aria-label="Next products"></div>
-          {%- endif -%}
-        </div>
-      {%- endif -%}
+      <div class="featured__collection--slider slider--controls--button">
+        <div class="swiper-button-prev product__slider--buton" aria-label="Previous products"></div>
+        {%- if showPagination -%}
+          <div class="swiper-pagination product__slider--pagination"></div>
+        {%- endif -%}
+        <div class="swiper-button-next product__slider--buton" aria-label="Next products"></div>
+      </div>
     </div>
   </div>
 </div>
