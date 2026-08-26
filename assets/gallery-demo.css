@@ -1257,6 +1257,18 @@
   margin: 0;
 }
 
+.buygreat-trending-products .product-card--rating {
+  display: none !important;
+}
+
+.buygreat-trending-products .product-grid-item__title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .buygreat-trending-products .product-grid-item__price {
   align-items: baseline;
   gap: 1.2rem;
