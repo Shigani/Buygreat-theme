@@ -1908,7 +1908,13 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
+  height: 100% !important;
   min-height: 100%;
+}
+
+.buygreat-trending-products .productSlider .swiper-slide > .product-grid-item {
+  border-bottom: 0.1rem solid #d9dddf !important;
+  height: 100% !important;
 }
 
 /* Do not extend a right edge through the empty space after the final card. */
