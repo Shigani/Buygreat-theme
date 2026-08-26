@@ -1893,6 +1893,19 @@
   border-right: 0.1rem solid #d9dddf !important;
 }
 
+/* CSS-only slider edges: every real slide owns its right edge. */
+.buygreat-trending-products .productSlider {
+  border: 0 !important;
+  border-left: 0.1rem solid #d9dddf !important;
+}
+
+.buygreat-trending-products .productSlider .swiper-slide {
+  border-bottom: 0.1rem solid #d9dddf !important;
+  border-left: 0 !important;
+  border-right: 0.1rem solid #d9dddf !important;
+  border-top: 0.1rem solid #d9dddf !important;
+}
+
 /* Keep the slider itself square and put the complete border on each real card. */
 .buygreat-trending-products .productSlider,
 .buygreat-trending-products .productSlider .swiper-wrapper,
