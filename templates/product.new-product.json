@@ -190,7 +190,7 @@
         "products_show_on_sm": "2",
         "slider_enable": true,
         "show_pagination": false,
-        "show_navigation": false,
+        "show_navigation": true,
         "auto_rotate": true,
         "autoplay_time": 3,
         "padding_top": 0,
@@ -295,3 +295,4 @@
     "featured_collection_HyEnxr"
   ]
 }
+
