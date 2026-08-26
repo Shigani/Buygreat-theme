@@ -259,7 +259,7 @@
         "autoplay_time": 3,
         "show_navigation": true,
         "navigation_button_style": "round",
-        "navigation_position": "top",
+        "navigation_position": "middle",
         "button_background": "#121212",
         "button_text_color": "#ffffff",
         "custom_colors_navigation": false,
