@@ -1805,5 +1805,34 @@
     margin-right: 0 !important;
     text-align: left !important;
   }
+
+  .buygreat-trending-products
+    .product-grid-item__content
+    .price.product-grid-item__price {
+    display: block !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+  }
+
+  .buygreat-trending-products
+    .product-grid-item__content
+    .price.product-grid-item__price
+    dl,
+  .buygreat-trending-products
+    .product-grid-item__content
+    .price.product-grid-item__price
+    .price__sale,
+  .buygreat-trending-products
+    .product-grid-item__content
+    .price.product-grid-item__price
+    .price__regular,
+  .buygreat-trending-products
+    .product-grid-item__content
+    .price.product-grid-item__price
+    .price-item {
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
 }
 
