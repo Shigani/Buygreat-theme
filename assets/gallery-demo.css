@@ -1592,8 +1592,46 @@
   color: rgb(var(--color-foreground));
 }
 
+.buygreat-featured-collection .product-recommendations__heading {
+  color: rgb(var(--color-foreground));
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 1.6rem;
+}
+
 .buygreat-featured-collection .product-grid-item__thumbnail {
   min-height: 15rem;
+}
+
+.buygreat-featured-collection .collection__product {
+  border: 0.1rem solid #d9dddf;
+  box-sizing: border-box;
+  margin: 0 !important;
+  overflow: hidden;
+}
+
+.buygreat-featured-collection .collection__product > .col,
+.buygreat-featured-collection .collection__product > .swiper-wrapper > .swiper-slide {
+  border-right: 0.1rem solid #d9dddf;
+  box-sizing: border-box;
+  margin-bottom: 0 !important;
+  min-width: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.buygreat-featured-collection .collection__product > .col:last-child,
+.buygreat-featured-collection .collection__product > .swiper-wrapper > .swiper-slide:last-child {
+  border-right: 0;
+}
+
+.buygreat-featured-collection .product-grid-item {
+  background: #fff;
+  border: 0 !important;
+  border-radius: 0;
+  box-shadow: none;
+  height: 100%;
 }
 
 .buygreat-featured-collection .productSlider {
@@ -1619,6 +1657,14 @@
 .buygreat-featured-collection .collection__list--slider {
   left: 0;
   right: 0;
+}
+
+.buygreat-product-info-trending.buygreat-featured-collection {
+  border-left: 0;
+  border-radius: 0;
+  border-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @media screen and (max-width: 749px) {
