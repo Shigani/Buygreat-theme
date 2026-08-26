@@ -125,7 +125,7 @@
         "rich_text_JrrFR7": {
           "type": "rich_text",
           "settings": {
-            "content": "<h3>Product highlights</h3><ul><li>Varia VS3 Coffee Grinder (Gen 2) is a zero-retention, single-dose grinder built for precision and efficiency.</li><li>With stepless micrometric adjustment, a magnetic dosing system, and a powerful 100W motor, it delivers consistent grind quality for both espresso and filter coffee.</li><li>Its sleek, CNC-machined aluminum body and 76.5° slope geometry ensure less than 0.1g retention per 10g dose—perfect for fast, clean workflow and effortless switching between beans.</li></ul>"
+            "content": "<h5><strong>Product Highlight</strong></h5><ul><li>Varia VS3 Coffee Grinder (Gen 2) is a zero-retention, single-dose grinder built for precision and efficiency.</li><li>With stepless micrometric adjustment, a magnetic dosing system, and a powerful 100W motor, it delivers consistent grind quality for both espresso and filter coffee.</li><li>Its sleek, CNC-machined aluminum body and 76.5° slope geometry ensure less than 0.1g retention per 10g dose—perfect for fast, clean workflow and effortless switching between beans.</li></ul>"
           }
         }
       },
