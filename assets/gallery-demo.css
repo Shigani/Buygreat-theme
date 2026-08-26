@@ -1738,8 +1738,19 @@
 .buygreat-featured-collection .collection__list--slider .product__slider--button svg,
 .buygreat-featured-collection .featured__collection--slider .product__slider--button svg {
   fill: currentColor;
-  height: 1.8rem;
-  width: 1.8rem;
+  height: 1.8rem !important;
+  width: 1.8rem !important;
+}
+
+.buygreat-recently-viewed-products .featured__collection--slider .swiper-button-prev,
+.buygreat-recently-viewed-products .featured__collection--slider .swiper-button-next {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.buygreat-recently-viewed-products .featured__collection--slider .swiper-button-prev::after,
+.buygreat-recently-viewed-products .featured__collection--slider .swiper-button-next::after {
+  font-size: 1.8rem;
 }
 
 .buygreat-product-info-trending.buygreat-featured-collection {
