@@ -1518,7 +1518,7 @@
 }
 
 .buygreat-recently-viewed-products .product-grid-item__thumbnail {
-  min-height: 15rem;
+  min-height: 19rem;
 }
 
 .buygreat-recently-viewed-products .productSlider {
@@ -1561,7 +1561,7 @@
   }
 
   .buygreat-recently-viewed-products .product-grid-item__thumbnail {
-    min-height: 13rem;
+    min-height: 16rem;
   }
 }
 
@@ -1601,7 +1601,7 @@
 }
 
 .buygreat-featured-collection .product-grid-item__thumbnail {
-  min-height: 15rem;
+  min-height: 19rem;
 }
 
 .buygreat-featured-collection .collection__product {
@@ -1704,7 +1704,7 @@
   }
 
   .buygreat-featured-collection .product-grid-item__thumbnail {
-    min-height: 13rem;
+    min-height: 16rem;
   }
 }
 
