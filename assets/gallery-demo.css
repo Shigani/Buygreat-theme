@@ -1366,6 +1366,22 @@
 }
 
 @media screen and (max-width: 749px) {
+  .buygreat-recently-viewed-products .featured__collection--slider .swiper-button-prev,
+  .buygreat-recently-viewed-products .featured__collection--slider .swiper-button-next {
+    opacity: 0 !important;
+    visibility: hidden;
+  }
+
+  .buygreat-recently-viewed-products.buygreat-recently-viewed-has-multiple
+    .featured__collection--slider
+    .swiper-button-prev,
+  .buygreat-recently-viewed-products.buygreat-recently-viewed-has-multiple
+    .featured__collection--slider
+    .swiper-button-next {
+    opacity: 1 !important;
+    visibility: visible;
+  }
+
   .buygreat-trending-products .product-grid-item__thumbnail {
     min-height: 17rem;
   }

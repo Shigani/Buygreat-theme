@@ -48,6 +48,11 @@ var recentViewsetupGrid = function (Recentgrid) {
     Recentgrid.innerHTML = recentViewPorductProductCards;
     insertRecentViewedAppBlocks(Recentgrid);
 
+    recentViewdProduct.classList.toggle(
+      "buygreat-recently-viewed-has-multiple",
+      Recentgrid.querySelectorAll(".buygreat-recent-view-slide").length > 1
+    );
+
     if (typeof theme.collectionSlider === "function") {
       theme.collectionSlider(recentViewdProduct);
     }
