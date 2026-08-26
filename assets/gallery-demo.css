@@ -1911,6 +1911,12 @@
   min-height: 100%;
 }
 
+/* Do not extend a right edge through the empty space after the final card. */
+.buygreat-trending-products .productSlider,
+.buygreat-featured-collection .productSlider {
+  border-right: 0 !important;
+}
+
 /* The border belongs to the last card currently in view, not the final data slide. */
 .buygreat-trending-products .productSlider .swiper-slide:last-child {
   border-right: 0 !important;
