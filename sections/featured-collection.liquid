@@ -247,7 +247,8 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
               media_size: section.settings.image_ratio,
               show_secondary_image: section.settings.show_secondary_image,
               show_vendor: section.settings.show_vendor,
-              show_badge: section.settings.show_badges,
+              show_badge: false,
+              show_product_tags: section.settings.show_badges,
               show_cart_button: section.settings.show_cart_button,
               cart_button_style: section.settings.cart_button_style,
               cart_button_place: section.settings.cart_button_positon,
@@ -486,7 +487,7 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
         "type": "checkbox",
         "id": "show_badges",
         "default": true,
-        "label": "Show badges"
+        "label": "Show product tags"
       },
       {
         "type": "select",
