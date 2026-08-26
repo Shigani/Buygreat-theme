@@ -242,13 +242,14 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
         {%- if slider_enable -%}<div class="swiper-wrapper">{% endif %}
         {%- for product in collection.products limit: featured_product_limit -%}
           <div class="{{ productItem }}">
+            {%- render 'product-display-tags', product_to_tag: product -%}
             {% render 'product-card-item',
               product_card_product: product,
               media_size: section.settings.image_ratio,
               show_secondary_image: section.settings.show_secondary_image,
               show_vendor: section.settings.show_vendor,
               show_badge: false,
-              show_product_tags: section.settings.show_badges,
+              show_product_tags: false,
               show_cart_button: section.settings.show_cart_button,
               cart_button_style: section.settings.cart_button_style,
               cart_button_place: section.settings.cart_button_positon,
