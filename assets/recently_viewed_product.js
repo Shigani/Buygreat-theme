@@ -10,11 +10,9 @@ var selectors = {
 
 document.addEventListener("DOMContentLoaded", function () {
   var productHandle = recentViewedProductHandle || false;
-  if (!productHandle)
-    return console.error(
-      "[recentViewPorduct] Missing `data-product-handle` attribute. Failed to update the recentViewPorduct."
-    );
-  updaterecentViewPorduct(productHandle);
+  if (productHandle) {
+    updaterecentViewPorduct(productHandle);
+  }
 
   var Recentgrid = document.querySelector(selectors.grid) || false;
   if (Recentgrid) {
@@ -99,7 +97,11 @@ var getrecentViewPorduct = function () {
     return recentViewPorduct
       .split(LOCAL_STORAGE_DELIMITER)
       .filter(function (handle, index, handles) {
-        return handle && handles.indexOf(handle) === index;
+        return (
+          handle &&
+          handles.indexOf(handle) === index &&
+          (!recentViewedProductHandle || handle !== recentViewedProductHandle)
+        );
       });
   }
   return [];
