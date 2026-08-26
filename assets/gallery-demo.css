@@ -2050,3 +2050,18 @@
   border-right: 0.1rem solid #d9dddf !important;
 }
 
+/* Final cascade override for the product-info trending cards. */
+.buygreat-trending-products .productSlider,
+.buygreat-featured-collection .productSlider {
+  border-right: 0 !important;
+}
+
+.buygreat-trending-products .productSlider .swiper-slide > .product-grid-item {
+  border-bottom: 0.1rem solid #d9dddf !important;
+  height: 100% !important;
+}
+
+.buygreat-product-info-trending .productSlider {
+  border-bottom: 0.1rem solid #d9dddf !important;
+}
+
