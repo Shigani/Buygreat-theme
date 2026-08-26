@@ -1441,6 +1441,16 @@
   margin-bottom: 0;
 }
 
+.buygreat-product-rich-text-box.rte ul {
+  display: block;
+  gap: 0;
+  grid-template-columns: none;
+}
+
+.buygreat-product-rich-text-box.rte ul li + li {
+  margin-top: 2rem;
+}
+
 .buygreat-product-info-trending .product-recommendations__heading {
   color: rgb(var(--color-foreground));
   font-weight: 600;
