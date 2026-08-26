@@ -268,21 +268,17 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
 
       {%- if slider_enable and section.settings.navigation_position == 'middle' -%}
         <div
-          class="collection__list--slider slider--controls--button slider--navgaition-button-absolute"
+          class="featured__collection--slider slider--controls--button"
           id="section__{{ section.id }}"
         >
           {%- if showNavigation -%}
-            <div class="swiper-button-prev product__slider--button button--{{ section.settings.navigation_button_style }}">
-              {% render 'slider-left-arrow-icon' %}
-            </div>
+            <div class="swiper-button-prev product__slider--buton" aria-label="Previous products"></div>
           {%- endif -%}
           {%- if showPagination -%}
             <div class="swiper-pagination product__slider--pagination"></div>
           {%- endif -%}
           {%- if showNavigation -%}
-            <div class="swiper-button-next product__slider--button button--{{ section.settings.navigation_button_style }}">
-              {% render 'slider-right-arrow-icon' %}
-            </div>
+            <div class="swiper-button-next product__slider--buton" aria-label="Next products"></div>
           {%- endif -%}
         </div>
       {%- endif -%}
