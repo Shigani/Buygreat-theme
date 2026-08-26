@@ -1868,3 +1868,35 @@
   border-right: 0.1rem solid #d9dddf !important;
 }
 
+/* Keep the slider itself square and put the complete border on each real card. */
+.buygreat-trending-products .productSlider,
+.buygreat-trending-products .productSlider .swiper-wrapper,
+.buygreat-trending-products .productSlider .swiper-slide,
+.buygreat-trending-products .productSlider .swiper-slide .product-grid-item {
+  border-radius: 0 !important;
+}
+
+.buygreat-trending-products .productSlider .swiper-wrapper {
+  background: transparent !important;
+}
+
+.buygreat-trending-products .productSlider .swiper-slide {
+  border: 0 !important;
+  display: flex;
+}
+
+.buygreat-trending-products .productSlider .swiper-slide .product-grid-item {
+  border: 0.1rem solid #d9dddf !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 0 !important;
+  min-width: 0;
+  width: 100%;
+}
+
+.buygreat-trending-products .productSlider .swiper-slide + .swiper-slide .product-grid-item {
+  margin-left: -0.1rem !important;
+}
+
