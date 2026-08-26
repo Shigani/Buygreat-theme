@@ -1753,6 +1753,10 @@
   font-size: 1.8rem;
 }
 
+.buygreat-trending-products.buygreat-featured-collection {
+  border-top: 0 !important;
+}
+
 .buygreat-product-info-trending.buygreat-featured-collection {
   border-left: 0;
   border-radius: 0;
