@@ -196,6 +196,48 @@ theme.collectionSlider = (function () {
       },
     });
 
+    function syncVisibleCardBorder() {
+      if (!sliderContainer || !e.classList.contains("buygreat-trending-products")) {
+        return;
+      }
+
+      var sliderBounds = sliderContainer.getBoundingClientRect();
+      var visibleSlides = Array.prototype.slice
+        .call(sliderContainer.querySelectorAll(".swiper-slide"))
+        .map(function (slide) {
+          slide.classList.remove("buygreat-slider-visible-last");
+          return slide;
+        })
+        .filter(function (slide) {
+          var slideBounds = slide.getBoundingClientRect();
+          return (
+            slideBounds.width > 0 &&
+            slideBounds.right > sliderBounds.left + 1 &&
+            slideBounds.left < sliderBounds.right - 1
+          );
+        })
+        .sort(function (firstSlide, secondSlide) {
+          return (
+            firstSlide.getBoundingClientRect().left -
+            secondSlide.getBoundingClientRect().left
+          );
+        });
+
+      if (visibleSlides.length) {
+        visibleSlides[visibleSlides.length - 1].classList.add(
+          "buygreat-slider-visible-last"
+        );
+      }
+    }
+
+    if (sliderContainer && e.classList.contains("buygreat-trending-products")) {
+      featuredCollection.on("slideChange", syncVisibleCardBorder);
+      featuredCollection.on("transitionEnd", syncVisibleCardBorder);
+      featuredCollection.on("resize", syncVisibleCardBorder);
+      window.addEventListener("resize", syncVisibleCardBorder);
+      requestAnimationFrame(syncVisibleCardBorder);
+    }
+
     if(!sliderContainer == false && sliderAutoplay == "true"){
       sliderContainer.addEventListener('mouseenter', (e) => {
         featuredCollection.autoplay.stop();
