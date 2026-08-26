@@ -11,8 +11,22 @@
   assign showNavigation = section.settings.show_navigation
 -%}
 
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.mobile_padding_top | default: 20 }}px !important;
+    padding-bottom: {{ section.settings.mobile_padding_bottom | default: 25 }}px !important;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | default: 25 }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom | default: 25 }}px !important;
+    }
+  }
+{%- endstyle -%}
+
 <div
-  class="buygreat-trending-products buygreat-recently-viewed-products recently_viewed_proudct no-js-inline color-{{ section.settings.color_scheme }} gradient"
+  class="section-{{ section.id }}-padding buygreat-trending-products buygreat-recently-viewed-products recently_viewed_proudct no-js-inline color-{{ section.settings.color_scheme }} gradient"
   data-product-handle="{{ product.handle }}"
   data-section-id="{{ section.id }}"
   data-section-type="recently-viewed"
@@ -195,6 +209,58 @@
       "unit": "s",
       "label": "Change slides every",
       "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "paragraph",
+      "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 25
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 25
     }
   ],
   "blocks": [
