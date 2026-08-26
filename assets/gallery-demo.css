@@ -1542,7 +1542,7 @@
   padding-bottom: 1.2rem;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
-  padding-top: 1.2rem !important;
+  padding-top: 1.4rem !important;
 }
 
 .buygreat-recently-viewed-products .product-grid-item__content > *:last-child {
@@ -1663,7 +1663,7 @@
   padding-bottom: 1.2rem;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
-  padding-top: 1.2rem !important;
+  padding-top: 1.4rem !important;
 }
 
 .buygreat-featured-collection .product-grid-item__content > *:last-child {
@@ -1684,6 +1684,11 @@
 }
 
 @media screen and (max-width: 749px) {
+  .buygreat-recently-viewed-products .product-grid-item__content,
+  .buygreat-featured-collection .product-grid-item__content {
+    padding-top: 1.2rem !important;
+  }
+
   .buygreat-featured-collection {
     margin-top: 0;
     padding-bottom: 2.4rem;
