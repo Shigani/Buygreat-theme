@@ -1792,3 +1792,18 @@
   }
 }
 
+/* Keep prices left-aligned across every product-card block on mobile. */
+@media screen and (max-width: 749px) {
+  .buygreat-trending-products .product-grid-item__content .price-wrap,
+  .buygreat-trending-products .product-grid-item__content .product-grid-item__price,
+  .buygreat-trending-products .product-grid-item__content .product-grid-item__price dl,
+  .buygreat-trending-products .product-grid-item__content .product-grid-item__price .price__sale,
+  .buygreat-trending-products .product-grid-item__content .product-grid-item__price .price__regular,
+  .buygreat-trending-products .product-grid-item__content .product-grid-item__price dd {
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+}
+
