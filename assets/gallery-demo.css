@@ -951,6 +951,7 @@
   cursor: pointer;
   flex: 0 1 auto;
   font: inherit;
+  font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.35;
   min-width: 0;
@@ -1104,6 +1105,7 @@
     align-items: center;
     border-bottom: 0.1rem solid #d9dddf;
     display: flex;
+    font-size: 1.8rem;
     justify-content: space-between;
     padding: 1.2rem 1.4rem;
     text-align: left;
@@ -1581,6 +1583,12 @@
   font-weight: 600;
   line-height: 1.35;
   margin: 0 0 1.6rem;
+}
+
+.buygreat-featured-collection .section-heading__title.h2,
+.buygreat-recently-viewed-products .product-recommendations__heading.h2,
+.buygreat-product-info-trending .product-recommendations__heading.h2 {
+  font-size: 1.8rem !important;
 }
 
 .buygreat-featured-collection .section-heading__sub_title {
