@@ -90,6 +90,7 @@
           "type": "trending_products",
           "settings": {
             "heading": "Trending Products",
+            "heading_size": "h2",
             "collection": "automated-collection",
             "image_ratio": "square",
             "show_badges": true,
@@ -230,7 +231,7 @@
       "name": "Feature collection",
       "settings": {
         "main_heading": "Featured collection",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "subtitle": "",
         "alignment": "left",
         "mobile_alignment": "center",
