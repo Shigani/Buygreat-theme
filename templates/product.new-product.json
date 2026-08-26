@@ -249,7 +249,7 @@
         "show_product_rating": false,
         "show_badges": true,
         "badge_position": "top-left",
-        "show_cart_button": true,
+        "show_cart_button": false,
         "cart_button_style": "style2",
         "cart_button_positon": "bottom_right",
         "show_countdown": true,
