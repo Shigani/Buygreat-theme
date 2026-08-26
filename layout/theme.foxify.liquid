@@ -303,7 +303,13 @@
       <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
     {% endif %}
     {% render 'rapid-search-settings' %}
-{% include 'pagefly-app-header' %}{%- render 'foxify-head' -%}</head>
+{% include 'pagefly-app-header' %}{%- render 'foxify-head' -%}<script type="text/javascript">if(typeof window.hulkappsWishlist === 'undefined') {
+                            window.hulkappsWishlist = {};
+                        }
+                        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
+                        window.hulkappsWishlist.hasAppBlockSupport = '1';
+                        </script>
+</head>
 
   <body> {% sections 'foxify-header-group' %} 
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
