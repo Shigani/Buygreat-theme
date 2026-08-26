@@ -1884,6 +1884,25 @@
   border-right: 0.1rem solid #d9dddf !important;
 }
 
+/* Keep the bottom edge on every rendered product card, including cards whose
+   content is shorter or whose slider wrapper is resized by Swiper. */
+.buygreat-trending-products .productSlider .swiper-slide {
+  display: flex !important;
+}
+
+.buygreat-trending-products .productSlider .swiper-slide > .product-grid-item {
+  border-bottom: 0.1rem solid #d9dddf !important;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.buygreat-featured-collection .collection__product > .col > .product-grid-item,
+.buygreat-featured-collection .productSlider .swiper-slide > .product-grid-item {
+  border-bottom: 0.1rem solid #d9dddf !important;
+}
+
 /* The border belongs to the last card currently in view, not the final data slide. */
 .buygreat-trending-products .productSlider .swiper-slide:last-child {
   border-right: 0 !important;
