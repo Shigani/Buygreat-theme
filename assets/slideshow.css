@@ -448,7 +448,23 @@
   }
 }
 .slideshow__text .banner__heading {
+    font-weight: 700;
     margin-top: 6px;
     margin-bottom: 22px !important;
+}
+.slideshow__brand-image {
+    margin-bottom: 1.5rem;
+}
+.slideshow__brand-image-image {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+}
+@media only screen and (max-width: 749px) {
+  .slideshow__brand-image-image {
+    max-height: 64px;
+  }
 }
 

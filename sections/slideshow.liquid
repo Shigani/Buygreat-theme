@@ -254,6 +254,7 @@
               </div>
 
               {%- if block.settings.heading != blank
+                or block.settings.brand_image != blank
                 or block.settings.subheading != blank
                 or block.settings.description != blank
                 or block.settings.button_label != blank
@@ -267,6 +268,23 @@
                       {%- if block.settings.subheading != blank -%}
                         <div class="banner__text subheading" style="--sub-heading-text: {{ block.settings.sub_heading_text_color }}">
                           <span>{{ block.settings.subheading }}</span>
+                        </div>
+                      {%- endif -%}
+                    {%- endcapture -%}
+
+                    {%- capture brand_image -%}
+                      {%- if block.settings.brand_image != blank -%}
+                        <div class="slideshow__brand-image">
+                          {{
+                            block.settings.brand_image
+                            | image_url: width: 600
+                            | image_tag:
+                              class: 'slideshow__brand-image-image',
+                              loading: 'eager',
+                              sizes: '(min-width: 750px) 220px, 45vw',
+                              widths: '120, 180, 240, 360, 540, 600',
+                              alt: block.settings.brand_image.alt
+                          }}
                         </div>
                       {%- endif -%}
                     {%- endcapture -%}
@@ -288,7 +306,10 @@
                         -%}
                         <h2
                           class="banner__heading mb-0"
-                          style="font-size: {{ slide_heading_size }}px;"
+                          style="
+                            font-size: {{ slide_heading_size }}px;
+                            color: {{ block.settings.heading_text_color | default: '#121212' }};
+                          "
                         >
                           {{ block.settings.heading }}
                         </h2>
@@ -305,10 +326,12 @@
 
                     {%- if block.settings.heading_position == 'top' -%}
                       {{ subheading }}
+                      {{ brand_image }}
                       {{ heading }}
                       {{ description }}
                     {%- elsif block.settings.heading_position == 'bottom' -%}
                       {{ description }}
+                      {{ brand_image }}
                       {{ heading }}
                       {{ subheading }}
                     {%- endif -%}
@@ -629,6 +652,12 @@
           "label": "t:sections.slideshow.blocks.slide.settings.heading.label"
         },
         {
+          "type": "image_picker",
+          "id": "brand_image",
+          "label": "Brand image",
+          "info": "Optional image shown above the heading."
+        },
+        {
           "type": "select",
           "id": "heading_size",
           "options": [
@@ -647,6 +676,12 @@
           ],
           "default": "32",
           "label": "Heading size"
+        },
+        {
+          "type": "color",
+          "id": "heading_text_color",
+          "label": "Heading color",
+          "default": "#121212"
         },
         {
           "type": "select",
