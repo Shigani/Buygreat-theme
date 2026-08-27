@@ -141,7 +141,7 @@
         "make_section_full_width": true,
         "show_img_scale": false,
         "button_background": "accent-1",
-        "show_content_below_image": true,
+        "show_content_below_image": false,
         "show_mobile_dots": true,
         "mobile__dots_color": "mobile__dark",
         "show_mobile_nav": false,
