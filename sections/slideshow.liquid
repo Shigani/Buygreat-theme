@@ -266,7 +266,10 @@
                   <div class="slideshow__text banner__box {{ block.settings.content_animation }} color-{{ block.settings.color_scheme }} gradient ">
                     {%- capture subheading -%}
                       {%- if block.settings.subheading != blank -%}
-                        <div class="banner__text subheading" style="--sub-heading-text: {{ block.settings.sub_heading_text_color }}">
+                        <div
+                          class="banner__text subheading"
+                          style="color: {{ block.settings.sub_heading_text_color | default: '#121212' }};"
+                        >
                           <span>{{ block.settings.subheading }}</span>
                         </div>
                       {%- endif -%}
@@ -642,7 +645,7 @@
         {
           "type": "color",
           "id": "sub_heading_text_color",
-          "label": "Sub heading Color",
+          "label": "Subheading color",
           "default": "#121212"
         },
         {
