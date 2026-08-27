@@ -3991,10 +3991,6 @@ h2.section-heading__title.h2, h2.section-heading__title {
 .h0,.video__content--title,h1, .h1 {
     font-size: calc(var(--font-heading-size) * 2.5rem)!important;
 }
-.slideshow__text  h2.banner__heading.h1 {
-    font-size: 3.0rem !important;
-}
-
 .product--card__countdown .countdown__digit {
     font-size: 16px !important;
 }
