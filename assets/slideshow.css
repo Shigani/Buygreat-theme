@@ -508,6 +508,7 @@
 .slideshow--bullet-button.pagination--dots
     .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: transparent !important;
+    border-width: 3px !important;
 }
 
 .slideshow--bullet-button.pagination--dots.dark .swiper-pagination-bullet,
@@ -521,6 +522,7 @@
 .slideshow--bullet-button.pagination--dots.mobile__dark
     .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: transparent !important;
+    border: 3px solid #000 !important;
 }
 
 @media only screen and (max-width: 749px) {
