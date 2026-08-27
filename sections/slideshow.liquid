@@ -321,7 +321,10 @@
 
                     {%- capture description -%}
                       {%- if block.settings.description != blank -%}
-                        <div class="banner__text">
+                        <div
+                          class="banner__text"
+                          style="color: {{ block.settings.description_text_color | default: '#121212' }};"
+                        >
                           <span>{{ block.settings.description }}</span>
                         </div>
                       {%- endif -%}
@@ -645,7 +648,7 @@
         {
           "type": "color",
           "id": "sub_heading_text_color",
-          "label": "Subheading color",
+          "label": "Top subheading color",
           "default": "#121212"
         },
         {
@@ -707,6 +710,12 @@
           "id": "description",
           "default": "Tell your brand's story through images",
           "label": "t:sections.slideshow.blocks.slide.settings.subheading.label"
+        },
+        {
+          "type": "color",
+          "id": "description_text_color",
+          "label": "Subheading color",
+          "default": "#121212"
         },
         {
           "type": "text",
