@@ -525,6 +525,19 @@
     border: 3px solid #000 !important;
 }
 
+.slideshow--bullet-button.pagination--dots
+    .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+    background: #fff !important;
+    border-color: #fff !important;
+}
+
+.slideshow--bullet-button.pagination--dots .swiper-pagination-bullet,
+.slideshow--bullet-button.pagination--dots
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    transform: none !important;
+    transition: none !important;
+}
+
 @media only screen and (max-width: 749px) {
     .slideshow--slider.slider--controls--bullet {
         bottom: 30px;
