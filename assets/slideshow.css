@@ -242,6 +242,11 @@
     padding-top: 4rem;
     padding-bottom: 6rem;
 }
+  .slideshow__text-wrapper.show_content--mobile-image .slideshow__text.banner__box {
+    padding: 0 2rem;
+    background: transparent;
+    background-image: none;
+  }
   .slideshow--nav-button {
     top: unset;
     bottom: 1.2rem;
