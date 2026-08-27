@@ -76,7 +76,7 @@
   opacity: 1;
   text-indent: -9999px;
   transform: none;
-  transition: none;
+  transition: background-color 180ms ease;
 }
 
 .slideshow--bullet-button.pagination--dots
