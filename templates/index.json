@@ -15,7 +15,6 @@
         "slide_Q9Jtk9": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Banner_3_a9b0e7b9-5d31-41ad-993f-4b7ccb687281.png",
             "subheading": "",
             "sub_heading_text_color": "#121212",
             "heading": "",
@@ -35,14 +34,12 @@
             "content_box_alignment": "middle-left",
             "alignment_desktop": "left",
             "content_animation": "fade__in__up",
-            "mobile_image": "shopify://shop_images/Banner_3_Mobile.png",
             "alignment_mobile": "center"
           }
         },
         "slide_LcMT9C": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Banner_4.png",
             "subheading": "",
             "sub_heading_text_color": "#121212",
             "heading": "",
@@ -62,14 +59,12 @@
             "content_box_alignment": "middle-left",
             "alignment_desktop": "left",
             "content_animation": "fade__in__up",
-            "mobile_image": "shopify://shop_images/Banner_4_mobile_de1a401a-60fc-44ec-af2a-c6a333507b53.png",
             "alignment_mobile": "center"
           }
         },
         "slide_i9WkJY": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_May_8_2026_10_15_52_AM_60b339df-17d1-4b6e-aef7-7bf7395681c5.png",
             "subheading": "",
             "sub_heading_text_color": "#ffffff",
             "heading": "",
@@ -89,14 +84,12 @@
             "content_box_alignment": "middle-left",
             "alignment_desktop": "left",
             "content_animation": "fade__in__up",
-            "mobile_image": "shopify://shop_images/Banner_1_mobile_5ef9a001-f5e1-4939-8399-80646bb91380.png",
             "alignment_mobile": "center"
           }
         },
         "slide_kHCNW8": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/banner_2.png",
             "subheading": "",
             "sub_heading_text_color": "#000000",
             "heading": "",
@@ -116,7 +109,6 @@
             "content_box_alignment": "middle-left",
             "alignment_desktop": "left",
             "content_animation": "fade__in__up",
-            "mobile_image": "shopify://shop_images/Banner_2_mobile.png",
             "alignment_mobile": "center"
           }
         }
@@ -131,7 +123,7 @@
         "slide_height": "medium",
         "autorotate": true,
         "autorotate_speed": 2,
-        "show_dots": false,
+        "show_dots": true,
         "pagination_style": "dots",
         "dots_color": "dark",
         "show_arrows": false,
@@ -160,7 +152,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "home-and-living",
-            "image": "shopify://shop_images/Daily_Home.jpg",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -170,7 +161,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "appliances",
-            "image": "shopify://shop_images/Appliances_ef028a2d-ac3c-4f82-b11e-ec66942bfbd1.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -180,7 +170,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "electronics",
-            "image": "shopify://shop_images/Electronics.jpg",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -190,7 +179,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "furniture",
-            "image": "shopify://shop_images/Furniture.jpg",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -200,7 +188,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "baby-and-kids",
-            "image": "shopify://shop_images/Toys.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -210,7 +197,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "sports-and-fitness",
-            "image": "shopify://shop_images/Gym_Fitness.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -220,7 +206,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "auto-accessories",
-            "image": "shopify://shop_images/Car_Accessories.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -230,7 +215,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "outdoor",
-            "image": "shopify://shop_images/Outdoor_91deac3e-ee55-494d-9d42-0f02851c702e.jpg",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -240,7 +224,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "event-accessories",
-            "image": "shopify://shop_images/Event_Accessories.jpg",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -250,7 +233,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "tools",
-            "image": "shopify://shop_images/Hardware_Tools_bffcf510-78e5-4613-b2ef-e720144ba418.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -488,7 +470,6 @@
         "banner_YKM7z3": {
           "type": "banner",
           "settings": {
-            "banner_image": "shopify://shop_images/Home_Banner_2.png",
             "banner_title": "Furnitures",
             "banner_heading_size": "medium",
             "banner_description": "",
@@ -513,7 +494,6 @@
         "banner_Kgqqqy": {
           "type": "banner",
           "settings": {
-            "banner_image": "shopify://shop_images/BUY_2_GET_10_BUY_MORE_15_1.png",
             "banner_title": "",
             "banner_heading_size": "medium",
             "banner_description": "",
@@ -538,7 +518,6 @@
         "banner_WEz4dP": {
           "type": "banner",
           "settings": {
-            "banner_image": "shopify://shop_images/Home_Banner_fe42bf14-02fe-4ea2-8f2b-7e0eb227ab02.png",
             "banner_title": "Kitchen Appliances",
             "banner_heading_size": "medium",
             "banner_description": "",
@@ -665,56 +644,48 @@
         "logo_mcQzRd": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Carla_Home-removebg-preview.png",
             "image_link": ""
           }
         },
         "logo_g3imRb": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Gardeon.png",
             "image_link": ""
           }
         },
         "logo_NXDhir": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/j.elliot_logo_black_289x_7c684912-7293-417a-b499-0c34d09d6ab4.avif",
             "image_link": ""
           }
         },
         "logo_AAhGU3": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/vevor.png",
             "image_link": ""
           }
         },
         "logo_wGNrVU": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/3b57be07-a4ed-46d1-9012-7216ce0dbaab.png",
             "image_link": ""
           }
         },
         "logo_CTNRQ8": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Choetech.png",
             "image_link": ""
           }
         },
         "logo_wJLTTK": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/UGREEN.jpg",
             "image_link": ""
           }
         },
         "logo_H68fGm": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/90c73f9c33796197ec0a1ea92a9f4004.w1500.h1500.jpg",
             "image_link": ""
           }
         }
@@ -1385,7 +1356,6 @@
           "settings": {
             "icon_enable": true,
             "icon": "payment",
-            "image": "shopify://shop_images/delivery-icon-transparent-background-shipping-cost-ico-11562852302e3mtlf1bfz_6a6cb508-57cb-450a-ac0e-af3836abdeba.png",
             "heading": "<p>DELIVERY</p>",
             "text": "1-2 weeks"
           }
@@ -1413,7 +1383,6 @@
           "settings": {
             "icon_enable": true,
             "icon": "dollar",
-            "image": "shopify://shop_images/secure_checkout.png",
             "heading": "<p>BEST SUPPORT</p>",
             "text": "Customer First"
           }
