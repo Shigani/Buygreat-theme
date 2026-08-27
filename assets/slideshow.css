@@ -367,7 +367,8 @@
   .slideshow__mobile--media--small {
     min-height: 28rem;
   }
-  .slideshow__text-wrapper.show_content--on-image {
+  .slideshow__text-wrapper.show_content--on-image,
+  .slideshow__text-wrapper.show_content--on-mobile-image {
     display: flex;
     height: 100%;
     flex-direction: column;
