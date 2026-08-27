@@ -45,6 +45,7 @@
         "slide_LcMT9C": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/VARIA-VS4-AB-Homepage-Banner_1800x_0d1fca52-6261-4681-8d4f-dcf74f6881ba.webp",
             "subheading": "",
             "sub_heading_text_color": "#121212",
             "heading": "",
@@ -66,69 +67,14 @@
             "content_box_alignment": "middle-left",
             "alignment_desktop": "left",
             "content_animation": "fade__in__up",
-            "alignment_mobile": "center"
-          }
-        },
-        "slide_i9WkJY": {
-          "type": "slide",
-          "settings": {
-            "subheading": "",
-            "sub_heading_text_color": "#ffffff",
-            "heading": "",
-            "heading_size": "h1",
-            "heading_text_color": "#121212",
-            "heading_position": "bottom",
-            "description": "",
-            "description_text_color": "#121212",
-            "button_label": "",
-            "link": "",
-            "button_type": "secondary",
-            "button_label_2": "",
-            "link_2": "",
-            "button_type_2": "secondary",
-            "button_size": "medium",
-            "show_text_box": false,
-            "show_image_overlay": false,
-            "color_scheme": "inverse",
-            "content_box_alignment": "middle-left",
-            "alignment_desktop": "left",
-            "content_animation": "fade__in__up",
-            "alignment_mobile": "center"
-          }
-        },
-        "slide_kHCNW8": {
-          "type": "slide",
-          "settings": {
-            "subheading": "",
-            "sub_heading_text_color": "#000000",
-            "heading": "",
-            "heading_size": "h2",
-            "heading_text_color": "#121212",
-            "heading_position": "bottom",
-            "description": "",
-            "description_text_color": "#121212",
-            "button_label": "",
-            "link": "shopify://collections/all",
-            "button_type": "primary",
-            "button_label_2": "",
-            "link_2": "shopify://collections",
-            "button_type_2": "secondary",
-            "button_size": "large",
-            "show_text_box": false,
-            "show_image_overlay": false,
-            "color_scheme": "inverse",
-            "content_box_alignment": "middle-left",
-            "alignment_desktop": "left",
-            "content_animation": "fade__in__up",
+            "mobile_image": "shopify://shop_images/AB-Homepage-Banner-Mobile-Bellman_600x800_crop_center_1991d363-28fc-405d-a351-665c5b742ecd.webp",
             "alignment_mobile": "center"
           }
         }
       },
       "block_order": [
         "slide_Q9Jtk9",
-        "slide_LcMT9C",
-        "slide_i9WkJY",
-        "slide_kHCNW8"
+        "slide_LcMT9C"
       ],
       "settings": {
         "slide_height": "adapt_image",
