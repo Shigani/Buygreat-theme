@@ -1661,6 +1661,14 @@
   position: relative;
 }
 
+.buygreat-recently-viewed-products .buygreat-recent-view-slide,
+.buygreat-recently-viewed-products .product-grid-item,
+.buygreat-recently-viewed-products .product-grid-item__thumbnail,
+.buygreat-recently-viewed-products .product-grid-item__thumbnail .product__media_thumbnail,
+.buygreat-recently-viewed-products .product-grid-item__thumbnail .media {
+  border-radius: 0 !important;
+}
+
 .buygreat-recently-viewed-products .product-grid-item__content {
   padding-bottom: 1.2rem;
   padding-left: 1.2rem;
