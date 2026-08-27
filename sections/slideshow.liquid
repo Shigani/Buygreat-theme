@@ -273,7 +273,23 @@
 
                     {%- capture heading -%}
                        {%- if block.settings.heading != blank -%}
-                        <h2 class="banner__heading {{ block.settings.heading_size }} mb-0">
+                        {%- liquid
+                          assign slide_heading_size = block.settings.heading_size
+                          case slide_heading_size
+                            when 'h2'
+                              assign slide_heading_size = 18
+                            when 'h1'
+                              assign slide_heading_size = 32
+                            when 'h0'
+                              assign slide_heading_size = 48
+                            when blank
+                              assign slide_heading_size = 32
+                          endcase
+                        -%}
+                        <h2
+                          class="banner__heading mb-0"
+                          style="font-size: {{ slide_heading_size }}px;"
+                        >
                           {{ block.settings.heading }}
                         </h2>
                        {%- endif -%}
@@ -617,19 +633,19 @@
           "id": "heading_size",
           "options": [
             {
-              "value": "h2",
-              "label": "Small"
+              "value": "18",
+              "label": "18"
             },
             {
-              "value": "h1",
-              "label": "Medium"
+              "value": "32",
+              "label": "32"
             },
             {
-              "value": "h0",
-              "label": "Large"
+              "value": "48",
+              "label": "48"
             }
           ],
-          "default": "h1",
+          "default": "32",
           "label": "Heading size"
         },
         {
@@ -920,3 +936,4 @@ Changes:
   to: "{%- capture description -%}"
   position: 12369..12396
 {% endcomment %}
+
