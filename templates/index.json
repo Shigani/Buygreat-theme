@@ -210,10 +210,10 @@
         "featured_collection_VmeMen"
       ],
       "settings": {
-        "heading": "<p>CATEGORIES</p>",
-        "heading_size": "h1",
-        "alignment": "center",
-        "layout": "slider",
+        "heading": "<p><strong>CATEGORIES</strong></p>",
+        "heading_size": "h2",
+        "alignment": "left",
+        "layout": "standard",
         "column": "5",
         "full_width": false,
         "image_ratio": "square",
@@ -224,7 +224,7 @@
         "card_title_size": "h5",
         "card_button_style": "secondary",
         "use_arrow_icon": false,
-        "icon_type": "arrow_up",
+        "icon_type": "arrow_right",
         "show_view_all": false,
         "button_label": "Shop All Collection",
         "button_style": "primary",
@@ -233,7 +233,7 @@
         "autoplay_time": 3,
         "show_navigation": true,
         "navigation_button_style": "round",
-        "navigation_position": "top",
+        "navigation_position": "middle",
         "button_background": "#ff0000",
         "button_text_color": "#ffffff",
         "custom_colors_navigation": true,
@@ -472,36 +472,11 @@
             "description_color": "#000000",
             "button_text_color": "#ffffff"
           }
-        },
-        "banner_WEz4dP": {
-          "type": "banner",
-          "settings": {
-            "banner_title": "Kitchen Appliances",
-            "banner_heading_size": "medium",
-            "banner_description": "",
-            "banner_button_text": "shop now",
-            "banner_link": "shopify://collections/kitchen-appliances",
-            "banner_button_type": "primary",
-            "button_size": "small",
-            "grid_column_start": 1,
-            "grid_column_end": 5,
-            "grid_row_start": 1,
-            "grid_row_end": 9,
-            "override_banner_setting": false,
-            "content_max_width": 100,
-            "content_position": "left--center",
-            "custom_banner_content_inner_space": "medium",
-            "content_alignment": "center",
-            "heading_color": "#000000",
-            "description_color": "#000000",
-            "button_text_color": "#ffffff"
-          }
         }
       },
       "block_order": [
         "banner_YKM7z3",
-        "banner_Kgqqqy",
-        "banner_WEz4dP"
+        "banner_Kgqqqy"
       ],
       "settings": {
         "title": "",
@@ -511,14 +486,14 @@
         "container_type": "container-fluid",
         "color_scheme": "scheme-212ba1c6-71aa-4666-9a11-06d7ddf2586c",
         "banner_layout_type": "grid",
-        "section-colums-desktop": 3,
+        "section-colums-desktop": 2,
         "banner_grid_gap": "medium",
         "image_ratio": "adapt",
         "banner_corner_radius": 15,
         "banner_overlay": 0,
         "show_content_below_image": true,
         "content_position": "top--left",
-        "banner_content_inner_space": "medium",
+        "banner_content_inner_space": "none",
         "content_alignment": "center",
         "mosaic_image_hight": "fit",
         "padding_top": 30,
