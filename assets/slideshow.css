@@ -454,6 +454,7 @@
 .slideshow__text .banner__heading {
     font-weight: 700;
     margin: 0;
+    font-size: var(--slideshow-heading-size);
 }
 .slideshow__brand-image {
     margin-bottom: 35px;
@@ -466,6 +467,9 @@
     object-fit: contain;
 }
 @media only screen and (max-width: 749px) {
+  .slideshow__text .banner__heading {
+    font-size: 24px;
+  }
   .slideshow__brand-image-image {
     max-width: 140px;
   }
