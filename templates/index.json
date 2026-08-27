@@ -17,10 +17,10 @@
           "settings": {
             "subheading": "",
             "sub_heading_text_color": "#121212",
-            "heading": "",
-            "heading_size": "h1",
+            "heading": "New Expresso Series 1",
+            "heading_size": "h2",
             "heading_position": "top",
-            "description": "",
+            "description": "Barista Quality Result At Home",
             "button_label": "",
             "link": "",
             "button_type": "secondary",
@@ -121,7 +121,7 @@
       ],
       "settings": {
         "slide_height": "small",
-        "autorotate": true,
+        "autorotate": false,
         "autorotate_speed": 2,
         "show_dots": true,
         "pagination_style": "dots",
