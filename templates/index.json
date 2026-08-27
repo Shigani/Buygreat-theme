@@ -15,14 +15,16 @@
         "slide_Q9Jtk9": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/AB-Homepage-Banner-Desktop-Gaggia-E24_1800x_671bbe88-17f1-471c-a026-344911c200dc.webp",
             "subheading": "",
             "sub_heading_text_color": "#121212",
             "heading": "New Expresso Series 1",
+            "brand_image": "shopify://shop_images/Fellow-Logo-Homepage_250x_a13610a0-e845-4e3f-82c9-ff874ab2d8bf.avif",
             "heading_size": "32",
-            "heading_text_color": "#FFFFFF",
+            "heading_text_color": "#ffffff",
             "heading_position": "top",
             "description": "Barista Quality Result At Home",
-            "description_text_color": "#FFFFFF",
+            "description_text_color": "#ffffff",
             "button_label": "Buy Now",
             "link": "shopify://collections",
             "button_type": "primary",
@@ -31,11 +33,11 @@
             "button_type_2": "secondary",
             "button_size": "medium",
             "show_text_box": false,
-            "show_image_overlay": false,
+            "show_image_overlay": true,
             "color_scheme": "background-2",
             "content_box_alignment": "middle-left",
             "alignment_desktop": "left",
-            "content_animation": "fade__in__up",
+            "content_animation": "",
             "alignment_mobile": "center"
           }
         },
