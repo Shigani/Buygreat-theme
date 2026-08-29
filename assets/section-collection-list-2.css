@@ -171,7 +171,7 @@ h3.collection__title {
 
 .collection_list_2_section .collection-list:not(.productSlider) {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--collection-list-2-columns, 4), minmax(0, 1fr));
   gap: 1rem;
 }
 
