@@ -257,6 +257,11 @@ h3.collection__title {
   object-fit: contain;
 }
 
+.collection_list_2_section .collection__card .media.media--landscape,
+.collection_list_2_section .collection__card .placeholder_svg_parent.media--landscape {
+  padding-bottom: 56.25%;
+}
+
 .collection_list_2_section .collection__card_text {
   min-height: 3.2rem;
   margin: 0;
