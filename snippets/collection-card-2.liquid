@@ -102,14 +102,6 @@
             {% endif %}
           </h3>
         {% endif %}
-        {%- if product_count -%}
-          <span class="collection__product_count xcvpcount"
-            >{{ collection.products_count }}
-          {% comment %}
-            {{ 'sections.collection_list.items' | t }}
-          {% endcomment %}
-          </span>
-        {%- endif -%}
       </div>
     {%- else -%}
       <div class="collection__card_text placeholder__position {% if section.settings.column == "5" %} column__five--design {% endif %} text-center {% unless content_position %} collection--content-absolute {% endunless %} {% if show_content_below_image_mobile %} collection--normal-on-mobile{% endif %}">
@@ -150,12 +142,10 @@
             {% endif %}
           </h3>
 
-           <span class="collection__product_count">(8 Items)</span> 
-      
-          
         {% endif %}
       </div>
     {%- endif -%}
     {% unless content_position %}</div>{% endunless %}
   </div>
 </a>
+

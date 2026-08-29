@@ -434,7 +434,6 @@ row {% if section.settings.column == "5" %} row-cols-xl-5 row-cols-lg-4 row-cols
             {%- render 'collection-card-2',
               collection: block.settings.collection,
               custom_image: block.settings.image,
-              product_count: section.settings.product_count,
               columns: columns,
               round_image: section.settings.image_round_corner,
               image_ratio: section.settings.image_ratio,
@@ -633,12 +632,6 @@ row {% if section.settings.column == "5" %} row-cols-xl-5 row-cols-lg-4 row-cols
       "default": "adapt",
       "label": "t:sections.collection-list.settings.image_ratio.label",
       "info": "t:sections.collection-list.settings.image_ratio.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "product_count",
-      "default": false,
-      "label": "Show product count"
     },
     {
      "type": "checkbox",
