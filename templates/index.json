@@ -51,10 +51,10 @@
             "heading": "VARIA VS4 Coffee Grinder",
             "brand_image": "shopify://shop_images/Varia-Logo_250x_5403ef91-fd93-4070-aeb1-bb269456ae40.avif",
             "heading_size": "h1",
-            "heading_text_color": "#FFFFFF",
+            "heading_text_color": "#ffffff",
             "heading_position": "top",
             "description": "Engineered For Uncompromising Precision",
-            "description_text_color": "#FFFFFF",
+            "description_text_color": "#ffffff",
             "button_label": "Shop Now",
             "link": "shopify://collections",
             "button_type": "primary",
@@ -210,7 +210,7 @@
         "featured_collection_VmeMen"
       ],
       "settings": {
-        "heading": "<p><strong>CATEGORIES</strong></p>",
+        "heading": "<p>Discover our top categories</p>",
         "heading_size": "h2",
         "alignment": "left",
         "layout": "standard",
