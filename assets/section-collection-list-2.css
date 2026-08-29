@@ -21,9 +21,6 @@ h5.collection__title {
   padding-right: 10px;
   text-align: center;
 }
-.collection__product_count {
-  flex-shrink: 0;
-}
 @media only screen and (max-width: 991px) {
   .collection__title {
     font-size: 1.6rem;
