@@ -143,3 +143,109 @@ h3.collection__title {
     transition: .3s!important;
     box-shadow: none;
 }
+
+/* Demo-style category cards */
+.collection_list_2_section .section-heading {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.collection_list_2_section .section-heading__title {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.collection_list_2_section .slider__heading--wrapper {
+  margin-bottom: 1.2rem;
+}
+
+.collection_list_2_section .collection--list-slider {
+  padding: 1rem;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.16);
+  background: rgb(var(--color-background));
+}
+
+.collection_list_2_section .collection-list {
+  margin: 0;
+}
+
+.collection_list_2_section .collection-list:not(.productSlider) {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.collection_list_2_section .collection-list:not(.productSlider) .collection-list__item {
+  width: auto;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  flex: none;
+}
+
+.collection_list_2_section .collection-list.productSlider .swiper-wrapper {
+  align-items: stretch;
+}
+
+.collection_list_2_section .collection-list.productSlider .swiper-slide {
+  height: auto;
+  min-width: 0;
+}
+
+.collection_list_2_section .collection__card {
+  height: 100%;
+  background: #fff;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.16);
+  border-radius: 0;
+}
+
+.collection_list_2_section .collection__card .media,
+.collection_list_2_section .collection__card .placeholder_svg_parent {
+  height: auto;
+  aspect-ratio: 5 / 3;
+  padding-bottom: 0;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
+  margin: 0;
+}
+
+.collection_list_2_section .collection__card .media > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.collection_list_2_section .collection__card_text {
+  min-height: 3.6rem;
+  margin: 0;
+  padding: 0.5rem 0.8rem 0.6rem;
+  background: #fff;
+  text-align: center;
+}
+
+.collection_list_2_section .collection__title {
+  justify-content: center;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media only screen and (max-width: 749px) {
+  .collection_list_2_section .section-heading__title {
+    font-size: 2.2rem;
+  }
+
+  .collection_list_2_section .collection--list-slider {
+    padding: 0.8rem;
+  }
+
+  .collection_list_2_section .collection-list:not(.productSlider) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .collection_list_2_section .collection__card_text {
+    min-height: 3.8rem;
+  }
+}
+
