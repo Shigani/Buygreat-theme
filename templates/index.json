@@ -109,7 +109,8 @@
         "featured_collection_BEDUKe": {
           "type": "featured_collection",
           "settings": {
-            "collection": "home-and-living",
+            "collection": "automated-collection",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -118,7 +119,8 @@
         "featured_collection_fPJGQd": {
           "type": "featured_collection",
           "settings": {
-            "collection": "appliances",
+            "collection": "hydrogen",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -127,7 +129,8 @@
         "featured_collection_CrgJ6G": {
           "type": "featured_collection",
           "settings": {
-            "collection": "electronics",
+            "collection": "frontpage",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -136,7 +139,8 @@
         "featured_collection_4CxwGM": {
           "type": "featured_collection",
           "settings": {
-            "collection": "furniture",
+            "collection": "automated-collection",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -145,7 +149,8 @@
         "featured_collection_fntFzm": {
           "type": "featured_collection",
           "settings": {
-            "collection": "baby-and-kids",
+            "collection": "frontpage",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -154,7 +159,8 @@
         "featured_collection_DXbjFf": {
           "type": "featured_collection",
           "settings": {
-            "collection": "sports-and-fitness",
+            "collection": "frontpage",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -163,7 +169,8 @@
         "featured_collection_zdPkdp": {
           "type": "featured_collection",
           "settings": {
-            "collection": "auto-accessories",
+            "collection": "automated-collection",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -172,7 +179,8 @@
         "featured_collection_g76QHa": {
           "type": "featured_collection",
           "settings": {
-            "collection": "outdoor",
+            "collection": "hydrogen",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -197,7 +205,6 @@
         "column": "4",
         "full_width": false,
         "image_ratio": "square",
-        "product_count": false,
         "show_content_below_image": true,
         "show_content_below_image_mobile": false,
         "title_design": "text",
