@@ -231,10 +231,6 @@ h3.collection__title {
 }
 
 @media only screen and (max-width: 749px) {
-  .collection_list_2_section .section-heading__title {
-    font-size: 2.2rem;
-  }
-
   .collection_list_2_section .collection--list-slider {
     padding: 0.8rem;
   }
