@@ -206,6 +206,7 @@ h3.collection__title {
   background: #fff;
   box-shadow: none;
   margin: 0;
+  overflow: hidden;
 }
 
 .collection_list_2_section .collection__card .media > img {
@@ -226,6 +227,13 @@ h3.collection__title {
   justify-content: center;
   font-weight: 700;
   line-height: 1.2;
+}
+
+.collection_list_2_section .collection__title > svg,
+.collection_list_2_section .collection--card-button > svg {
+  flex: 0 0 auto;
+  display: block;
+  margin-left: 0.6rem;
 }
 
 @media only screen and (max-width: 749px) {
