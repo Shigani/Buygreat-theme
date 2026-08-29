@@ -194,9 +194,42 @@ h3.collection__title {
   height: 100%;
   background: #fff;
   border: 0.1rem solid rgba(var(--color-foreground), 0.16);
+  border-bottom-width: 0.5rem;
   border-radius: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-origin: center;
+}
+
+.collection_list_2_section .collection-list__item:nth-child(8n + 1) .collection__card {
+  border-bottom-color: #7edb8a;
+}
+
+.collection_list_2_section .collection-list__item:nth-child(8n + 2) .collection__card {
+  border-bottom-color: #e9e77d;
+}
+
+.collection_list_2_section .collection-list__item:nth-child(8n + 3) .collection__card {
+  border-bottom-color: #cf7bdc;
+}
+
+.collection_list_2_section .collection-list__item:nth-child(8n + 4) .collection__card {
+  border-bottom-color: #8f8be7;
+}
+
+.collection_list_2_section .collection-list__item:nth-child(8n + 5) .collection__card {
+  border-bottom-color: #48d8e7;
+}
+
+.collection_list_2_section .collection-list__item:nth-child(8n + 6) .collection__card {
+  border-bottom-color: #b777d7;
+}
+
+.collection_list_2_section .collection-list__item:nth-child(8n + 7) .collection__card {
+  border-bottom-color: #e25a6b;
+}
+
+.collection_list_2_section .collection-list__item:nth-child(8n) .collection__card {
+  border-bottom-color: #f2b84b;
 }
 
 @media (hover: hover) and (pointer: fine) {
