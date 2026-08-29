@@ -177,24 +177,6 @@
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
           }
-        },
-        "featured_collection_L4bkaa": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "event-accessories",
-            "use_custom_color": false,
-            "button_foreground_color": "#ffffff",
-            "button_background_color": "#001eff"
-          }
-        },
-        "featured_collection_VmeMen": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "tools",
-            "use_custom_color": false,
-            "button_foreground_color": "#ffffff",
-            "button_background_color": "#001eff"
-          }
         }
       },
       "block_order": [
@@ -205,16 +187,14 @@
         "featured_collection_fntFzm",
         "featured_collection_DXbjFf",
         "featured_collection_zdPkdp",
-        "featured_collection_g76QHa",
-        "featured_collection_L4bkaa",
-        "featured_collection_VmeMen"
+        "featured_collection_g76QHa"
       ],
       "settings": {
         "heading": "<p>Discover our top categories</p>",
         "heading_size": "h2",
         "alignment": "left",
         "layout": "standard",
-        "column": "5",
+        "column": "4",
         "full_width": false,
         "image_ratio": "square",
         "product_count": false,
