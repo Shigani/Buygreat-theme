@@ -204,7 +204,7 @@
         "layout": "standard",
         "column": "4",
         "full_width": false,
-        "image_ratio": "square",
+        "image_ratio": "landscape",
         "show_content_below_image": true,
         "show_content_below_image_mobile": false,
         "title_design": "text",
