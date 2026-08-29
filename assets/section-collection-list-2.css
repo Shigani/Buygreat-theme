@@ -195,6 +195,17 @@ h3.collection__title {
   background: #fff;
   border: 0.1rem solid rgba(var(--color-foreground), 0.16);
   border-radius: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .collection_list_2_section .collection__card:hover {
+    position: relative;
+    z-index: 1;
+    transform: scale(1.03);
+    box-shadow: 0 0.6rem 1.6rem rgba(var(--color-foreground), 0.12);
+  }
 }
 
 .collection_list_2_section .collection__card .media,
