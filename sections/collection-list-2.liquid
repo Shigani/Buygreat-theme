@@ -316,8 +316,21 @@ row {% if section.settings.column == "5" %} row-cols-xl-5 row-cols-lg-4 row-cols
 <div class="mass_2_title_area_section">
 {% endif %}
   
+    {%- liquid
+      assign collection_heading_size = section.settings.heading_size
+      case collection_heading_size
+        when 'h2'
+          assign collection_heading_size = 18
+        when 'h1'
+          assign collection_heading_size = 32
+        when 'h0'
+          assign collection_heading_size = 48
+        when blank
+          assign collection_heading_size = 32
+      endcase
+    -%}
     <div class="section-heading text-{{ section.settings.alignment }} mobile-text-{{ section.settings.mobile_alignment }} {% if slider_enable and section.settings.navigation_position == "top"  %} flex-grow-1 {% else %} {% if section.settings.heading != blank or section.settings.subtitle != blank  %}mb-50 {% endif %} {% endif %}">
-      <h2 class="section-heading__title {{ section.settings.heading_size }} rte">
+      <h2 class="section-heading__title rte" style="--collection-list-2-heading-size: {{ collection_heading_size }}px;">
         {{- section.settings.heading | replace: 'p>', 'span>' -}}
       </h2>
     </div>
@@ -485,23 +498,23 @@ row {% if section.settings.column == "5" %} row-cols-xl-5 row-cols-lg-4 row-cols
         "label": "t:sections.collection-list.settings.title.label"
     },
 	{
-    "type": "select",
-    "id": "heading_size",
-    "options": [
+      "type": "select",
+      "id": "heading_size",
+      "options": [
         {
-          "value": "h0",
-          "label": "Large"
+          "value": "18",
+          "label": "Small"
         },
         {
-          "value": "h1",
+          "value": "32",
           "label": "Medium"
         },
         {
-          "value": "h2",
-          "label": "Small"
+          "value": "48",
+          "label": "Large"
         }
-     ],
-     "default": "h1",
+      ],
+      "default": "32",
       "label": "Heading size"
     },
 	{

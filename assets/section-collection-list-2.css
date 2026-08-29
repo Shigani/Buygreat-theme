@@ -153,6 +153,7 @@ h3.collection__title {
 .collection_list_2_section .section-heading__title {
   margin-bottom: 0;
   font-weight: 700;
+  font-size: var(--collection-list-2-heading-size);
 }
 
 .collection_list_2_section .slider__heading--wrapper {
