@@ -80,6 +80,83 @@
   }
 }
 
+/* Compact bordered logo grid */
+.logo__list .logo__list--bar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin-bottom: 0;
+  border-top: 0.1rem solid var(--text-with-icon-border-color, rgba(var(--color-foreground), 0.16));
+  border-left: 0.1rem solid var(--text-with-icon-border-color, rgba(var(--color-foreground), 0.16));
+}
+
+.logo__list .logo__list--bar .logo__list--image {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  background: rgb(var(--color-background));
+  border-right: 0.1rem solid var(--text-with-icon-border-color, rgba(var(--color-foreground), 0.16));
+  border-bottom: 0.1rem solid var(--text-with-icon-border-color, rgba(var(--color-foreground), 0.16));
+}
+
+.logo__list .logo__list--media,
+.logo__list .logo__list--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8rem;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo__list .logo__list--media > img {
+  position: static;
+  width: auto;
+  max-width: 75%;
+  max-height: 5.5rem;
+  height: auto;
+  transform: none;
+  object-fit: contain;
+}
+
+.logo__list .logo__list--placeholder > svg.placeholder-svg {
+  position: static;
+  width: 75%;
+  height: 75%;
+  max-width: 100%;
+  border-radius: 0;
+}
+
+@media screen and (max-width: 989px) {
+  .logo__list .logo__list--bar.grid--1-col-tablet-down {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .logo__list .logo__list--bar.grid--2-col-tablet-down {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .logo__list .logo__list--bar.grid--3-col-desktop {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .logo__list .logo__list--bar.grid--4-col-desktop {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .logo__list .logo__list--bar.grid--5-col-desktop {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .logo__list .logo__list--bar.grid--6-col-desktop {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
@@ -87,3 +164,4 @@
 
 
 }
+
