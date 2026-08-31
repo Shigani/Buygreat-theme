@@ -467,6 +467,7 @@
         "banner_YKM7z3",
         "banner_Kgqqqy"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -497,12 +498,14 @@
         "image_MJfeFi": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/EOFY-Website-Button-2025-Varia_750x_2x_812b1b53-af14-4fce-9344-9b9885f91dfa.webp",
             "link": ""
           }
         },
         "image_mTg78p": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Overstocked-Sale-Clearance_750x_2x_c11a24c6-7214-4b08-b423-328b32fbaf4e.webp",
             "link": ""
           }
         }
@@ -512,7 +515,11 @@
         "image_mTg78p"
       ],
       "name": "Banner list image only",
-      "settings": {}
+      "settings": {
+        "banner_layout_type": "grid",
+        "section-colums-desktop": 2,
+        "banner_grid_gap": "medium"
+      }
     },
     "logo_list_2_qj8CbB": {
       "type": "logo-list-2",
