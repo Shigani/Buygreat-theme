@@ -14,6 +14,20 @@
   .section-{{ section.id }}-image-only .banner_list_item--media {
     border-radius: 0;
   }
+
+  .section-{{ section.id }}-image-only .banner-grid.mosaic_column {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .section-{{ section.id }}-image-only .banner-grid.mosaic_column .mosaic_item {
+    grid-column: span 6;
+  }
+
+  @media screen and (max-width: 992px) {
+    .section-{{ section.id }}-image-only .banner-grid.mosaic_column .mosaic_item {
+      grid-column: 1 / -1;
+    }
+  }
 {%- endstyle -%}
 
 {{ 'banner-list.css' | asset_url | stylesheet_tag }}
@@ -34,9 +48,9 @@
         endif
       -%}
 
-      <div class="banner-grid banner_grid_gap--medium grid-colums-4">
+      <div class="banner-grid banner_grid_gap--{{ section.settings.banner_grid_gap }} {% if section.settings.banner_layout_type == 'mosaic' %}mosaic_column{% else %}grid-colums-{{ section.settings.section-colums-desktop }}{% endif %}">
         {% for block in section.blocks %}
-          <div class="banner_list_item" {{ block.shopify_attributes }}>
+          <div class="banner_list_item{% if section.settings.banner_layout_type == 'mosaic' %} mosaic_item{% endif %}" {{ block.shopify_attributes }}>
             {% if block.settings.link != blank %}
               <a href="{{ block.settings.link }}" class="d-block">
             {% else %}
@@ -78,7 +92,61 @@
   "tag": "section",
   "class": "section",
   "max_blocks": 12,
-  "settings": [],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "banner_layout_type",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "mosaic",
+          "label": "Mosaic"
+        }
+      ],
+      "default": "grid",
+      "label": "Desktop layout banner type"
+    },
+    {
+      "type": "range",
+      "id": "section-colums-desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "Number of columns on desktop"
+    },
+    {
+      "type": "select",
+      "id": "banner_grid_gap",
+      "options": [
+        {
+          "value": "no-gap",
+          "label": "No gap"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium",
+      "label": "Column space"
+    }
+  ],
   "blocks": [
     {
       "type": "image",
