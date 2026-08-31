@@ -263,6 +263,180 @@
         "banner_grid_gap": "medium"
       }
     },
+    "collection_list_2_FcLr46": {
+      "type": "collection-list-2",
+      "blocks": {
+        "featured_collection_jrF9R6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "automated-collection",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
+            "use_custom_color": false,
+            "button_foreground_color": "#ffffff",
+            "button_background_color": "#001eff"
+          }
+        },
+        "featured_collection_chgj3z": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hydrogen",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
+            "use_custom_color": false,
+            "button_foreground_color": "#ffffff",
+            "button_background_color": "#001eff"
+          }
+        },
+        "featured_collection_Nfq8j9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "frontpage",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
+            "use_custom_color": false,
+            "button_foreground_color": "#ffffff",
+            "button_background_color": "#001eff"
+          }
+        },
+        "featured_collection_hYmJca": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "automated-collection",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
+            "use_custom_color": false,
+            "button_foreground_color": "#ffffff",
+            "button_background_color": "#001eff"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_jrF9R6",
+        "featured_collection_chgj3z",
+        "featured_collection_Nfq8j9",
+        "featured_collection_hYmJca"
+      ],
+      "settings": {
+        "heading": "<p>Top grinder categories</p>",
+        "heading_size": "h2",
+        "alignment": "left",
+        "layout": "standard",
+        "column": "4",
+        "full_width": false,
+        "image_ratio": "landscape",
+        "show_content_below_image": true,
+        "show_content_below_image_mobile": false,
+        "title_design": "text",
+        "card_title_size": "h6",
+        "card_button_style": "secondary",
+        "use_arrow_icon": false,
+        "icon_type": "arrow_right",
+        "show_view_all": false,
+        "button_label": "Shop All Collection",
+        "button_style": "primary",
+        "button_size": "large",
+        "auto_rotate": true,
+        "autoplay_time": 3,
+        "show_navigation": true,
+        "navigation_button_style": "round",
+        "navigation_position": "middle",
+        "button_background": "#ff0000",
+        "button_text_color": "#ffffff",
+        "custom_colors_navigation": true,
+        "nav_foreground": "#ffffff",
+        "nav_background": "#1d3b8a",
+        "mobile_alignment": "center",
+        "products_show_on_sm": "2",
+        "padding_top": 50,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "collection_list_2_LpXbYU": {
+      "type": "collection-list-2",
+      "blocks": {
+        "featured_collection_3PQPMt": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "frontpage",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
+            "use_custom_color": false,
+            "button_foreground_color": "#ffffff",
+            "button_background_color": "#001eff"
+          }
+        },
+        "featured_collection_iUdNQb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "frontpage",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
+            "use_custom_color": false,
+            "button_foreground_color": "#ffffff",
+            "button_background_color": "#001eff"
+          }
+        },
+        "featured_collection_Nb9CcN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "automated-collection",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
+            "use_custom_color": false,
+            "button_foreground_color": "#ffffff",
+            "button_background_color": "#001eff"
+          }
+        },
+        "featured_collection_kGmihi": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hydrogen",
+            "image": "shopify://shop_images/AB-Homepage-Grinders_340x197_2x_22ca717b-2f6e-40eb-84c8-facca39a39af.avif",
+            "use_custom_color": false,
+            "button_foreground_color": "#ffffff",
+            "button_background_color": "#001eff"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_3PQPMt",
+        "featured_collection_iUdNQb",
+        "featured_collection_Nb9CcN",
+        "featured_collection_kGmihi"
+      ],
+      "settings": {
+        "heading": "<p>Top coffee maker categories</p>",
+        "heading_size": "h2",
+        "alignment": "left",
+        "layout": "standard",
+        "column": "4",
+        "full_width": false,
+        "image_ratio": "landscape",
+        "show_content_below_image": true,
+        "show_content_below_image_mobile": false,
+        "title_design": "text",
+        "card_title_size": "h6",
+        "card_button_style": "secondary",
+        "use_arrow_icon": false,
+        "icon_type": "arrow_right",
+        "show_view_all": false,
+        "button_label": "Shop All Collection",
+        "button_style": "primary",
+        "button_size": "large",
+        "auto_rotate": true,
+        "autoplay_time": 3,
+        "show_navigation": true,
+        "navigation_button_style": "round",
+        "navigation_position": "middle",
+        "button_background": "#ff0000",
+        "button_text_color": "#ffffff",
+        "custom_colors_navigation": true,
+        "nav_foreground": "#ffffff",
+        "nav_background": "#1d3b8a",
+        "mobile_alignment": "center",
+        "products_show_on_sm": "2",
+        "padding_top": 50,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
     "logo_list_2_qj8CbB": {
       "type": "logo-list-2",
       "blocks": {
@@ -429,6 +603,8 @@
     "17702904001c89f287",
     "collection_list_2_hEY8rL",
     "banner_list_image_only_QbA3EE",
+    "collection_list_2_FcLr46",
+    "collection_list_2_LpXbYU",
     "logo_list_2_qj8CbB",
     "featured_collection_mEfacH",
     "featured_blog_YWEhrT"
