@@ -260,7 +260,11 @@
       "settings": {
         "banner_layout_type": "grid",
         "section-colums-desktop": 2,
-        "banner_grid_gap": "medium"
+        "banner_grid_gap": "medium",
+        "padding_top": 16,
+        "padding_bottom": 26,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
       }
     },
     "collection_list_2_FcLr46": {
