@@ -447,48 +447,56 @@
         "logo_mcQzRd": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Fellow-Brand-Logo_150x70_2x_cb8a4eed-2978-4720-b6f2-33b78488f9f6.webp",
             "image_link": ""
           }
         },
         "logo_g3imRb": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Normcore-Brand-Logo_150x70_2x_a59a67e4-e999-46a3-b081-acccf9abbcc4.avif",
             "image_link": ""
           }
         },
         "logo_NXDhir": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Varia-Brand-Logo_150x70_2x_933ddc51-106d-464c-9961-eed0daa8d2ff.webp",
             "image_link": ""
           }
         },
         "logo_AAhGU3": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Hario-Brand-Logo_150x70_2x_d32d4a50-d8fd-405a-a7a7-906f447baa2e.avif",
             "image_link": ""
           }
         },
         "logo_wGNrVU": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Moccamaster-150x70-2_150x70_2x_17e1aa0b-f432-4cd4-9920-3e9158ebd6ac.avif",
             "image_link": ""
           }
         },
         "logo_CTNRQ8": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Bellman-Coffee-Logo_150x70_2x_b75a0d8d-a99b-444d-a02b-147f4ed531d5.avif",
             "image_link": ""
           }
         },
         "logo_wJLTTK": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/logo-rhinowares_150x70_2x_c4a4e5ed-7d42-4e74-9a67-dede89b8213d.webp",
             "image_link": ""
           }
         },
         "logo_Je8T8r": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/logo-gaggia_150x70_2x_4add23fc-e6da-4033-9a8b-823752e94230.avif",
             "image_link": ""
           }
         }
