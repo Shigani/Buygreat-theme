@@ -415,11 +415,11 @@
         "banner_YKM7z3": {
           "type": "banner",
           "settings": {
-            "banner_title": "Furnitures",
+            "banner_title": "",
             "banner_heading_size": "medium",
             "banner_description": "",
-            "banner_button_text": "shop now",
-            "banner_link": "shopify://collections/furniture",
+            "banner_button_text": "",
+            "banner_link": "",
             "banner_button_type": "primary",
             "button_size": "small",
             "grid_column_start": 1,
