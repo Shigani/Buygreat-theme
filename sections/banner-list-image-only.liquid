@@ -1,0 +1,121 @@
+{%- style -%}
+  .section-{{ section.id }}-image-only-padding {
+    padding-top: 40px;
+    padding-bottom: 52px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-image-only-padding {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .section-{{ section.id }}-image-only .banner_list_item--media {
+    border-radius: 0;
+  }
+{%- endstyle -%}
+
+{{ 'banner-list.css' | asset_url | stylesheet_tag }}
+
+<div class="banner-list-wrapper banner-list-image-only">
+  <div class="section-{{ section.id }}-image-only section-{{ section.id }}-image-only-padding color-background-1 gradient">
+    <div class="container">
+      {%- liquid
+        assign highest_ratio = 0
+        for block in section.blocks
+          if block.settings.image != blank and block.settings.image.aspect_ratio > highest_ratio
+            assign highest_ratio = block.settings.image.aspect_ratio
+          endif
+        endfor
+
+        if highest_ratio == 0
+          assign highest_ratio = 1
+        endif
+      -%}
+
+      <div class="banner-grid banner_grid_gap--medium grid-colums-4">
+        {% for block in section.blocks %}
+          <div class="banner_list_item" {{ block.shopify_attributes }}>
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}" class="d-block">
+            {% else %}
+              <div class="d-block">
+            {% endif %}
+              <div
+                class="banner_list_item--media media media--transparent media--adapt"
+                style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+              >
+                {% if block.settings.image != blank %}
+                  {{
+                    block.settings.image
+                    | image_url: width: 2200
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '375, 550, 750, 850, 1100, 1500, 1780, 2000, 2200',
+                      sizes: '(min-width: 992px) calc((100vw - 160px) / 4), (min-width: 580px) calc((100vw - 100px) / 2), calc(100vw - 30px)',
+                      alt: block.settings.image.alt
+                  }}
+                {% else %}
+                  {{ 'collection-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+              </div>
+            {% if block.settings.link != blank %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Banner list image only",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 12,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner list image only",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
