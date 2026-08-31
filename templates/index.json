@@ -491,6 +491,29 @@
         "mobile_padding_bottom": 55
       }
     },
+    "banner_list_image_only_QbA3EE": {
+      "type": "banner-list-image-only",
+      "blocks": {
+        "image_MJfeFi": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "image_mTg78p": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_MJfeFi",
+        "image_mTg78p"
+      ],
+      "name": "Banner list image only",
+      "settings": {}
+    },
     "logo_list_2_qj8CbB": {
       "type": "logo-list-2",
       "blocks": {
@@ -1400,6 +1423,7 @@
     "featured_collection_XL6qrH",
     "1770219693b5b903cf",
     "banner_list_fd6pmG",
+    "banner_list_image_only_QbA3EE",
     "logo_list_2_qj8CbB",
     "featured_collection_mEfacH",
     "faq_C3qJxH",
