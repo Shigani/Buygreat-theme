@@ -344,7 +344,7 @@
         "nav_background": "#1d3b8a",
         "mobile_alignment": "center",
         "products_show_on_sm": "2",
-        "padding_top": 50,
+        "padding_top": 20,
         "padding_bottom": 0,
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 0
@@ -431,7 +431,7 @@
         "nav_background": "#1d3b8a",
         "mobile_alignment": "center",
         "products_show_on_sm": "2",
-        "padding_top": 50,
+        "padding_top": 20,
         "padding_bottom": 0,
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 0
