@@ -43,9 +43,6 @@
   opacity: 0.4;
 }
 @media only screen and (min-width: 750px) {
-  .logo__list--image {
-      max-width: 15rem !important;
-  }
   .logo__list--bar {
     justify-content: center;
   }
