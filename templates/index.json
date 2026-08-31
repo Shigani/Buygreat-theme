@@ -415,6 +415,7 @@
         "banner_YKM7z3": {
           "type": "banner",
           "settings": {
+            "banner_image": "shopify://shop_images/EOFY-Website-Button-2025-Varia_750x_2x_812b1b53-af14-4fce-9344-9b9885f91dfa.webp",
             "banner_title": "",
             "banner_heading_size": "medium",
             "banner_description": "",
@@ -439,6 +440,7 @@
         "banner_Kgqqqy": {
           "type": "banner",
           "settings": {
+            "banner_image": "shopify://shop_images/Overstocked-Sale-Clearance_750x_2x_c11a24c6-7214-4b08-b423-328b32fbaf4e.webp",
             "banner_title": "",
             "banner_heading_size": "medium",
             "banner_description": "",
