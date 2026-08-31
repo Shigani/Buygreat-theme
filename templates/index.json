@@ -485,12 +485,6 @@
           "settings": {
             "image_link": ""
           }
-        },
-        "logo_H68fGm": {
-          "type": "logo",
-          "settings": {
-            "image_link": ""
-          }
         }
       },
       "block_order": [
@@ -500,12 +494,11 @@
         "logo_AAhGU3",
         "logo_wGNrVU",
         "logo_CTNRQ8",
-        "logo_wJLTTK",
-        "logo_H68fGm"
+        "logo_wJLTTK"
       ],
       "settings": {
         "container": "container",
-        "products_show_on_xl": "6",
+        "products_show_on_xl": "3",
         "products_show_on_sm": "2",
         "border_on": false,
         "mobile_stack": true,
