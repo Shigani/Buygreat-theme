@@ -56,7 +56,7 @@
       <div class="mobile--scoller">
         <div class="mobile--scoller-inner">
     {% endif %}
-    <div class="logo__list--bar grid grid--{{ product_show_xl }}-col-desktop grid--{{ product_show_sm }}-col-tablet-down">
+    <div class="logo__list--bar grid grid--{{ product_show_xl }}-col-desktop grid--{{ product_show_sm }}-col-tablet-down{% if section.settings.show_view_all %} logo__list--bar-with-view-all{% endif %}">
       {%- for block in section.blocks -%}
         <div class="logo__list--image grid__item" {{ block.shopify_attributes }}>
           {% if block.settings.image_link != blank %}
@@ -91,6 +91,20 @@
           {% if block.settings.image_link != blank %}</a>{% endif %}
         </div>
       {% endfor %}
+      {% if section.settings.show_view_all %}
+        <a
+          class="logo__list--view-all grid__item"
+          href="{{ section.settings.view_all_link | default: routes.collections_url }}"
+        >
+          <span class="logo__list--view-all-label">{{ section.settings.view_all_label | default: 'View All' }}</span>
+          {% if section.settings.view_all_count != blank %}
+            <span class="logo__list--view-all-count">{{ section.settings.view_all_count }}</span>
+          {% endif %}
+          <span class="logo__list--view-all-arrow" aria-hidden="true">
+            {% render 'slider-right-arrow-icon' %}
+          </span>
+        </a>
+      {% endif %}
     </div>
     {% if section.settings.mobile_stack == false %}
       </div>
@@ -163,6 +177,29 @@
         ],
         "default": "2",
         "info": "It works unless you enable the \"Stack on mobile\" "
+      },
+      {
+        "type": "checkbox",
+        "id": "show_view_all",
+        "label": "Show View All",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "view_all_label",
+        "label": "View All label",
+        "default": "View All"
+      },
+      {
+        "type": "text",
+        "id": "view_all_count",
+        "label": "View All supporting text",
+        "default": "160+ Brands"
+      },
+      {
+        "type": "url",
+        "id": "view_all_link",
+        "label": "View All link"
       },
       {
        "type": "checkbox",
