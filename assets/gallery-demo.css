@@ -1261,10 +1261,11 @@
   display: none !important;
 }
 
-.buygreat-trending-products .product-grid-item__title {
+.buygreat-trending-products .product-grid-item__titles .product-grid-item__title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
 }
