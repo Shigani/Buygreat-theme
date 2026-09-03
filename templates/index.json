@@ -596,7 +596,7 @@
         "post_limit": 4,
         "card_style": "standard",
         "show_image": true,
-        "image_ratio": "small",
+        "image_ratio": "medium",
         "show_title": true,
         "show_content": false,
         "show_date": false,
@@ -607,7 +607,7 @@
         "show_view_all": true,
         "style_2_blog": true,
         "color_scheme": "",
-        "padding_top": 50,
+        "padding_top": 25,
         "padding_bottom": 50,
         "mobile_padding_top": 50,
         "mobile_padding_bottom": 50
