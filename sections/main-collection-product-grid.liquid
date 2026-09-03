@@ -435,13 +435,6 @@
       margin-top: .5rem;
       margin-bottom: 0;
   }
-  .buygreat-default-collection__title {
-      margin-bottom: 2.4rem;
-  }
-  .buygreat-default-collection__title .collection-hero__title {
-      margin: 0;
-      text-align: left;
-  }
 </style>
 
 {%- liquid
@@ -588,13 +581,6 @@
       </div>
     {%- endif -%}
   {%- endif -%}
-
-  <div class="{{ section.settings.container_type }} buygreat-default-collection__title">
-    <h1 class="collection-hero__title mb-0">
-      <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-      {{- collection.title | escape -}}
-    </h1>
-  </div>
 
   <div
     {% if section.settings.filter_type == 'vertical' or section.settings.filter_type == 'vertical-right' %}
