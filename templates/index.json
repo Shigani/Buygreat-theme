@@ -596,7 +596,7 @@
         "post_limit": 4,
         "card_style": "standard",
         "show_image": true,
-        "image_ratio": "medium",
+        "image_ratio": "large",
         "show_title": true,
         "show_content": false,
         "show_date": false,
