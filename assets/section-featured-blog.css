@@ -244,6 +244,7 @@ span.button__dotted > svg {
 
 .buygreat-demo-blog .blog__posts.grid.standard .article-card {
   background: #fff;
+  border: 1px solid rgba(var(--color-foreground), 0.16);
   border-radius: 0;
   box-shadow: none;
   height: 100%;
@@ -328,7 +329,6 @@ span.button__dotted > svg {
     padding: 1.5rem;
   }
 }
-
 
 
 
