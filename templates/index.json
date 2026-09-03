@@ -239,11 +239,11 @@
       "blocks": {
         "image_MJfeFi": {
           "type": "image",
-      "settings": {
+          "settings": {
             "image": "shopify://shop_images/EOFY-Website-Button-2025-Varia_750x_2x_812b1b53-af14-4fce-9344-9b9885f91dfa.webp",
             "link": ""
-      }
-    },
+          }
+        },
         "image_mTg78p": {
           "type": "image",
           "settings": {
@@ -592,7 +592,7 @@
         "main_heading": "Check Our Blog Posts",
         "heading_size": "h1",
         "text": "",
-        "blog": "blogs",
+        "blog": "news",
         "post_limit": 4,
         "card_style": "standard",
         "show_image": true,
