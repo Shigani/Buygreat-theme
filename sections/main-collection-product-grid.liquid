@@ -5,6 +5,7 @@
 {%- endcomment -%}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'product-card-item.css' | asset_url | stylesheet_tag }}
+{{ 'gallery-demo.css' | asset_url | stylesheet_tag }}
 {{ 'countdown-timer.css' | asset_url | stylesheet_tag }}
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
@@ -383,6 +384,16 @@
       box-shadow: none;
       border-bottom: 1px solid rgba(var(--color-foreground), .16);
   }
+  .buygreat-default-collection .buygreat-collection-product-cards {
+      background: rgb(var(--color-background));
+      border: 0;
+      box-sizing: border-box;
+      padding: 0;
+  }
+  .buygreat-default-collection .buygreat-collection-product-cards > .col {
+      padding-left: 0;
+      padding-right: 0;
+  }
 </style>
 
 {%- liquid
@@ -580,7 +591,7 @@
             >
               <div class="loading-overlay"></div>
               <div
-                class="row row-cols-lg-{{ product_column_view }} row-cols-md-3 {% if section.settings.product_column_on_mobile %} row-cols-1 {% else %} row-cols-2 {% endif %}"
+                class="row buygreat-trending-products buygreat-featured-collection buygreat-collection-product-cards row-cols-lg-{{ product_column_view }} row-cols-md-3 {% if section.settings.product_column_on_mobile %} row-cols-1 {% else %} row-cols-2 {% endif %}"
                 data-product-column
               >
                 {%- for product in collection.products -%}
@@ -591,7 +602,8 @@
                       media_size: section.settings.image_ratio,
                       show_secondary_image: section.settings.show_secondary_image,
                       show_vendor: section.settings.show_vendor,
-                      show_badge: section.settings.show_badges,
+                      show_badge: false,
+                      show_product_tags: section.settings.show_badges,
                       show_cart_button: section.settings.show_cart_button,
                       cart_button_style: section.settings.cart_button_style,
                       cart_button_place: section.settings.cart_button_positon,
