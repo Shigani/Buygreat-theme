@@ -423,9 +423,6 @@
       min-height: 4rem;
       margin-bottom: 0;
   }
-  .buygreat-default-collection .buygreat-collection-product-cards .product-grid-item__title {
-      font-weight: 700;
-  }
   .buygreat-default-collection .buygreat-collection-product-cards .product-grid-item__content {
       flex: 0 0 auto;
       padding-bottom: .8rem;
@@ -434,6 +431,14 @@
   .buygreat-default-collection .buygreat-collection-product-cards .product-grid-item__content > .product-grid-item__price {
       margin-top: .5rem;
       margin-bottom: 0;
+  }
+  .buygreat-default-collection__title {
+      margin-bottom: 2.4rem;
+  }
+  .buygreat-default-collection__title .collection-hero__title {
+      margin: 0;
+      text-align: left;
+      font-weight: 700;
   }
 </style>
 
@@ -581,6 +586,13 @@
       </div>
     {%- endif -%}
   {%- endif -%}
+
+  <div class="{{ section.settings.container_type }} buygreat-default-collection__title">
+    <h1 class="collection-hero__title mb-0">
+      <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+      {{- collection.title | escape -}}
+    </h1>
+  </div>
 
   <div
     {% if section.settings.filter_type == 'vertical' or section.settings.filter_type == 'vertical-right' %}
