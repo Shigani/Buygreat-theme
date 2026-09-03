@@ -253,8 +253,13 @@ span.button__dotted > svg {
 .buygreat-demo-blog .blog__posts.grid.standard a.article-content.motion-reduce {
   border-radius: 0;
   display: block;
-  height: 100%;
+  height: auto;
   overflow: hidden;
+}
+
+.buygreat-demo-blog .blog__posts.grid.standard .card__meida--inner {
+  height: auto;
+  margin: 0;
 }
 
 .buygreat-demo-blog .blog__posts.grid.standard .card__meida--inner.article-card__image--small .article-card__image {
@@ -277,8 +282,9 @@ span.button__dotted > svg {
   background: #fff;
   display: flex;
   flex-direction: column;
-  min-height: 10rem;
-  padding: 2rem 1.5rem 2.2rem;
+  margin: 0;
+  min-height: 0;
+  padding: 1.5rem 1.5rem 2.2rem;
   text-align: left;
 }
 
@@ -322,7 +328,6 @@ span.button__dotted > svg {
     padding: 1.5rem;
   }
 }
-
 
 
 
