@@ -56,9 +56,9 @@
         "show_countdown": false,
         "timer_color_scheme": "accent-1",
         "place_timer_on_image": true,
-        "padding_top": 50,
+        "padding_top": 40,
         "padding_bottom": 100,
-        "mobile_padding_top": 65,
+        "mobile_padding_top": 25,
         "mobile_padding_bottom": 60
       }
     },
