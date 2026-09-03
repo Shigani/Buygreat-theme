@@ -187,7 +187,10 @@
   text-align: center;
   text-decoration: none;
   transition: background-color 0.2s ease;
-  grid-row: span 2;
+  width: auto;
+  max-width: none;
+  grid-column: -2 / -1;
+  grid-row: 1 / span 2;
 }
 
 .logo__list .logo__list--view-all:hover,
@@ -230,6 +233,8 @@
     grid-column: 1 / -1;
     grid-row: auto;
     min-height: 8rem;
+    width: auto;
+    max-width: none;
   }
 
   .logo__list--view-all-arrow {
