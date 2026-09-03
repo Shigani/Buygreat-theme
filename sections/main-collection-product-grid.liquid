@@ -391,19 +391,21 @@
       border-bottom: 1px solid rgba(var(--color-foreground), .16);
   }
   .buygreat-default-collection .buygreat-collection-product-cards {
-      background: #fff;
+      background: transparent;
       border: 0;
       box-sizing: border-box;
       padding: 0;
   }
   .buygreat-default-collection .buygreat-collection-product-cards > .col {
       align-self: flex-start;
-      background: #fff;
+      background: transparent;
       padding-left: 0;
       padding-right: 0;
   }
   .buygreat-default-collection .buygreat-collection-product-cards .product-grid-item {
+      background: #fff;
       height: auto;
+      margin-bottom: 0;
   }
   .buygreat-default-collection .buygreat-collection-product-cards .product-grid-item__titles {
       min-height: 4rem;
@@ -621,7 +623,6 @@
                 {%- for product in collection.products -%}
                   <div class="col">
                     {% render 'product-card-item',
-                      className: 'mb-30',
                       product_card_product: product,
                       media_size: section.settings.image_ratio,
                       show_secondary_image: section.settings.show_secondary_image,
