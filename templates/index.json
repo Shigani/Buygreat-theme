@@ -593,7 +593,7 @@
         "heading_size": "h1",
         "text": "",
         "blog": "blogs",
-        "post_limit": 3,
+        "post_limit": 4,
         "card_style": "standard",
         "show_image": true,
         "image_ratio": "medium",
