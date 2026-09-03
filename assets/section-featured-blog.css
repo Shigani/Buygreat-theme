@@ -257,21 +257,16 @@ span.button__dotted > svg {
   overflow: hidden;
 }
 
-.buygreat-demo-blog .blog__posts.grid.standard .card__meida--inner.article-card__image--small {
+.buygreat-demo-blog .blog__posts.grid.standard .card__meida--inner.article-card__image--small .article-card__image {
   padding-bottom: 38%;
 }
 
-.buygreat-demo-blog .blog__posts.grid.standard .card__meida--inner.article-card__image--medium {
+.buygreat-demo-blog .blog__posts.grid.standard .card__meida--inner.article-card__image--medium .article-card__image {
   padding-bottom: 46%;
 }
 
-.buygreat-demo-blog .blog__posts.grid.standard .card__meida--inner.article-card__image--large {
+.buygreat-demo-blog .blog__posts.grid.standard .card__meida--inner.article-card__image--large .article-card__image {
   padding-bottom: 56%;
-}
-
-.buygreat-demo-blog .blog__posts.grid.standard .article-card__image {
-  height: 100%;
-  padding-bottom: 0;
 }
 
 .buygreat-demo-blog .blog__posts.grid.standard .article-card__image img {
@@ -327,7 +322,6 @@ span.button__dotted > svg {
     padding: 1.5rem;
   }
 }
-
 
 
 
