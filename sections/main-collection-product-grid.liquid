@@ -352,6 +352,37 @@
   details.facets__disclosure-vertical {
       box-shadow: none;
   }
+  .buygreat-default-collection .facets-vertical .facets__disclosure-vertical {
+      border: 1px solid rgba(var(--color-foreground), .16);
+      border-radius: 0;
+      margin-bottom: 1.6rem;
+      overflow: hidden;
+  }
+  .buygreat-default-collection .facets-vertical .facets__disclosure-vertical + .facets__disclosure-vertical {
+      margin-top: 0;
+  }
+  .buygreat-default-collection .facets-vertical .facets__summary {
+      border-radius: 0;
+      margin: 0;
+      padding: 1.2rem 1.4rem;
+  }
+  .buygreat-default-collection .facets-vertical .facets__disclosure-vertical[open] > .facets__summary {
+      border-bottom: 1px solid rgba(var(--color-foreground), .16);
+  }
+  .buygreat-default-collection .facets-vertical .facets__display-vertical {
+      margin: 0;
+      padding: 1rem 1.4rem 1.4rem;
+  }
+  .buygreat-default-collection .mobile-facets__open {
+      background: rgb(var(--color-background));
+      border: 1px solid rgba(var(--color-foreground), .16);
+      border-radius: 0;
+  }
+  .buygreat-default-collection .mobile-facets__details {
+      border-radius: 0;
+      box-shadow: none;
+      border-bottom: 1px solid rgba(var(--color-foreground), .16);
+  }
 </style>
 
 {%- liquid
@@ -373,7 +404,7 @@
 -%}
 
 <div
-  class="template-search  section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
+  class="template-search buygreat-default-collection section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient"
   data-section-id="{{ section.id }}"
   data-section-type="collection-product"
   data-design="{{ request.design_mode }}"
