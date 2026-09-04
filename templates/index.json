@@ -202,10 +202,10 @@
         "color_scheme": "background-2",
         "border_show": true,
         "border_color": "#e7e7e7",
-        "padding_top": 40,
-        "padding_bottom": 35,
-        "mobile_padding_top": 45,
-        "mobile_padding_bottom": 40
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "mobile_padding_top": 15,
+        "mobile_padding_bottom": 15
       }
     },
     "collection_list_2_hEY8rL": {
@@ -480,7 +480,7 @@
         "subtitle": "",
         "alignment": "left",
         "mobile_alignment": "center",
-        "collection": "automated-collection",
+        "collection": "",
         "image_ratio": "square",
         "image_round_corner": true,
         "show_secondary_image": true,
