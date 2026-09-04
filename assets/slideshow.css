@@ -200,8 +200,8 @@
   .slideshow__text {
     position: relative;
     z-index: 9;
-    width: 50%;
-    max-width: 50%;
+    width: 33.3333%;
+    max-width: 33.3333%;
   }
   .top--position .slideshow__text {
     top: 5rem;
