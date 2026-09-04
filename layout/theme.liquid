@@ -22,8 +22,8 @@
     dir="rtl"
   {% endif %}
 >
-<meta name="google-site-verification" content="9Z7-8ZXfhLrB7T_HM5tUwtXExKQ9PKwj5iWPs-nFTnM" />
   <head>
+    <meta name="google-site-verification" content="9Z7-8ZXfhLrB7T_HM5tUwtXExKQ9PKwj5iWPs-nFTnM">
  {%- render 'layouthub_header' -%}
 	<!-- Added by AVADA SEO Suite -->
 	{% include 'avada-seo' %}
@@ -51,8 +51,9 @@
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
+    {%- assign seo_description = page_description | default: shop.description -%}
+    {% if seo_description != blank %}
+      <meta name="description" content="{{ seo_description | strip_html | escape }}">
     {% endif %}
 
     {% render 'meta-tags' %}
@@ -303,15 +304,9 @@
       <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
     {% endif %}
     {% render 'rapid-search-settings' %}
-{% include 'pagefly-app-header' %}{%- render 'foxify-head' -%}<script type="text/javascript">if(typeof window.hulkappsWishlist === 'undefined') {
-                            window.hulkappsWishlist = {};
-                        }
-                        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
-                        window.hulkappsWishlist.hasAppBlockSupport = '1';
-                        </script>
-</head>
+{% include 'pagefly-app-header' %}</head>
 
-  <body>{% sections 'foxify-header-group' %}
+  <body>
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -330,6 +325,9 @@
     {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {%- if request.page_type == 'index' -%}
+        <h1 class="visually-hidden">{{ shop.name | escape }}</h1>
+      {%- endif -%}
       <!--LayoutHub-Workspace-Start-->{{ content_for_layout }}<!--LayoutHub-Workspace-End-->
     </main>
 
@@ -436,5 +434,5 @@
       {%- render 'back-to-top' -%}
     {%- endif -%}
   {%- render "ecom_footer"-%}{%- render 'layouthub_footer' -%} 
- {%- render 'foxify-footer' -%}{% sections 'foxify-footer-group' %}</body>
+ </body>
 </html>
