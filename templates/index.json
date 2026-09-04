@@ -15,13 +15,13 @@
         "slide_kHCNW8": {
           "type": "slide",
           "settings": {
-            "subheading": "Discover everyday essentials, home products, kitchen appliances, electronics, furniture, fitness, gear, kids products and more",
+            "subheading": "",
             "sub_heading_text_color": "#000000",
             "heading": "Shop Quality\nProducts Online\nin Australia",
             "heading_size": "48",
             "heading_text_color": "#002290",
-            "heading_position": "bottom",
-            "description": "",
+            "heading_position": "top",
+            "description": "Discover everyday essentials, home products, kitchen appliances, electronics, furniture, fitness, gear, kids products and more",
             "description_text_color": "#121212",
             "button_label": "Shop Best Seller",
             "link": "shopify://collections/all",
