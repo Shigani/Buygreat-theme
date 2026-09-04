@@ -262,6 +262,20 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
               color_swatches: section.settings.color_swatches
             %}
           </div>
+        {%- else -%}
+          {%- assign a = 1 -%}
+          {%- for i in (1..featured_product_limit) -%}
+            {%- liquid
+              assign product_item = 'product-' | append: a
+              assign a = a | plus: 1
+            -%}
+            {%- render 'product-card-placeholder', product_item: product_item, productItem: productItem -%}
+            {%- liquid
+              if a == 7
+                assign a = 1
+              endif
+            -%}
+          {%- endfor -%}
         {%- endfor -%}
         {%- if slider_enable -%}</div>{% endif %}
       </div>
@@ -920,4 +934,3 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
   }
 }
 {% endschema %}
-

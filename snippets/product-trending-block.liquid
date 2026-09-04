@@ -45,6 +45,20 @@
               is_product_options: true
             %}
           </div>
+        {%- else -%}
+          {%- assign a = 1 -%}
+          {%- for i in (1..block.settings.products_to_show) -%}
+            {%- liquid
+              assign product_item = 'product-' | append: a
+              assign a = a | plus: 1
+            -%}
+            {%- render 'product-card-placeholder', product_item: product_item, productItem: 'swiper-slide' -%}
+            {%- liquid
+              if a == 7
+                assign a = 1
+              endif
+            -%}
+          {%- endfor -%}
         {%- endfor -%}
       </div>
     </div>
@@ -54,4 +68,3 @@
     </div>
   </div>
 </div>
-

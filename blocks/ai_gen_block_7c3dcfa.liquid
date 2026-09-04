@@ -312,112 +312,146 @@
     </div>
   {% endif %}
 
-  {% if block.settings.collection != blank %}
-    {% assign collection = block.settings.collection %}
+  {% assign collection = block.settings.collection %}
+  {% assign has_products = false %}
+  {% if collection != blank %}
     {% if collection.products.size > 0 %}
-      <div class="ai-featured-carousel-container-{{ ai_gen_id }}">
-        {% if block.settings.layout_style == 'slide' and block.settings.show_arrows %}
-          <button
-            class="ai-featured-carousel-nav-{{ ai_gen_id }} ai-featured-carousel-nav-prev-{{ ai_gen_id }}"
-            aria-label="Previous products"
-            data-nav="prev"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-        {% endif %}
+      {% assign has_products = true %}
+    {% endif %}
+  {% endif %}
 
-        <div class="ai-featured-carousel-track-{{ ai_gen_id }}">
-          {% for product in collection.products limit: block.settings.product_limit %}
-            <div class="ai-featured-carousel-card-{{ ai_gen_id }}">
-              <a href="{{ product.url }}" class="ai-featured-carousel-image-wrapper-{{ ai_gen_id }}">
-                {% if product.featured_image %}
-                  <img
-                    src="{{ product.featured_image | image_url: width: 600 }}"
-                    alt="{{ product.featured_image.alt | escape }}"
-                    loading="lazy"
-                    width="600"
-                    height="600"
-                    class="ai-featured-carousel-image-{{ ai_gen_id }}"
-                  >
-                {% else %}
-                  <div class="ai-featured-carousel-image-{{ ai_gen_id }}">
-                    {{ 'product-1' | placeholder_svg_tag }}
-                  </div>
-                {% endif %}
+  <div class="ai-featured-carousel-container-{{ ai_gen_id }}">
+    {% if block.settings.layout_style == 'slide' and block.settings.show_arrows %}
+      <button
+        class="ai-featured-carousel-nav-{{ ai_gen_id }} ai-featured-carousel-nav-prev-{{ ai_gen_id }}"
+        aria-label="Previous products"
+        data-nav="prev"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+    {% endif %}
+
+    <div class="ai-featured-carousel-track-{{ ai_gen_id }}">
+      {% if has_products %}
+        {% for product in collection.products limit: block.settings.product_limit %}
+          <div class="ai-featured-carousel-card-{{ ai_gen_id }}">
+            <a href="{{ product.url }}" class="ai-featured-carousel-image-wrapper-{{ ai_gen_id }}">
+              {% if product.featured_image %}
+                <img
+                  src="{{ product.featured_image | image_url: width: 600 }}"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  loading="lazy"
+                  width="600"
+                  height="600"
+                  class="ai-featured-carousel-image-{{ ai_gen_id }}"
+                >
+              {% else %}
+                <div class="ai-featured-carousel-image-{{ ai_gen_id }}">
+                  {{ 'product-1' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </a>
+
+            <div class="ai-featured-carousel-content-{{ ai_gen_id }}">
+              <a href="{{ product.url }}">
+                <h3 class="ai-featured-carousel-title-{{ ai_gen_id }}">{{ product.title }}</h3>
               </a>
 
-              <div class="ai-featured-carousel-content-{{ ai_gen_id }}">
-                <a href="{{ product.url }}">
-                  <h3 class="ai-featured-carousel-title-{{ ai_gen_id }}">{{ product.title }}</h3>
-                </a>
+              <div class="ai-featured-carousel-price-wrapper-{{ ai_gen_id }}">
+                <p class="ai-featured-carousel-price-{{ ai_gen_id }}">
+                  {{ product.price | money }}
+                </p>
 
-                <div class="ai-featured-carousel-price-wrapper-{{ ai_gen_id }}">
-                  <p class="ai-featured-carousel-price-{{ ai_gen_id }}">
-                    {{ product.price | money }}
-                  </p>
+                {% if product.compare_at_price > product.price %}
+                  <span class="ai-featured-carousel-compare-price-{{ ai_gen_id }}">
+                    {{ product.compare_at_price | money }}
+                  </span>
 
-                  {% if product.compare_at_price > product.price %}
-                    <span class="ai-featured-carousel-compare-price-{{ ai_gen_id }}">
-                      {{ product.compare_at_price | money }}
+                  {% if block.settings.show_savings %}
+                    {% assign savings = product.compare_at_price | minus: product.price %}
+                    <span class="ai-featured-carousel-savings-{{ ai_gen_id }}">
+                      Save {{ savings | money }}
                     </span>
-
-                    {% if block.settings.show_savings %}
-                      {% assign savings = product.compare_at_price | minus: product.price %}
-                      <span class="ai-featured-carousel-savings-{{ ai_gen_id }}">
-                        Save {{ savings | money }}
-                      </span>
-                    {% endif %}
-                  {% endif %}
-                </div>
-
-                {% if block.settings.show_add_to_cart %}
-                  {% if product.available %}
-                    <button
-                      class="ai-featured-carousel-button-{{ ai_gen_id }}"
-                      data-product-id="{{ product.id }}"
-                      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
-                      data-action="add-to-cart"
-                    >
-                      Add to Cart
-                    </button>
-                  {% else %}
-                    <button
-                      class="ai-featured-carousel-button-{{ ai_gen_id }}"
-                      disabled
-                    >
-                      Sold Out
-                    </button>
                   {% endif %}
                 {% endif %}
               </div>
-            </div>
-          {% endfor %}
-        </div>
 
-        {% if block.settings.layout_style == 'slide' and block.settings.show_arrows %}
-          <button
-            class="ai-featured-carousel-nav-{{ ai_gen_id }} ai-featured-carousel-nav-next-{{ ai_gen_id }}"
-            aria-label="Next products"
-            data-nav="next"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        {% endif %}
-      </div>
-    {% else %}
-      <div class="ai-featured-carousel-empty-{{ ai_gen_id }}">
-        <p>This collection has no products yet.</p>
-      </div>
-    {% endif %}
-  {% else %}
-    <div class="ai-featured-carousel-empty-{{ ai_gen_id }}">
-      <p>Select a collection to display products</p>
+              {% if block.settings.show_add_to_cart %}
+                {% if product.available %}
+                  <button
+                    class="ai-featured-carousel-button-{{ ai_gen_id }}"
+                    data-product-id="{{ product.id }}"
+                    data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                    data-action="add-to-cart"
+                  >
+                    Add to Cart
+                  </button>
+                {% else %}
+                  <button
+                    class="ai-featured-carousel-button-{{ ai_gen_id }}"
+                    disabled
+                  >
+                    Sold Out
+                  </button>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        {% assign placeholder_index = 1 %}
+        {% for i in (1..block.settings.product_limit) %}
+          <div class="ai-featured-carousel-card-{{ ai_gen_id }}">
+            <div class="ai-featured-carousel-image-wrapper-{{ ai_gen_id }}">
+              <div class="ai-featured-carousel-image-{{ ai_gen_id }}">
+                {% assign placeholder_image = 'product-' | append: placeholder_index %}
+                {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            </div>
+            <div class="ai-featured-carousel-content-{{ ai_gen_id }}">
+              {% if block.settings.show_title %}
+                <h3 class="ai-featured-carousel-title-{{ ai_gen_id }}">
+                  {{ 'products.product.placeholder_title' | t }}
+                </h3>
+              {% endif %}
+              <div class="ai-featured-carousel-price-wrapper-{{ ai_gen_id }}">
+                {% if block.settings.show_price %}
+                  <p class="ai-featured-carousel-price-{{ ai_gen_id }}">
+                    {{ 'products.product.placeholder_price' | t }}
+                  </p>
+                {% endif %}
+              </div>
+              {% if block.settings.show_add_to_cart %}
+                <button class="ai-featured-carousel-button-{{ ai_gen_id }}" disabled type="button">
+                  {{ 'products.product.add_to_cart' | t }}
+                </button>
+              {% endif %}
+            </div>
+          </div>
+          {% liquid
+            assign placeholder_index = placeholder_index | plus: 1
+            if placeholder_index == 5
+              assign placeholder_index = 1
+            endif
+          %}
+        {% endfor %}
+      {% endif %}
     </div>
-  {% endif %}
+
+    {% if block.settings.layout_style == 'slide' and block.settings.show_arrows %}
+      <button
+        class="ai-featured-carousel-nav-{{ ai_gen_id }} ai-featured-carousel-nav-next-{{ ai_gen_id }}"
+        aria-label="Next products"
+        data-nav="next"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    {% endif %}
+  </div>
 </featured-products-carousel-{{ ai_gen_id }}>
 
 <script>

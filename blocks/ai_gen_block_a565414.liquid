@@ -675,11 +675,11 @@
               </div>
               <div class="ai-carousel-content-{{ai_gen_id}}">
                 {% if show_title %}
-                  <h3 class="ai-carousel-product-title-{{ai_gen_id}}">Product Title</h3>
+                  <h3 class="ai-carousel-product-title-{{ai_gen_id}}">{{ 'products.product.placeholder_title' | t }}</h3>
                 {% endif %}
                 {% if show_price %}
                   <div class="ai-carousel-price-wrapper-{{ai_gen_id}}">
-                    <span class="ai-carousel-price-{{ai_gen_id}}">$99.00</span>
+                    <span class="ai-carousel-price-{{ai_gen_id}}">{{ 'products.product.placeholder_price' | t }}</span>
                   </div>
                 {% endif %}
                 {% if show_add_to_cart %}

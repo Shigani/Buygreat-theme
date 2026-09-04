@@ -523,9 +523,42 @@
           </div>
         {% endfor %}
       {% else %}
-        <div class="ai-featured-carousel__empty-{{ ai_gen_id }}">
-          <p>No products found. Please select a collection with products.</p>
-        </div>
+        {% assign placeholder_index = 1 %}
+        {% for i in (1..max_products) %}
+          <div class="ai-featured-carousel__card-{{ ai_gen_id }}">
+            <div class="ai-featured-carousel__image-wrapper-{{ ai_gen_id }}">
+              <div class="ai-featured-carousel__image-{{ ai_gen_id }}">
+                {% assign placeholder_image = 'product-' | append: placeholder_index %}
+                {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            </div>
+            <div class="ai-featured-carousel__content-{{ ai_gen_id }}">
+              {% if block.settings.show_title %}
+                <h3 class="ai-featured-carousel__title-product-{{ ai_gen_id }}">
+                  {{ 'products.product.placeholder_title' | t }}
+                </h3>
+              {% endif %}
+              {% if block.settings.show_price %}
+                <div class="ai-featured-carousel__price-wrapper-{{ ai_gen_id }}">
+                  <span class="ai-featured-carousel__price-{{ ai_gen_id }}">
+                    {{ 'products.product.placeholder_price' | t }}
+                  </span>
+                </div>
+              {% endif %}
+              {% if block.settings.show_add_to_cart %}
+                <button class="ai-featured-carousel__button-{{ ai_gen_id }}" disabled type="button">
+                  {{ 'products.product.add_to_cart' | t }}
+                </button>
+              {% endif %}
+            </div>
+          </div>
+          {% liquid
+            assign placeholder_index = placeholder_index | plus: 1
+            if placeholder_index == 5
+              assign placeholder_index = 1
+            endif
+          %}
+        {% endfor %}
       {% endif %}
     </div>
 

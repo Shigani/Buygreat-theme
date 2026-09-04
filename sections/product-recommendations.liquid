@@ -112,6 +112,20 @@ row row-cols-xl-{{ productShowXl }} row-cols-lg-{{ productShowLg }} row-cols-md-
                 is_product_options: true
               %}
             </div>
+          {% else %}
+            {% assign a = 1 %}
+            {% for i in (1..section.settings.products_to_show) %}
+              {% liquid
+                assign product_item = 'product-' | append: a
+                assign a = a | plus: 1
+              %}
+              {% render 'product-card-placeholder', product_item: product_item, productItem: productItem %}
+              {% liquid
+                if a == 7
+                  assign a = 1
+                endif
+              %}
+            {% endfor %}
           {% endfor %}
           {%- if slider_enable -%}</div>{%- endif -%}
         </div>
