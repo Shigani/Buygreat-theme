@@ -641,10 +641,10 @@
       ],
       "settings": {
         "container_type": "container",
-        "caption": "FREQUENTLY ASKED QUESTIONS",
-        "heading": "You've Got Any Questions?",
+        "caption": "",
+        "heading": "FREQUENTLY ASKED QUESTIONS",
         "heading_size": "h1",
-        "enable_image": true,
+        "enable_image": false,
         "height": "large",
         "image_position": "right",
         "show_have_qustion": true,
@@ -655,10 +655,10 @@
         "full_width": true,
         "color_scheme": "background-1",
         "mobile_image_position": "top",
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "mobile_padding_top": 60,
-        "mobile_padding_bottom": 60
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "mobile_padding_top": 30,
+        "mobile_padding_bottom": 30
       }
     },
     "17702904001c89f287": {
