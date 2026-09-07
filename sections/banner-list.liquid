@@ -116,10 +116,10 @@
                     {% endif %}
                   >
                     <div class="banner_list_item-inner-content">
-                      <p class="banner_list_description">{{ block.settings.banner_description }}</p>
                       <h2 class="banner_list_title {% if block.settings.banner_heading_size == 'small' %} h4 {% elsif block.settings.banner_heading_size == 'large' %} h2 {% elsif block.settings.banner_heading_size == 'extra-large' %} h0 {% elsif block.settings.banner_heading_size == 'extra-large-2x' %} h-2x {% else %} h3 {% endif %}">
                         {{ block.settings.banner_title }}
                       </h2>
+                      <p class="banner_list_description">{{ block.settings.banner_description }}</p>
                       <button class="button button--{{ block.settings.button_size }} button--{{ block.settings.banner_button_type }}">
                         {{ block.settings.banner_button_text }}
                         <span class="right__btn_svg">

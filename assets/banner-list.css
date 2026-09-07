@@ -274,6 +274,7 @@
 .banner_list_item-inner-content h2 {
   --heading-color: var(--color-foreground);
   color: var(--heading-color);
+  font-weight: 700;
 }
 .banner_list_description {
   --description-color: var(--description-foreground, --color-foreground);
