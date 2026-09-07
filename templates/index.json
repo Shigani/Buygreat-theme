@@ -499,6 +499,7 @@
         "banner_PPJgpi": {
           "type": "banner",
           "settings": {
+            "banner_image": "shopify://shop_images/exec-6267a194-c7e0-4d3e-ac41-47ddf88ca269.png",
             "banner_title": "Build Your Home Gym",
             "banner_heading_size": "small",
             "banner_description": "Weights, fitness equipment & workout accessories",
@@ -523,6 +524,7 @@
         "banner_6Xay38": {
           "type": "banner",
           "settings": {
+            "banner_image": "shopify://shop_images/exec-9f0d4bb2-a2bd-4595-8b9f-854f7a09913f.png",
             "banner_title": "Upgrade Your Tech",
             "banner_heading_size": "small",
             "banner_description": "Chargers, headphones, speakers & accessories",
