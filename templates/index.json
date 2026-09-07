@@ -449,9 +449,9 @@
         "banner_YKM7z3": {
           "type": "banner",
           "settings": {
-            "banner_title": "Furnitures",
+            "banner_title": "Make cooking easier",
             "banner_heading_size": "medium",
-            "banner_description": "",
+            "banner_description": "Air fryers, kitchen gadget & appliances",
             "banner_button_text": "shop now",
             "banner_link": "shopify://collections/furniture",
             "banner_button_type": "primary",
@@ -460,11 +460,11 @@
             "grid_column_end": 5,
             "grid_row_start": 1,
             "grid_row_end": 9,
-            "override_banner_setting": false,
+            "override_banner_setting": true,
             "content_max_width": 100,
             "content_position": "left--center",
             "custom_banner_content_inner_space": "medium",
-            "content_alignment": "center",
+            "content_alignment": "flex-start",
             "heading_color": "#000000",
             "description_color": "#000000",
             "button_text_color": "#ffffff"
@@ -517,24 +517,49 @@
             "description_color": "#000000",
             "button_text_color": "#ffffff"
           }
+        },
+        "banner_etBDdU": {
+          "type": "banner",
+          "settings": {
+            "banner_title": "Kitchen Appliances",
+            "banner_heading_size": "medium",
+            "banner_description": "",
+            "banner_button_text": "shop now",
+            "banner_link": "shopify://collections/kitchen-appliances",
+            "banner_button_type": "primary",
+            "button_size": "small",
+            "grid_column_start": 1,
+            "grid_column_end": 5,
+            "grid_row_start": 1,
+            "grid_row_end": 9,
+            "override_banner_setting": false,
+            "content_max_width": 100,
+            "content_position": "left--center",
+            "custom_banner_content_inner_space": "medium",
+            "content_alignment": "center",
+            "heading_color": "#000000",
+            "description_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
         }
       },
       "block_order": [
         "banner_YKM7z3",
         "banner_Kgqqqy",
-        "banner_WEz4dP"
+        "banner_WEz4dP",
+        "banner_etBDdU"
       ],
       "settings": {
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
-        "alignment": "center",
+        "alignment": "left",
         "container_type": "container-fluid",
         "color_scheme": "scheme-212ba1c6-71aa-4666-9a11-06d7ddf2586c",
         "banner_layout_type": "grid",
-        "section-colums-desktop": 3,
-        "banner_grid_gap": "medium",
-        "image_ratio": "adapt",
+        "section-colums-desktop": 4,
+        "banner_grid_gap": "small",
+        "image_ratio": "square",
         "banner_corner_radius": 15,
         "banner_overlay": 0,
         "show_content_below_image": true,
