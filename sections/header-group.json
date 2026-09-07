@@ -92,7 +92,6 @@
         "ai_gen_block_f5656e0_r9F734": {
           "type": "ai_gen_block_f5656e0",
           "settings": {
-            "logo": "shopify://shop_images/Insta_9667cbed-4698-4a71-9f10-0542cf15bc0a.png",
             "logo_link": "",
             "logo_height": 50,
             "logo_alignment": "center",
@@ -161,7 +160,6 @@
           "disabled": true,
           "settings": {
             "show_logo": true,
-            "logo": "shopify://shop_images/Logo_accouncement_bar.jpg",
             "logo_link": "",
             "logo_position": "bottom",
             "logo_horizontal_alignment": "center",
@@ -279,13 +277,11 @@
         "@media screen and (max-width: 749px) {.header__heading-logo {margin-left: auto; margin-right: auto; text-align: center; } .header__heading {justify-content: center; }}"
       ],
       "settings": {
-        "container": "container",
-        "logo": "shopify://shop_images/Insta_86d8b772-9445-4465-92c0-04e81e085c50.png",
-        "logo_inner": "shopify://shop_images/Insta_9667cbed-4698-4a71-9f10-0542cf15bc0a.png",
+        "container": "container-fluid",
         "logo_width": 250,
         "logo_position": "top_left",
-        "menu": "main-menu-1",
-        "menu_position": "center",
+        "menu": "home",
+        "menu_position": "start",
         "header_sticky": true,
         "show_normal_btn": false,
         "askqustion": "Ask Questions?",
@@ -298,14 +294,12 @@
         "user_icon": true,
         "color_scheme": "scheme-212ba1c6-71aa-4666-9a11-06d7ddf2586c",
         "transparent_header": false,
-        "transparent_logo": "shopify://shop_images/buygreat_Final_logo_ff27489e-72cc-403b-a4ab-e3827ea886bc.png",
         "transparent_color_foreground": "#121212",
         "drawer_menu": false,
         "drawer-menu": "main-menu",
         "color_foreground": "#121212",
         "color_background": "#fff200",
-        "submenu_color_scheme": "scheme-98fe9495-d4e3-4712-9cb7-8d5dfbf5d753",
-        "logo_2": "shopify://shop_images/buygreat_Final_logo_ff27489e-72cc-403b-a4ab-e3827ea886bc.png"
+        "submenu_color_scheme": "scheme-98fe9495-d4e3-4712-9cb7-8d5dfbf5d753"
       }
     },
     "17702921375d767fbc": {
@@ -319,7 +313,6 @@
           "type": "ai_gen_block_afcfca9",
           "disabled": true,
           "settings": {
-            "logo": "shopify://shop_images/buygreat_Final_logo_d8f37126-0fc2-4955-a1e3-33bba64257a8.png",
             "logo_width": 180,
             "logo_text": "",
             "logo_text_size": 32,
@@ -349,7 +342,7 @@
             "icon_hover_color": "#0047ab",
             "cart_badge_bg_color": "#dc143c",
             "cart_badge_text_color": "#ffffff",
-            "menu": "main-menu-1",
+            "menu": "",
             "nav_alignment": "center",
             "nav_bg_color": "#f8f8f8",
             "nav_border_color": "#e0e0e0",
@@ -388,7 +381,6 @@
           "type": "ai_gen_block_2cde873",
           "disabled": true,
           "settings": {
-            "logo": "shopify://shop_images/buygreat_Final_logo_d8f37126-0fc2-4955-a1e3-33bba64257a8.png",
             "logo_width": 180,
             "logo_text": "",
             "logo_text_size": 32,
@@ -410,7 +402,7 @@
             "icon_hover_color": "#0047ab",
             "cart_badge_bg": "#dc143c",
             "cart_badge_text": "#ffffff",
-            "menu": "main-menu-1",
+            "menu": "",
             "menu_alignment": "center",
             "menu_font_size": 15,
             "menu_item_spacing": 35,
