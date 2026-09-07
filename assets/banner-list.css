@@ -1,6 +1,16 @@
 .banner-grid {
   display: grid;
 }
+.banner-list-container {
+  width: 100%;
+}
+@media screen and (min-width: 992px) {
+  .banner-list-container:not(.px-0) {
+    max-width: var(--container-lg-width);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
 .section-heading.banner-list-section-heading {
   margin-bottom: 50px;
   text-align: left;
