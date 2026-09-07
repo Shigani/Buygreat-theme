@@ -233,7 +233,7 @@
         "featured_collection_VmeMen"
       ],
       "settings": {
-        "heading": "<p>CATEGORIES</p>",
+        "heading": "<p>Categories</p>",
         "heading_size": "32",
         "alignment": "center",
         "layout": "standard",
@@ -265,7 +265,7 @@
         "products_show_on_sm": "2",
         "padding_top": 50,
         "padding_bottom": 0,
-        "mobile_padding_top": 0,
+        "mobile_padding_top": 15,
         "mobile_padding_bottom": 0
       }
     },
@@ -417,7 +417,7 @@
         "color_swatches": false,
         "products_to_show": 50,
         "products_show_on_xl": "6",
-        "products_show_on_sm": "2",
+        "products_show_on_sm": "1.5",
         "slider_enable": true,
         "auto_rotate": false,
         "autoplay_time": 3,
@@ -435,8 +435,8 @@
         "button_size": "large",
         "padding_top": 15,
         "padding_bottom": 0,
-        "mobile_padding_top": 40,
-        "mobile_padding_bottom": 0,
+        "mobile_padding_top": 30,
+        "mobile_padding_bottom": 40,
         "color_scheme": "background-1",
         "custom_colors": true,
         "foreground": "#121212",
@@ -550,7 +550,7 @@
         "banner_6Xay38"
       ],
       "settings": {
-        "title": "",
+        "title": "Find Products For Every Part Of Your Life",
         "heading_size": "h1",
         "subtitle": "",
         "alignment": "left",
