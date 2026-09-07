@@ -161,7 +161,7 @@
           "settings": {
             "heading": "",
             "image_width": 200,
-            "contact_address": "<p>BuyGreat is an Australia-focused online store offering quality everyday and trending products at great prices. We work with trusted suppliers and reliable delivery partners, including Australia Post, to ensure a smooth and secure shopping experience. BuyGreat — Save More.</p>",
+            "contact_address": "<p>Buygreat Australia is your online destination for quality products across home. kitchen, electronic, furniture, fitness, kids, outdoor and auto accessories</p>",
             "social_media": false,
             "social_forground_color": "#022335",
             "social_background_color": "#ffffff"
@@ -217,7 +217,7 @@
         "contact_info_bdVgTR"
       ],
       "settings": {
-        "color_scheme": "scheme-a343ce79-5123-420f-8efd-48e3252818eb",
+        "color_scheme": "inverse",
         "enable_country_selector": true,
         "enable_language_selector": true,
         "show_divider": false,
@@ -227,8 +227,8 @@
         "copyright_custom_text": "<p><strong>♡</strong> Designed By <a href=\"https://themeforest.net/user/team90degree\" target=\"_blank\" title=\"https://thekamaan.com\">www.thekamaan.com</a></p>",
         "payment_enable": true,
         "content_alignment": "left",
-        "padding_top": 105,
-        "padding_bottom": 95,
+        "padding_top": 35,
+        "padding_bottom": 30,
         "mobile_padding_top": 0,
         "mobile_padding_bottom": 45
       }
