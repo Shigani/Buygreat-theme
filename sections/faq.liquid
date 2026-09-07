@@ -18,6 +18,24 @@
   else
     assign content_class = 'col-lg-6'
   endif
+
+  assign collapsible_content_heading_size = section.settings.heading_size
+  case collapsible_content_heading_size
+    when '18'
+      assign collapsible_content_heading_size = 18
+    when 'h2'
+      assign collapsible_content_heading_size = 18
+    when '32'
+      assign collapsible_content_heading_size = 32
+    when 'h1'
+      assign collapsible_content_heading_size = 32
+    when '48'
+      assign collapsible_content_heading_size = 48
+    when 'h0'
+      assign collapsible_content_heading_size = 48
+    when blank
+      assign collapsible_content_heading_size = 32
+  endcase
 -%}
 
 {%- style -%}
@@ -49,7 +67,7 @@
             {{ section.settings.caption | escape }}
           </p>
 
-          <h2 class="faq__list--wrapper--heading {{ section.settings.heading_size }}">
+          <h2 class="faq__list--wrapper--heading" style="--collapsible-content-heading-size: {{ collapsible_content_heading_size }}px;">
             {{ section.settings.heading }}
           </h2>
           <div class="faq__list--item--wrapper">
@@ -185,19 +203,19 @@
         "id": "heading_size",
         "options": [
           {
-            "value": "h2",
+            "value": "18",
             "label": "Small"
           },
           {
-            "value": "h1",
+            "value": "32",
             "label": "Medium"
           },
           {
-            "value": "h0",
+            "value": "48",
             "label": "Large"
           }
         ],
-        "default": "h1",
+        "default": "32",
         "label": "Heading size"
       },
       {

@@ -127,6 +127,14 @@ h3.shq_title {
 .shq_inner {
     width: 55%;
 }
+.faq__list--wrapper .multi_col_sub--caption {
+    text-align: left;
+}
+.faq__list--wrapper h2.faq__list--wrapper--heading {
+    font-size: var(--collapsible-content-heading-size);
+    font-weight: 700;
+    text-align: left;
+}
 /* small mobile :320px. */
 @media (max-width: 767px) {
 .s_h_q_area {
@@ -139,7 +147,6 @@ h3.shq_title {
 }
 
 }
-
 
 
 
