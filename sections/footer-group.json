@@ -162,46 +162,37 @@
             "heading": "",
             "image_width": 200,
             "contact_address": "<p>Buygreat Australia is your online destination for quality products across home. kitchen, electronic, furniture, fitness, kids, outdoor and auto accessories</p>",
-            "social_media": false,
+            "social_media": true,
             "social_forground_color": "#022335",
             "social_background_color": "#ffffff"
           }
         },
         "link_list_PDkTHN": {
           "type": "link_list",
-          "disabled": true,
           "settings": {
-            "heading": "Help Center",
+            "heading": "SHOP",
             "menu": ""
           }
         },
         "link_list_hhftGd": {
           "type": "link_list",
           "settings": {
-            "heading": "Menu",
+            "heading": "HELP",
             "menu": "main-menu"
           }
         },
         "link_list_YJ6VGQ": {
           "type": "link_list",
           "settings": {
-            "heading": "Our Policy",
+            "heading": "BUYGREAT",
             "menu": ""
-          }
-        },
-        "newsletter_YnDLXX": {
-          "type": "newsletter",
-          "name": "Subscribe ",
-          "settings": {
-            "newsletter_information": "Subscribe to BuyGreat and Save on your First Order.",
-            "heading": "Subscribe"
           }
         },
         "contact_info_bdVgTR": {
           "type": "contact_info",
           "settings": {
-            "heading": "Get in Touch",
-            "contact_address": "<p>We’re always happy to assist. </p><p><strong>Email:</strong><a href=\"mailto:support@buygreat.com\" target=\"_blank\"><span style=\"text-decoration:underline\">info@buygreat.com.au</span></a></p><p>Support Hours: Monday–Friday, 9am–5pm (AEST) <br/><br/></p>",
+            "heading": "CUSTOMER SUPPORT",
+            "contact_address": "<p>☎ 1300 123 456<br/>✉ <a href=\"mailto:support@buygreat.com.au\">support@buygreat.com.au</a><br/>◷ Mon – Fri: 9am – 6pm AEST<br/>◷ Sat – Sun: 10am – 4pm AEST<br/>🚚 Australia-wide delivery<br/>  to metro and regional areas.<br/><br/></p>",
             "social_media": false
           }
         }
@@ -213,7 +204,6 @@
         "link_list_PDkTHN",
         "link_list_hhftGd",
         "link_list_YJ6VGQ",
-        "newsletter_YnDLXX",
         "contact_info_bdVgTR"
       ],
       "settings": {
