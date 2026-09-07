@@ -74,9 +74,9 @@
           "type": "feature",
           "settings": {
             "icon_enable": true,
-            "icon": "payment",
-            "heading": "<p>DELIVERY</p>",
-            "text": "1-2 weeks"
+            "icon": "truck",
+            "heading": "<p><strong>Australia-Wide Delivery</strong></p>",
+            "text": "Convenient delivery across Australia"
           }
         },
         "feature_jDUNTa": {
@@ -84,8 +84,8 @@
           "settings": {
             "icon_enable": true,
             "icon": "box",
-            "heading": "<p>FREE SHIPPING</p>",
-            "text": "2500 Items"
+            "heading": "<p><strong>Great Prices</strong></p>",
+            "text": "Everyday products at a competitive price"
           }
         },
         "feature_Ap9Jyy": {
@@ -93,8 +93,8 @@
           "settings": {
             "icon_enable": true,
             "icon": "guarantee",
-            "heading": "<p>MONEY BACK GUARANTEED</p>",
-            "text": "100%"
+            "heading": "<p><strong>Secure Checkout</strong></p>",
+            "text": "Shop with  confidence"
           }
         },
         "feature_iWDyVt": {
@@ -102,8 +102,8 @@
           "settings": {
             "icon_enable": true,
             "icon": "dollar",
-            "heading": "<p>BEST SUPPORT</p>",
-            "text": "Customer First"
+            "heading": "<p><strong>Customer Support</strong></p>",
+            "text": "We're here to help"
           }
         }
       },
@@ -234,7 +234,7 @@
       ],
       "settings": {
         "heading": "<p>Categories</p>",
-        "heading_size": "18",
+        "heading_size": "32",
         "alignment": "center",
         "layout": "standard",
         "column": "5",
@@ -394,7 +394,7 @@
       "type": "featured-collection",
       "settings": {
         "main_heading": "Everyday Collections",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "subtitle": "",
         "alignment": "left",
         "mobile_alignment": "center",
@@ -551,7 +551,7 @@
       ],
       "settings": {
         "title": "Find Products For Every Part Of Your Life",
-        "heading_size": "18",
+        "heading_size": "32",
         "subtitle": "",
         "alignment": "left",
         "container_type": "container-fluid",
@@ -642,8 +642,8 @@
       "settings": {
         "container_type": "container",
         "caption": "",
-        "heading": "FREQUENTLY ASKED QUESTIONS",
-        "heading_size": "h1",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "32",
         "enable_image": false,
         "height": "large",
         "image_position": "right",
