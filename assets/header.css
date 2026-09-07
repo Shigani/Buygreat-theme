@@ -255,3 +255,18 @@ span.phone--number--area {
 
 }
 
+.top_left .header__inline-search-form {
+    display: none;
+}
+
+@media only screen and (min-width: 992px) {
+    .top_left .header__actions_btn--top-left-search {
+        display: none;
+    }
+
+    .top_left .header__inline-search-form {
+        display: block;
+        width: 260px;
+        margin-inline-end: 10px;
+    }
+}

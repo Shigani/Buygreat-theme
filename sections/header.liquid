@@ -637,7 +637,7 @@
           {% if section.settings.show_search and section.settings.logo_position != 'middle_left_search_inline_expend' %}
             <button
               id="header_search__action"
-              class="header__actions_btn header__actions_btn--search {{ search_button_visible }}"
+              class="header__actions_btn header__actions_btn--search {{ search_button_visible }}{% if section.settings.logo_position == 'top_left' %} header__actions_btn--top-left-search{% endif %}"
               aria-label="{{ 'general.search.search' | t }}"
             >
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -646,8 +646,9 @@
             </button>
           {%- endif -%}
 
-          {% if section.settings.show_search and section.settings.logo_position == 'middle_left_search_inline_expend' %}
-            <button
+          {% if section.settings.show_search and section.settings.logo_position == 'middle_left_search_inline_expend' or section.settings.show_search and section.settings.logo_position == 'top_left' %}
+            {% if section.settings.logo_position == 'middle_left_search_inline_expend' %}
+              <button
               id="header_search__action"
               class="header__actions_btn header__actions_btn--search {{ search_button_visible }} d-none d-md-only-block"
               aria-label="{{ 'general.search.search' | t }}"
@@ -655,14 +656,15 @@
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.833313 9.16659C0.833313 4.56421 4.56427 0.833252 9.16665 0.833252C13.769 0.833252 17.5 4.56421 17.5 9.16659C17.5 11.1677 16.7946 13.004 15.6191 14.4405L19.1666 17.9881L17.9881 19.1666L14.4406 15.619C13.0041 16.7946 11.1677 17.4999 9.16665 17.4999C4.56427 17.4999 0.833313 13.7689 0.833313 9.16659ZM9.16665 2.49992C5.48475 2.49992 2.49998 5.48469 2.49998 9.16659C2.49998 12.8485 5.48475 15.8333 9.16665 15.8333C12.8486 15.8333 15.8333 12.8485 15.8333 9.16659C15.8333 5.48469 12.8486 2.49992 9.16665 2.49992Z" fill="currentColor"/>
               </svg>
-            </button>
+              </button>
+            {%- endif -%}
             {%- if settings.predictive_search_enabled -%}
               <predictive-search
                 class="header-search--box search-modal__form d-md-none"
                 data-loading-text="{{ 'accessibility.loading' | t }}"
               >
             {%- endif -%}
-            <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+            <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form header__inline-search-form">
               <div class="search__input_field input__field_form">
                 <label class="visually-hidden" for="Search-In-Modal">{{ 'general.search.search' | t }}</label>
                 <input
