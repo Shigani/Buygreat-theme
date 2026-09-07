@@ -580,7 +580,7 @@
         "main_heading": "Check Our Blog Posts",
         "heading_size": "h2",
         "text": "",
-        "blog": "blogs",
+        "blog": "news",
         "post_limit": 4,
         "card_style": "standard",
         "show_image": true,
