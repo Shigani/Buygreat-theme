@@ -234,7 +234,7 @@
       ],
       "settings": {
         "heading": "<p>Categories</p>",
-        "heading_size": "32",
+        "heading_size": "18",
         "alignment": "center",
         "layout": "standard",
         "column": "5",
@@ -394,7 +394,7 @@
       "type": "featured-collection",
       "settings": {
         "main_heading": "Everyday Collections",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "subtitle": "",
         "alignment": "left",
         "mobile_alignment": "center",
@@ -551,7 +551,7 @@
       ],
       "settings": {
         "title": "Find Products For Every Part Of Your Life",
-        "heading_size": "32",
+        "heading_size": "18",
         "subtitle": "",
         "alignment": "left",
         "container_type": "container-fluid",
@@ -578,7 +578,7 @@
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
         "main_heading": "Check Our Blog Posts",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "text": "",
         "blog": "blogs",
         "post_limit": 4,
