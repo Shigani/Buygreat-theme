@@ -83,7 +83,7 @@
           "type": "feature",
           "settings": {
             "icon_enable": true,
-            "icon": "box",
+            "icon": "price_tag",
             "heading": "<p><strong>Great Prices</strong></p>",
             "text": "Everyday products at a competitive price"
           }
@@ -92,7 +92,7 @@
           "type": "feature",
           "settings": {
             "icon_enable": true,
-            "icon": "guarantee",
+            "icon": "card",
             "heading": "<p><strong>Secure Checkout</strong></p>",
             "text": "Shop with  confidence"
           }
@@ -101,7 +101,7 @@
           "type": "feature",
           "settings": {
             "icon_enable": true,
-            "icon": "dollar",
+            "icon": "mic",
             "heading": "<p><strong>Customer Support</strong></p>",
             "text": "We're here to help"
           }
