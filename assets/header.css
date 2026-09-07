@@ -279,10 +279,39 @@ span.phone--number--area {
 }
 
 @media only screen and (min-width: 992px) {
+    .top_left .header__actions {
+        min-width: 0;
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+
+    .top_left predictive-search.header-search--box {
+        flex: 1 1 220px;
+        width: 220px;
+        min-width: 140px;
+        max-width: 260px;
+        margin-inline-end: 0;
+    }
+
     .top_left .header__inline-search-form {
         display: block;
-        width: 260px;
-        margin-inline-end: 10px;
+        flex: 1 1 220px;
+        width: 220px;
+        min-width: 140px;
+        max-width: 260px;
+        margin-inline-end: 0;
+    }
+
+    .top_left predictive-search.header-search--box .header__inline-search-form {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+    .top_left .header__inline-search-form .search__input_field,
+    .top_left .header__inline-search-form .search__input {
+        width: 100%;
+        min-width: 0;
     }
 }
 
