@@ -304,9 +304,15 @@
       <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
     {% endif %}
     {% render 'rapid-search-settings' %}
-{% include 'pagefly-app-header' %}</head>
+{% include 'pagefly-app-header' %}{%- render 'foxify-head' -%}<script type="text/javascript">if(typeof window.hulkappsWishlist === 'undefined') {
+                            window.hulkappsWishlist = {};
+                        }
+                        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
+                        window.hulkappsWishlist.hasAppBlockSupport = '1';
+                        </script>
+</head>
 
-  <body>
+  <body>{% sections 'foxify-header-group' %}
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -434,5 +440,5 @@
       {%- render 'back-to-top' -%}
     {%- endif -%}
   {%- render "ecom_footer"-%}{%- render 'layouthub_footer' -%} 
- </body>
+ {%- render 'foxify-footer' -%}{% sections 'foxify-footer-group' %}</body>
 </html>
