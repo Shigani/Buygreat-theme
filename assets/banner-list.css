@@ -1,14 +1,21 @@
 .banner-grid {
   display: grid;
 }
-.banner-list-section-heading {
+.section-heading.banner-list-section-heading {
   margin-bottom: 50px;
+  text-align: left;
+  align-items: flex-start;
 }
 .banner-list-section-heading .section-heading__title {
   font-size: var(--banner-list-heading-size);
+  font-weight: 700;
+  text-align: left;
+}
+.banner-list-section-heading .section-heading__sub_title {
+  text-align: left;
 }
 @media screen and (max-width: 749px) {
-  .banner-list-section-heading {
+  .section-heading.banner-list-section-heading {
     margin-bottom: 1.2rem;
   }
 }
