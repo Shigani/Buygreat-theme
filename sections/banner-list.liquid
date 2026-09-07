@@ -27,10 +27,29 @@
 <div class="banner-list-wrapper">
   <div class="section-{{ section.id }}-banner section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
     <div class="{{ section.settings.container_type }}">
+      {%- liquid
+        assign banner_list_heading_size = section.settings.heading_size
+        case banner_list_heading_size
+          when '18'
+            assign banner_list_heading_size = 18
+          when 'h2'
+            assign banner_list_heading_size = 18
+          when '32'
+            assign banner_list_heading_size = 32
+          when 'h1'
+            assign banner_list_heading_size = 32
+          when '48'
+            assign banner_list_heading_size = 48
+          when 'h0'
+            assign banner_list_heading_size = 48
+          when blank
+            assign banner_list_heading_size = 32
+        endcase
+      -%}
       {% if section.settings.title != blank or section.settings.subtitle != blank %}
-        <div class="section-heading  text-{{ section.settings.alignment }}  mb-50">
+        <div class="section-heading text-{{ section.settings.alignment }} banner-list-section-heading">
           <span class="section-heading__sub_title">{{- section.settings.subtitle -}}</span>
-          <h2 class="section-heading__title {{ section.settings.heading_size }}">{{- section.settings.title -}}</h2>
+          <h2 class="section-heading__title" style="--banner-list-heading-size: {{ banner_list_heading_size }}px;">{{- section.settings.title -}}</h2>
         </div>
       {% endif %}
 
@@ -157,19 +176,19 @@
       "id": "heading_size",
       "options": [
         {
-          "value": "h0",
+          "value": "48",
           "label": "Large"
         },
         {
-          "value": "h1",
+          "value": "32",
           "label": "Medium"
         },
         {
-          "value": "h2",
+          "value": "18",
           "label": "Small"
         }
       ],
-      "default": "h1",
+      "default": "32",
       "label": "Heading size"
     },
     {
