@@ -323,6 +323,11 @@
 .banner_list_content.banner_list_content-inner-padding--large {
   padding: clamp(4rem, 3cqi, 6rem);
 }
+.banner_list_content.banner_list_content-inner-padding--small,
+.banner_list_content.banner_list_content-inner-padding--medium,
+.banner_list_content.banner_list_content-inner-padding--large {
+  padding-left: 2rem;
+}
 
 .banner_list_item--overlay {
   position: relative;
