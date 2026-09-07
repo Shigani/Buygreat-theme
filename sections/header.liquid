@@ -637,7 +637,7 @@
           {% if section.settings.show_search and section.settings.logo_position != 'middle_left_search_inline_expend' %}
             <button
               id="header_search__action"
-              class="header__actions_btn header__actions_btn--search {{ search_button_visible }}{% if section.settings.logo_position == 'top_left' %} header__actions_btn--top-left-search{% endif %}"
+              class="{% if section.settings.logo_position == 'top_left' %}header__top-left-search{% else %}header__actions_btn header__actions_btn--search {{ search_button_visible }}{% endif %}"
               aria-label="{{ 'general.search.search' | t }}"
             >
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

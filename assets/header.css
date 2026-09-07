@@ -255,18 +255,39 @@ span.phone--number--area {
 
 }
 
+.top_left .header__top-left-search {
+    position: relative;
+    display: none;
+    padding: 8px;
+    color: rgba(var(--color-foreground));
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.top_left .header__top-left-search svg {
+    width: auto;
+    height: 2.3rem;
+}
+
+.top_left .header__top-left-search:hover {
+    color: rgba(var(--color-foreground), 0.7);
+}
+
 .top_left .header__inline-search-form {
     display: none;
 }
 
 @media only screen and (min-width: 992px) {
-    .top_left .header__actions_btn--top-left-search {
-        display: none;
-    }
-
     .top_left .header__inline-search-form {
         display: block;
         width: 260px;
         margin-inline-end: 10px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .top_left .header__top-left-search {
+        display: flex;
     }
 }
