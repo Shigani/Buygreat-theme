@@ -409,6 +409,7 @@
         "show_badges": true,
         "badge_position": "top-left",
         "show_cart_button": false,
+        "show_add_to_cart_button": true,
         "cart_button_style": "style2",
         "cart_button_positon": "bottom_center",
         "show_countdown": false,
