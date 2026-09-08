@@ -1257,10 +1257,6 @@
   margin: 0;
 }
 
-.buygreat-trending-products .product-card--rating {
-  display: none !important;
-}
-
 .buygreat-trending-products .product-grid-item__titles .product-grid-item__title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
