@@ -251,6 +251,7 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
               show_badge: false,
               show_product_tags: false,
               show_cart_button: section.settings.show_cart_button,
+              show_add_to_cart_button: section.settings.show_add_to_cart_button,
               cart_button_style: section.settings.cart_button_style,
               cart_button_place: section.settings.cart_button_positon,
               show_countdown: section.settings.show_countdown,
@@ -520,6 +521,12 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
         "id": "show_cart_button",
         "default": true,
         "label": "Enable quick shop button"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_add_to_cart_button",
+        "default": false,
+        "label": "Enable add to cart button"
       },
       {
         "type": "select",

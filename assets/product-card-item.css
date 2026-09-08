@@ -680,7 +680,13 @@ button.cart--icon-button.active {
 
 
 
+.product-card-add-to-cart {
+    margin-top: 10px;
+}
 
+.product-card-add-to-cart__button {
+    width: 100%;
+}
 
 
 
