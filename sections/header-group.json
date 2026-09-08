@@ -282,7 +282,7 @@
         "logo_position": "top_left",
         "menu": "home",
         "menu_position": "start",
-        "header_sticky": true,
+        "header_sticky": false,
         "show_normal_btn": false,
         "askqustion": "Ask Questions?",
         "phone_nmbr": "",
