@@ -763,7 +763,7 @@
         "padding_top": 30,
         "padding_bottom": 52,
         "mobile_padding_top": 0,
-        "mobile_padding_bottom": 55
+        "mobile_padding_bottom": 25
       }
     },
     "featured_collection_LcdVGc": {
@@ -811,9 +811,9 @@
         "button_style": "primary",
         "button_size": "large",
         "padding_top": 15,
-        "padding_bottom": 0,
+        "padding_bottom": 10,
         "mobile_padding_top": 30,
-        "mobile_padding_bottom": 40,
+        "mobile_padding_bottom": 20,
         "color_scheme": "background-1",
         "custom_colors": true,
         "foreground": "#121212",
@@ -844,7 +844,7 @@
         "color_scheme": "",
         "padding_top": 25,
         "padding_bottom": 30,
-        "mobile_padding_top": 25,
+        "mobile_padding_top": 15,
         "mobile_padding_bottom": 30
       }
     },
