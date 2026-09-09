@@ -244,7 +244,7 @@ h3.collection__title {
 .collection_list_2_section .collection__card .media,
 .collection_list_2_section .collection__card .placeholder_svg_parent {
   height: auto;
-  border-radius: 5px 5px 0 0 !important;
+  border-radius: 0 !important;
   background: #fff;
   box-shadow: none;
   margin: 0;
