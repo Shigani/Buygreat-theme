@@ -143,9 +143,9 @@
       <div class="blog__posts grid {{ section.settings.card_style }}">
         {% for i in (1..section.settings.post_limit) %}
           {% liquid
-            assign ridx = forloop.rindex
-            if ridx == 3
-              assign ridx = 1
+            assign ridx = forloop.index | modulo: 3
+            if ridx == 0
+              assign ridx = 3
             endif
           %}
           {%- assign placeholder_image = 'blog-apparel-' | append: ridx -%}
