@@ -227,7 +227,7 @@
         "layout": "standard",
         "column": "4",
         "full_width": false,
-        "image_ratio": "landscape",
+        "image_ratio": "adapt",
         "show_content_below_image": true,
         "show_content_below_image_mobile": false,
         "title_design": "text",
