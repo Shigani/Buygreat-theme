@@ -827,7 +827,7 @@
         "main_heading": "Check Our Blog Posts",
         "heading_size": "h2",
         "text": "",
-        "blog": "news",
+        "blog": "",
         "post_limit": 4,
         "card_style": "standard",
         "show_image": true,
