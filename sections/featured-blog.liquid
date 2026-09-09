@@ -151,9 +151,26 @@
           {%- assign placeholder_image = 'blog-apparel-' | append: ridx -%}
           <div class="blog-placeholder {% unless section.settings.card_style == "standard" %} blog--item-{{ forloop.index }} {% endunless %}">
             <article class="article-card">
-              <div class="placeholder media media--landscape">
-                {{ placeholder_image | placeholder_svg_tag: 'placeholder' }}
-              </div>
+              {%- if section.settings.show_image -%}
+                {%- if section.settings.card_style == 'masonry' -%}
+                  <div class="article-card__image media media--landscape">
+                    {{ placeholder_image | placeholder_svg_tag: 'placeholder' }}
+                  </div>
+                {%- else -%}
+                  <div
+                    class="card__meida--inner{% if section.settings.image_ratio != 'adapt' %} article-media--position article-card__image--{{ section.settings.image_ratio }}{% endif %}"
+                  >
+                    <div
+                      class="article-card__image media"
+                      {% if section.settings.image_ratio == 'adapt' %}
+                        style="padding-bottom: 46%;"
+                      {% endif %}
+                    >
+                      {{ placeholder_image | placeholder_svg_tag: 'placeholder' }}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
               <div class="article-card__info">
               <div class="article__meta"><span class="meta__info--item">
                 <span class="person_svg">
@@ -200,11 +217,14 @@
                 </span>
                 Nov 11, 2024
               </span></div> 
-                <h2 class="article-card__title nrb_dmotitl h5 mb-0">
+                <h3 class="post-title h4">
                   {{ 'sections.featured_blog.onboarding_title' | t }}
-                </h2>
-                <p class="article-card__excerpt">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some...
-                </p>
+                </h3>
+                {%- if section.settings.show_content -%}
+                  <p class="article-card__excerpt">
+                    {{ 'sections.featured_blog.onboarding_content' | t }}
+                  </p>
+                {%- endif -%}
               </div>
             </article>
           </div>
