@@ -3108,7 +3108,7 @@ button.cart--icon-button.active svg g {
     color: #121212 !important;
     margin-top: 7px !important;
 }
-sticky-variant-select .select_box,.collection-list__item:not(.collection-card-padding__none) .collection__card .media:not(.media--circle) {
+sticky-variant-select .select_box {
     border-radius: 5px !important;
 }
 .template-search__results h3.post-title {
@@ -3350,7 +3350,7 @@ button.button.button--small.button--primary {
     padding: 10px 20px !important;
 }
 
-sticky-variant-select .select_box, .collection-list__item:not(.collection-card-padding__none) .collection__card .media:not(.media--circle),.neonix_bnr .banner__media.media
+sticky-variant-select .select_box, .neonix_bnr .banner__media.media
 ,.image__column.grid__item.media.image--banner-media-height-adapt.placeholder
 {
     border-radius: 15px!important;
@@ -4105,8 +4105,6 @@ countdown-timer.product__grid_timer.del1_count_d {
 
 
 }
-
-
 
 
 
