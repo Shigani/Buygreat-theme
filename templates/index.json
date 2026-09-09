@@ -133,6 +133,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "home-and-living",
+            "image": "shopify://shop_images/category-home-living.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -142,6 +143,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "appliances",
+            "image": "shopify://shop_images/category-kitchen-appliances.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -151,6 +153,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "electronics",
+            "image": "shopify://shop_images/category-electronics.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -160,6 +163,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "furniture",
+            "image": "shopify://shop_images/category-furniture.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -169,6 +173,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "baby-and-kids",
+            "image": "shopify://shop_images/category-gym-fitness.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -178,6 +183,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "sports-and-fitness",
+            "image": "shopify://shop_images/category-baby-kids.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -187,6 +193,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "auto-accessories",
+            "image": "shopify://shop_images/category-outdoor.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -196,24 +203,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "outdoor",
-            "use_custom_color": false,
-            "button_foreground_color": "#ffffff",
-            "button_background_color": "#001eff"
-          }
-        },
-        "featured_collection_L4bkaa": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "event-accessories",
-            "use_custom_color": false,
-            "button_foreground_color": "#ffffff",
-            "button_background_color": "#001eff"
-          }
-        },
-        "featured_collection_VmeMen": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "tools",
+            "image": "shopify://shop_images/category-auto-accessories.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -228,18 +218,16 @@
         "featured_collection_fntFzm",
         "featured_collection_DXbjFf",
         "featured_collection_zdPkdp",
-        "featured_collection_g76QHa",
-        "featured_collection_L4bkaa",
-        "featured_collection_VmeMen"
+        "featured_collection_g76QHa"
       ],
       "settings": {
         "heading": "<p>Categories</p>",
         "heading_size": "32",
         "alignment": "center",
         "layout": "standard",
-        "column": "5",
+        "column": "4",
         "full_width": false,
-        "image_ratio": "square",
+        "image_ratio": "landscape",
         "show_content_below_image": true,
         "show_content_below_image_mobile": false,
         "title_design": "text",
