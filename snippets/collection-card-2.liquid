@@ -1,16 +1,25 @@
+{%- liquid
+  assign media_ratio = image_ratio | default: 'adapt'
+  if custom_image != blank
+    assign media_aspect_ratio = custom_image.aspect_ratio
+  elsif collection.featured_image != blank
+    assign media_aspect_ratio = collection.featured_image.aspect_ratio
+  endif
+-%}
+
 <a
   {% if collection.all_products_count > 0 %}
     href="{{ collection.url }}"
   {% endif %}
-  class="{% if collection.featured_image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} collection__card"
+  class="{% if collection.featured_image != blank or custom_image != blank %} card--media{% else %}{% if media_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} collection__card"
 >
   <div class="card--stretch">
     {% unless content_position %}<div class="collection--card-wrapper">{% endunless %}
     {%- if collection.featured_image != blank or custom_image != blank -%}
       <div
-        class="media media--{{ section.settings.image_ratio }} {% if radius and section.settings.image_ratio != "circle" %} rounded--3rem {% endif %} {% if round_image %} collection--rounded-media {% endif %} media--hover-effect overflow-hidden card--client-height"
-        {% if section.settings.image_ratio == 'adapt' %}
-          style="padding-bottom: {{ 1 | divided_by: collection.featured_image.aspect_ratio | times: 100 }}%;"
+        class="media media--{{ media_ratio }} {% if radius and media_ratio != "circle" %} rounded--3rem {% endif %} {% if round_image %} collection--rounded-media {% endif %} media--hover-effect overflow-hidden card--client-height"
+        {% if media_ratio == 'adapt' and media_aspect_ratio != blank %}
+          style="padding-bottom: {{ 1 | divided_by: media_aspect_ratio | times: 100 }}%;"
         {% endif %}
       >
         {% if custom_image != blank %}
@@ -54,8 +63,8 @@
       </div>
     {%- else -%}
       <div
-        class="placeholder_svg_parent {% if radius and section.settings.image_ratio != "circle" %} rounded--3rem {% endif %} {% if round_image %}rounded--image{% endif %} media--{{ image_ratio }} card--client-height"
-        {% if image_ratio == 'adapt' %}
+        class="placeholder_svg_parent {% if radius and media_ratio != "circle" %} rounded--3rem {% endif %} {% if round_image %}rounded--image{% endif %} media--{{ media_ratio }} card--client-height"
+        {% if media_ratio == 'adapt' %}
           style="padding-bottom: 100%"
         {% endif %}
       >
@@ -148,4 +157,3 @@
     {% unless content_position %}</div>{% endunless %}
   </div>
 </a>
-
