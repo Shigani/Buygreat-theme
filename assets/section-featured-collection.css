@@ -66,3 +66,12 @@
     position: relative;
     top: -25px;
 }
+
+.buygreat-featured-collection .featured-collection-placeholder,
+.buygreat-featured-collection .featured-collection-placeholder .product-grid-item__thumbnail,
+.buygreat-featured-collection .featured-collection-placeholder .product__media_thumbnail,
+.buygreat-featured-collection .featured-collection-placeholder .placeholder,
+.buygreat-featured-collection .featured-collection-placeholder .placeholder_svg_parent,
+.buygreat-featured-collection .featured-collection-placeholder .placeholder-svg {
+  border-radius: 0;
+}

@@ -270,7 +270,15 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
               assign product_item = 'product-' | append: a
               assign a = a | plus: 1
             -%}
-            {%- render 'product-card-placeholder', product_item: product_item, productItem: productItem -%}
+            {%- render 'product-card-placeholder',
+              product_item: product_item,
+              productItem: productItem,
+              media_size: section.settings.image_ratio,
+              show_title: section.settings.show_title,
+              show_price: section.settings.show_price,
+              show_rating: section.settings.show_product_rating,
+              placeholder_class: 'featured-collection-placeholder'
+            -%}
             {%- liquid
               if a == 7
                 assign a = 1
