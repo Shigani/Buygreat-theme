@@ -3693,10 +3693,6 @@ mark.custom-mark-2 {
 .row.footer--grid .col:last-child {
     margin-bottom: 0;
 }
-div#product-grid.collection .col {
-    flex: 0 0 auto;
-    width: 50% !important;
-}
 .col-12.col-md-4.flex-grow-1.image-with-text__text-item {
     padding-left: 20px;
 }
@@ -4105,7 +4101,6 @@ countdown-timer.product__grid_timer.del1_count_d {
 
 
 }
-
 
 
 
