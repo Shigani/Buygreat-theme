@@ -32,8 +32,8 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "container_type": "container-fluid",
-        "color_scheme": "background-2",
+        "container_type": "container",
+        "color_scheme": "background-1",
         "products_per_page": 100,
         "product_column": "4",
         "product_column_on_mobile": false,
@@ -43,7 +43,7 @@
         "filter_type": "vertical",
         "enable_sorting": false,
         "checked_icon_color": "#181a17",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "show_secondary_image": true,
         "show_title": true,
         "show_price": true,
@@ -51,14 +51,14 @@
         "show_product_rating": true,
         "show_badges": true,
         "badge_position": "top-left",
-        "show_cart_button": false,
+        "show_cart_button": true,
         "cart_button_positon": "bottom_center",
         "show_countdown": false,
         "timer_color_scheme": "accent-1",
         "place_timer_on_image": true,
-        "padding_top": 40,
+        "padding_top": 100,
         "padding_bottom": 100,
-        "mobile_padding_top": 25,
+        "mobile_padding_top": 65,
         "mobile_padding_bottom": 60
       }
     },
