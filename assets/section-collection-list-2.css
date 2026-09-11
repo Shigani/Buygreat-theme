@@ -205,7 +205,6 @@ h3.collection__title {
   .collection_list_2_section .collection__card:hover {
     position: relative;
     z-index: 1;
-    transform: scale(1.03);
     box-shadow: 0 0.6rem 1.6rem rgba(var(--color-foreground), 0.12);
   }
 }
@@ -230,6 +229,13 @@ h3.collection__title {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .collection_list_2_section .collection__card:hover .media > img {
+    transform: scale(1.05);
+  }
 }
 
 .collection_list_2_section .collection-list__item .collection__card_text {
