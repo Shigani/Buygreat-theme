@@ -394,7 +394,7 @@
         "subtitle": "",
         "alignment": "left",
         "mobile_alignment": "center",
-        "collection": "",
+        "collection": "automated-collection",
         "image_ratio": "square",
         "image_round_corner": true,
         "show_secondary_image": true,
