@@ -132,7 +132,7 @@
         "featured_collection_BEDUKe": {
           "type": "featured_collection",
           "settings": {
-            "collection": "home-and-living",
+            "collection": "automated-collection",
             "image": "shopify://shop_images/category-home-living.png",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
