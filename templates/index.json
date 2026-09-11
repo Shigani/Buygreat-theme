@@ -134,6 +134,7 @@
           "settings": {
             "collection": "automated-collection",
             "image": "shopify://shop_images/category-home-living.png",
+            "card_description": "Furniture, storage & everyday essential",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -144,6 +145,7 @@
           "settings": {
             "collection": "appliances",
             "image": "shopify://shop_images/category-kitchen-appliances.png",
+            "card_description": "Air fryers, blenders & kitchen essentials",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -154,6 +156,7 @@
           "settings": {
             "collection": "electronics",
             "image": "shopify://shop_images/category-electronics.png",
+            "card_description": "Tech Accessories, audio & everyday electronics",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -164,6 +167,7 @@
           "settings": {
             "collection": "furniture",
             "image": "shopify://shop_images/category-furniture.png",
+            "card_description": "Home, office & practical furniture",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -174,6 +178,7 @@
           "settings": {
             "collection": "baby-and-kids",
             "image": "shopify://shop_images/category-gym-fitness.png",
+            "card_description": "Home gym equipment & fitness accessories",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -184,6 +189,7 @@
           "settings": {
             "collection": "sports-and-fitness",
             "image": "shopify://shop_images/category-baby-kids.png",
+            "card_description": "Toys, kids products & everyday essentials",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -194,6 +200,7 @@
           "settings": {
             "collection": "auto-accessories",
             "image": "shopify://shop_images/category-outdoor.png",
+            "card_description": "Outdoor accessories & useful outdoor products",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
@@ -204,6 +211,7 @@
           "settings": {
             "collection": "outdoor",
             "image": "shopify://shop_images/category-auto-accessories.png",
+            "card_description": "Practical products for your car",
             "use_custom_color": false,
             "button_foreground_color": "#ffffff",
             "button_background_color": "#001eff"
