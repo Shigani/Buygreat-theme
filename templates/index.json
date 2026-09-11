@@ -223,7 +223,7 @@
       "settings": {
         "heading": "<p>Categories</p>",
         "heading_size": "32",
-        "alignment": "center",
+        "alignment": "left",
         "layout": "standard",
         "column": "4",
         "full_width": false,
