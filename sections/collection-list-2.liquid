@@ -434,6 +434,7 @@ row {% if section.settings.column == "5" %} row-cols-xl-5 row-cols-lg-4 row-cols
             {%- render 'collection-card-2',
               collection: block.settings.collection,
               custom_image: block.settings.image,
+              card_description: block.settings.card_description,
               columns: columns,
               round_image: section.settings.image_round_corner,
               image_ratio: section.settings.image_ratio,
@@ -972,11 +973,17 @@ row {% if section.settings.column == "5" %} row-cols-xl-5 row-cols-lg-4 row-cols
           "id": "collection",
           "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
         },
-        {
+         {
             "type": "image_picker",
             "id": "image",
             "label": "Image",
             "info": "Optional! Instead of the collection's image, the selected image will be displayed."
+         },
+         {
+            "type": "textarea",
+            "id": "card_description",
+            "label": "Description",
+            "info": "Optional. Overrides the selected collection description."
          },
          {
             "type": "header",
@@ -1028,4 +1035,3 @@ row {% if section.settings.column == "5" %} row-cols-xl-5 row-cols-lg-4 row-cols
   ]
 }
 {% endschema %}
-

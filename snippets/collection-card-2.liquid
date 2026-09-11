@@ -1,5 +1,6 @@
 {%- liquid
   assign media_ratio = image_ratio | default: 'adapt'
+  assign custom_description = card_description | default: '' | strip_html | strip
   if custom_image != blank
     assign media_aspect_ratio = custom_image.aspect_ratio
   elsif collection.featured_image != blank
@@ -75,7 +76,10 @@
 
     {%- if collection != blank -%}
       {%- liquid
-        assign collection_description = collection.description | strip_html | strip
+        assign collection_description = custom_description
+        if collection_description == blank
+          assign collection_description = collection.description | strip_html | strip
+        endif
         if collection_description == blank
           case collection.handle
             when 'home-and-living'
@@ -179,6 +183,10 @@
               {% endif %}
             {% endif %}
           </h3>
+
+          {% if custom_description != blank %}
+            <p class="collection__description">{{ custom_description | truncate: 72 }}</p>
+          {% endif %}
 
           <span class="collection__card_link">
             {{ 'sections.collection_list.shop_now' | t }} <span aria-hidden="true">→</span>
