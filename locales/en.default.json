@@ -362,7 +362,18 @@
     "collection_list": {
       "view_all": "View all",
       "items": "Items",
-      "default_title": "Collection title"
+      "default_title": "Collection title",
+      "shop_now": "Shop now",
+      "descriptions": {
+        "home_and_living": "Furniture, storage & everyday essentials",
+        "appliances": "Air fryers, blenders & kitchen essentials",
+        "electronics": "Tech accessories, audio & everyday electronics",
+        "furniture": "Home, office & practical furniture",
+        "sports_and_fitness": "Home gym equipment & fitness accessories",
+        "baby_and_kids": "Toys, kids products & everyday essentials",
+        "outdoor": "Outdoor accessories & useful outdoor products",
+        "auto_accessories": "Practical products for your car"
+      }
     },
     "collection_template": {
       "apply": "Apply",

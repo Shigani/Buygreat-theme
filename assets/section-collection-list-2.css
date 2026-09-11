@@ -144,7 +144,6 @@ h3.collection__title {
 /* Demo-style category cards */
 .collection_list_2_section .section-heading {
   margin-bottom: 1.2rem;
-  text-align: left;
 }
 
 .collection_list_2_section .section-heading__title {
@@ -158,9 +157,9 @@ h3.collection__title {
 }
 
 .collection_list_2_section .collection--list-slider {
-  padding: 1rem;
-  border: 0.1rem solid rgba(var(--color-foreground), 0.16);
-  background: rgb(var(--color-background));
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .collection_list_2_section .collection-list {
@@ -170,7 +169,7 @@ h3.collection__title {
 .collection_list_2_section .collection-list:not(.productSlider) {
   display: grid;
   grid-template-columns: repeat(var(--collection-list-2-columns, 4), minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .collection_list_2_section .collection-list:not(.productSlider) .collection-list__item {
@@ -179,6 +178,7 @@ h3.collection__title {
   padding: 0;
   margin: 0;
   flex: none;
+  height: 100%;
 }
 
 .collection_list_2_section .collection-list.productSlider .swiper-wrapper {
@@ -193,43 +193,12 @@ h3.collection__title {
 .collection_list_2_section .collection__card {
   height: 100%;
   background: #fff;
-  border: 0.1rem solid rgba(var(--color-foreground), 0.16);
-  border-bottom-width: 0.5rem;
-  border-radius: 0;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.14);
+  border-radius: 0.8rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(var(--color-foreground), 0.06);
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-origin: center;
-}
-
-.collection_list_2_section .collection-list__item:nth-child(8n + 1) .collection__card {
-  border-bottom-color: #7edb8a;
-}
-
-.collection_list_2_section .collection-list__item:nth-child(8n + 2) .collection__card {
-  border-bottom-color: #e9e77d;
-}
-
-.collection_list_2_section .collection-list__item:nth-child(8n + 3) .collection__card {
-  border-bottom-color: #cf7bdc;
-}
-
-.collection_list_2_section .collection-list__item:nth-child(8n + 4) .collection__card {
-  border-bottom-color: #8f8be7;
-}
-
-.collection_list_2_section .collection-list__item:nth-child(8n + 5) .collection__card {
-  border-bottom-color: #48d8e7;
-}
-
-.collection_list_2_section .collection-list__item:nth-child(8n + 6) .collection__card {
-  border-bottom-color: #b777d7;
-}
-
-.collection_list_2_section .collection-list__item:nth-child(8n + 7) .collection__card {
-  border-bottom-color: #e25a6b;
-}
-
-.collection_list_2_section .collection-list__item:nth-child(8n) .collection__card {
-  border-bottom-color: #f2b84b;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -251,28 +220,52 @@ h3.collection__title {
   overflow: hidden;
 }
 
+.collection_list_2_section .collection__card .media.media--landscape,
+.collection_list_2_section .collection__card .placeholder_svg_parent.media--landscape {
+  aspect-ratio: 2.55 / 1;
+  padding-bottom: 0 !important;
+}
+
 .collection_list_2_section .collection__card .media > img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-}
-
-.collection_list_2_section .collection__card .media.media--landscape,
-.collection_list_2_section .collection__card .placeholder_svg_parent.media--landscape {
-  padding-bottom: 56.25%;
+  object-fit: cover;
 }
 
 .collection_list_2_section .collection__card_text {
-  min-height: 3.2rem;
+  display: block;
+  min-height: 8.4rem;
   margin: 0;
-  padding: 0.4rem 0.8rem 0.5rem;
+  padding: 0.9rem 1rem 1rem;
   background: #fff;
-  text-align: center;
+  text-align: left;
 }
 
 .collection_list_2_section .collection__title {
-  justify-content: center;
+  display: flex;
+  justify-content: flex-start;
   font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.35rem !important;
+  text-align: left;
+}
+
+.collection_list_2_section .collection__card:hover .collection__title {
+  color: rgb(var(--color-foreground));
+}
+
+.collection_list_2_section .collection__description {
+  color: rgba(var(--color-foreground), 0.72);
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin: 0 0 0.55rem;
+}
+
+.collection_list_2_section .collection__card_link {
+  color: rgb(var(--color-foreground));
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -285,7 +278,7 @@ h3.collection__title {
 
 @media only screen and (max-width: 749px) {
   .collection_list_2_section .collection--list-slider {
-    padding: 0.8rem;
+    padding: 0;
   }
 
   .collection_list_2_section .collection-list:not(.productSlider) {
@@ -294,6 +287,7 @@ h3.collection__title {
   }
 
   .collection_list_2_section .collection__card_text {
-    min-height: 3.4rem;
+    min-height: 8.6rem;
+    padding: 0.8rem;
   }
 }

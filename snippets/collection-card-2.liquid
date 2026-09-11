@@ -74,6 +74,29 @@
     {%- endif -%}
 
     {%- if collection != blank -%}
+      {%- liquid
+        assign collection_description = collection.description | strip_html | strip
+        if collection_description == blank
+          case collection.handle
+            when 'home-and-living'
+              assign collection_description = 'sections.collection_list.descriptions.home_and_living' | t
+            when 'appliances'
+              assign collection_description = 'sections.collection_list.descriptions.appliances' | t
+            when 'electronics'
+              assign collection_description = 'sections.collection_list.descriptions.electronics' | t
+            when 'furniture'
+              assign collection_description = 'sections.collection_list.descriptions.furniture' | t
+            when 'sports-and-fitness'
+              assign collection_description = 'sections.collection_list.descriptions.sports_and_fitness' | t
+            when 'baby-and-kids'
+              assign collection_description = 'sections.collection_list.descriptions.baby_and_kids' | t
+            when 'outdoor'
+              assign collection_description = 'sections.collection_list.descriptions.outdoor' | t
+            when 'auto-accessories'
+              assign collection_description = 'sections.collection_list.descriptions.auto_accessories' | t
+          endcase
+        endif
+      -%}
       <div class="collection__card_text{% if section.settings.column == "5" %} column__five--design {% endif %}  {% unless content_position %} collection--content-absolute {% endunless %} {% if show_content_below_image_mobile %} collection--normal-on-mobile{% endif %}">
         {% if title_design == 'button' %}
           {%- liquid
@@ -110,6 +133,12 @@
               {% endif %}
             {% endif %}
           </h3>
+          {% if collection_description != blank %}
+            <p class="collection__description">{{ collection_description | truncate: 72 }}</p>
+          {% endif %}
+          <span class="collection__card_link">
+            {{ 'sections.collection_list.shop_now' | t }} <span aria-hidden="true">→</span>
+          </span>
         {% endif %}
       </div>
     {%- else -%}
