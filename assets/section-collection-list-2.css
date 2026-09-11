@@ -232,7 +232,7 @@ h3.collection__title {
   object-fit: cover;
 }
 
-.collection_list_2_section .collection__card_text {
+.collection_list_2_section .collection-list__item .collection__card_text {
   display: block;
   min-height: 8.4rem;
   margin: 0;
@@ -241,7 +241,7 @@ h3.collection__title {
   text-align: left;
 }
 
-.collection_list_2_section .collection__title {
+.collection_list_2_section .collection-list__item .collection__title {
   display: flex;
   justify-content: flex-start;
   font-weight: 700;
