@@ -257,6 +257,7 @@ h3.collection__title {
 .collection_list_2_section .collection__description {
   color: rgba(var(--color-foreground), 0.72);
   font-size: 1.3rem;
+  font-weight: 500;
   line-height: 1.35;
   margin: 0 0 0.55rem;
 }
