@@ -264,7 +264,7 @@ h3.collection__title {
 .collection_list_2_section .collection__card_link {
   color: rgb(var(--color-foreground));
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 1.2;
 }
