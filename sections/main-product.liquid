@@ -219,21 +219,6 @@
                       </span>
                     {%- endif -%}
                   </div>
-                  {%- if block.settings.show_same_day_dispatch -%}
-                    <div class="buygreat-product-dispatch" aria-label="Same day dispatch">
-                      <img
-                        class="buygreat-product-dispatch__icon"
-                        src="https://alternativebrewing.com.au/cdn/shop/files/green-truck.png?v=11637505862051965359"
-                        alt=""
-                        aria-hidden="true"
-                        width="45"
-                      >
-                      <span class="buygreat-product-dispatch__copy">
-                        <span class="buygreat-product-dispatch__title">Same day dispatch</span>
-                        <span class="buygreat-product-dispatch__subtitle">Orders placed before 3pm</span>
-                      </span>
-                    </div>
-                  {%- endif -%}
                 </div>
 
                 {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
@@ -1475,16 +1460,7 @@
     {
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "checkbox",
-          "id": "show_same_day_dispatch",
-          "default": true,
-          "label": "Show same day dispatch",
-          "info": "Displays the dispatch message beside the product price."
-        }
-      ]
+      "limit": 1
     },
   	{
       "type": "countdown",
