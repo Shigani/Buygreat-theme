@@ -2126,7 +2126,7 @@
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer,
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-list,
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1.1 / 1;
   height: auto;
   min-height: 0;
 }
