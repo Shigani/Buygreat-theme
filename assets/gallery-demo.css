@@ -1591,25 +1591,6 @@
     min-width: 0;
   }
 
-  .product > .buygreat-product-info-column > .buygreat-product-info-trending {
-    box-sizing: border-box;
-    grid-column: 1;
-    grid-row: 4;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
-    width: 100%;
-  }
-
-  .product.product--has-rich-text > .buygreat-product-info-column > .buygreat-product-rich-text-box {
-    grid-column: 1;
-    grid-row: 4;
-    min-width: 0;
-  }
-
-  .product.product--has-rich-text > .buygreat-product-info-column > .buygreat-product-info-trending {
-    grid-row: 5;
-  }
-
   .product > .buygreat-product-media-column > .buygreat-product-tabs {
     grid-column: 1;
     grid-row: 3;
