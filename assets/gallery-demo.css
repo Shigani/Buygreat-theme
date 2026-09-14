@@ -8,9 +8,9 @@
   width: 100%;
 }
 
-/* Keep every product-media thumbnail visibly framed, including unselected images. */
 .buygreat-product-gallery-card .buygreat-gallery-thumbnails .thumbnail {
   border: 0.1rem solid #bcc5ce !important;
+  box-sizing: border-box;
   box-shadow: none !important;
 }
 
@@ -2036,6 +2036,7 @@
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails .thumbnail-list {
+    box-sizing: border-box;
     display: flex !important;
     flex: 1 1 auto !important;
     flex-direction: column;
@@ -2046,7 +2047,7 @@
     min-height: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    padding: 0.2rem;
+    padding: 0;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
     width: 100%;
@@ -2059,6 +2060,7 @@
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails .thumbnail-list__item {
+    box-sizing: border-box;
     flex: 0 0 7.2rem !important;
     height: 7.2rem;
     min-height: 7.2rem;
@@ -2070,8 +2072,9 @@
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails .thumbnail {
+    box-sizing: border-box;
     height: 7.2rem;
-    width: 7.2rem;
+    width: 100%;
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails .thumbnail[aria-current] {
