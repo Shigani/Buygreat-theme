@@ -2152,4 +2152,14 @@
     padding-left: 1.8rem;
     padding-right: 1.8rem;
   }
+
+  .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails .thumbnail-list__item {
+    flex: 0 0 calc((100% - 3.2rem) / 5) !important;
+    height: calc((100% - 3.2rem) / 5);
+    min-height: 0;
+  }
+
+  .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails .thumbnail {
+    height: 100%;
+  }
 }
