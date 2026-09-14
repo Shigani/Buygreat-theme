@@ -8,6 +8,11 @@
   width: 100%;
 }
 
+.buygreat-product-info-shell h1.buygreat-product-title {
+  font-size: var(--buygreat-product-title-size, 3.2rem) !important;
+  font-weight: var(--buygreat-product-title-weight, 400) !important;
+}
+
 .buygreat-product-gallery-card .buygreat-gallery-thumbnails .thumbnail {
   border: 0.1rem solid #bcc5ce !important;
   box-sizing: border-box;

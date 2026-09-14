@@ -189,7 +189,11 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
-                <h1 class="product__title" {{ block.shopify_attributes }}>
+                <h1
+                  class="product__title buygreat-product-title"
+                  style="--buygreat-product-title-size: {{ block.settings.title_font_size | default: 3.2 }}rem; --buygreat-product-title-weight: {{ block.settings.title_font_weight | default: 400 }};"
+                  {{ block.shopify_attributes }}
+                >
                   {{ product.title | escape }}
                 </h1>
               {%- when 'price' -%}
@@ -1424,7 +1428,43 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "title_font_size",
+          "label": "Product title size",
+          "min": 1.8,
+          "max": 5.0,
+          "step": 0.1,
+          "unit": "rem",
+          "default": 3.2
+        },
+        {
+          "type": "select",
+          "id": "title_font_weight",
+          "label": "Product title weight",
+          "options": [
+            {
+              "value": "400",
+              "label": "Regular"
+            },
+            {
+              "value": "500",
+              "label": "Medium"
+            },
+            {
+              "value": "600",
+              "label": "Semi-bold"
+            },
+            {
+              "value": "700",
+              "label": "Bold"
+            }
+          ],
+          "default": "400"
+        }
+      ]
     },
     {
       "type": "price",
