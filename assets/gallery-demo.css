@@ -2101,8 +2101,10 @@
 }
 
 .buygreat-product-info-shell > .buygreat-product-rich-text-box {
+  padding-bottom: 0.8rem;
   padding-left: 0;
   padding-right: 0;
+  padding-top: 0.8rem;
 }
 
 .buygreat-product-info-shell > .buygreat-product-rich-text-box.rte ul {
