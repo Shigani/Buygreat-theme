@@ -2189,6 +2189,15 @@
     top: auto !important;
   }
 
+  .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails > .slider-button[disabled] {
+    color: #8d949d !important;
+    opacity: 1 !important;
+  }
+
+  .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails > .slider-button[disabled] .icon {
+    color: inherit !important;
+  }
+
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails .thumbnail-list {
     height: 100%;
   }
