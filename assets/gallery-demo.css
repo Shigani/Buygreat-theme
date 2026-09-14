@@ -2164,17 +2164,19 @@
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails > .slider-button {
+    height: 2.4rem;
     position: absolute;
+    width: 100%;
     z-index: 2;
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails > .slider-button--prev {
     left: 0;
-    top: 0;
+    top: -2.4rem;
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails > .slider-button--next {
-    bottom: 0;
+    bottom: -2.4rem;
     left: 0;
   }
 
