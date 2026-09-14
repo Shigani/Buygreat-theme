@@ -20,6 +20,18 @@
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_same_day_dispatch": true
+          }
+        },
+        "rich_text_X9FXGH": {
+          "type": "rich_text",
+          "settings": {
+            "content": "<h3>Product highlights</h3><ul><li>Varia VS3 Coffee Grinder (Gen 2) is a zero-retention, single-dose grinder built for precision and efficiency.</li><li>With stepless micrometric adjustment, a magnetic dosing system, and a powerful 100W motor, it delivers consistent grind quality for both espresso and filter coffee.</li><li>Its sleek, CNC-machined aluminum body and 76.5° slope geometry ensure less than 0.1g retention per 10g dose—perfect for fast, clean workflow and effortless switching between beans.</li></ul>"
+          }
+        },
         "f900597c-23f9-44fa-ac9b-986174a86857": {
           "type": "countdown",
           "disabled": true,
@@ -38,12 +50,6 @@
             "color_option_style": "color",
             "choose_options_name": "Color",
             "color_option_design": "round"
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-            "show_same_day_dispatch": true
           }
         },
         "buy_buttons": {
@@ -121,20 +127,15 @@
           "settings": {
             "review_embed": "{% assign has_legacy = false %}\n{% if product.metafields.judgeme.widget.size > 20 %}\n  {% assign has_legacy = true %}\n{% endif %}\n<div style='clear:both'></div>\n<div\n  id='judgeme_product_reviews'\n  class='jdgm-widget jdgm-review-widget'\n  data-product-title='{{ product.title | escape }}'\n  data-id='{{ product.id }}'\n  data-product-id='{{ product.id }}'\n  data-widget='review'\n  data-auto-install='false'\n  data-shop-reviews-count='{{ shop.metafields.judgeme.shop_reviews_count | default: 0 | escape }}'\n  data-entry-point='review_widget.js'\n  data-entry-key='review-widget/main.js'\n>\n  {% if has_legacy %}\n    <div class='jdgm-legacy-widget-content' style='display: none;'>\n      {{ product.metafields.judgeme.widget }}\n    </div>\n  {% endif %}\n</div>\n{% if product.metafields.judgeme.review_widget_data %}\n  <script>\n    jdgm.data ||= {};\n    jdgm.data.reviewWidget ||= {};\n    jdgm.data.reviewWidget[{{ product.id }}] = {{ product.metafields.judgeme.review_widget_data }}\n  </script>\n{% endif %}"
           }
-        },
-        "rich_text_X9FXGH": {
-          "type": "rich_text",
-          "settings": {
-            "content": "<h3>Product highlights</h3><ul><li>Varia VS3 Coffee Grinder (Gen 2) is a zero-retention, single-dose grinder built for precision and efficiency.</li><li>With stepless micrometric adjustment, a magnetic dosing system, and a powerful 100W motor, it delivers consistent grind quality for both espresso and filter coffee.</li><li>Its sleek, CNC-machined aluminum body and 76.5° slope geometry ensure less than 0.1g retention per 10g dose—perfect for fast, clean workflow and effortless switching between beans.</li></ul>"
-          }
         }
       },
       "block_order": [
         "title",
         "judge_me_reviews_preview_badge_VLwR3J",
+        "price",
+        "rich_text_X9FXGH",
         "f900597c-23f9-44fa-ac9b-986174a86857",
         "variant_picker",
-        "price",
         "buy_buttons",
         "popup_size_guide_qnNqG3",
         "popup_text_hirBFk",
@@ -142,8 +143,7 @@
         "trending_products_N6PPyC",
         "f7302d8a-c3b2-48a3-ab1e-68e65db1f80c",
         "c8842c06-e135-4b13-b10b-b2c347861c89",
-        "review_app_NPcTYU",
-        "rich_text_X9FXGH"
+        "review_app_NPcTYU"
       ],
       "settings": {
         "color_scheme": "background-1",
