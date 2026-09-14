@@ -2122,3 +2122,27 @@
     display: none;
   }
 }
+
+.product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer,
+.product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-list,
+.product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  min-height: 0;
+}
+
+.product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-frame,
+.product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media {
+  height: 100%;
+  min-height: 0;
+}
+
+.product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item img,
+.product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item video,
+.product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item model-viewer {
+  height: 100%;
+  max-height: none;
+  max-width: 100%;
+  object-fit: contain;
+  width: 100%;
+}
