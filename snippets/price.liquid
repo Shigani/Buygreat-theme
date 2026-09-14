@@ -22,7 +22,9 @@
   assign price = target.price | default: 1999
   assign available = target.available | default: false
   assign money_price = price | money
-  if settings.currency_code_enabled
+  if show_currency_code
+    assign money_price = price | money_with_currency
+  elsif settings.currency_code_enabled
     assign money_price = price | money_with_currency
   endif
 
@@ -66,7 +68,7 @@
       </dt>
       <dd class="price__compare">
         <s class="price-item price-item--regular">
-          {% if settings.currency_code_enabled %}
+          {% if show_currency_code or settings.currency_code_enabled %}
             {{ compare_at_price | money_with_currency }}
           {% else %}
             {{ compare_at_price | money }}

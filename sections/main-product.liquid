@@ -202,16 +202,22 @@
                   id="price-{{ section.id }}"
                   {{ block.shopify_attributes }}
                 >
-                  <span class="buygreat-product-price-label">
-                    {{ 'sections.cart.headings.price' | t }}
-                  </span>
-                  <div class="no-js-hidden buygreat-product-price-values">
-                    {%- render 'price',
-                      product: product,
-                      use_variant: true,
-                      show_badges: false,
-                      price_class: 'price--large'
-                    -%}
+                  <div class="buygreat-product-price-main">
+                    <div class="no-js-hidden buygreat-product-price-values">
+                      {%- render 'price',
+                        product: product,
+                        use_variant: true,
+                        show_badges: false,
+                        show_currency_code: true,
+                        price_class: 'price--large'
+                      -%}
+                    </div>
+                    {%- if current_variant.compare_at_price > current_variant.price -%}
+                      {%- assign savings_amount = current_variant.compare_at_price | minus: current_variant.price -%}
+                      <span class="buygreat-product-savings" aria-label="Save {{ savings_amount | money_without_trailing_zeros }}">
+                        SAVE {{ savings_amount | money_without_trailing_zeros }}
+                      </span>
+                    {%- endif -%}
                   </div>
                   {%- if block.settings.show_same_day_dispatch -%}
                     <div class="buygreat-product-dispatch" aria-label="Same day dispatch">

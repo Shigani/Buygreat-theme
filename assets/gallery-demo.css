@@ -2216,3 +2216,110 @@
     width: 100%;
   }
 }
+
+/* Product page price presentation. */
+.buygreat-product-price-block {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem 2.4rem;
+}
+
+.buygreat-product-price-main {
+  align-items: baseline;
+  display: flex;
+  flex: 1 1 auto;
+  gap: 1.4rem;
+  min-width: 0;
+}
+
+.buygreat-product-price-main .buygreat-product-price-values {
+  flex: 0 0 auto;
+}
+
+.buygreat-product-price-main .buygreat-product-price-values .price {
+  display: block;
+  font-size: 1.6rem !important;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.buygreat-product-price-main .buygreat-product-price-values .price dl {
+  display: block;
+}
+
+.buygreat-product-price-main .buygreat-product-price-values .price--on-sale .price__sale {
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1.4rem;
+  white-space: nowrap;
+}
+
+.buygreat-product-price-main .buygreat-product-price-values .price__sale > dt {
+  display: none;
+}
+
+.buygreat-product-price-main .buygreat-product-price-values .price__sale > dd {
+  margin: 0;
+}
+
+.buygreat-product-price-main .buygreat-product-price-values .price__sale > dd:not(.price__compare) {
+  order: 1;
+}
+
+.buygreat-product-price-main .buygreat-product-price-values .price__sale > dd.price__compare {
+  order: 2;
+}
+
+.buygreat-product-price-main .buygreat-product-price-values .price--on-sale .price-item--sale,
+.buygreat-product-price-main .buygreat-product-price-values .price:not(.price--on-sale) .price-item--regular {
+  color: #102a50 !important;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.buygreat-product-price-main .buygreat-product-price-values .price--on-sale .price-item--regular {
+  color: #8791a0 !important;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  text-decoration: line-through !important;
+}
+
+.buygreat-product-savings {
+  align-items: center;
+  background: #f6c343;
+  border-radius: 0.5rem;
+  color: #102a50;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.75rem 1.2rem 0.7rem;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 749px) {
+  .buygreat-product-price-main {
+    flex-basis: 100%;
+    gap: 1rem;
+  }
+
+  .buygreat-product-price-main .buygreat-product-price-values .price--on-sale .price-item--sale,
+  .buygreat-product-price-main .buygreat-product-price-values .price:not(.price--on-sale) .price-item--regular {
+    font-size: 2.6rem;
+  }
+
+  .buygreat-product-price-main .buygreat-product-price-values .price--on-sale .price-item--regular {
+    font-size: 1.3rem;
+  }
+
+  .buygreat-product-savings {
+    font-size: 1.1rem;
+    padding: 0.65rem 0.9rem 0.6rem;
+  }
+}
