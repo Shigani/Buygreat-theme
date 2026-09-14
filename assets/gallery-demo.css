@@ -2140,11 +2140,11 @@
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item img,
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item video,
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item model-viewer {
-  height: 94%;
+  height: 90%;
   max-height: none;
   max-width: 100%;
   object-fit: contain;
-  width: 94%;
+  width: 90%;
 }
 
 @media screen and (min-width: 750px) {
