@@ -2101,3 +2101,15 @@
     display: none !important;
   }
 }
+
+.buygreat-product-gallery-card,
+.buygreat-product-info-shell {
+  border: 0 !important;
+  border-radius: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .buygreat-product-info-shell {
+    box-shadow: none !important;
+  }
+}
