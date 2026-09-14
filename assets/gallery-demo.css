@@ -8,6 +8,17 @@
   width: 100%;
 }
 
+/* Keep every product-media thumbnail visibly framed, including unselected images. */
+.buygreat-product-gallery-card .buygreat-gallery-thumbnails .thumbnail {
+  border: 0.1rem solid #bcc5ce !important;
+  box-shadow: none !important;
+}
+
+.buygreat-product-gallery-card .buygreat-gallery-thumbnails .thumbnail[aria-current] {
+  border: 0.2rem solid rgb(var(--color-button)) !important;
+  box-shadow: none !important;
+}
+
 /* Keep the product color swatches compact and aligned with their legend. */
 .buygreat-product-info-shell
   .product-form__input input[type="radio"]
