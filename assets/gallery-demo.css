@@ -2113,3 +2113,15 @@
     box-shadow: none !important;
   }
 }
+
+.buygreat-product-rich-text-box {
+  border: 0 !important;
+  border-radius: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .buygreat-product-rich-text-box::before,
+  .buygreat-product-rich-text-box::after {
+    display: none;
+  }
+}
