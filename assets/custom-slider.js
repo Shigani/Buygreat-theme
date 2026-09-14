@@ -9,6 +9,7 @@ if (!customElements.get('slider-component')) {
         this.pageTotalElement = this.querySelector('.slider-counter--total');
         this.prevButton = this.querySelector('button[name="previous"]');
         this.nextButton = this.querySelector('button[name="next"]');
+        this.isVertical = false;
 
         if (!this.slider || !this.nextButton) return;
 
@@ -22,10 +23,16 @@ if (!customElements.get('slider-component')) {
       }
 
       initPages() {
+        this.isVertical = this.dataset.sliderAxis === 'vertical' && window.matchMedia('(min-width: 750px)').matches;
         this.sliderItemsToShow = Array.from(this.sliderItems).filter(element => element.clientWidth > 0);
         if (this.sliderItemsToShow.length < 2) return;
-        this.sliderItemOffset = this.sliderItemsToShow[1].offsetLeft - this.sliderItemsToShow[0].offsetLeft;
-        this.slidesPerPage = Math.floor((this.slider.clientWidth - this.sliderItemsToShow[0].offsetLeft) / this.sliderItemOffset);
+        this.sliderItemOffset = this.isVertical
+          ? this.sliderItemsToShow[1].offsetTop - this.sliderItemsToShow[0].offsetTop
+          : this.sliderItemsToShow[1].offsetLeft - this.sliderItemsToShow[0].offsetLeft;
+        if (!this.sliderItemOffset) return;
+        const sliderSize = this.isVertical ? this.slider.clientHeight : this.slider.clientWidth;
+        const firstItemOffset = this.isVertical ? this.sliderItemsToShow[0].offsetTop : this.sliderItemsToShow[0].offsetLeft;
+        this.slidesPerPage = Math.floor((sliderSize - firstItemOffset) / this.sliderItemOffset);
         this.totalPages = this.sliderItemsToShow.length - this.slidesPerPage + 1;
         this.update();
       }
@@ -37,7 +44,8 @@ if (!customElements.get('slider-component')) {
 
       update() {
         const previousPage = this.currentPage;
-        this.currentPage = Math.round(this.slider.scrollLeft / this.sliderItemOffset) + 1;
+        const scrollPosition = this.isVertical ? this.slider.scrollTop : this.slider.scrollLeft;
+        this.currentPage = Math.round(scrollPosition / this.sliderItemOffset) + 1;
 
         if (this.currentPageElement && this.pageTotalElement) {
           this.currentPageElement.textContent = this.currentPage;
@@ -53,7 +61,7 @@ if (!customElements.get('slider-component')) {
 
         if (this.enableSliderLooping) return;
 
-        if (this.isSlideVisible(this.sliderItemsToShow[0]) && this.slider.scrollLeft === 0) {
+        if (this.isSlideVisible(this.sliderItemsToShow[0]) && scrollPosition === 0) {
           this.prevButton.setAttribute('disabled', 'disabled');
         } else {
           this.prevButton.removeAttribute('disabled');
@@ -67,15 +75,22 @@ if (!customElements.get('slider-component')) {
       }
 
       isSlideVisible(element, offset = 0) {
-        const lastVisibleSlide = this.slider.clientWidth + this.slider.scrollLeft - offset;
-        return (element.offsetLeft + element.clientWidth) <= lastVisibleSlide && element.offsetLeft >= this.slider.scrollLeft;
+        const scrollPosition = this.isVertical ? this.slider.scrollTop : this.slider.scrollLeft;
+        const viewportSize = this.isVertical ? this.slider.clientHeight : this.slider.clientWidth;
+        const elementStart = this.isVertical ? element.offsetTop : element.offsetLeft;
+        const elementSize = this.isVertical ? element.offsetHeight : element.offsetWidth;
+        const lastVisibleSlide = viewportSize + scrollPosition - offset;
+        return (elementStart + elementSize) <= lastVisibleSlide && elementStart >= scrollPosition;
       }
 
       onButtonClick(event) {
         event.preventDefault();
         const step = event.currentTarget.dataset.step || 1;
-        this.slideScrollPosition = event.currentTarget.name === 'next' ? this.slider.scrollLeft + (step * this.sliderItemOffset) : this.slider.scrollLeft - (step * this.sliderItemOffset);
-        this.slider.scrollTo({
+        const currentPosition = this.isVertical ? this.slider.scrollTop : this.slider.scrollLeft;
+        this.slideScrollPosition = event.currentTarget.name === 'next' ? currentPosition + (step * this.sliderItemOffset) : currentPosition - (step * this.sliderItemOffset);
+        this.slider.scrollTo(this.isVertical ? {
+          top: this.slideScrollPosition
+        } : {
           left: this.slideScrollPosition
         });
       }

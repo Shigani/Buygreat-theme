@@ -100,7 +100,8 @@ if (!customElements.get('media-gallery')) {
       thumbnail.querySelector('button').setAttribute('aria-current', true);
       if (this.elements.thumbnails.isSlideVisible(thumbnail, 10)) return;
 
-      this.elements.thumbnails.slider.scrollTo({ left: thumbnail.offsetLeft });
+      const isVertical = this.elements.thumbnails.dataset.sliderAxis === 'vertical' && this.mql.matches;
+      this.elements.thumbnails.slider.scrollTo(isVertical ? { top: thumbnail.offsetTop } : { left: thumbnail.offsetLeft });
     }
 
     announceLiveRegion(activeItem, position) {
@@ -138,4 +139,3 @@ if (!customElements.get('media-gallery')) {
     }
   });
 }
-
