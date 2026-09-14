@@ -2100,6 +2100,15 @@
   border-radius: 0;
 }
 
+.buygreat-product-info-shell > .buygreat-product-rich-text-box {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.buygreat-product-info-shell > .buygreat-product-rich-text-box.rte ul {
+  padding-left: 0;
+}
+
 @media screen and (max-width: 749px) {
   .buygreat-product-rich-text-box::before,
   .buygreat-product-rich-text-box::after {
