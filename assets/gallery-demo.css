@@ -2164,20 +2164,29 @@
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails > .slider-button {
-    height: 2.4rem;
+    align-items: center;
+    background: transparent !important;
+    border-radius: 0;
+    display: flex !important;
+    height: 2.4rem !important;
+    justify-content: center;
+    left: 0 !important;
+    margin: 0;
     position: absolute;
-    width: 100%;
+    right: auto !important;
+    transform: none;
+    width: 100% !important;
     z-index: 2;
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails > .slider-button--prev {
-    left: 0;
-    top: -2.4rem;
+    bottom: auto !important;
+    top: -2.4rem !important;
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails > .slider-button--next {
-    bottom: -2.4rem;
-    left: 0;
+    bottom: -2.4rem !important;
+    top: auto !important;
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails .thumbnail-list {
