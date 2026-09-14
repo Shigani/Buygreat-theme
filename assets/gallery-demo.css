@@ -2154,12 +2154,16 @@
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails .thumbnail-list__item {
-    flex: 0 0 calc((100% - 3.2rem) / 5) !important;
-    height: calc((100% - 3.2rem) / 5);
-    min-height: 0;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 7.2rem !important;
+    height: 7.2rem;
+    min-height: 7.2rem;
+    width: 7.2rem !important;
   }
 
   .product--thumbnail_slider .buygreat-product-gallery .buygreat-gallery-thumbnails .thumbnail {
-    height: 100%;
+    aspect-ratio: 1 / 1;
+    height: 7.2rem;
+    width: 7.2rem;
   }
 }
