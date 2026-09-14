@@ -2126,7 +2126,7 @@
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer,
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-list,
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item {
-  aspect-ratio: 1.1 / 1;
+  aspect-ratio: 1.2 / 1;
   height: auto;
   min-height: 0;
 }
@@ -2140,9 +2140,16 @@
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item img,
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item video,
 .product--thumbnail_slider .buygreat-product-gallery-card .buygreat-gallery-viewer .product__media-item model-viewer {
-  height: 100%;
+  height: 94%;
   max-height: none;
   max-width: 100%;
   object-fit: contain;
-  width: 100%;
+  width: 94%;
+}
+
+@media screen and (min-width: 750px) {
+  .product--thumbnail_slider .buygreat-product-gallery-card {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
 }
