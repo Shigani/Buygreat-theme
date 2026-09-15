@@ -2376,3 +2376,24 @@
     font-size: 1.3rem;
   }
 }
+
+@media screen and (max-width: 749px) {
+  .buygreat-product-info-shell::after,
+  .buygreat-product-rich-text-box::before,
+  .buygreat-product-rich-text-box::after {
+    border: 0 !important;
+    display: none !important;
+  }
+
+  .buygreat-product-rich-text-box,
+  .buygreat-product-share,
+  .buygreat-product-info-trending,
+  .buygreat-trending-products,
+  .buygreat-trending-products .productSlider {
+    border-bottom: 0 !important;
+  }
+
+  .buygreat-trending-products.buygreat-product-info-trending {
+    border-top: 0 !important;
+  }
+}
