@@ -2399,7 +2399,10 @@
 
 .buygreat-product-info-shell
   .product-form__input.radio--swatch
-  > label.buygreat-variant-swatch-selected.variant--swatch-color {
+  > label.buygreat-variant-swatch-with-label.variant--swatch-color,
+.buygreat-product-info-shell
+  .product-form__input.radio--swatch
+  > label.buygreat-variant-swatch-with-label.variant--swatch-image {
   align-items: center;
   background-color: #fff !important;
   border: 0.1rem solid #d9dddf !important;
@@ -2414,7 +2417,7 @@
 
 .buygreat-product-info-shell
   .product-form__input.radio--swatch
-  > label.buygreat-variant-swatch-selected.variant--swatch-color::before {
+  > label.buygreat-variant-swatch-with-label.variant--swatch-color::before {
   background: var(--swatch--background);
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
   border-radius: 50%;
@@ -2426,14 +2429,25 @@
 
 .buygreat-product-info-shell
   .product-form__input.radio--swatch
-  > label.buygreat-variant-swatch-selected.variant--swatch-color
+  > label.buygreat-variant-swatch-with-label
   > .swatch--variant-tooltip {
   display: none;
 }
 
 .buygreat-product-info-shell
   .product-form__input.radio--swatch
-  > label.buygreat-variant-swatch-selected.variant--swatch-color
+  > label.buygreat-variant-swatch-with-label.variant--swatch-image
+  > img {
+  border-radius: 50%;
+  flex: 0 0 2rem;
+  height: 2rem !important;
+  object-fit: cover;
+  width: 2rem !important;
+}
+
+.buygreat-product-info-shell
+  .product-form__input.radio--swatch
+  > label.buygreat-variant-swatch-with-label
   > .buygreat-variant-swatch-label {
   display: inline-block;
   font-size: 1.3rem;

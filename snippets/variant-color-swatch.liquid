@@ -102,7 +102,7 @@
             <label
               for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
               {% if option_name == choose_option %}
-                class="variant--swatch-custom variant--swatch-image {% if block.settings.color_option_design == "round" %} border-radius-100 {%  endif %}{% if option.selected_value == value %} buygreat-variant-swatch-selected{% endif %}"
+                class="variant--swatch-custom variant--swatch-image {% if block.settings.color_option_design == "round" %} border-radius-100 {%  endif %}"
               {% endif %}
             >
               <img
@@ -113,15 +113,12 @@
                 loading="lazy"
               >
               <span class="swatch--variant-tooltip">{{ value | escape }}</span>
-              {%- if option.selected_value == value -%}
-                <span class="buygreat-variant-swatch-label">{{ value | escape }}</span>
-              {%- endif -%}
             </label>
           {%- else -%}
             <label
               for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
               {%- if option_name == choose_option -%}
-                class="variant--swatch-custom variant--swatch-color {% if block.settings.color_option_design == "round" %} border-radius-100 {%  endif %}{% if option.selected_value == value %} buygreat-variant-swatch-selected{% endif %}"
+                class="variant--swatch-custom variant--swatch-color buygreat-variant-swatch-with-label {% if block.settings.color_option_design == "round" %} border-radius-100 {%  endif %}{% if option.selected_value == value %} buygreat-variant-swatch-selected{% endif %}"
                 style="
                   --swatch--background: {% if value.swatch.color %}{{ swatch_value }}{% else %}{{ value | escape }}{% endif %};{% if swatch_focal_point %} --swatch-focal-point: {{ swatch_focal_point }};{% endif %}
                   background-color: {%- if variant.metafields.meta.variant_color.value != blank -%} {{ variant.metafields.meta.variant_color.value }} {%- else -%}var(--swatch--background){%- endif -%}; {%- if text == "white" -%} border-color: rgba(var(--color-foreground),.30) {%- endif -%}
@@ -130,9 +127,7 @@
             >
               {%- if option_name == choose_option -%}
                 <span class="swatch--variant-tooltip">{{ value | escape }}</span>
-                {%- if option.selected_value == value -%}
-                  <span class="buygreat-variant-swatch-label">{{ value | escape }}</span>
-                {%- endif -%}
+                <span class="buygreat-variant-swatch-label">{{ value | escape }}</span>
               {%- else -%}
                 {{ value | escape }}
               {%- endif -%}
@@ -142,7 +137,7 @@
           <label
             for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
             {%- if option_name == choose_option -%}
-              class="variant--swatch-custom variant--swatch-color {% if block.settings.color_option_design == "round" %} border-radius-100 {%  endif %}{% if option.selected_value == value %} buygreat-variant-swatch-selected{% endif %}"
+              class="variant--swatch-custom variant--swatch-color buygreat-variant-swatch-with-label {% if block.settings.color_option_design == "round" %} border-radius-100 {%  endif %}{% if option.selected_value == value %} buygreat-variant-swatch-selected{% endif %}"
               style="
                 --swatch--background: {% if value.swatch.color %}{{ swatch_value }}{% else %}{{ value | escape }}{% endif %};{% if swatch_focal_point %} --swatch-focal-point: {{ swatch_focal_point }};{% endif %}
                 background-color: {%- if variant.metafields.meta.variant_color.value != blank -%} {{ variant.metafields.meta.variant_color.value }} {%- else -%}var(--swatch--background){%- endif -%}; {%- if text == "white" -%} border-color: rgba(var(--color-foreground),.30) {%- endif -%}
@@ -151,9 +146,7 @@
           >
             {%- if option_name == choose_option -%}
               <span class="swatch--variant-tooltip">{{ value | escape }}</span>
-              {%- if option.selected_value == value -%}
-                <span class="buygreat-variant-swatch-label">{{ value | escape }}</span>
-              {%- endif -%}
+              <span class="buygreat-variant-swatch-label">{{ value | escape }}</span>
             {%- else -%}
               {{ value | escape }}
             {%- endif -%}
