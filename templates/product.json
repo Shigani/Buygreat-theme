@@ -14,10 +14,17 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "title_font_size": 4,
+            "title_font_weight": "700"
+          }
         },
         "judge_me_reviews_preview_badge_VLwR3J": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
           "settings": {}
         },
         "f900597c-23f9-44fa-ac9b-986174a86857": {
@@ -30,19 +37,11 @@
             "timer_foreground": "#ffffff"
           }
         },
-        "variant_picker": {
-          "type": "variant_picker",
+        "rich_text_aAXQyf": {
+          "type": "rich_text",
           "settings": {
-            "picker_type": "button",
-            "show_color_swatch": true,
-            "color_option_style": "color",
-            "choose_options_name": "Color",
-            "color_option_design": "round"
+            "content": "<p>✓ 7L family-sized capacity<br/>✓ Digital temperature and timer controls<br/>✓ Easy everyday cooking<br/>✓ Modern stainless steel finish</p>"
           }
-        },
-        "price": {
-          "type": "price",
-          "settings": {}
         },
         "shipping_info": {
           "type": "shipping_info",
@@ -53,6 +52,16 @@
             "shipping_line_3": "Shipping calculated at checkout",
             "shipping_link_text": "View Shipping Information →",
             "shipping_link": ""
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_color_swatch": true,
+            "color_option_style": "color",
+            "choose_options_name": "Color",
+            "color_option_design": "round"
           }
         },
         "buy_buttons": {
@@ -106,6 +115,7 @@
         },
         "trending_products_N6PPyC": {
           "type": "trending_products",
+          "disabled": true,
           "settings": {
             "heading": "Trending Products",
             "heading_size": "h2",
@@ -144,10 +154,11 @@
       "block_order": [
         "title",
         "judge_me_reviews_preview_badge_VLwR3J",
-        "f900597c-23f9-44fa-ac9b-986174a86857",
-        "variant_picker",
         "price",
+        "f900597c-23f9-44fa-ac9b-986174a86857",
+        "rich_text_aAXQyf",
         "shipping_info",
+        "variant_picker",
         "buy_buttons",
         "trust_badges",
         "popup_size_guide_qnNqG3",
@@ -159,7 +170,7 @@
         "review_app_NPcTYU"
       ],
       "settings": {
-        "color_scheme": "background-2",
+        "color_scheme": "background-1",
         "breadcrumb_enable": true,
         "gallery_layout": "thumbnail_slider",
         "media_size": "large",
@@ -228,7 +239,7 @@
     "recent-viewed-products": {
       "type": "recently_viewed_product",
       "settings": {
-        "color_scheme": "background-2",
+        "color_scheme": "background-1",
         "heading": "Recently viewed product",
         "heading_size": "h2",
         "text_align": "center",
@@ -270,6 +281,7 @@
         "show_badges": true,
         "badge_position": "top-left",
         "show_cart_button": false,
+        "show_add_to_cart_button": false,
         "cart_button_style": "style2",
         "cart_button_positon": "bottom_right",
         "show_countdown": true,
