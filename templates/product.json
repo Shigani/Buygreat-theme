@@ -106,6 +106,7 @@
         },
         "trending_products_N6PPyC": {
           "type": "trending_products",
+          "disabled": true,
           "settings": {
             "heading": "Trending Products",
             "heading_size": "h2",
