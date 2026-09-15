@@ -305,6 +305,11 @@
   display: none !important;
 }
 
+.buygreat-product-info-shell .buygreat-buy-button-links,
+.buygreat-product-info-shell .guarantee__safe__checkout {
+  display: none !important;
+}
+
 .buygreat-product-info-shell .product-form__quantity .form__label {
   font-size: 1.5rem;
   font-weight: 600;
