@@ -2253,6 +2253,7 @@
 @media screen and (max-width: 749px) {
   .buygreat-product-price-main {
     flex-basis: 100%;
+    flex-wrap: wrap;
     gap: 1rem;
   }
 
@@ -2266,6 +2267,7 @@
   }
 
   .buygreat-product-savings {
+    flex-basis: 100%;
     font-size: 1.1rem;
     padding: 0.65rem 0.9rem 0.6rem;
   }
