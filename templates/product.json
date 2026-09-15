@@ -33,16 +33,6 @@
             "timer_foreground": "#ffffff"
           }
         },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "show_color_swatch": true,
-            "color_option_style": "color",
-            "choose_options_name": "Color",
-            "color_option_design": "round"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
@@ -62,6 +52,16 @@
             "shipping_line_3": "Shipping calculated at checkout",
             "shipping_link_text": "View Shipping Information →",
             "shipping_link": "shopify://pages/test-pagec55yj"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_color_swatch": true,
+            "color_option_style": "color",
+            "choose_options_name": "Color",
+            "color_option_design": "round"
           }
         },
         "buy_buttons": {
@@ -145,10 +145,10 @@
         "title",
         "judge_me_reviews_preview_badge_VLwR3J",
         "f900597c-23f9-44fa-ac9b-986174a86857",
-        "variant_picker",
         "price",
         "rich_text_Uh9LKU",
         "shipping_info",
+        "variant_picker",
         "buy_buttons",
         "popup_size_guide_qnNqG3",
         "popup_text_hirBFk",
