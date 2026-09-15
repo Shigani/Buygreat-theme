@@ -2411,6 +2411,8 @@
   display: inline-flex;
   gap: 0.7rem;
   height: 3.2rem;
+  outline: none !important;
+  outline-offset: 0;
   padding: 0.3rem 0.9rem 0.3rem 0.5rem;
   width: auto !important;
 }
