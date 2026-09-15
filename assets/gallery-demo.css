@@ -2419,6 +2419,13 @@
 
 .buygreat-product-info-shell
   .product-form__input.radio--swatch
+  > label.buygreat-variant-swatch-with-label.buygreat-variant-swatch-selected {
+  border-color: rgba(var(--color-foreground)) !important;
+  border-width: 0.2rem !important;
+}
+
+.buygreat-product-info-shell
+  .product-form__input.radio--swatch
   > label.buygreat-variant-swatch-with-label.variant--swatch-color::before {
   background: var(--swatch--background);
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
