@@ -239,7 +239,8 @@ class VariantRadios extends VariantSelects {
 
   updateOptionsParent() {
     this.fieldsets.map((fieldset, index) => {
-      fieldset.children[0].children[1].innerHTML = this.options[index];
+      const selectedValue = fieldset.querySelector(".form__label > span");
+      if (selectedValue) selectedValue.innerHTML = this.options[index];
     });
   }
 }
