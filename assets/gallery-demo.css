@@ -2388,8 +2388,7 @@
   .buygreat-product-rich-text-box,
   .buygreat-product-share,
   .buygreat-product-info-trending,
-  .buygreat-trending-products,
-  .buygreat-trending-products .productSlider {
+  .buygreat-trending-products {
     border-bottom: 0 !important;
   }
 
