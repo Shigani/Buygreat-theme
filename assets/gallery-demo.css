@@ -2258,7 +2258,8 @@
   .buygreat-product-price-main {
     flex-basis: 100%;
     flex-wrap: wrap;
-    gap: 1rem;
+    column-gap: 1rem;
+    row-gap: 0.4rem;
   }
 
   .buygreat-product-price-main .buygreat-product-price-values .price--on-sale .price-item--sale,
