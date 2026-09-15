@@ -14,10 +14,7 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-            "title_font_size": 3.2,
-            "title_font_weight": "400"
-          }
+          "settings": {}
         },
         "judge_me_reviews_preview_badge_VLwR3J": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
@@ -33,27 +30,6 @@
             "timer_foreground": "#ffffff"
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "rich_text_Uh9LKU": {
-          "type": "rich_text",
-          "settings": {
-            "content": "<p>✓ 7L family-sized capacity<br/>✓ Digital temperature and timer controls<br/>✓ Easy everyday cooking<br/>✓ Modern stainless steel finish</p>"
-          }
-        },
-        "shipping_info": {
-          "type": "shipping_info",
-          "settings": {
-            "shipping_heading": "Delivery",
-            "shipping_line_1": "Delivery available across Australia",
-            "shipping_line_2": "Free shipping on eligible products",
-            "shipping_line_3": "Shipping calculated at checkout",
-            "shipping_link_text": "View Shipping Information →",
-            "shipping_link": "shopify://pages/test-pagec55yj"
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -64,6 +40,21 @@
             "color_option_design": "round"
           }
         },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "shipping_info": {
+          "type": "shipping_info",
+          "settings": {
+            "shipping_heading": "Delivery",
+            "shipping_line_1": "Delivery available across Australia",
+            "shipping_line_2": "Free shipping on eligible products",
+            "shipping_line_3": "Shipping calculated at checkout",
+            "shipping_link_text": "View Shipping Information →",
+            "shipping_link": ""
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -72,7 +63,20 @@
             "show_dynamic_checkout": true,
             "need_help_phone": "0332270075",
             "guarantee_safe_checkout": true,
-            "safe_checkout_text": "Secure Checkout"
+            "safe_checkout_text": ""
+          }
+        },
+        "trust_badges": {
+          "type": "trust_badges",
+          "settings": {
+            "delivery_heading": "Australia-Wide Delivery",
+            "delivery_text": "Convenient delivery across Australia",
+            "checkout_heading": "Secure Checkout",
+            "checkout_text": "Shop with confidence",
+            "returns_heading": "Returns Available",
+            "returns_text": "Easy returns and exchanges",
+            "support_heading": "Customer Support",
+            "support_text": "We're here to help"
           }
         },
         "popup_size_guide_qnNqG3": {
@@ -106,7 +110,6 @@
         },
         "trending_products_N6PPyC": {
           "type": "trending_products",
-          "disabled": true,
           "settings": {
             "heading": "Trending Products",
             "heading_size": "h2",
@@ -146,11 +149,11 @@
         "title",
         "judge_me_reviews_preview_badge_VLwR3J",
         "f900597c-23f9-44fa-ac9b-986174a86857",
-        "price",
-        "rich_text_Uh9LKU",
-        "shipping_info",
         "variant_picker",
+        "price",
+        "shipping_info",
         "buy_buttons",
+        "trust_badges",
         "popup_size_guide_qnNqG3",
         "popup_text_hirBFk",
         "0a478e9c-d23b-4b8b-b309-62919d0eb667",
@@ -160,7 +163,7 @@
         "review_app_NPcTYU"
       ],
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
         "breadcrumb_enable": true,
         "gallery_layout": "thumbnail_slider",
         "media_size": "large",
@@ -229,7 +232,7 @@
     "recent-viewed-products": {
       "type": "recently_viewed_product",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
         "heading": "Recently viewed product",
         "heading_size": "h2",
         "text_align": "center",
@@ -271,7 +274,6 @@
         "show_badges": true,
         "badge_position": "top-left",
         "show_cart_button": false,
-        "show_add_to_cart_button": false,
         "cart_button_style": "style2",
         "cart_button_positon": "bottom_right",
         "show_countdown": true,

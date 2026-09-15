@@ -2381,6 +2381,103 @@
   }
 }
 
+.buygreat-product-trust {
+  border-bottom: 0.1rem solid #e1e6eb;
+  border-top: 0.1rem solid #e1e6eb;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 2rem;
+  padding: 1.4rem 0;
+  width: 100%;
+}
+
+.buygreat-product-trust__item {
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
+  min-width: 0;
+  padding: 0 1.2rem;
+}
+
+.buygreat-product-trust__item + .buygreat-product-trust__item {
+  border-left: 0.1rem solid #e1e6eb;
+}
+
+.buygreat-product-trust__icon {
+  color: #163a63;
+  display: block;
+  flex: 0 0 2.5rem;
+  line-height: 0;
+}
+
+.buygreat-product-trust__icon svg {
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.buygreat-product-trust__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.buygreat-product-trust__heading {
+  color: rgb(var(--color-foreground));
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.buygreat-product-trust__text {
+  color: #6b7785;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+@media screen and (max-width: 749px) {
+  .buygreat-product-trust {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0.8rem 0;
+  }
+
+  .buygreat-product-trust__item {
+    gap: 0.6rem;
+    padding: 0.9rem 0.7rem;
+  }
+
+  .buygreat-product-trust__item + .buygreat-product-trust__item {
+    border-left: 0;
+  }
+
+  .buygreat-product-trust__item:nth-child(even) {
+    border-left: 0.1rem solid #e1e6eb;
+  }
+
+  .buygreat-product-trust__item:nth-child(n + 3) {
+    border-top: 0.1rem solid #e1e6eb;
+    padding-top: 1.2rem;
+  }
+
+  .buygreat-product-trust__icon {
+    flex-basis: 2rem;
+  }
+
+  .buygreat-product-trust__icon svg {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .buygreat-product-trust__heading {
+    font-size: 1rem;
+  }
+
+  .buygreat-product-trust__text {
+    font-size: 0.9rem;
+  }
+}
+
 @media screen and (max-width: 749px) {
   .buygreat-product-info-shell::after,
   .buygreat-product-rich-text-box::before,

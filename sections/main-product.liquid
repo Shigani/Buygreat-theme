@@ -717,6 +717,46 @@
 
                 <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
 
+              {%- when 'trust_badges' -%}
+                <div class="buygreat-product-trust" {{ block.shopify_attributes }}>
+                  <div class="buygreat-product-trust__item">
+                    <span class="buygreat-product-trust__icon" aria-hidden="true">
+                      {%- render 'icon-features', icon: 'delivery' -%}
+                    </span>
+                    <span class="buygreat-product-trust__content">
+                      <strong class="buygreat-product-trust__heading">{{ block.settings.delivery_heading | escape }}</strong>
+                      <span class="buygreat-product-trust__text">{{ block.settings.delivery_text | escape }}</span>
+                    </span>
+                  </div>
+                  <div class="buygreat-product-trust__item">
+                    <span class="buygreat-product-trust__icon" aria-hidden="true">
+                      {%- render 'icon-features', icon: 'secure_checkout' -%}
+                    </span>
+                    <span class="buygreat-product-trust__content">
+                      <strong class="buygreat-product-trust__heading">{{ block.settings.checkout_heading | escape }}</strong>
+                      <span class="buygreat-product-trust__text">{{ block.settings.checkout_text | escape }}</span>
+                    </span>
+                  </div>
+                  <div class="buygreat-product-trust__item">
+                    <span class="buygreat-product-trust__icon" aria-hidden="true">
+                      {%- render 'icon-features', icon: 'compare' -%}
+                    </span>
+                    <span class="buygreat-product-trust__content">
+                      <strong class="buygreat-product-trust__heading">{{ block.settings.returns_heading | escape }}</strong>
+                      <span class="buygreat-product-trust__text">{{ block.settings.returns_text | escape }}</span>
+                    </span>
+                  </div>
+                  <div class="buygreat-product-trust__item">
+                    <span class="buygreat-product-trust__icon" aria-hidden="true">
+                      {%- render 'icon-features', icon: 'support_headset' -%}
+                    </span>
+                    <span class="buygreat-product-trust__content">
+                      <strong class="buygreat-product-trust__heading">{{ block.settings.support_heading | escape }}</strong>
+                      <span class="buygreat-product-trust__text">{{ block.settings.support_text | escape }}</span>
+                    </span>
+                  </div>
+                </div>
+
               {%- when 'barcode' -%}
                 <div id="barcode__{{ section.id }}" {{ block.shopify_attributes }}>
                   <div class="product__variant_barcode {% if current_variant.barcode == blank %} no-js-inline {% endif %}">
@@ -1496,7 +1536,7 @@
       "name": "t:sections.main-product.blocks.price.name",
       "limit": 1
     },
-	{
+    {
       "type": "shipping_info",
       "name": "Shipping information",
       "limit": 1,
@@ -1535,6 +1575,61 @@
           "type": "url",
           "id": "shipping_link",
           "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "trust_badges",
+      "name": "Trust badges",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "delivery_heading",
+          "label": "Delivery heading",
+          "default": "Australia-Wide Delivery"
+        },
+        {
+          "type": "text",
+          "id": "delivery_text",
+          "label": "Delivery text",
+          "default": "Convenient delivery across Australia"
+        },
+        {
+          "type": "text",
+          "id": "checkout_heading",
+          "label": "Checkout heading",
+          "default": "Secure Checkout"
+        },
+        {
+          "type": "text",
+          "id": "checkout_text",
+          "label": "Checkout text",
+          "default": "Shop with confidence"
+        },
+        {
+          "type": "text",
+          "id": "returns_heading",
+          "label": "Returns heading",
+          "default": "Returns Available"
+        },
+        {
+          "type": "text",
+          "id": "returns_text",
+          "label": "Returns text",
+          "default": "Easy returns and exchanges"
+        },
+        {
+          "type": "text",
+          "id": "support_heading",
+          "label": "Support heading",
+          "default": "Customer Support"
+        },
+        {
+          "type": "text",
+          "id": "support_text",
+          "label": "Support text",
+          "default": "We're here to help"
         }
       ]
     },
