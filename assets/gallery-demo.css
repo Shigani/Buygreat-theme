@@ -2270,3 +2270,7 @@
     padding: 0.65rem 0.9rem 0.6rem;
   }
 }
+
+.buygreat-product-info-shell > .buygreat-product-rich-text-box {
+  margin-top: 0.8rem;
+}
