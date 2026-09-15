@@ -2250,6 +2250,10 @@
   white-space: nowrap;
 }
 
+.buygreat-product-price-break {
+  display: none;
+}
+
 @media screen and (max-width: 749px) {
   .buygreat-product-price-main {
     flex-basis: 100%;
@@ -2266,10 +2270,20 @@
     font-size: 1.3rem;
   }
 
+  .buygreat-product-price-break {
+    display: block;
+    flex: 0 0 100%;
+    height: 0;
+    line-height: 0;
+    width: 0;
+  }
+
   .buygreat-product-savings {
-    flex-basis: 100%;
+    flex-basis: auto;
     font-size: 1.1rem;
+    max-width: 100%;
     padding: 0.65rem 0.9rem 0.6rem;
+    width: max-content;
   }
 }
 

@@ -214,6 +214,7 @@
                     </div>
                     {%- if current_variant.compare_at_price > current_variant.price -%}
                       {%- assign savings_amount = current_variant.compare_at_price | minus: current_variant.price -%}
+                      <span class="buygreat-product-price-break" aria-hidden="true"></span>
                       <span class="buygreat-product-savings" aria-label="Save {{ savings_amount | money_without_trailing_zeros }}">
                         SAVE {{ savings_amount | money_without_trailing_zeros }}
                       </span>
