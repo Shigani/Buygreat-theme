@@ -14,26 +14,11 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-            "title_font_size": 3.5,
-            "title_font_weight": "700"
-          }
+          "settings": {}
         },
         "judge_me_reviews_preview_badge_VLwR3J": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-            "show_same_day_dispatch": true
-          }
-        },
-        "rich_text_X9FXGH": {
-          "type": "rich_text",
-          "settings": {
-            "content": "<h6><strong>✓ 7L family-sized capacity<br/>✓ Digital temperature and timer controls<br/>✓ Easy everyday cooking<br/>✓ Modern stainless steel finish</strong></h6>"
-          }
         },
         "f900597c-23f9-44fa-ac9b-986174a86857": {
           "type": "countdown",
@@ -53,6 +38,21 @@
             "color_option_style": "color",
             "choose_options_name": "Color",
             "color_option_design": "round"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "shipping_info": {
+          "type": "shipping_info",
+          "settings": {
+            "shipping_heading": "Delivery",
+            "shipping_line_1": "Delivery available across Australia",
+            "shipping_line_2": "Free shipping on eligible products",
+            "shipping_line_3": "Shipping calculated at checkout",
+            "shipping_link_text": "View Shipping Information →",
+            "shipping_link": ""
           }
         },
         "buy_buttons": {
@@ -135,10 +135,10 @@
       "block_order": [
         "title",
         "judge_me_reviews_preview_badge_VLwR3J",
-        "price",
-        "rich_text_X9FXGH",
         "f900597c-23f9-44fa-ac9b-986174a86857",
         "variant_picker",
+        "price",
+        "shipping_info",
         "buy_buttons",
         "popup_size_guide_qnNqG3",
         "popup_text_hirBFk",
@@ -149,14 +149,14 @@
         "review_app_NPcTYU"
       ],
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
         "breadcrumb_enable": true,
         "gallery_layout": "thumbnail_slider",
         "media_size": "large",
         "media_height": "large",
         "mobile_thumbnails": "show",
         "image_card_corner_radius": 16,
-        "hide_variants": true,
+        "hide_variants": false,
         "enable_sticky_info": false,
         "top_space_enable": false,
         "sticky_enable": false,
@@ -218,7 +218,7 @@
     "recent-viewed-products": {
       "type": "recently_viewed_product",
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
         "heading": "Recently viewed product",
         "heading_size": "h2",
         "text_align": "center",
@@ -256,11 +256,10 @@
         "show_title": true,
         "show_price": true,
         "show_vendor": false,
-        "show_product_rating": true,
+        "show_product_rating": false,
         "show_badges": true,
         "badge_position": "top-left",
         "show_cart_button": false,
-        "show_add_to_cart_button": false,
         "cart_button_style": "style2",
         "cart_button_positon": "bottom_right",
         "show_countdown": true,
@@ -289,7 +288,7 @@
         "padding_bottom": 15,
         "mobile_padding_top": 15,
         "mobile_padding_bottom": 15,
-        "color_scheme": "accent-2",
+        "color_scheme": "background-2",
         "custom_colors": true,
         "foreground": "#121212",
         "background": "#fff"

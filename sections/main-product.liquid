@@ -238,6 +238,39 @@
                     {{ form | payment_terms }}
                   {%- endform -%}
                 </div>
+              {%- when 'shipping_info' -%}
+                {%- assign shipping_info_link = block.settings.shipping_link | default: routes.shipping_policy_url -%}
+                <div class="buygreat-product-shipping-info" {{ block.shopify_attributes }}>
+                  <div class="buygreat-product-shipping-info__icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" role="presentation" focusable="false">
+                      <path d="M4 11.5h25v22H4zM29 19h8.2l6.8 7.3v7.2H29z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2.5"/>
+                      <path d="M37.2 19v7.3H44M11.5 38.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM36.5 38.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+                    </svg>
+                  </div>
+                  <div class="buygreat-product-shipping-info__content">
+                    {%- if block.settings.shipping_heading != blank -%}
+                      <h3 class="buygreat-product-shipping-info__heading">
+                        {{ block.settings.shipping_heading | escape }}
+                      </h3>
+                    {%- endif -%}
+                    <div class="buygreat-product-shipping-info__lines">
+                      {%- if block.settings.shipping_line_1 != blank -%}
+                        <p>{{ block.settings.shipping_line_1 | escape }}</p>
+                      {%- endif -%}
+                      {%- if block.settings.shipping_line_2 != blank -%}
+                        <p>{{ block.settings.shipping_line_2 | escape }}</p>
+                      {%- endif -%}
+                      {%- if block.settings.shipping_line_3 != blank -%}
+                        <p>{{ block.settings.shipping_line_3 | escape }}</p>
+                      {%- endif -%}
+                    </div>
+                    {%- if block.settings.shipping_link_text != blank and shipping_info_link != blank -%}
+                      <a class="buygreat-product-shipping-info__link" href="{{ shipping_info_link }}">
+                        {{ block.settings.shipping_link_text | escape }}
+                      </a>
+                    {%- endif -%}
+                  </div>
+                </div>
               {%- when 'popup_size_guide' -%}
                 <div class="product_additional_information" {{ block.shopify_attributes }}>
                   <modal-opener
@@ -1461,6 +1494,48 @@
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
       "limit": 1
+    },
+	{
+      "type": "shipping_info",
+      "name": "Shipping information",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "shipping_heading",
+          "label": "Heading",
+          "default": "Delivery"
+        },
+        {
+          "type": "text",
+          "id": "shipping_line_1",
+          "label": "Shipping line 1",
+          "default": "Delivery available across Australia"
+        },
+        {
+          "type": "text",
+          "id": "shipping_line_2",
+          "label": "Shipping line 2",
+          "default": "Free shipping on eligible products"
+        },
+        {
+          "type": "text",
+          "id": "shipping_line_3",
+          "label": "Shipping line 3",
+          "default": "Shipping calculated at checkout"
+        },
+        {
+          "type": "text",
+          "id": "shipping_link_text",
+          "label": "Link text",
+          "default": "View Shipping Information →"
+        },
+        {
+          "type": "url",
+          "id": "shipping_link",
+          "label": "Link"
+        }
+      ]
     },
   	{
       "type": "countdown",

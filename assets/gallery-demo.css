@@ -2274,3 +2274,88 @@
 .buygreat-product-info-shell > .buygreat-product-rich-text-box {
   margin-top: 0.8rem;
 }
+
+.buygreat-product-shipping-info {
+  align-items: flex-start;
+  background: #f5f9fd;
+  border: 0.1rem solid #d9e6f1;
+  border-radius: 0.7rem;
+  box-sizing: border-box;
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+  padding: 1.8rem 2rem;
+  width: 100%;
+}
+
+.buygreat-product-shipping-info__icon {
+  color: #35516f;
+  flex: 0 0 3.8rem;
+  padding-top: 0.1rem;
+}
+
+.buygreat-product-shipping-info__icon svg {
+  display: block;
+  height: 3.8rem;
+  width: 3.8rem;
+}
+
+.buygreat-product-shipping-info__content {
+  min-width: 0;
+}
+
+.buygreat-product-shipping-info__heading {
+  color: #233f60;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.7rem;
+}
+
+.buygreat-product-shipping-info__lines {
+  color: #5d7891;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  line-height: 1.45;
+}
+
+.buygreat-product-shipping-info__lines p {
+  margin: 0;
+}
+
+.buygreat-product-shipping-info__link {
+  color: #47779f;
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+@media screen and (max-width: 749px) {
+  .buygreat-product-shipping-info {
+    gap: 1rem;
+    margin-top: 1.2rem;
+    padding: 1.4rem 1.2rem;
+  }
+
+  .buygreat-product-shipping-info__icon {
+    flex-basis: 3.2rem;
+  }
+
+  .buygreat-product-shipping-info__icon svg {
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
+  .buygreat-product-shipping-info__heading {
+    font-size: 1.6rem;
+  }
+
+  .buygreat-product-shipping-info__lines,
+  .buygreat-product-shipping-info__link {
+    font-size: 1.3rem;
+  }
+}
