@@ -14,7 +14,10 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "title_font_size": 3.2,
+            "title_font_weight": "400"
+          }
         },
         "judge_me_reviews_preview_badge_VLwR3J": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
@@ -44,6 +47,12 @@
           "type": "price",
           "settings": {}
         },
+        "rich_text_Uh9LKU": {
+          "type": "rich_text",
+          "settings": {
+            "content": "<p>✓ 7L family-sized capacity<br/>✓ Digital temperature and timer controls<br/>✓ Easy everyday cooking<br/>✓ Modern stainless steel finish</p>"
+          }
+        },
         "shipping_info": {
           "type": "shipping_info",
           "settings": {
@@ -52,7 +61,7 @@
             "shipping_line_2": "Free shipping on eligible products",
             "shipping_line_3": "Shipping calculated at checkout",
             "shipping_link_text": "View Shipping Information →",
-            "shipping_link": ""
+            "shipping_link": "shopify://pages/test-pagec55yj"
           }
         },
         "buy_buttons": {
@@ -138,6 +147,7 @@
         "f900597c-23f9-44fa-ac9b-986174a86857",
         "variant_picker",
         "price",
+        "rich_text_Uh9LKU",
         "shipping_info",
         "buy_buttons",
         "popup_size_guide_qnNqG3",
@@ -149,7 +159,7 @@
         "review_app_NPcTYU"
       ],
       "settings": {
-        "color_scheme": "background-2",
+        "color_scheme": "background-1",
         "breadcrumb_enable": true,
         "gallery_layout": "thumbnail_slider",
         "media_size": "large",
@@ -260,6 +270,7 @@
         "show_badges": true,
         "badge_position": "top-left",
         "show_cart_button": false,
+        "show_add_to_cart_button": false,
         "cart_button_style": "style2",
         "cart_button_positon": "bottom_right",
         "show_countdown": true,
