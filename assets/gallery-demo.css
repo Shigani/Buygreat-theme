@@ -2400,7 +2400,7 @@
 }
 
 .buygreat-product-trust__item + .buygreat-product-trust__item {
-  border-left: 0.1rem solid #e1e6eb;
+  border-left: 0;
 }
 
 .buygreat-product-trust__icon {
@@ -2438,6 +2438,7 @@
 
 @media screen and (max-width: 749px) {
   .buygreat-product-trust {
+    border: 0;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 0.8rem 0;
   }
@@ -2452,11 +2453,11 @@
   }
 
   .buygreat-product-trust__item:nth-child(even) {
-    border-left: 0.1rem solid #e1e6eb;
+    border-left: 0;
   }
 
   .buygreat-product-trust__item:nth-child(n + 3) {
-    border-top: 0.1rem solid #e1e6eb;
+    border-top: 0;
     padding-top: 1.2rem;
   }
 
