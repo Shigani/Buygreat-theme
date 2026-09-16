@@ -1034,6 +1034,44 @@
   margin-bottom: 0;
 }
 
+@media screen and (min-width: 750px) {
+  .buygreat-product-tabs {
+    column-gap: 2.4rem;
+    display: grid;
+    grid-template-columns: minmax(16rem, 19rem) minmax(0, 1fr);
+    padding: 1.6rem;
+  }
+
+  .buygreat-product-tabs__nav {
+    border-bottom: 0;
+    border-right: 0.1rem solid #d9dddf;
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .buygreat-product-tabs__tab {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    padding: 1.2rem 1.6rem;
+    width: 100%;
+  }
+
+  .buygreat-product-tabs__tab.is-active::after {
+    bottom: auto;
+    height: 2.4rem;
+    left: 0;
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.4rem;
+  }
+
+  .buygreat-product-tabs__panel {
+    padding-top: 0;
+  }
+}
+
 @media screen and (max-width: 749px) {
   .buygreat-product-tabs {
     border-left: 0;
