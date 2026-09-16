@@ -337,7 +337,7 @@
         "padding_bottom": 15,
         "mobile_padding_top": 15,
         "mobile_padding_bottom": 15,
-        "color_scheme": "background-2",
+        "color_scheme": "background-1",
         "custom_colors": true,
         "foreground": "#121212",
         "background": "#fff"
