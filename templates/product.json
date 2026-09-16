@@ -51,7 +51,7 @@
             "shipping_line_2": "Free shipping on eligible products",
             "shipping_line_3": "Shipping calculated at checkout",
             "shipping_link_text": "View Shipping Information →",
-            "shipping_link": ""
+            "shipping_link": "shopify://pages/test-pagec55yj"
           }
         },
         "variant_picker": {
@@ -263,25 +263,6 @@
         "include_margins": true
       }
     },
-    "recent-viewed-products": {
-      "type": "recently_viewed_product",
-      "settings": {
-        "color_scheme": "background-1",
-        "heading": "Recently viewed product",
-        "heading_size": "h2",
-        "text_align": "center",
-        "products_show_on_xl": "6",
-        "products_show_on_sm": "1.5",
-        "show_pagination": false,
-        "show_navigation": false,
-        "auto_rotate": true,
-        "autoplay_time": 3,
-        "padding_top": 20,
-        "padding_bottom": 25,
-        "mobile_padding_top": 20,
-        "mobile_padding_bottom": 25
-      }
-    },
     "1774636155881bcebb": {
       "type": "apps",
       "blocks": {
@@ -300,6 +281,25 @@
       ],
       "settings": {
         "include_margins": true
+      }
+    },
+    "recent-viewed-products": {
+      "type": "recently_viewed_product",
+      "settings": {
+        "color_scheme": "background-1",
+        "heading": "Recently viewed product",
+        "heading_size": "h2",
+        "text_align": "center",
+        "products_show_on_xl": "6",
+        "products_show_on_sm": "1.5",
+        "show_pagination": false,
+        "show_navigation": false,
+        "auto_rotate": true,
+        "autoplay_time": 3,
+        "padding_top": 20,
+        "padding_bottom": 25,
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 25
       }
     },
     "featured_collection_HyEnxr": {
