@@ -121,7 +121,7 @@
                 <div
                   class="product__description rte buygreat-product-description is-collapsed"
                   data-buygreat-description
-                  data-description-lines="8"
+                  data-description-lines="{{ block.settings.read_more_lines | default: 8 }}"
                 >
                   {{ block.settings.content }}
                   {{ block.settings.page.content }}
