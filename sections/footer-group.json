@@ -160,6 +160,7 @@
           "type": "image",
           "settings": {
             "heading": "",
+            "image": "shopify://shop_images/ba35cbf8f0f2e0a05738d92760df95c683bc4797.png",
             "image_width": 200,
             "contact_address": "<p>Buygreat Australia is your online destination for quality products across home. kitchen, electronic, furniture, fitness, kids, outdoor and auto accessories</p>",
             "social_media": true,
@@ -207,15 +208,15 @@
         "contact_info_bdVgTR"
       ],
       "custom_css": [
-        ".footer__bottom {display: none}"
+        ".footer__bottom {display: none;}"
       ],
       "settings": {
-        "color_scheme": "inverse",
+        "color_scheme": "background-2",
         "enable_country_selector": false,
         "enable_language_selector": true,
         "show_divider": false,
         "show_divider_home": false,
-        "copy_right_color_scheme": "background-1",
+        "copy_right_color_scheme": "background-2",
         "copyright_custom_enable": false,
         "copyright_custom_text": "",
         "payment_enable": false,
