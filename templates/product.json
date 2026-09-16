@@ -284,6 +284,20 @@
     },
     "1774636155881bcebb": {
       "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_ag9fBf": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_ag9fBf"
+      ],
       "settings": {
         "include_margins": true
       }
@@ -292,6 +306,7 @@
       "type": "featured-collection",
       "name": "Feature collection",
       "settings": {
+        "color_scheme": "background-1",
         "main_heading": "Featured collection",
         "heading_size": "h2",
         "subtitle": "",
@@ -337,7 +352,6 @@
         "padding_bottom": 15,
         "mobile_padding_top": 15,
         "mobile_padding_bottom": 15,
-        "color_scheme": "background-1",
         "custom_colors": true,
         "foreground": "#121212",
         "background": "#fff"
@@ -349,8 +363,8 @@
     "177901878618d59b8e",
     "product-recommendations",
     "1745289788ef9d2eb4",
-    "recent-viewed-products",
     "1774636155881bcebb",
+    "recent-viewed-products",
     "featured_collection_HyEnxr"
   ]
 }
