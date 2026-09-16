@@ -117,8 +117,25 @@
             </div>
           {%- else -%}
             <div class="buygreat-product-tabs__content rte">
-              {{ block.settings.content }}
-              {{ block.settings.page.content }}
+              <div class="buygreat-product-description-wrapper" data-buygreat-description-wrapper>
+                <div
+                  class="product__description rte buygreat-product-description is-collapsed"
+                  data-buygreat-description
+                  data-description-lines="8"
+                >
+                  {{ block.settings.content }}
+                  {{ block.settings.page.content }}
+                </div>
+                <button
+                  type="button"
+                  class="buygreat-product-description-toggle"
+                  data-buygreat-description-toggle
+                  aria-expanded="false"
+                  hidden
+                >
+                  Read more
+                </button>
+              </div>
             </div>
           {%- endif -%}
         </div>
