@@ -148,7 +148,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Specification",
-            "content": "",
+            "content": "<p>Capacity: 7L<br/>Power: 1800W<br/>Temperature range: 80°C–200°C<br/>Timer: Up to 60 minutes<br/>Controls: Digital touch controls<br/>Finish: Stainless steel<br/>Basket: Removable non-stick basket<br/>Cleaning: Easy-clean removable parts</p>",
             "page": "",
             "icon": "check_mark"
           }
@@ -157,7 +157,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "What's included",
-            "content": "",
+            "content": "<p>1 × Digital air fryer<br/>1 × Removable cooking basket<br/>1 × Crisper tray<br/>1 × Quick-start guide<br/>1 × Care and safety instructions</p>",
             "page": "",
             "icon": "check_mark"
           }
@@ -166,7 +166,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Returns",
-            "content": "",
+            "content": "<p>We want you to shop with confidence. If you change your mind, please contact our support team before returning your item. Products must be unused, in original condition and include all packaging and accessories. Return conditions and timeframes may apply.</p>",
             "page": "",
             "icon": "check_mark"
           }
