@@ -27,6 +27,13 @@
           "type": "price",
           "settings": {}
         },
+        "inventory_gLJ9ei": {
+          "type": "inventory",
+          "settings": {
+            "colors_accent_1": "#121212",
+            "gradient_accent_1": ""
+          }
+        },
         "f900597c-23f9-44fa-ac9b-986174a86857": {
           "type": "countdown",
           "disabled": true,
@@ -180,6 +187,7 @@
         "title",
         "judge_me_reviews_preview_badge_VLwR3J",
         "price",
+        "inventory_gLJ9ei",
         "f900597c-23f9-44fa-ac9b-986174a86857",
         "rich_text_aAXQyf",
         "shipping_info",
