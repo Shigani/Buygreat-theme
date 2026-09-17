@@ -2374,13 +2374,14 @@
 }
 
 .buygreat-product-shipping-info {
-  align-items: flex-start;
+  align-items: center;
   background: #f5f9fd;
   border: 0.1rem solid #d9e6f1;
   border-radius: 0.7rem;
   box-sizing: border-box;
   display: flex;
   gap: 1.6rem;
+  justify-content: center;
   margin-top: 1.6rem;
   padding: 1.8rem 2rem;
   width: 100%;
@@ -2400,6 +2401,7 @@
 
 .buygreat-product-shipping-info__content {
   min-width: 0;
+  text-align: center;
 }
 
 .buygreat-product-shipping-info__heading {
