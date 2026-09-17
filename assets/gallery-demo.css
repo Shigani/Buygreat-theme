@@ -2466,6 +2466,7 @@
   border-top: 0.1rem solid #e1e6eb;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-items: center;
   margin-top: 2rem;
   padding: 1.4rem 0;
   width: 100%;
@@ -2475,8 +2476,10 @@
   align-items: center;
   display: flex;
   gap: 0.8rem;
+  justify-content: center;
   min-width: 0;
   padding: 0 1.2rem;
+  text-align: center;
 }
 
 .buygreat-product-trust__item + .buygreat-product-trust__item {
