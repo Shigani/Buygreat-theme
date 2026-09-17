@@ -144,8 +144,13 @@
 {%- endstyle -%}
 
 {%- liquid
+  assign featured_collection = section.settings.collection
+  if featured_collection == blank and product.collections != blank
+    assign featured_collection = product.collections | first
+  endif
+
   assign more_in_collection = false
-  if section.settings.collection.all_products_count > section.settings.products_to_show
+  if featured_collection != blank and featured_collection.all_products_count > section.settings.products_to_show
     assign more_in_collection = true
   endif
 
@@ -235,12 +240,11 @@ row row-cols-xl-{{ productShowXl }} row-cols-md-{{ productShowXl }} row-cols-{{ 
 
     {%- liquid
       assign featured_product_limit = section.settings.products_to_show
-      assign collection = collections[section.settings.collection]
     -%}
     <div class="product_slider_wrapper">
       <div class="{{ productWrapper }} mb--n30 collection__product   one_col_m_{{ productShowSm }}  ">
         {%- if slider_enable -%}<div class="swiper-wrapper">{% endif %}
-        {%- for product in collection.products limit: featured_product_limit -%}
+        {%- for product in featured_collection.products limit: featured_product_limit -%}
           <div class="{{ productItem }}">
             {%- render 'product-display-tags', product_to_tag: product -%}
             {% render 'product-card-item',

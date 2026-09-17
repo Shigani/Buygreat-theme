@@ -1,7 +1,4 @@
 {%- assign trending_collection = block.settings.collection -%}
-{%- if trending_collection == blank and product.collections != blank -%}
-  {%- assign trending_collection = product.collections | first -%}
-{%- endif -%}
 {%- if trending_collection != blank -%}
   {%- assign trending_products = trending_collection.products -%}
 {%- else -%}
