@@ -222,7 +222,11 @@
       "inventory_status": {
         "availability": "Only",
         "in_stock": "items in stock!",
-        "out_of_stock": "Out of stock!"
+        "out_of_stock": "Out of stock!",
+        "in_stock_label": "In Stock",
+        "medium_stock": "Medium Stock",
+        "low_stock": "Low Stock",
+        "no_stock": "No Stock"
       },
       "discount_label": "Save -",
       "video_exit_message": "{{ title }} opens full screen video in same window.",

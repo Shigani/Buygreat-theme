@@ -329,14 +329,29 @@
                 {%- comment -%}Rendered in the tabbed product content below the gallery.{%- endcomment -%}
               {%- when 'inventory' -%}
                 {%- liquid
-                  if current_variant.inventory_quantity < 0
-                    assign progress_bar_width = 0
-                  else
-                    assign progress_bar_width = current_variant.inventory_quantity | times: 100 | divided_by: 30
-                  endif
+                  assign inventory_reference_quantity = product.variants | map: 'inventory_quantity' | sort | last | default: 0
+                  assign inventory_status_label = 'products.product.inventory_status.in_stock_label'
+                  assign inventory_status_class = 'in-stock'
 
-                  if progress_bar_width > 70
-                    assign progress_bar_width = 65
+                  if current_variant.available == false
+                    assign inventory_status_label = 'products.product.inventory_status.no_stock'
+                    assign inventory_status_class = 'no-stock'
+                  elsif current_variant.inventory_management != blank
+                    if current_variant.inventory_quantity <= 0
+                      assign inventory_status_label = 'products.product.inventory_status.no_stock'
+                      assign inventory_status_class = 'no-stock'
+                    else
+                      assign inventory_one_third_comparison = current_variant.inventory_quantity | times: 3
+                      assign inventory_two_thirds_comparison = inventory_reference_quantity | times: 2
+
+                      if inventory_one_third_comparison <= inventory_reference_quantity
+                        assign inventory_status_label = 'products.product.inventory_status.low_stock'
+                        assign inventory_status_class = 'low-stock'
+                      elsif inventory_one_third_comparison <= inventory_two_thirds_comparison
+                        assign inventory_status_label = 'products.product.inventory_status.medium_stock'
+                        assign inventory_status_class = 'medium-stock'
+                      endif
+                    endif
                   endif
                 -%}
 
@@ -345,26 +360,9 @@
                   id="inventory__stock--{{ section.id }}"
                   {{ block.shopify_attributes }}
                 >
-                  <div class="{% if current_variant.inventory_quantity <= 0 and current_variant.inventory_policy == "continue" %}no-js-inline{% endif  %}">
-                    <span class="inventory-title {% if current_variant.inventory_quantity <= 1 %} no-js-inline {% endif %}">
-                      {{- 'products.product.inventory_status.availability' | t -}}
-                    </span>
-                    <span class="variant__inventory">
-                      <span class="in_stock__title  {% if current_variant.inventory_quantity <= 1 %} no-js-inline {% endif %}">
-                        <span class="variant__stock__amount">{{ current_variant.inventory_quantity }}</span>
-                        {{ 'products.product.inventory_status.in_stock' | t }}
-                      </span>
-                      <span class="out__of_stock {% if current_variant.inventory_quantity > 0 %} no-js-inline {% endif %}">
-                        {{- 'products.product.inventory_status.out_of_stock' | t -}}
-                      </span>
-                    </span>
-
-                    <div class="stock_countdown_progress">
-                      <span
-                        class="stock_progress_bar"
-                        style="width: {{ progress_bar_width }}%; --progress-bar-bg: {% if block.settings.gradient_accent_1 != blank %}{{ block.settings.gradient_accent_1 }} {% else %} {{ block.settings.colors_accent_1 }}{% endif %};"
-                      ></span>
-                    </div>
+                  <div class="product-variant-inventory__status product-variant-inventory__status--{{ inventory_status_class }}">
+                    <span class="product-variant-inventory__dot" aria-hidden="true"></span>
+                    <span class="product-variant-inventory__label">{{ inventory_status_label | t }}</span>
                   </div>
                 </div>
               {%- when 'countdown' -%}

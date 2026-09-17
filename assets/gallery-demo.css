@@ -13,6 +13,42 @@
   font-weight: var(--buygreat-product-title-weight, 400) !important;
 }
 
+.buygreat-product-info-shell .product-variant-inventory__status {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.7rem;
+  line-height: 1.3;
+}
+
+.buygreat-product-info-shell .product-variant-inventory__dot {
+  background: currentColor;
+  border-radius: 50%;
+  display: inline-block;
+  flex: 0 0 0.8rem;
+  height: 0.8rem;
+  width: 0.8rem;
+}
+
+.buygreat-product-info-shell .product-variant-inventory__label {
+  font-weight: 600;
+}
+
+.buygreat-product-info-shell .product-variant-inventory__status--in-stock {
+  color: #198754;
+}
+
+.buygreat-product-info-shell .product-variant-inventory__status--medium-stock {
+  color: #c58a00;
+}
+
+.buygreat-product-info-shell .product-variant-inventory__status--low-stock {
+  color: #c62828;
+}
+
+.buygreat-product-info-shell .product-variant-inventory__status--no-stock {
+  color: #6b7280;
+}
+
 .buygreat-product-gallery-card .buygreat-gallery-thumbnails .thumbnail {
   border: 0.1rem solid #bcc5ce !important;
   box-sizing: border-box;
