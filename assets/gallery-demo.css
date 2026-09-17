@@ -2389,6 +2389,7 @@
 
 .buygreat-product-shipping-info__icon {
   color: #35516f;
+  display: none;
   flex: 0 0 3.8rem;
   padding-top: 0.1rem;
 }
