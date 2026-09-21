@@ -66,6 +66,7 @@
             "content_box_alignment": "middle-left",
             "alignment_desktop": "left",
             "content_animation": "fade__in__up",
+            "mobile_image": "shopify://shop_images/exec-ba4514f2-acc2-49f7-8c05-9e1ee3910c2d.png",
             "alignment_mobile": "center"
           }
         }
