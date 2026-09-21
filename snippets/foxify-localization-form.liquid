@@ -106,11 +106,12 @@
         {% if show_flag %}
           <img
             src='https://flagcdn.com/w40/{{ iso_code }}.png'
-            srcSet='https://flagcdn.com/w80/{{ iso_code }}.png 2x, https://flagcdn.com/w120/{{ iso_code }}.png 3x'
+            srcSet='https://flagcdn.com/w80/{{ iso_code }}.png 2x, https://flagcdn.com/w160/{{ iso_code }}.png 3x'
             class='x-disclosure__flag'
             alt='{{ localization.country.name }}'
             width='24px'
             height='auto'
+            onerror='this.style.display="none"'
           >
         {% endif %}
         <span>
