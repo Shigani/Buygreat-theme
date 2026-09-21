@@ -40,10 +40,39 @@
             "mobile_image": "shopify://shop_images/exec-ba4514f2-acc2-49f7-8c05-9e1ee3910c2d.png",
             "alignment_mobile": "center"
           }
+        },
+        "slide_jpTdy7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/exec-c1ed4088-db30-48bf-bc36-da4b3d971739.png",
+            "subheading": "",
+            "sub_heading_text_color": "#121212",
+            "heading": "HEADING 2",
+            "heading_size": "32",
+            "heading_text_color": "#002290",
+            "heading_position": "top",
+            "description": "Sub Heading 5",
+            "description_text_color": "#121212",
+            "button_label": "Shop Now",
+            "link": "",
+            "button_type": "secondary",
+            "button_label_2": "",
+            "link_2": "",
+            "button_type_2": "secondary",
+            "button_size": "medium",
+            "show_text_box": false,
+            "show_image_overlay": false,
+            "color_scheme": "background-1",
+            "content_box_alignment": "middle-left",
+            "alignment_desktop": "left",
+            "content_animation": "fade__in__up",
+            "alignment_mobile": "center"
+          }
         }
       },
       "block_order": [
-        "slide_kHCNW8"
+        "slide_kHCNW8",
+        "slide_jpTdy7"
       ],
       "settings": {
         "slide_height": "small",
@@ -389,6 +418,7 @@
     "featured_collection_mEfacH": {
       "type": "featured-collection",
       "settings": {
+        "color_scheme": "background-1",
         "main_heading": "Everyday Collections",
         "heading_size": "h1",
         "subtitle": "",
@@ -434,7 +464,6 @@
         "padding_bottom": 0,
         "mobile_padding_top": 30,
         "mobile_padding_bottom": 40,
-        "color_scheme": "background-1",
         "custom_colors": true,
         "foreground": "#121212",
         "background": "#ffffff"
@@ -577,6 +606,7 @@
     "featured_collection_3PLH7U": {
       "type": "featured-collection",
       "settings": {
+        "color_scheme": "background-1",
         "main_heading": "Everyday Collections",
         "heading_size": "h1",
         "subtitle": "",
@@ -622,7 +652,6 @@
         "padding_bottom": 0,
         "mobile_padding_top": 30,
         "mobile_padding_bottom": 40,
-        "color_scheme": "background-1",
         "custom_colors": true,
         "foreground": "#121212",
         "background": "#ffffff"
@@ -765,6 +794,7 @@
     "featured_collection_LcdVGc": {
       "type": "featured-collection",
       "settings": {
+        "color_scheme": "background-1",
         "main_heading": "Everyday Collections",
         "heading_size": "h1",
         "subtitle": "",
@@ -810,7 +840,6 @@
         "padding_bottom": 10,
         "mobile_padding_top": 30,
         "mobile_padding_bottom": 20,
-        "color_scheme": "background-1",
         "custom_colors": true,
         "foreground": "#121212",
         "background": "#ffffff"
