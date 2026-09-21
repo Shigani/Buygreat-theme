@@ -294,7 +294,7 @@
         "show_cart": true,
         "show_search": true,
         "user_icon": true,
-        "color_scheme": "scheme-212ba1c6-71aa-4666-9a11-06d7ddf2586c",
+        "color_scheme": "background-1",
         "transparent_header": false,
         "transparent_color_foreground": "#121212",
         "drawer_menu": false,
