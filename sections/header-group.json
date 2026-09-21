@@ -274,7 +274,8 @@
         "mega_menu_with_collection_qbjAEx"
       ],
       "custom_css": [
-        "@media screen and (max-width: 749px) {.header__heading-logo {margin-left: auto; margin-right: auto; text-align: center; } .header__heading {justify-content: center; }}"
+        "@media screen and (max-width: 749px) {.header__heading-logo {margin-left: auto; margin-right: auto; text-align: center; } .header__heading {justify-content: center; }}",
+        ".header_bottom {padding-bottom: 0px !important;}"
       ],
       "settings": {
         "container": "container-fluid",
