@@ -282,7 +282,7 @@
         "logo_inner": "shopify://shop_images/ba35cbf8f0f2e0a05738d92760df95c683bc4797.png",
         "logo_width": 250,
         "logo_position": "top_left",
-        "menu": "home",
+        "menu": "buygreat",
         "menu_position": "start",
         "header_sticky": false,
         "show_normal_btn": false,
