@@ -218,7 +218,6 @@
       "block_order": [
         "information_txt_w9WjdD"
       ],
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "header_top_enable": true,
@@ -226,10 +225,10 @@
         "show_separator_line": false,
         "show_social": false,
         "icon": "phone",
-        "header_linklist_title_1": "",
+        "header_linklist_title_1": "Shop Online Across Australia | Great Product, Great Prices",
         "header_linklist_url_1": "",
         "icon_2": "email",
-        "header_linklist_title_2": "info@buygreat.com.au",
+        "header_linklist_title_2": "",
         "header_linklist_url_2": "",
         "enable_country_selector": false,
         "enable_language_selector": true,
