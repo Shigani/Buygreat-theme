@@ -21,8 +21,20 @@
 .header-localization  .localization-selector.link {
     color: rgba(var(--color-foreground),.75);
 }
+.header__topbar > .container > .row {
+    position: relative;
+}
 .header__topbar .announcement-bar__message {
     text-align: center !important;
+}
+@media screen and (min-width: 768px) {
+    .header__topbar .announcement-bar__message {
+        position: absolute;
+        inset-inline-start: 50%;
+        width: max-content;
+        max-width: calc(100% - 2rem);
+        transform: translateX(-50%);
+    }
 }
 
   
