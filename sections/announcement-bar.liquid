@@ -21,6 +21,9 @@
 .header-localization  .localization-selector.link {
     color: rgba(var(--color-foreground),.75);
 }
+.header__topbar .announcement-bar__message {
+    text-align: center !important;
+}
 
   
   
@@ -53,7 +56,7 @@
             {% if block.information_txt != block %}
               <p
                 class="
-                  mb-0 {% if section.settings.show_social != false
+                  announcement-bar__message mb-0 {% if section.settings.show_social != false
                   and section.settings.enable_language_selector != false
                   or section.settings.enable_country_selector != false
                   or section.settings.header_linklist_title_1 != blank
