@@ -212,8 +212,13 @@ span.phone--number--area h3 a {
 
 .header-search--box .input__field {
     height: 45px !important;
-    border-color: #f5f5f5;
-    background: #f5f5f5;
+    border-color: #d6d6d6;
+    background: #ffffff;
+    border-radius: 50px;
+}
+.header__inline-search-form .search__input {
+    border: 1px solid #d6d6d6;
+    background: #ffffff;
     border-radius: 50px;
 }
 .header-search--box .input__field:focus {
@@ -286,19 +291,19 @@ span.phone--number--area {
     }
 
     .top_left predictive-search.header-search--box {
-        flex: 1 1 220px;
-        width: 220px;
+        flex: 1 1 280px;
+        width: 280px;
         min-width: 140px;
-        max-width: 260px;
+        max-width: 300px;
         margin-inline-end: 0;
     }
 
     .top_left .header__inline-search-form {
         display: block;
-        flex: 1 1 220px;
-        width: 220px;
+        flex: 1 1 280px;
+        width: 280px;
         min-width: 140px;
-        max-width: 260px;
+        max-width: 300px;
         margin-inline-end: 0;
     }
 
