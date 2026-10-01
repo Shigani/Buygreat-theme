@@ -327,6 +327,34 @@ span.phone--number--area {
     }
 }
 
+@media only screen and (min-width: 992px) {
+    .header_bottom.top_left .header__inner {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: center;
+        column-gap: 24px;
+    }
+
+    .header_bottom.top_left .header__logo {
+        grid-column: 1;
+    }
+
+    .header_bottom.top_left .header__actions {
+        grid-column: 2;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .header_bottom.top_left .header__menu {
+        grid-column: 1 / -1;
+    }
+
+    .header_bottom.top_left .header__actions predictive-search.header-search--box,
+    .header_bottom.top_left .header__actions .header__inline-search-form {
+        margin-inline-end: auto;
+    }
+}
+
 @media only screen and (max-width: 991px) {
     .top_left .header__inner {
         position: relative;
