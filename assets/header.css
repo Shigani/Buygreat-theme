@@ -332,6 +332,10 @@ span.phone--number--area {
         position: relative;
     }
 
+    .top_left .header__actions {
+        position: static;
+    }
+
     .top_left .header__top-left-search,
     .top_left .header__actions_btn--search {
         display: none !important;
@@ -346,6 +350,7 @@ span.phone--number--area {
         max-width: calc(100vw - 112px);
         margin: 0;
         transform: translate(-50%, -50%);
+        right: auto;
         z-index: 2;
     }
 
