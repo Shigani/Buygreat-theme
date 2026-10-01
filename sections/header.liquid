@@ -42,12 +42,20 @@
     assign color_enable = section.settings.transparent_header
   endif
 
-  assign sm_none = ''
-  assign sm_visible = 'd-none'
+  if section.settings.logo_2 != blank
+    assign sm_none = 'd-sm-none'
+    assign sm_visible = 'd-sm-only-visible'
+  else
+    assign sm_visible = 'd-none'
+  endif
 
   unless request.page_type == 'index'
-    assign sm_none_other = ''
-    assign sm_visible_other = 'd-none'
+    if section.settings.logo_2 != blank
+      assign sm_none_other = 'd-sm-none'
+      assign sm_visible_other = 'd-sm-only-visible'
+    else
+      assign sm_visible_other = 'd-none'
+    endif
   endunless
 
   assign cart_icon = section.settings.show_cart
