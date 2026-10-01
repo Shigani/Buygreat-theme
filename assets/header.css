@@ -326,3 +326,37 @@ span.phone--number--area {
         display: flex;
     }
 }
+
+@media only screen and (max-width: 991px) {
+    .top_left .header__inner {
+        position: relative;
+    }
+
+    .top_left .header__top-left-search,
+    .top_left .header__actions_btn--search {
+        display: none !important;
+    }
+
+    .top_left .header__inline-search-form {
+        display: flex !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: min(52vw, 280px);
+        max-width: calc(100vw - 112px);
+        margin: 0;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .top_left .header__inline-search-form .search__input_field,
+    .top_left .header__inline-search-form .search__input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .top_left .header__inline-search-form .search__input {
+        height: 36px;
+        padding-inline: 12px 42px;
+    }
+}
