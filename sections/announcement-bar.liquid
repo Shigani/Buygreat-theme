@@ -31,11 +31,21 @@
     justify-content: center !important;
 }
 @media screen and (min-width: 768px) {
-    .header__topbar .announcement-bar__message {
+    .header__topbar .header__topbar-information-column {
         display: none !important;
     }
 
+    .header__topbar .header__topbar-links-column {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .header__topbar .header__topbar-links-column .header-linklist {
+        width: 100%;
+    }
+
     .header__topbar .announcement-bar__message {
+        display: none !important;
         position: absolute;
         inset-inline-start: 50%;
         width: max-content;
@@ -85,7 +95,7 @@
           {% endif %}
         </div>
 
-        <div class="{% if section.settings.show_social %}col-md-12 col-12 col-lg-4 {% else %} col-md-12 col-12 col-lg-6{% endif %}">
+        <div class="header__topbar-information-column {% if section.settings.show_social %}col-md-12 col-12 col-lg-4 {% else %} col-md-12 col-12 col-lg-6{% endif %}">
           {%- for block in section.blocks -%}
             {% if block.information_txt != block %}
               <p
@@ -110,13 +120,14 @@
 
         <div
           class="
+            header__topbar-links-column
             {% if section.settings.show_social %}
              {% if section.settings.enable_language_selector
                or section.settings.enable_country_selector
                or section.settings.header_linklist_title_1 != blank
                or section.settings.header_linklist_title_2 != blank
              %} col-lg-4 {% else %} col-lg-6 {% endif %} col-md-6 col-12 d-none d-md-block
-            {% else %} header__topbar-links-column {% if section.settings.enable_language_selector
+            {% else %} {% if section.settings.enable_language_selector
                or section.settings.enable_country_selector
                or section.settings.header_linklist_title_1 != blank
                or section.settings.header_linklist_title_2 != blank
