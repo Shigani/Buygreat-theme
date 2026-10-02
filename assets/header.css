@@ -340,9 +340,14 @@ span.phone--number--area {
         min-width: 200px;
     }
 
+    .header_bottom.top_left .header__inner.row .header__logo.col-auto {
+        width: auto !important;
+    }
+
     .header_bottom.top_left .header__actions {
         grid-column: 2;
         width: 100%;
+        padding-inline-start: 16px;
         justify-content: flex-start;
     }
 
