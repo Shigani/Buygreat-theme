@@ -337,6 +337,7 @@ span.phone--number--area {
 
     .header_bottom.top_left .header__logo {
         grid-column: 1;
+        min-width: 200px;
     }
 
     .header_bottom.top_left .header__actions {
@@ -352,6 +353,18 @@ span.phone--number--area {
     .header_bottom.top_left .header__actions predictive-search.header-search--box,
     .header_bottom.top_left .header__actions .header__inline-search-form {
         margin-inline-end: auto;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .header_bottom.top_left .header__logo {
+        min-width: 165px;
+    }
+}
+
+@media only screen and (min-width: 1401px) {
+    .header_bottom.top_left .header__logo {
+        min-width: 230px;
     }
 }
 
