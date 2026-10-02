@@ -351,6 +351,11 @@ span.phone--number--area {
         justify-content: flex-start;
     }
 
+    .header_bottom.top_left .header__actions > predictive-search.header-search--box,
+    .header_bottom.top_left .header__actions > .header__inline-search-form {
+        margin-inline-start: 24px !important;
+    }
+
     .header_bottom.top_left .header__menu {
         grid-column: 1 / -1;
     }
