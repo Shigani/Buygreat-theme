@@ -202,6 +202,11 @@
         "type": "shopify://apps/beae-page-builder/blocks/app-embed/f4353b90-19bd-4f19-8138-af38b7a6de94",
         "disabled": false,
         "settings": {}
+      },
+      "4511042945966949202": {
+        "type": "shopify://apps/ecombe-page-builder/blocks/app_embed/019acda3-2cf4-7ddf-930a-874774fcd7cf",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
