@@ -1,0 +1,916 @@
+{% comment %}
+ LayoutHub (https://layouthub.com)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from LayoutHub
+ {% endcomment %} 
+ <div class="lh-sections-wrapper" data-id="ec4905bc73a4a9e97cbc21df" data-type="collection">
+  
+<section id="" data-section-id="Yt3mTFnMIS" data-section="standard-collection-2-2" data-dev="huynh-duc" data-lh-page-id="966" data-lh-page-name="Standard Collection 2" data-layouthub="section">  
+ {%- if 'dior' != ""-%}
+	                {%- assign tpl =  template | replace: '.', ' ' | truncatewords: 1, '' | handle  -%}
+	                {%- if tpl != 'collection' -%}
+	                    {% assign collection  =  collections['dior']  %}
+	                {%- endif -%}
+	            {%endif %}
+       
+
+			 {%- if collection == blank -%}
+			 	{%- assign collection =  collections['all'] -%}
+				{% assign tags_test = 'Black,M,Bags' %}
+				{% assign current_tags = tags_test | downcase | split: ',' %}
+				{% assign current_tags_temp = tags_test | split: ',' %}
+			 {%- else  -%}
+			  {% assign current_tags_temp = current_tags %}
+				{% assign current_tags = current_tags | join : ',' | downcase | split: ',' %}
+			 {%- endif%}{%- assign color_names = '' | split: ',' -%}
+		{%- assign color_names_downcase = '' | split: ',' -%}
+		{%- assign color_values = '' | split: ','  -%}
+		{%- if shop.metafields.layouthub and shop.metafields.layouthub.colors and shop.metafields.layouthub.colors contains '|' -%}
+			{% assign colors = shop.metafields.layouthub.colors | split: '|' %}
+			{%- assign color_names = colors | first | strip | split: ',' -%}
+			{%- assign color_names_downcase = colors | first | strip | downcase | split: ',' -%}
+			{%- assign color_values = colors | last | strip | split: ',' -%}
+		 {%- endif -%}<div class="lh-wrapper lh-collection-page" data-type="lh-grid" data-team="The4">
+     
+    <div class="lh-wrapper-container">
+        <div class="lh-container">
+            <div class="lh-row">
+                <div class="lh-col-md-12 lh-main-collection">
+                  <div class="lh-row">
+                      <div class="lh-col-md-12">
+                          <include data-live-home data-live-use_filter data-live-filter_text data-live-use_filter data-live-title_full data-live-show_badge data-live-show_2 data-live-image_size data-live-label_soldout data-live-label_unavai data-live-days data-live-hours data-live-minutes data-live-seconds data-name="product-items" data-id="2">  
+ {%- paginate collection.products by 12 -%}<div class="lh-collection-content" data-money-format="{{shop.money_format | url_encode }}" data-id="">
+  <div class="lh-top-collection">
+      <div class="lh-wrap-breadcrumb">
+        <a href="{{shop.url}}"><i class="lni lni-home"></i><text  data-lhi="home" data-lh-lang>{{ 'Yt3mTFnMIS.home' | t }}</text></a>
+        <span>{{ collection.title }}</span>
+      </div>
+      <div class="lh-wrap-right">
+        {% assign show_text_pagination =  paginate.parts | size %}
+						{%- if show_text_pagination > 0 -%}
+						<div class="lh-text-pagination" >
+							{% assign from = paginate.current_page | minus: 1 | times: paginate.page_size | plus: 1 %}
+							{% assign to = paginate.current_page | times: paginate.page_size %}
+							{% assign size = paginate.items %}
+							{%- if to > size -%}
+								{% assign to = size %}
+							{%- endif -%}
+							{% assign part = from | append: "-" | append: to %}
+							{% assign text_pagination = 'Showing {from} of {total} results' | replace : "{from}", part | replace : "{total}", size  %}
+							<span>{{text_pagination}}</span>
+						</div>
+					{%- endif -%}<div class="lh-type-view">
+          <a href="#" data-type="lh-grid" class="lh-grid-view">
+            <i class="fa fa-th" aria-hidden="true"></i>
+          </a>
+          <a href="#" data-type="lh-list" class="lh-list-view">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </a>
+        </div>
+         
+        <div class="lh-filter-button">
+          <a  data-lhi="filter_text" data-lh-lang>{{ 'Yt3mTFnMIS.lh_2spkq0_text' | t }}</a>
+        </div>
+         
+      </div>
+  </div>
+   
+  <div class="lh-filter-collection" style="display:none">
+      <include data-name="filter" data-id="2">  
+ <div class="lh-filter-content" data-size-tags="{{current_tags | size}}">
+	<div class="lh-row lh-align-start">
+		<div class="lh-filter-block active lh-block-sort  lh-col-md-3">
+											  
+												<div class="title-wrapper">
+													<h3 class="lh-component-title"  data-lhi="components[0]title" data-lh-lang data-lhis="components-title">{{ 'Yt3mTFnMIS.lh_pcvexl_title' | t }}</h3>
+											 	</div>
+												 
+												<div class="lh-filter-block-content">
+													<div class="shop-tools flex alin_center">
+										          <div class="shopify-ordering">
+																{% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+																{% for option in collection.sort_options %}
+																	{%- if option.value == sort_by -%}
+																		{% assign sort_default = option.name %}
+																	{%- endif -%}
+																{% endfor %}
+																<ul class="cl-select_orderby">
+																	{% for option in collection.sort_options %}
+																	 <li data-value="{{ option.value }}" {%- if sort_by == option.value -%}class="active"{%- endif -%}>{{ option.name }}</li>
+																 {% endfor %}
+																</ul>
+										          </div>
+										      </div>
+												</div>
+										</div>
+				     
+				  
+							
+							 
+				        <div class="lh-filter-block active lh-block-filter-colors lh-col-md-3" data-multi-select="true">
+										 
+				            <div class="title-wrapper">
+				                 <h3 class="lh-component-title"  data-lhi="components[1]title" data-lh-lang data-lhis="components-title">{{ 'Yt3mTFnMIS.lh_pcvexk_title' | t }}</h3>
+				            </div>
+										 
+				            <div  class="lh-category-items lh-filter-block-content">
+				                 <ul class="lh-block-filter-colors" data-width="100">
+
+														 {% assign tag = 'Blue' %}
+															{% assign tag_down = tag | downcase %}
+															{% assign tag_handle = tag | handleize   %}
+															<li class="lh-item-filter lh-tooltip_top" data-lh-tooltip="{{tag | escape}}" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+																{% assign bg = '#ccc' %}
+																{%- for c in color_names_downcase -%}
+																	{%- if c == tag_down -%}
+																		{% assign bg = color_values[forloop.index0] %}
+																		{%- break -%}
+																	{%- endif -%}
+																{%- endfor -%}
+																{% assign border_black = '' %}
+																{%- if bg == '#ffffff' -%}
+																	{% assign border_black = 'lh-border-black' %}
+																{%- endif -%}
+																{% assign tag_filter = blank %}
+																{% if current_tags contains tag_down %}
+																		{% assign tag_filter = tag_down %}
+																{% elsif current_tags contains tag_handle %}
+																		{% assign tag_filter = tag_handle %}
+																{% endif %}
+																{% if tag_filter != blank %}
+																		{{ tag | link_to_remove_tag : tag_filter | split: '>' | first | append: ' class="active"><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>' | append: tag | append: '</a>' }}
+																{% else %}
+																		{{ tag | link_to_add_tag : tag_down | split: '>' | first | append: ' class=""><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>'| append: tag | append: '</a>' }}
+																{% endif %}
+															</li>
+														 {% assign tag = 'White' %}
+															{% assign tag_down = tag | downcase %}
+															{% assign tag_handle = tag | handleize   %}
+															<li class="lh-item-filter lh-tooltip_top" data-lh-tooltip="{{tag | escape}}" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+																{% assign bg = '#ccc' %}
+																{%- for c in color_names_downcase -%}
+																	{%- if c == tag_down -%}
+																		{% assign bg = color_values[forloop.index0] %}
+																		{%- break -%}
+																	{%- endif -%}
+																{%- endfor -%}
+																{% assign border_black = '' %}
+																{%- if bg == '#ffffff' -%}
+																	{% assign border_black = 'lh-border-black' %}
+																{%- endif -%}
+																{% assign tag_filter = blank %}
+																{% if current_tags contains tag_down %}
+																		{% assign tag_filter = tag_down %}
+																{% elsif current_tags contains tag_handle %}
+																		{% assign tag_filter = tag_handle %}
+																{% endif %}
+																{% if tag_filter != blank %}
+																		{{ tag | link_to_remove_tag : tag_filter | split: '>' | first | append: ' class="active"><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>' | append: tag | append: '</a>' }}
+																{% else %}
+																		{{ tag | link_to_add_tag : tag_down | split: '>' | first | append: ' class=""><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>'| append: tag | append: '</a>' }}
+																{% endif %}
+															</li>
+														 {% assign tag = 'Red' %}
+															{% assign tag_down = tag | downcase %}
+															{% assign tag_handle = tag | handleize   %}
+															<li class="lh-item-filter lh-tooltip_top" data-lh-tooltip="{{tag | escape}}" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+																{% assign bg = '#ccc' %}
+																{%- for c in color_names_downcase -%}
+																	{%- if c == tag_down -%}
+																		{% assign bg = color_values[forloop.index0] %}
+																		{%- break -%}
+																	{%- endif -%}
+																{%- endfor -%}
+																{% assign border_black = '' %}
+																{%- if bg == '#ffffff' -%}
+																	{% assign border_black = 'lh-border-black' %}
+																{%- endif -%}
+																{% assign tag_filter = blank %}
+																{% if current_tags contains tag_down %}
+																		{% assign tag_filter = tag_down %}
+																{% elsif current_tags contains tag_handle %}
+																		{% assign tag_filter = tag_handle %}
+																{% endif %}
+																{% if tag_filter != blank %}
+																		{{ tag | link_to_remove_tag : tag_filter | split: '>' | first | append: ' class="active"><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>' | append: tag | append: '</a>' }}
+																{% else %}
+																		{{ tag | link_to_add_tag : tag_down | split: '>' | first | append: ' class=""><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>'| append: tag | append: '</a>' }}
+																{% endif %}
+															</li>
+														 {% assign tag = 'Black' %}
+															{% assign tag_down = tag | downcase %}
+															{% assign tag_handle = tag | handleize   %}
+															<li class="lh-item-filter lh-tooltip_top" data-lh-tooltip="{{tag | escape}}" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+																{% assign bg = '#ccc' %}
+																{%- for c in color_names_downcase -%}
+																	{%- if c == tag_down -%}
+																		{% assign bg = color_values[forloop.index0] %}
+																		{%- break -%}
+																	{%- endif -%}
+																{%- endfor -%}
+																{% assign border_black = '' %}
+																{%- if bg == '#ffffff' -%}
+																	{% assign border_black = 'lh-border-black' %}
+																{%- endif -%}
+																{% assign tag_filter = blank %}
+																{% if current_tags contains tag_down %}
+																		{% assign tag_filter = tag_down %}
+																{% elsif current_tags contains tag_handle %}
+																		{% assign tag_filter = tag_handle %}
+																{% endif %}
+																{% if tag_filter != blank %}
+																		{{ tag | link_to_remove_tag : tag_filter | split: '>' | first | append: ' class="active"><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>' | append: tag | append: '</a>' }}
+																{% else %}
+																		{{ tag | link_to_add_tag : tag_down | split: '>' | first | append: ' class=""><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>'| append: tag | append: '</a>' }}
+																{% endif %}
+															</li>
+														 {% assign tag = 'Brown' %}
+															{% assign tag_down = tag | downcase %}
+															{% assign tag_handle = tag | handleize   %}
+															<li class="lh-item-filter lh-tooltip_top" data-lh-tooltip="{{tag | escape}}" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+																{% assign bg = '#ccc' %}
+																{%- for c in color_names_downcase -%}
+																	{%- if c == tag_down -%}
+																		{% assign bg = color_values[forloop.index0] %}
+																		{%- break -%}
+																	{%- endif -%}
+																{%- endfor -%}
+																{% assign border_black = '' %}
+																{%- if bg == '#ffffff' -%}
+																	{% assign border_black = 'lh-border-black' %}
+																{%- endif -%}
+																{% assign tag_filter = blank %}
+																{% if current_tags contains tag_down %}
+																		{% assign tag_filter = tag_down %}
+																{% elsif current_tags contains tag_handle %}
+																		{% assign tag_filter = tag_handle %}
+																{% endif %}
+																{% if tag_filter != blank %}
+																		{{ tag | link_to_remove_tag : tag_filter | split: '>' | first | append: ' class="active"><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>' | append: tag | append: '</a>' }}
+																{% else %}
+																		{{ tag | link_to_add_tag : tag_down | split: '>' | first | append: ' class=""><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>'| append: tag | append: '</a>' }}
+																{% endif %}
+															</li>
+														 {% assign tag = 'Yellow' %}
+															{% assign tag_down = tag | downcase %}
+															{% assign tag_handle = tag | handleize   %}
+															<li class="lh-item-filter lh-tooltip_top" data-lh-tooltip="{{tag | escape}}" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+																{% assign bg = '#ccc' %}
+																{%- for c in color_names_downcase -%}
+																	{%- if c == tag_down -%}
+																		{% assign bg = color_values[forloop.index0] %}
+																		{%- break -%}
+																	{%- endif -%}
+																{%- endfor -%}
+																{% assign border_black = '' %}
+																{%- if bg == '#ffffff' -%}
+																	{% assign border_black = 'lh-border-black' %}
+																{%- endif -%}
+																{% assign tag_filter = blank %}
+																{% if current_tags contains tag_down %}
+																		{% assign tag_filter = tag_down %}
+																{% elsif current_tags contains tag_handle %}
+																		{% assign tag_filter = tag_handle %}
+																{% endif %}
+																{% if tag_filter != blank %}
+																		{{ tag | link_to_remove_tag : tag_filter | split: '>' | first | append: ' class="active"><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>' | append: tag | append: '</a>' }}
+																{% else %}
+																		{{ tag | link_to_add_tag : tag_down | split: '>' | first | append: ' class=""><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>'| append: tag | append: '</a>' }}
+																{% endif %}
+															</li>
+														 {% assign tag = 'Green' %}
+															{% assign tag_down = tag | downcase %}
+															{% assign tag_handle = tag | handleize   %}
+															<li class="lh-item-filter lh-tooltip_top" data-lh-tooltip="{{tag | escape}}" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+																{% assign bg = '#ccc' %}
+																{%- for c in color_names_downcase -%}
+																	{%- if c == tag_down -%}
+																		{% assign bg = color_values[forloop.index0] %}
+																		{%- break -%}
+																	{%- endif -%}
+																{%- endfor -%}
+																{% assign border_black = '' %}
+																{%- if bg == '#ffffff' -%}
+																	{% assign border_black = 'lh-border-black' %}
+																{%- endif -%}
+																{% assign tag_filter = blank %}
+																{% if current_tags contains tag_down %}
+																		{% assign tag_filter = tag_down %}
+																{% elsif current_tags contains tag_handle %}
+																		{% assign tag_filter = tag_handle %}
+																{% endif %}
+																{% if tag_filter != blank %}
+																		{{ tag | link_to_remove_tag : tag_filter | split: '>' | first | append: ' class="active"><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>' | append: tag | append: '</a>' }}
+																{% else %}
+																		{{ tag | link_to_add_tag : tag_down | split: '>' | first | append: ' class=""><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>'| append: tag | append: '</a>' }}
+																{% endif %}
+															</li>
+														 {% assign tag = 'Powder blue' %}
+															{% assign tag_down = tag | downcase %}
+															{% assign tag_handle = tag | handleize   %}
+															<li class="lh-item-filter lh-tooltip_top" data-lh-tooltip="{{tag | escape}}" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+																{% assign bg = '#ccc' %}
+																{%- for c in color_names_downcase -%}
+																	{%- if c == tag_down -%}
+																		{% assign bg = color_values[forloop.index0] %}
+																		{%- break -%}
+																	{%- endif -%}
+																{%- endfor -%}
+																{% assign border_black = '' %}
+																{%- if bg == '#ffffff' -%}
+																	{% assign border_black = 'lh-border-black' %}
+																{%- endif -%}
+																{% assign tag_filter = blank %}
+																{% if current_tags contains tag_down %}
+																		{% assign tag_filter = tag_down %}
+																{% elsif current_tags contains tag_handle %}
+																		{% assign tag_filter = tag_handle %}
+																{% endif %}
+																{% if tag_filter != blank %}
+																		{{ tag | link_to_remove_tag : tag_filter | split: '>' | first | append: ' class="active"><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>' | append: tag | append: '</a>' }}
+																{% else %}
+																		{{ tag | link_to_add_tag : tag_down | split: '>' | first | append: ' class=""><span class="' | append: border_black | append : '" style="background-color:' | append: bg | append : ';color:' | append: bg | append : '"></span>'| append: tag | append: '</a>' }}
+																{% endif %}
+															</li>
+														 
+	                        </ul>
+				            </div>
+				        </div>
+							 
+				     
+				  
+					    	
+								 
+					        <div class="lh-filter-block active lh-block-filter-tags  lh-col-md-3" data-multi-select="true">
+											 
+					            <div class="title-wrapper">
+												<h3 class="lh-component-title"  data-lhi="components[2]title" data-lh-lang data-lhis="components-title">{{ 'Yt3mTFnMIS.lh_pcvexj_title' | t }}</h3>
+					           	</div>
+											 
+					             <ul class="lh-block-filter-tags lh-filter-block-content" data-width="0">
+					             	 {% assign tag =  'L' | strip %}
+														{% assign tag_down =  tag | downcase %}
+														{% assign tag_handle = tag | handleize %}
+														{% assign tag =  'L' %}
+														{% assign tag_handle = tag | handleize %}
+						                <li class="lh-item-filter" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+															{% assign tag_filter = blank %}
+															{% if current_tags contains tag_down %}
+																	{% assign tag_filter = tag_down %}
+															{% elsif current_tags contains tag_handle %}
+																	{% assign tag_filter = tag_handle %}
+															{% endif %}
+															{% if tag_filter != blank %}
+											         	{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+											        {% else %}
+																{{  tag | link_to_add_tag:  tag_down  | replace_first: '>',' class="" >'}}
+						                  {% endif %}
+						                </li>
+					                 {% assign tag =  'M' | strip %}
+														{% assign tag_down =  tag | downcase %}
+														{% assign tag_handle = tag | handleize %}
+														{% assign tag =  'M' %}
+														{% assign tag_handle = tag | handleize %}
+						                <li class="lh-item-filter" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+															{% assign tag_filter = blank %}
+															{% if current_tags contains tag_down %}
+																	{% assign tag_filter = tag_down %}
+															{% elsif current_tags contains tag_handle %}
+																	{% assign tag_filter = tag_handle %}
+															{% endif %}
+															{% if tag_filter != blank %}
+											         	{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+											        {% else %}
+																{{  tag | link_to_add_tag:  tag_down  | replace_first: '>',' class="" >'}}
+						                  {% endif %}
+						                </li>
+					                 {% assign tag =  'XL' | strip %}
+														{% assign tag_down =  tag | downcase %}
+														{% assign tag_handle = tag | handleize %}
+														{% assign tag =  'XL' %}
+														{% assign tag_handle = tag | handleize %}
+						                <li class="lh-item-filter" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+															{% assign tag_filter = blank %}
+															{% if current_tags contains tag_down %}
+																	{% assign tag_filter = tag_down %}
+															{% elsif current_tags contains tag_handle %}
+																	{% assign tag_filter = tag_handle %}
+															{% endif %}
+															{% if tag_filter != blank %}
+											         	{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+											        {% else %}
+																{{  tag | link_to_add_tag:  tag_down  | replace_first: '>',' class="" >'}}
+						                  {% endif %}
+						                </li>
+					                 {% assign tag =  'S' | strip %}
+														{% assign tag_down =  tag | downcase %}
+														{% assign tag_handle = tag | handleize %}
+														{% assign tag =  'S' %}
+														{% assign tag_handle = tag | handleize %}
+						                <li class="lh-item-filter" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+															{% assign tag_filter = blank %}
+															{% if current_tags contains tag_down %}
+																	{% assign tag_filter = tag_down %}
+															{% elsif current_tags contains tag_handle %}
+																	{% assign tag_filter = tag_handle %}
+															{% endif %}
+															{% if tag_filter != blank %}
+											         	{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+											        {% else %}
+																{{  tag | link_to_add_tag:  tag_down  | replace_first: '>',' class="" >'}}
+						                  {% endif %}
+						                </li>
+					                 {% assign tag =  'XS' | strip %}
+														{% assign tag_down =  tag | downcase %}
+														{% assign tag_handle = tag | handleize %}
+														{% assign tag =  'XS' %}
+														{% assign tag_handle = tag | handleize %}
+						                <li class="lh-item-filter" data-tag="{{tag | escape}}" data-handle="{{tag_handle}}">
+															{% assign tag_filter = blank %}
+															{% if current_tags contains tag_down %}
+																	{% assign tag_filter = tag_down %}
+															{% elsif current_tags contains tag_handle %}
+																	{% assign tag_filter = tag_handle %}
+															{% endif %}
+															{% if tag_filter != blank %}
+											         	{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+											        {% else %}
+																{{  tag | link_to_add_tag:  tag_down  | replace_first: '>',' class="" >'}}
+						                  {% endif %}
+						                </li>
+					                 
+					            </ul>
+					        </div>
+								 
+						 
+				  
+										<div class="lh-filter-block active lh-block-tags  lh-col-md-3" data-multi-select="true">
+											  
+												<div class="title-wrapper">
+													<h3 class="lh-component-title"  data-lhi="components[3]title" data-lh-lang data-lhis="components-title">{{ 'Yt3mTFnMIS.lh_pcvexi_title' | t }}</h3>
+											 	</div>
+												 
+												<div class="lh-block-html lh-filter-block-content">
+													<ul class="lh-list-tags">
+														{% assign tags_collection = collection.tags %}
+														 {% assign tag_setting = 'shoes' | strip %}
+															{% assign tag_down_setting = tag_setting | downcase %}
+															{% assign tag_handle_setting = tag_setting | handleize %}
+															{%- for tag in tags_collection -%}
+																{% assign tag_down = tag | downcase | strip %}
+																{%- if tag_down == tag_down_setting -%}
+																		<li class="lh-item-tag lh-item-filter" data-tag='shoes' data-handle='{{tag_handle_setting}}'>
+																			{% assign tag_filter = blank %}
+																			{% if current_tags contains tag_down_setting %}
+																					{% assign tag_filter = tag_down_setting %}
+																			{% elsif current_tags contains tag_handle_setting %}
+																					{% assign tag_filter = tag_handle_setting %}
+																			{% endif %}
+																			{% if tag_filter != blank  %}
+																						{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+																			{% else %}
+																						{{  tag | link_to_add_tag:  tag_down_setting  | replace_first: '>',' class="" >'}}
+																			{% endif %}
+																		</li>
+																{%- endif -%}
+															{%- endfor -%}
+														 {% assign tag_setting = 'watches' | strip %}
+															{% assign tag_down_setting = tag_setting | downcase %}
+															{% assign tag_handle_setting = tag_setting | handleize %}
+															{%- for tag in tags_collection -%}
+																{% assign tag_down = tag | downcase | strip %}
+																{%- if tag_down == tag_down_setting -%}
+																		<li class="lh-item-tag lh-item-filter" data-tag='watches' data-handle='{{tag_handle_setting}}'>
+																			{% assign tag_filter = blank %}
+																			{% if current_tags contains tag_down_setting %}
+																					{% assign tag_filter = tag_down_setting %}
+																			{% elsif current_tags contains tag_handle_setting %}
+																					{% assign tag_filter = tag_handle_setting %}
+																			{% endif %}
+																			{% if tag_filter != blank  %}
+																						{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+																			{% else %}
+																						{{  tag | link_to_add_tag:  tag_down_setting  | replace_first: '>',' class="" >'}}
+																			{% endif %}
+																		</li>
+																{%- endif -%}
+															{%- endfor -%}
+														 {% assign tag_setting = 'bags' | strip %}
+															{% assign tag_down_setting = tag_setting | downcase %}
+															{% assign tag_handle_setting = tag_setting | handleize %}
+															{%- for tag in tags_collection -%}
+																{% assign tag_down = tag | downcase | strip %}
+																{%- if tag_down == tag_down_setting -%}
+																		<li class="lh-item-tag lh-item-filter" data-tag='bags' data-handle='{{tag_handle_setting}}'>
+																			{% assign tag_filter = blank %}
+																			{% if current_tags contains tag_down_setting %}
+																					{% assign tag_filter = tag_down_setting %}
+																			{% elsif current_tags contains tag_handle_setting %}
+																					{% assign tag_filter = tag_handle_setting %}
+																			{% endif %}
+																			{% if tag_filter != blank  %}
+																						{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+																			{% else %}
+																						{{  tag | link_to_add_tag:  tag_down_setting  | replace_first: '>',' class="" >'}}
+																			{% endif %}
+																		</li>
+																{%- endif -%}
+															{%- endfor -%}
+														 {% assign tag_setting = 'basic' | strip %}
+															{% assign tag_down_setting = tag_setting | downcase %}
+															{% assign tag_handle_setting = tag_setting | handleize %}
+															{%- for tag in tags_collection -%}
+																{% assign tag_down = tag | downcase | strip %}
+																{%- if tag_down == tag_down_setting -%}
+																		<li class="lh-item-tag lh-item-filter" data-tag='basic' data-handle='{{tag_handle_setting}}'>
+																			{% assign tag_filter = blank %}
+																			{% if current_tags contains tag_down_setting %}
+																					{% assign tag_filter = tag_down_setting %}
+																			{% elsif current_tags contains tag_handle_setting %}
+																					{% assign tag_filter = tag_handle_setting %}
+																			{% endif %}
+																			{% if tag_filter != blank  %}
+																						{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+																			{% else %}
+																						{{  tag | link_to_add_tag:  tag_down_setting  | replace_first: '>',' class="" >'}}
+																			{% endif %}
+																		</li>
+																{%- endif -%}
+															{%- endfor -%}
+														 {% assign tag_setting = 'Polo' | strip %}
+															{% assign tag_down_setting = tag_setting | downcase %}
+															{% assign tag_handle_setting = tag_setting | handleize %}
+															{%- for tag in tags_collection -%}
+																{% assign tag_down = tag | downcase | strip %}
+																{%- if tag_down == tag_down_setting -%}
+																		<li class="lh-item-tag lh-item-filter" data-tag='Polo' data-handle='{{tag_handle_setting}}'>
+																			{% assign tag_filter = blank %}
+																			{% if current_tags contains tag_down_setting %}
+																					{% assign tag_filter = tag_down_setting %}
+																			{% elsif current_tags contains tag_handle_setting %}
+																					{% assign tag_filter = tag_handle_setting %}
+																			{% endif %}
+																			{% if tag_filter != blank  %}
+																						{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+																			{% else %}
+																						{{  tag | link_to_add_tag:  tag_down_setting  | replace_first: '>',' class="" >'}}
+																			{% endif %}
+																		</li>
+																{%- endif -%}
+															{%- endfor -%}
+														 {% assign tag_setting = 'Shirt' | strip %}
+															{% assign tag_down_setting = tag_setting | downcase %}
+															{% assign tag_handle_setting = tag_setting | handleize %}
+															{%- for tag in tags_collection -%}
+																{% assign tag_down = tag | downcase | strip %}
+																{%- if tag_down == tag_down_setting -%}
+																		<li class="lh-item-tag lh-item-filter" data-tag='Shirt' data-handle='{{tag_handle_setting}}'>
+																			{% assign tag_filter = blank %}
+																			{% if current_tags contains tag_down_setting %}
+																					{% assign tag_filter = tag_down_setting %}
+																			{% elsif current_tags contains tag_handle_setting %}
+																					{% assign tag_filter = tag_handle_setting %}
+																			{% endif %}
+																			{% if tag_filter != blank  %}
+																						{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+																			{% else %}
+																						{{  tag | link_to_add_tag:  tag_down_setting  | replace_first: '>',' class="" >'}}
+																			{% endif %}
+																		</li>
+																{%- endif -%}
+															{%- endfor -%}
+														 {% assign tag_setting = 'Sweaters' | strip %}
+															{% assign tag_down_setting = tag_setting | downcase %}
+															{% assign tag_handle_setting = tag_setting | handleize %}
+															{%- for tag in tags_collection -%}
+																{% assign tag_down = tag | downcase | strip %}
+																{%- if tag_down == tag_down_setting -%}
+																		<li class="lh-item-tag lh-item-filter" data-tag='Sweaters' data-handle='{{tag_handle_setting}}'>
+																			{% assign tag_filter = blank %}
+																			{% if current_tags contains tag_down_setting %}
+																					{% assign tag_filter = tag_down_setting %}
+																			{% elsif current_tags contains tag_handle_setting %}
+																					{% assign tag_filter = tag_handle_setting %}
+																			{% endif %}
+																			{% if tag_filter != blank  %}
+																						{{  tag |  link_to_remove_tag:  tag_filter  | replace_first: '>',' class="active" >' }}
+																			{% else %}
+																						{{  tag | link_to_add_tag:  tag_down_setting  | replace_first: '>',' class="" >'}}
+																			{% endif %}
+																		</li>
+																{%- endif -%}
+															{%- endfor -%}
+														 
+													</ul>
+												</div>
+										</div></div>
+</div>
+   </include></div>
+   
+
+  <div class="lh-active-filter">
+    <ul>
+      {%- for tag in current_tags_temp -%}
+				{% assign tag_downcase = tag | downcase %}
+				<li class="lh-item-filter">
+					{{  tag |  link_to_remove_tag:  tag_downcase }}
+				</li>
+			{%- endfor -%}
+			{%- if current_tags.size > 1 -%}
+			<li class="lh-item-filter lh-item-reset">
+				{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+				{%- assign pageUrl = contentForQuerystring | split:'"pageurl":"' | last | split:'"' | first | split:'.myshopify.com' | last |
+					 replace:'\/','/' |
+					 replace:'%20',' ' |
+					 replace:'\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u0026','&'
+				-%}
+				{%- assign view = '' -%}
+				{%- if pageUrl contains 'view=' -%}
+					{%- assign viewID = pageUrl | split: 'view=' | last | split: '&' | first -%}
+					{%- assign view = '?view=' | append: viewID -%}
+				{%- endif -%}
+				<a href="{{collection.url}}{{view}}"  data-lhi="reset_text" data-lh-lang>{{ 'Yt3mTFnMIS.lh_u4i8zz_text' | t }}</a>
+			</li>
+			{%- endif -%}</ul>
+  </div>
+  <div class="lh-row lh-collection-items full_text lh-badge-yes lh-two-item" data-hub-attr-state="class%3D%22lh-row%20lh-collection-items%20%257B%253A%257Bsection.settings.title_full%257D%253A%257D%20lh-badge-%257B%253A%257Bsection.settings.show_badge%257D%253A%257D%20%7Battr%7Bsection.settings.show_2%20%3D%3D%20'yes'%3F'lh-two-item'%3A''%7Dattr%7D%22"  data-hub-attr-title_full  data-hub-attr-show_badge >
+    {% for product in collection.products %}
+					{% assign first_variant = product.selected_or_first_available_variant %}
+					{% assign v_type = '' %}
+					{% assign isSale = false %}
+					{%- if first_variant.available -%}
+						{%- if first_variant.compare_at_price > first_variant.price -%}
+							{% assign isSale = true %}
+							{% assign v_type = 'sale' %}
+						{%- endif -%}
+					{%- else -%}
+						{% assign v_type = 'soldout' %}
+					{%- endif -%}
+		        <div class="lh-product-item lh-col-md-3" data-id="{{product.id}}" data-v-type="{{v_type}}">
+								{% assign is_swatch = true %}
+								{%- if 'no' == 'no' or product.variants.size == 1 and product.variants[0].option1 == 'Default Title' -%}
+									{% assign is_swatch = false %}
+								{%- endif -%}
+		            <div  class="lh-product-item-images">
+									<div class="lh-ribbon-badge">
+											{%- if v_type == 'soldout' -%}
+												<span class="lh-sold-out"  data-lhi="label_unavai" data-lh-lang>{{ 'Yt3mTFnMIS.lh_sjlit0_unavai' | t }}</span>
+											{%- else -%}
+												<span class="lh-sold-out"  data-lhi="label_soldout" data-lh-lang>{{ 'Yt3mTFnMIS.lh_sjlit0_soldout' | t }}</span>
+											{%- endif -%}
+											<span class="lh-sale-off"  data-lhi="label_sale" data-lh-lang>{{ 'Yt3mTFnMIS.lh_sjlit0_sale' | t }}</span>
+											{%- for tag in product.tags -%}
+												{%- if tag == 'new' -%}
+													<span class="lh-hot"  data-lhi="label_new" data-lh-lang>{{ 'Yt3mTFnMIS.lh_sjlit0_new' | t }}</span>
+													{%- break -%}
+												{%- endif -%}
+												{%- if tag == 'LIMITED' -%}
+													<span class="lh-limited"  data-lhi="label_limited" data-lh-lang>{{ 'Yt3mTFnMIS.lh_sjlit0_limited' | t }}</span>
+													{%- break -%}
+												{%- endif -%}
+											{%- endfor -%}
+			            </div>
+									<div class="lh-product-item-actions">
+	                    <div class="lh-wishlist-wrapper">
+												{%- capture wishlist_content -%}
+													<a href="javascript:void(0)" class="lh-button-wl">
+														<i class='lni lni-heart'></i>
+														<span class="lh-tooltip"  data-lhi="wishlist" data-lh-lang>{{ 'Yt3mTFnMIS.wishlist' | t }}</span>
+													</a>
+												{%- endcapture -%}
+												{%- render 'layouthub_wishlist', wishlist_content:wishlist_content, wishlist_type: 'other',product: product -%}
+	                    </div>
+	                    <div class="lh-quickview-wrapper">
+												{%- capture quickview_content -%}
+													<a href="javascript:void(0)">
+														<i class='lni lni-eye'></i>
+														<span class="lh-tooltip"   data-lhi="quick_view" data-lh-lang>{{ 'Yt3mTFnMIS.lh_txhi7h_view' | t }}</span>
+													</a>
+												{%- endcapture -%}
+												{%- render 'layouthub_quickview', quickview_content: quickview_content, product: product -%}
+
+	                    </div>
+	                </div>
+	            		<a class="lh-product-item-image" href="{{product.url | within: collection}}">
+										 
+											<img src="{{ product.featured_image | img_url: '2362x3543' }}" alt="{{product.title}}">
+											{% if product.images.size > 1 %}
+												<img src="{{product.images[1] | img_url : '2362x3543' }}" class="lh-img-hover" alt="{{product.title}}">
+											{% else %}
+												<img src="{{product.featured_image | img_url: '2362x3543' }}" class="lh-img-hover" alt="{{product.title}}">
+											{% endif %}
+										 
+									</a>
+									<span class="lh-icon-loading"></span>
+									<div class="lh-wrap-button">
+										{% if product.available  %}
+
+											{%- if is_swatch -%}
+												<a href="{{product.url}}">
+													<i class='lni lni-cart'></i>
+													<span  data-lhi="quick_shop" data-lh-lang>{{ 'Yt3mTFnMIS.lh_txhi7h_shop' | t }}</span>
+												</a>
+											{%- else -%}
+												<a href="/cart/add/{{product.selected_or_first_available_variant.id}}">
+													<i class='lni lni-cart'></i>
+													<span  data-lhi="add_to_cart" data-lh-lang>{{ 'Yt3mTFnMIS.lh_f635tz_cart' | t }}</span>
+												</a>
+											{%- endif -%}
+										{% else %}
+											<a href="{{product.url}}">
+												<i class='lni lni-eye'></i>
+												<span  data-lhi="read_more" data-lh-lang>{{ 'Yt3mTFnMIS.lh_h7oza_more' | t }}</span>
+											</a>
+										{% endif %}
+									</div>
+		            </div>
+		            <div class="lh-item-info">
+										{%- if is_swatch -%}
+											<div class="lh-wrap-swatch">
+												{% assign variant_slected = product.selected_or_first_available_variant %}
+												{% assign arr_swatch = 'Color' | split: ',' %}
+												{%- if  arr_swatch.size > 0 %}
+													{%- if product.variants.size >= 1%}
+														{%- for option in product.options -%}
+															{%- assign option_index = forloop.index0 -%}
+																{%- if arr_swatch contains option -%}
+																	{%- assign index = 'option' | append: forloop.index -%}
+																		<div class="lh-swatch-images  swatch-index lh-swatch-variations"  data-option-index="{{ option_index }}">
+																			<ul class="list-swatch-images">
+																						{%- assign values = ""  -%}
+																						{%- for variant in product.variants -%}
+																							{%- assign option_value = variant[index] -%}
+																							{%- assign option_value_downcase = variant[index] | downcase -%}
+																							{%- if values != ""%}
+																								{%- assign tmp = values | split: '|' -%}
+																								{%- if tmp contains option_value_downcase  -%} {%- continue-%}{%- endif -%}
+																								{%- assign values = values  | append:   '|' | append: option_value_downcase -%}
+																							{%- else -%}
+																								{%- assign values =   option_value_downcase -%}
+																							{%- endif -%}
+																							<li data-option-index="{{ option_index }}" data-lh-tooltip="{{option_value}}" class="lh-swatch-select lh-swatch-image lh-tooltip_top {% if option_value == variant_slected[index] %} active{% endif %}" data-value="{{option_value | escape}}">
+																								 
+																									<span><img src="{{ variant | img_url: "120x120", crop: 'center' }}" alt="{{option_value}}">
+																									</span>
+																								 
+																							</li>
+																						{%- endfor -%}
+																			</ul>
+																		</div>
+																{%- endif -%}
+														{%- endfor -%}
+													{%- endif -%}
+												{%- endif -%}
+												<div class="lh-option-wrappers" >
+													<select name="id"  id="product-select-{{product.id}}">
+														{%- for variant in product.variants -%}
+															{%- if variant.available -%}
+																<option {%  if variant == product.selected_or_first_available_variant   %} selected="selected" {%  endif  %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+															{%- else -%}
+																<option disabled="disabled">
+																	{{ variant.title }} - {{ 'Yt3mTFnMIS.lh_sjlit0_soldout' | t }}
+																</option>
+															{%- endif -%}
+														{%- endfor -%}
+													</select>
+												</div>
+												<script type="application/json" id="lh-product-json-{{product.id}}">
+														{
+															"id": {{product.id}},
+															"title": {{product.title | json}},
+															"handle": {{product.handle | json}},
+															"price": {{product.price| json}},
+															"price_min": {{product.price_min| json}},
+															"price_max": {{product.price_max| json}},
+															"available": {{product.available | json}},
+															"price_varies": {{product.price_varies| json}},
+															"compare_at_price": {{product.compare_at_price| json}},
+															"compare_at_price_min": {{product.compare_at_price_min| json}},
+															"compare_at_price_max": {{product.compare_at_price_max| json}},
+															"compare_at_price_varies": {{product.compare_at_price_varies| json}},
+															"variants": [
+															{%- for variant in product.variants -%}
+															{
+															"id": {{variant.id}},
+															"title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+															"option1": {{variant.option1  | json}},
+															"option2": {%- if product.options.size == 1 -%}null{%-else-%}{{variant.option2  | json}}{%-endif-%},
+															"option3": {%- if product.options.size == 1 or product.options.size == 2 -%}null{%-else-%}{{variant.option3  | json}}{%-endif-%},
+															"sku": {{variant.sku | json}},
+															"requires_shipping": {{variant.requires_shipping}},
+															"taxable": {{variant.taxable |json}},
+															"featured_image": {%- if variant.image.id != blank -%}{
+																	"id": {{variant.image.id | json}},
+																	"product_id": {{product.id | json}},
+																	"width": {{variant.image.width | json}},
+																	"height": {{variant.image.height | json}},
+																	"src": {{variant.image.src | json}},
+																	"position":{{variant.image.position}}
+																}{%- else-%}null{%-endif-%},
+															"available": {{variant.available}},
+															"public_title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+															"options":  {{variant.options | json}},
+															"price": {{variant.price| json}},
+															"weight": {{variant.weight| json}},
+															"compare_at_price": {{variant.compare_at_price | json}},
+															"inventory_quantity": {{variant.inventory_quantity | json}},
+															"inventory_management": {{variant.inventory_management | json}},
+															"inventory_policy": {{variant.inventory_policy | json}},
+															"barcode": {{variant.barcode | json}}
+															}{%- if forloop.last == false -%},{%- endif -%}
+															{%- endfor -%}
+															],
+															"featured_image": {{product.featured_image | json}},
+															"options": [
+															{%- for option in product.options -%}
+															{{ option | json}}{%- if forloop.last == false -%},{%- endif -%}
+															{%-endfor -%}
+															]
+														}
+													</script>
+											</div>
+										{%- endif -%}
+										 
+											<div class="lh-rating-wrapper">
+												{% render 'layouthub_review',  review_type: 'rating' ,product: product %}
+											</div>
+										 
+		                <h4 class="lh-product-title">
+		                    <a class="" href="{{product.url | with: collection }}">{{ product.title}}</a>
+		                </h4>
+										 
+											<div class="lh-product-des">
+												{{ product.description | strip_html | truncatewords: 20 }}
+											</div>
+										 
+										<div class="lh-product-bottom">
+											<div class="lh-wrap-swap">
+												<div class="lh-wrap-price">
+													<div class="lh-price-box">
+														{%- if product.price_min < product.price_max and product.price_min > 0 -%}
+															<span class="lh-money">{{product.price_min | money }}</span> - <span class="lh-money">{{product.price_max | money }}</span>
+														{%- else -%}
+															{% if isSale  %}
+																<del class="lh-product-compare-price">{{ first_variant.compare_at_price | money  }}</del>
+																<ins class="lh-product-price">{{ first_variant.price | money }}</ins>
+															{%- else -%}
+																<span class="lh-product-price">{{ first_variant.price | money }}</span>
+															{% endif %}
+														{%- endif -%}
+					                </div>
+
+												</div>
+											</div>
+										</div>
+
+											<div class="lh-product-countdown">
+												 
+											</div>
+
+		            </div>
+		        </div>
+		    {% endfor %}<span class="lh-icon-loading"></span>
+  </div>
+</div>
+   </include></div>
+                      <div class="lh-col-md-12">
+                          <include data-name="pagination" data-id="3">  
+ <div class="lh-row">
+    <div class="lh-col-md-12">
+    <nav class="lh-nav-pagination">
+        <ul class="lh-pagination">
+             {% capture previous_label %}
+			  <span class="lh-icon-fallback-text">
+			    <span class="lh-fallback-text"><svg version="1.1" width="14" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+					<path fill="currentColor" d="M70.4,2.4L26.2,46.8c-0.9,0.9-1.3,2.1-1.3,3.3c0,1.2,0.5,2.4,1.3,3.3l44.2,44.2c1.1,1.1,2.8,1.1,3.9,0
+						c0.5-0.5,0.8-1.2,0.8-1.9c0-0.7-0.3-1.4-0.8-1.9L30.7,50.1L74.3,6.3c1.1-1.1,1.1-2.8,0-3.9C73.2,1.3,71.5,1.3,70.4,2.4z"></path>
+					</svg>
+				</span>
+			  </span>
+			{% endcapture %}
+			{% capture next_label %}
+			  <span class="lh-icon-fallback-text">
+			    <span class="lh-fallback-text"><svg version="1.1" width="14" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+					<path fill="currentColor" d="M29.6,97.6l44.2-44.4c0.9-0.9,1.3-2.1,1.3-3.3c0-1.2-0.5-2.4-1.3-3.3L29.6,2.4c-1.1-1.1-2.8-1.1-3.9,0
+						c-0.5,0.5-0.8,1.2-0.8,1.9c0,0.7,0.3,1.4,0.8,1.9l43.6,43.6L25.7,93.7c-1.1,1.1-1.1,2.8,0,3.9C26.8,98.7,28.5,98.7,29.6,97.6z"></path>
+					</svg></span>
+			  </span>
+			{% endcapture %}
+			{{ paginate | default_pagination: previous: previous_label, next: next_label }}</ul>
+    </nav>
+</div>
+</div>  </include></div>
+                      {%- endpaginate -%}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+  </section>
+</div>
+ {%schema%} 
+{"locales":{"en":{"Yt3mTFnMIS":{"lh_pcvexl_title":"SORT BY","lh_pcvexk_title":"FILTER BY COLOR","lh_pcvexj_title":"FILTER BY SIZE","lh_pcvexi_title":"PRODUCT TAGS","lh_u4i8zz_text":"Reset All Filters","lh_sjlit0_unavai":"UNAVAILABLE","lh_sjlit0_soldout":"SOLD OUT","lh_sjlit0_sale":"SALE","lh_sjlit0_new":"NEW","lh_sjlit0_limited":"LIMITED EDTION","wishlist":"Wishlist","lh_txhi7h_view":"Quick view","lh_txhi7h_shop":"QUICK SHOP","lh_f635tz_cart":"ADD TO CART","lh_h7oza_more":"READ MORE","home":"Home","lh_2spkq0_text":"Filters"}}},"name":"collection page"}
+ {%endschema%}
